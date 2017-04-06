@@ -1,0 +1,181 @@
+﻿*
+	{
+	
+	}
+
+body, html {
+	background:url(../Content/Images/background.png) no-repeat;
+	/*background-position: center center;*/
+	
+	background-size: cover;
+	height: 100%;
+	font-size: 16px;
+	line-height: none;
+	margin: 0px;
+	padding: 0px;
+	}
+	
+h2 {
+	margin: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #fff;
+	}
+ 
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+	min-height: 1px;
+	border: none;		
+	}
+
+.navbar-nav > li > a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 4px;
+	}
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+	color: #b9d2dd;
+	background-color: transparent;
+	}
+
+.navbar-inverse {
+	background-color:transparent !important;
+	border-color:transparent;
+	background-image:none;
+	box-shadow:none;
+	}
+	
+.navbar-inverse .navbar-nav > li > a {
+	color: #fff;
+	font-size: 18px;
+	}
+
+.btn {
+	border: 0px;
+	border-radius:0px;		
+	}
+
+.btn-info {
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: none;
+	}
+
+.btn.btn-info {
+	width: 150px;
+	height: 30px;
+	background:url(../Content/Images/Button_hp.png) no-repeat; 
+	color: #fff;
+	margin-left: 55px;
+	margin-right: 80px;
+	margin-top: 10px;
+	}
+
+.btn.btn-submit {
+	width: 150px;
+	height: 30px;
+	background:url(../Content/Images/Button_hp.png) no-repeat; 
+	color: #fff;
+	margin-left: 65px;
+	margin-right: 65px;
+	margin-top: 10px;
+	font-size: 16px;
+	padding: 0px;
+	}
+		
+.booklets#background {
+
+
+	}
+
+.panell#backgroundleft {
+	/*background:url(wood_background.png);*/
+	background-color: transparent !important;
+	border-radius: 0px;
+	margin-bottom: 180px;
+	color: #fff;
+	text-align: center;
+	padding: 40px 60px 40px 170px;
+	border: 1px;
+	border-color: #fff;
+	}
+
+.panell#backgroundright {
+	/*background:url(wood_background.png);*/
+	background-color: transparent !important;
+	border-radius: 0px;
+	margin-bottom: 180px;
+	color: #fff;
+	text-align: center;
+	padding: 40px 170px 40px 60px;
+	}
+
+.layout-background#wood_background {
+	background:url(../Content/Images/wood_background.png);
+	height: 600px;
+	}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 45px;
+	padding: 6px 20px;
+	font-size: 16px;
+	line-height: 1.42857143;
+
+	background-color: none;
+	background-image: none;
+
+	border-radius: 0px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(216, 63, 63, 0.1);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-horizontal .form-group {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+/*button, input, optgroup, select, textarea {
+	margin: 40px;
+}*/
+
+.form-control#fn {
+	height: 35px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.form-control#ln {
+	height: 35px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.form-control#gt {
+	height: 35px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.form-control#email {
+	height: 35px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.form-control#pwd {
+	height: 35px;
+	margin-top: 7px;
+	margin-bottom: 5px;
+}
+
+.help-block {	
+	font-size: 12px;
+}

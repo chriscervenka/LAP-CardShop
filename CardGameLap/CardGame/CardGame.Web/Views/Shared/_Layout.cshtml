@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/MyStyle.css" type="text/css">
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-inverse">
+            <div class="header">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Home</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><input type="button" class="btn btn-info" value="Register" onclick="location.href='@Url.Action("Register", "Account")'" /></li>
+                        <li><input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" /></li>
+                        <li><input type="button" class="btn btn-info" value="About" onclick="location.href='@Url.Action("About", "Home")'" /></li>
+                        <li><input type="button" class="btn btn-info" value="Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" /></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+        <!--<footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>-->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

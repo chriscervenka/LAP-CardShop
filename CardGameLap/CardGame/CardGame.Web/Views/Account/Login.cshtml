@@ -1,0 +1,53 @@
+﻿@model CardGame.Web.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<body>
+    <div class="booklets" id="background">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+                <div class="panell" id="backgroundleft">
+                    <div class="layout-background" id="wood_background">
+                        <p>ADS</p>
+                        <input type="button" class="btn btn-info" value="Create Account" onclick="location.href='@Url.Action("Register", "Account")'" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+                <div class="panell" id="backgroundright">
+                    <div class="layout-background" id="wood_background">
+                        @using (Html.BeginForm())
+                        {
+                        
+                            <h2>LOGIN</h2>
+                            <div class="form-group">
+                               
+                             
+                                @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(u => u.Email, htmlAttributes: new { @class = "form-control", placeholder = "Enter email", id = "email" })
+
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
+
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-submit">Login</button>
+                            </div>
+                         }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
