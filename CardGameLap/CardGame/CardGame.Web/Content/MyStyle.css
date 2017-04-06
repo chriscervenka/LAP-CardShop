@@ -78,6 +78,16 @@ h2 {
 	margin-top: 10px;
 	}
 
+.btn.btn-info#login {
+    width: 150px;
+    height: 30px;
+    background: url(../Content/Images/Button_hp.png) no-repeat;
+    color: #fff;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 10px;
+}
+
 .btn.btn-submit {
 	width: 150px;
 	height: 30px;
@@ -131,7 +141,7 @@ h2 {
 .form-control {
 	display: block;
 	width: 100%;
-	height: 45px;
+	height: 35px;
 	padding: 6px 20px;
 	font-size: 16px;
 	line-height: 1.42857143;
