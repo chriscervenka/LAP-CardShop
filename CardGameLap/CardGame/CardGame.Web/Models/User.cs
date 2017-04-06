@@ -16,9 +16,9 @@ namespace CardGame.Web.Models
         [DisplayName("First Name")]
         public string Firstname { get; set; }
 
-        [Required(ErrorMessage = "Your Firstname is required")]
+        [Required(ErrorMessage = "Your Lastname is required")]
         [StringLength(50)]
-        [DisplayName("First Name")]
+        [DisplayName("Last Name")]
         public string Lastname { get; set; }
 
         [Required]

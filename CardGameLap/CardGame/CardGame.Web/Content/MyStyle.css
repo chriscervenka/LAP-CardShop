@@ -30,6 +30,10 @@ h2 {
 	border: none;		
 	}
 
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
 .navbar-nav > li > a {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -116,7 +120,13 @@ h2 {
 .layout-background#wood_background {
 	background:url(../Content/Images/wood_background.png);
 	height: 600px;
+   
+    padding: 50px 10px 50px 10px;
 	}
+
+.form-group {
+   
+}
 
 .form-control {
 	display: block;
@@ -140,6 +150,7 @@ h2 {
 .form-horizontal .form-group {
 	margin-right: 20px;
 	margin-left: 20px;
+    
 }
 
 /*button, input, optgroup, select, textarea {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using CardGame.DAL.Logic;
-using CardGame.DAL.Model;
-using CardGame.Log;
 using CardGame.Web.Models;
 
 namespace CardGame.Web.Controllers

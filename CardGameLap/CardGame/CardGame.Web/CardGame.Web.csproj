@@ -221,6 +221,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Deckbuilder\Deckbuilder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -237,10 +238,6 @@
     <ProjectReference Include="..\CardGame.DAL\CardGame.DAL.csproj">
       <Project>{eb5dd192-e1a3-4351-a680-57034adf3708}</Project>
       <Name>CardGame.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
-      <Project>{a2b8ef85-9ca4-48fc-850a-c9fa254a7a4b}</Project>
-      <Name>CardGame.Log</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

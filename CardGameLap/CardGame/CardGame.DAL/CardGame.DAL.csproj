@@ -100,7 +100,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
+      <Project>{B232EA2E-230B-4C21-9A0B-63F9380C5416}</Project>
+      <Name>CardGame.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <EntityDeploy Include="Model\CardGameModel.edmx">
@@ -114,12 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
-      <Project>{a2b8ef85-9ca4-48fc-850a-c9fa254a7a4b}</Project>
-      <Name>CardGame.Log</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\CardGameModel.Context.tt">

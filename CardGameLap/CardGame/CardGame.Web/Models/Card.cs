@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using CardGame.DAL.Logic;
-using CardGame.DAL.Model;
-using CardGame.Log;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CardGame.Web.Models
 {
