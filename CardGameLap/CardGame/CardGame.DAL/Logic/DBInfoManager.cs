@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CardGame.DAL.Model;
 using CardGame.Log;
 
+
 namespace CardGame.DAL.Logic
 {
     public class DBInfoManager

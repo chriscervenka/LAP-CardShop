@@ -19,7 +19,7 @@ namespace CardGame.Web.Controllers
 
             foreach (var c in dbUserlist)
             {
-                User user = new User();
+                Register user = new Register();
                 user.ID = c.idperson;
                 user.Firstname = c.firstname;
                 user.Lastname = c.lastname;

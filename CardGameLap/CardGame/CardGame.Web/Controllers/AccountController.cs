@@ -6,6 +6,7 @@ using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
 
+
 namespace CardGame.Web.Controllers
 {
     public class AccountController : Controller
@@ -18,7 +19,7 @@ namespace CardGame.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(User login)
+        public ActionResult Login(Login login)
         {
             bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
             login.Role = UserManager.GetRoleNamesByEmail(login.Email);
@@ -58,7 +59,7 @@ namespace CardGame.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(User regUser)
+        public ActionResult Register(Register regUser)
         {
             var dbUser = new tblperson();
 

@@ -1,37 +1,15 @@
-﻿@model CardGame.Web.Models.User
+﻿@model CardGame.Web.Models.Register
 @{
     ViewBag.Title = "Register";
 }
 
-
-
-@*@using (Html.BeginForm())
-{
-    @Html.LabelFor(u => u.Firstname)
-    @Html.EditorFor(u => u.Firstname)
-    <br />
-    @Html.LabelFor(u => u.Lastname)
-    @Html.EditorFor(u => u.Lastname)
-    <br />
-    @Html.LabelFor(u => u.Email)
-    @Html.EditorFor(u => u.Email)
-    <br />
-    @Html.LabelFor(u => u.Password)
-    @Html.EditorFor(u => u.Password)
-    <br />
-    @Html.LabelFor(u => u.Gamertag)
-    @Html.EditorFor(u => u.Gamertag)
-    <br />
-
-    
-}*@
 
 <body>
 <div class="booklets" id="background">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
             <div class="panell" id="backgroundleft">
-                <div class="layout-background" id="wood_background">
+                <div class="text-left-registration"> 
                     <p>ADS</p>
                 </div>
             </div>
@@ -41,38 +19,6 @@
             <div class="panell" id="backgroundright">
                 <div class="layout-background" id="wood_background">
 
-                    @*<form class="form-horizontal">
-                        <h2>REGISTRATION</h2>
-                        <div class="form-group">
-                            <label class="control-label" for="text">Firstname</label>
-                            <input type="text" class="form-control" id="fn" placeholder="Firstname">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="text">Lastname</label>
-                            <input type="text" class="form-control" id="ln" placeholder="Lastname">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="text">Gamertag</label>
-                            <input type="text" class="form-control" id="gt" placeholder="Gamertag">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="pwd">Password</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-                        </div>
-
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-submit">Sign Up</button>
-                        </div>
-                    </form>*@
 
                     @using (Html.BeginForm())
                     {
