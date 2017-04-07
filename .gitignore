@@ -250,8 +250,8 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-CardGameLap/CardGame/CardGame.Web/20170324_LOG.xml
-CardGameLap/CardGame/CardGame.Web/20170328_LOG.xml
-CardGameLap/CardGame/CardGame.Web/20170327_LOG.xml
-CardGameLap/CardGame/CardGame.Web/20170331_LOG.xml
-CardGameLap/CardGame/CardGame.Web/20170406_LOG.xml
+*CardGameLap/CardGame/CardGame.Web/20170324_LOG.xml
+*CardGameLap/CardGame/CardGame.Web/20170328_LOG.xml
+*CardGameLap/CardGame/CardGame.Web/20170327_LOG.xml
+*CardGameLap/CardGame/CardGame.Web/20170331_LOG.xml
+*CardGameLap/CardGame/CardGame.Web/20170406_LOG.xml
