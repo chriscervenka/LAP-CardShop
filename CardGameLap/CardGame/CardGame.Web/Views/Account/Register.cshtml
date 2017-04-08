@@ -21,16 +21,19 @@
 
 
                     @using (Html.BeginForm())
+
                     {
+                        @Html.ValidationSummary(true)
+
                         <h2>REGISTRATION</h2>
                             <div class="form-group">
-                                @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })
-                                @Html.TextBoxFor(u => u.Firstname, htmlAttributes: new { @class = "form-control", placeholder = "Enter Firstname", id = "firstname" })
-                                @Html.ValidationMessageFor(u => u.Firstname)
+                               @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })
+                            @Html.TextBoxFor(u => u.Firstname, htmlAttributes: new { @class = "form-control", placeholder = "Enter Firstname", id = "firstname" })
+                            @Html.ValidationMessageFor(u => u.Gamertag)
 
                                 @Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })
                                 @Html.TextBoxFor(u => u.Lastname, htmlAttributes: new { @class = "form-control", placeholder = "Enter Lastname", id = "lastname" })
-                                @Html.ValidationMessageFor(u => u.Lastname)
+                                @Html.ValidationMessageFor(u => u.Gamertag)
 
                                 @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })
                                 @Html.TextBoxFor(u => u.Gamertag, htmlAttributes: new { @class = "form-control", placeholder = "Enter Gamertag", id = "gamertag" })
@@ -41,7 +44,7 @@
                                 @Html.ValidationMessageFor(u => u.Email)
                           
                                 @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
-                                @Html.TextBoxFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
+                                @Html.TextBoxFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password" })
                                 @Html.ValidationMessageFor(u => u.Password)
 
                                 @Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })

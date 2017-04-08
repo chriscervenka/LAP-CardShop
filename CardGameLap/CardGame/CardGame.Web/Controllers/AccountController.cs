@@ -65,11 +65,11 @@ namespace CardGame.Web.Controllers
 
             dbUser.firstname = regUser.Firstname;
             dbUser.lastname = regUser.Lastname;
-
+            dbUser.gamertag = regUser.Gamertag;
             dbUser.email = regUser.Email;
             dbUser.password = regUser.Password;
             dbUser.salt = regUser.Salt;
-            dbUser.userrole = "player";
+            dbUser.userrole = "admin";
             dbUser.currencybalance = 1000;
             dbUser.isactive = true;
 

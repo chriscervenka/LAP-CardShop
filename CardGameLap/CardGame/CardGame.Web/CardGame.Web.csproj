@@ -225,7 +225,10 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Deckbuilder\Deckbuilder.cshtml" />
+    <Content Include="Views\Shop\ShopStart.cshtml" />
+    <Content Include="Views\Deckbuilder\Gallery.cshtml" />
     <Content Include="Views\Shop\Shop.cshtml" />
+    <Content Include="Views\Shared\_LayoutShop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,6 +21,7 @@ namespace CardGame.Web.Controllers
 
                 ViewBag.Firstname = dbUser.firstname;
                 ViewBag.Lastname = dbUser.lastname;
+                ViewBag.Gamertag = dbUser.gamertag;
             }
             //Eigentlich von DAL auf ViewModel mappen und View dem Viewmodel mitgeben
                     

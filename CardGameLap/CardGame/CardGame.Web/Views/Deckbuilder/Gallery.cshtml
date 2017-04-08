@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CardGame.Web.Models.Card>
+
+@{
+    ViewBag.Title = "View";
+}
+
+@foreach (var item in Model)
+{
+    <div class="row col-md-4 col-sm-6 col-xs-12" style="margin-top:37px">
+        <div class="col-md-8 vcenter" style="margin-top:26px">
+            <div class="container" style="font-size:12px">
+                <div class="row">
+                    @*@Html.DisplayNameFor(model => model.cardname)*@
+                    @Html.DisplayFor(modelItem => item.Name)
+                </div>
+                <div class="row">
+                    @Html.DisplayNameFor(model => model.Mana):
+                    @Html.DisplayFor(modelItem => item.Mana)
+                </div>
+                <div class="row">
+                    @Html.DisplayNameFor(model => model.Life):
+                    @Html.DisplayFor(modelItem => item.Life)
+                </div>
+                <div class="row">
+                    @Html.DisplayNameFor(model => model.Attack):
+                    @Html.DisplayFor(modelItem => item.Attack)
+                </div>
+                @*<div class="row">
+                        @Html.DisplayNameFor(model => model.flavor)
+                        @Html.DisplayFor(modelItem => item.flavor)
+                    </div>
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.tblability.ability)
+                        @Html.DisplayFor(modelItem => item.tblability.ability)
+                    </div>*@
+                @*<div class="row">
+                    @Html.DisplayNameFor(model => model.tblclass.@class):
+                    @Html.DisplayFor(modelItem => item.tblclass.@class)
+                </div>
+                <div class="row">
+                    @Html.DisplayNameFor(model => model.tbltype.typename):
+                    @Html.DisplayFor(modelItem => item.tbltype.typename)
+                </div>*@
+            </div>
+        </div>
+        <div class="col-md-4" style="position:relative">
+            @{
+                var base64 = Convert.ToBase64String(item.Pic);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+            }
+            <img class="galleryImg img-responsive" src="@imgSrc" />
+        </div>
+    </div>
+                }
+
+@{
+    int startpositionB = ViewBag.start - 9;
+    int startpositionN = ViewBag.start + 9;
+
+    if (ViewBag.start < 9)
+    {
+        <a href="~/cards/index/?start=@startpositionB" style="visibility:hidden" class="glyphicon glyphicon-chevron-left"></a>
+    }
+    else
+    {
+        <a href="~/cards/index/?start=@startpositionB" class="glyphicon glyphicon-chevron-left"></a>
+    }
+
+    if (ViewBag.start > ViewBag.len - 8)
+    {
+        <a href="~/cards/index/?start=@startpositionN" style="visibility:hidden" class="glyphicon glyphicon-chevron-right">vor</a>
+
+    }
+    else
+    {
+        <a href="~/cards/index/?start=@startpositionN" class="glyphicon glyphicon-chevron-right"></a>
+    }
+
+}
+

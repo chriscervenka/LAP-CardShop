@@ -20,11 +20,11 @@ namespace CardGame.Web.Models
         public string Lastname { get; set; }
 
         [Required]
-        [MaxLength(10, ErrorMessage = "Gamertag must be 10 characters or less"), MinLength(2)]
+        [MaxLength(10, ErrorMessage = "Gamertag must be 10 characters or less ..."), MinLength(2)]
         public string Gamertag { get; set; }
 
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage ="Password doesn't match")]
+        [Compare("Password", ErrorMessage ="Please confirm your password ...")]
         public string ConfirmPassword { get; set; }
     }
 }

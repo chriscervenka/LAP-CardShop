@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
+using System.Linq;
 
 namespace CardGame.Web.Controllers
 {
@@ -49,5 +50,9 @@ namespace CardGame.Web.Controllers
 
             return View(card);
         }
+
+        
+           
+
+        }
     }
-}

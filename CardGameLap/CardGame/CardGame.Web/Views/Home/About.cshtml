@@ -1,7 +1,66 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>*@
 
-<p>Use this area to provide additional information.</p>
+<body>
+    <div class="booklets" id="background">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+                <div class="panell" id="backgroundleft">
+                    <div class="layout-background" id="wood_background">
+                        @*@{if (User.Identity.Name == "")
+                            {
+                                <h1>Welcome</h1>
+                            }
+                            else
+                            {
+                                <h2> Welcome</h2>
+                                <h1>@ViewBag.Gamertag</h1>
+                                <h2>to the amazing Shop of</h2>
+
+                            }
+                        }*@
+
+
+
+
+                        <h1>Magical Tea Party</h1>
+                        @*@{
+                            if (User.IsInRole("player"))
+                            {
+                                <h2>You are a Player</h2>
+                            }
+                        }*@
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                        <br>
+                        <p>If you are interested on more</p>
+                        <p>Choose buttons byond</p>
+
+                        <input type="button" class="btn btn-info" value="Impressum" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
+
+                        <input type="button" class="btn btn-info" value="AGB" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
+
+                        <input type="button" class="btn btn-info" value="Contact" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+                <div class="panell" id="backgroundright">
+                    <div class="layout-background" id="wood_background">
+
+
+
+                        @*<div class="form-group">
+                                <button type="submit" class="btn btn-submit" id="login">Login</button>
+                            </div>*@
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

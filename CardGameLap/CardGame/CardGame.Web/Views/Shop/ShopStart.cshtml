@@ -1,13 +1,33 @@
-﻿
+﻿@model CardGame.Web.Models.Register
+
 @{
     Layout = "~/Views/Shared/_LayoutShop.cshtml";
 }
 
 @{
-    ViewBag.Title = "Shop";
+    ViewBag.Title = "View";
 }
 
-<h2>Shop</h2>
+@*<div class="jumbotron">
+        @{if (User.Identity.Name == "")
+            {
+            <h1>Welcome</h1>
+            }
+            else
+            {
+            <h1> Welcome @ViewBag.Email @ViewBag.Firstname @ViewBag.Lastname </h1>
+            }
+         }
+
+        @{
+            if (User.IsInRole("admin"))
+            {
+                <h1>You are admin!</h1>
+            }
+        }
+
+
+    </div>*@
 
 <body>
     <div class="booklets" id="background">
@@ -23,7 +43,7 @@
                             {
                                 <h2> Welcome</h2>
                                 <h2>@ViewBag.Gamertag</h2>
-                                <h2>here you can buy your Cardpackages</h2>
+                                <h2>to the amazing Shop of</h2>
 
                             }
                         }
@@ -31,7 +51,7 @@
 
 
 
-                        @*<h1>CLONESTONE</h1>*@
+                        <h1>CLONESTONE</h1>
                         @{
                             if (User.IsInRole("player"))
                             {
@@ -62,5 +82,3 @@
         </div>
     </div>
 </body>
-
-

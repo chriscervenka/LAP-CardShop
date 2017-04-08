@@ -23,6 +23,7 @@ namespace CardGame.Web.Controllers
                 user.ID = c.idperson;
                 user.Firstname = c.firstname;
                 user.Lastname = c.lastname;
+                user.Gamertag = c.gamertag;
                 user.Email = c.email;
                 user.Role = c.userrole;
                 user.Password = c.password;

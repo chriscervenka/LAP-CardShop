@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Shop";
 }
 
 @*<div class="jumbotron">
@@ -35,7 +35,9 @@
                         }
                         else
                         {
-                            <h2> Welcome @*@ViewBag.Email*@ @ViewBag.Firstname @ViewBag.Lastname to the amazing Shop</h2>
+                            <h2> Welcome</h2>
+                            <h1>@ViewBag.Gamertag</h1>
+                            <h2>to the amazing Shop of</h2>
 
                         }
                     }
@@ -45,13 +47,14 @@
                         
                         <h1>CLONESTONE</h1>
                         @{
-                            if (User.IsInRole("admin"))
+                            if (User.IsInRole("player"))
                             {
-                                <h2>You are admin!</h2>
+                                <h2>You are a Player</h2>
                                 }
                             }
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+
+                        <input type="button" class="btn btn-info" value="Buy Cards" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
                     </div>
                 </div>
             </div>
