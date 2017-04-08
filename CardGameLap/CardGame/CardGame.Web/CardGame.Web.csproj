@@ -177,6 +177,7 @@
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\Bild1.png" />
     <Content Include="Content\Images\Bild2.png" />
+    <Content Include="Content\Images\black.jpg" />
     <Content Include="Content\Images\Button_hp.png" />
     <Content Include="Content\Images\LoginButton.png" />
     <Content Include="Content\Images\SignUpButton.png" />
@@ -229,6 +230,7 @@
     <Content Include="Views\Deckbuilder\Gallery.cshtml" />
     <Content Include="Views\Shop\Shop.cshtml" />
     <Content Include="Views\Shared\_LayoutShop.cshtml" />
+    <Content Include="Views\Account\VerifyRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,17 +9,17 @@ namespace CardGame.Web.Models
 {
     public class Login : User
     {
-        [Required(ErrorMessage = "E - Mail is required")]
+        [Required(ErrorMessage = "E-Mail is required")]
+        [RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$", ErrorMessage = "Please enter a valid email")]
         [DataType(DataType.EmailAddress)]
-        [EmailAddress(ErrorMessage = "Please enter a valid email")]
         public string Email { get; set; }
 
 
 
         //  TODO PASSWORD Validation funktioniert noch nicht
-        [Required(ErrorMessage = "Please enter your password")]
+        [Required(ErrorMessage = "Please provide Password", AllowEmptyStrings = false)]
         [DataType(DataType.Password)]
-        [StringLength(10, MinimumLength = 6, ErrorMessage = "Password must be min 6 char long")]
+        [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be min 6 char long")]
         public string Password { get; set; }
     }
 }

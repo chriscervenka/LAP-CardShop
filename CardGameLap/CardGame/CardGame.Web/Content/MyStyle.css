@@ -140,6 +140,10 @@ h2 {
    
 }
 
+.label {
+    font-size: 100%;
+}
+
 .form-control {
 	display: block;
 	width: 100%;
@@ -163,6 +167,10 @@ h2 {
 	margin-right: 20px;
 	margin-left: 20px;
     
+}
+
+button, input, select[multiple], textarea {
+	background-image: none;
 }
 
 /*button, input, optgroup, select, textarea {
