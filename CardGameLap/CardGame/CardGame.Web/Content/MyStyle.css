@@ -214,3 +214,24 @@ button, input, select[multiple], textarea {
 text-left-registration {
 }
 
+
+#slide {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+#slide img {
+  position:absolute;
+  left:35px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#slide img.top:hover {
+  opacity:0;
+}
+
