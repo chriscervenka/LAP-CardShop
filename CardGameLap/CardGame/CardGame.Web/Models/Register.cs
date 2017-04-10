@@ -12,16 +12,16 @@ namespace CardGame.Web.Models
         [Required(ErrorMessage = "Your Firstname is required", AllowEmptyStrings = false)]
         [StringLength(50)]
         [DisplayName("First Name")]
-        public string Firstname { get; set; }
+        public new string Firstname { get; set; }
 
         [Required(ErrorMessage = "Your Lastname is required", AllowEmptyStrings = false)]
         [StringLength(50)]
         [DisplayName("Last Name")]
-        public string Lastname { get; set; }
+        public new string Lastname { get; set; }
 
         [Required]
         [StringLength(20, ErrorMessage = "Gamertag can be 20 characters or less ..."), MinLength(2)]
-        public string Gamertag { get; set; }
+        public new string Gamertag { get; set; }
 
         
         [Compare("Password", ErrorMessage ="Please confirm your password ...")]

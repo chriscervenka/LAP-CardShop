@@ -207,6 +207,15 @@ button, input, select[multiple], textarea {
 	margin-bottom: 5px;
 }
 
+.input-field {
+    margin-top: 10px;
+}
+
+label {
+	display: inline-block;
+	font-weight: bold;
+}
+
 .help-block {	
 	font-size: 12px;
 }

@@ -33,40 +33,40 @@
 
                         }
                             <div class="form-group">
-                                <div>
-                                <p>@Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-            label" })</p>
+                                <div class="input-field">
+                                <p>@Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })</p>
                                 @Html.EditorFor(u => u.Firstname)
                                 @Html.ValidationMessageFor(u => u.Firstname)
                                 </div>
 
-                                <div>
-                                <p>@Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })</p>
-                                @Html.EditorFor(u => u.Lastname)
-                                @Html.ValidationMessageFor(u => u.Lastname)
+                                <div class="input-field">
+                                    <p>@Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })</p>
+                                    @Html.EditorFor(u => u.Lastname)
+                                    @Html.ValidationMessageFor(u => u.Lastname)
                                 </div>
 
-                                <div>
-                                <p>@Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })</p>
-                                @Html.EditorFor(u => u.Gamertag)
-                                @Html.ValidationMessageFor(u => u.Gamertag)
+                                <div class="input-field">
+                                    <p>@Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })</p>
+                                    @Html.EditorFor(u => u.Gamertag)
+                                    @Html.ValidationMessageFor(u => u.Gamertag)
                                 </div>
 
-                                <div>
-                                <p>@Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })</p>
-                                @Html.EditorFor(u => u.Email)
-                                @Html.ValidationMessageFor(u => u.Email)
+                                <div class="input-field">
+                                    <p>@Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })</p>
+                                    @Html.EditorFor(u => u.Email)
+                                    @Html.ValidationMessageFor(u => u.Email)
                                 </div>
 
-                                <div>
-                               <p>@Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })</p>
-                                @Html.EditorFor(u => u.Password)
-                                @Html.ValidationMessageFor(u => u.Password)
+                                <div class="input-field">
+                                    <p>@Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })</p>
+                                    @Html.EditorFor(u => u.Password)
+                                    @Html.ValidationMessageFor(u => u.Password)
                                 </div>
 
-                                <div>
-                                <p>@Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-      label" })</p>
-                                @Html.EditorFor(u => u.ConfirmPassword)
-                                @Html.ValidationMessageFor(u => u.ConfirmPassword)
+                                <div class="input-field">
+                                    <p>@Html.Label("Confirm Password", htmlAttributes: new { @class = "control-label" })</p>
+                                    @Html.EditorFor(u => u.ConfirmPassword)
+                                    @Html.ValidationMessageFor(u => u.ConfirmPassword)
                                 </div>
                             </div>
 
