@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
 
 namespace CardGame.Web.Models
 {
@@ -21,9 +20,10 @@ namespace CardGame.Web.Models
         [Range(0, int.MaxValue)]
         public int Life { get; set; }
 
-        [Range(0, int.MaxValue)]
+        
         public string Type { get; set; }
 
+        [Required]
         public byte[] Pic { get; set; }
     }
 }

@@ -82,25 +82,25 @@ namespace CardGame.Web.Controllers
             return RedirectToAction("Login");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
 
-        public ActionResult VerifyRegistration(tblperson regUser)
-        {
-            if (ModelState.IsValid)
-            {
-                using (ClonestoneFSEntities db = new ClonestoneFSEntities())
-                {
-                    db.tblperson.Add(regUser);
-                    db.SaveChanges();
-                    ModelState.Clear();
-                    regUser = null;
-                    ViewBag.Message = "succeed";
-                }
+        //public ActionResult VerifyRegistration(tblperson regUser)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        using (ClonestoneFSEntities db = new ClonestoneFSEntities())
+        //        {
+        //            db.tblperson.Add(regUser);
+        //            db.SaveChanges();
+        //            ModelState.Clear();
+        //            regUser = null;
+        //            ViewBag.Message = "succeed";
+        //        }
 
-            }
-            return View();
+        //    }
+        //    return RedirectToAction("VerifyRegistration");
 
-        }
+        //}
     }
 }
