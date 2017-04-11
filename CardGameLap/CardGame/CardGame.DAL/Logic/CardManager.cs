@@ -69,5 +69,38 @@ namespace CardGame.DAL.Logic
 
             return card;
         }
+
+
+        // TODO
+        // New Method GetAllCardsFromDeck()
+        public static List<tbldeck> GetAllCardsFromDeck()
+        {
+            List<tbldeck> ReturnList = null;
+            using (var db = new ClonestoneFSEntities())
+            {
+                //ReturnList = db.tblcard.Include(t => t.tbltype).ToList();
+                //ReturnList = db.tblcard.Include(t => t.tbldeckcard).ToList();
+                //ReturnList = db.tbldeck.ToList();
+
+                //var Deck = db.tbldeck.
+                //    Join(db.tbldeckcard, u => u.iddeck, uir => uir.fkdeck,(u, uir) => new { u, uir }).
+                //    Join(db.tblcard, r => r.uir.fkcard, ro => ro.idcard, (r, ro) => new { r, ro })
+                //    .Where(m => m.r.u.iddeck == 1);
+
+                //var result = from c in db.tbldeck
+                //             join o in db.tblcard
+                //             on c equals o.tbldeckcard
+                //             select new
+                //             {
+                //                 deckid = c.iddeck,
+                //                 name = c.deckname,                                
+
+                //             };
+            }
+            return ReturnList;
+
+
+
+        }
     }
 }

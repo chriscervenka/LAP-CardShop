@@ -24,7 +24,6 @@ namespace CardGame.Web.Controllers
                 card.Mana = c.mana;
                 card.Attack = c.attack;
                 card.Life = c.life;
-
                 card.Pic = c.pic;
                 //card.Type = c.tbltype.typename;
                 //card.Type = CardManager.GetCardTypeById(c.fktype);
@@ -52,9 +51,5 @@ namespace CardGame.Web.Controllers
 
             return View(card);
         }
-
-        
-           
-
-        }
     }
+}
