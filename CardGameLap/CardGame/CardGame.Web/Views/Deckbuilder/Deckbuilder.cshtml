@@ -4,94 +4,49 @@
     ViewBag.Title = "View";
 }
 
-<div class="container">
-    <div class="col-md-6 slider-body">
+<div class="container col-md-12">
+    <div class="row col-md-6 slider-body">
         <div class="well">
             <div id="myCarousel" class="carousel slide">
                 <!-- Carousel items -->
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                @foreach (var card in Model)
+                    <div class="item active col-md-12 col">
+
+
+                        @foreach (var card in Model)
+                        {
+                            if (card.Pic != null)
+                            {
+                                var base64 = Convert.ToBase64String(card.Pic);
+                                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                <div class="col-md-2">
+                                    <img src="@imgSrc" id="cardPic" alt="Image" class="img-responsive" />
+                                </div>
+                            }
+
+                            @*else
                                 {
-                                    if (card.Pic != null)
-                                    {
-                                        var base64 = Convert.ToBase64String(card.Pic);
-                                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                                        <div>
-                                            <img src="@imgSrc" id="cardPic" alt="Image" class="img-responsive" />
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="card-head">@Html.DisplayText("No Picture")</div>
-                                    }
-                                }
+                                    <div class="card-head">@Html.DisplayText("No Picture")</div>
+                                }*@
 
 
+                        }
 
-                                @*<a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>*@
-                            </div>
-                            @*<div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>*@
-
-                        </div>
-                        <!--/row-->
                     </div>
-                    <!--/item-->
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-
-                        </div>
-                        <!--/row-->
-                    </div>
-
                 </div>
                 <!--/carousel-inner-->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                @*<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>*@
             </div>
             <!--/myCarousel-->
         </div>
         <!--/well-->
     </div>
-</div>
 
-<div class="container">
-    <div class="col-md-6">
+
+
+    <div class="row col-md-6 slider-body">
         <div class="well">
             <div id="myCarouselCol" class="carousel slide">
 
@@ -99,24 +54,26 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="row">
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
+                            @foreach (var card in Model)
+                            {
+                                if (card.Pic != null)
+                                {
+                                    var base64 = Convert.ToBase64String(card.Pic);
+                                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+
+                                    <div class="col-sm-2">
+                                        <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
+                                    </div>
+
+                                }
+
+                                @*else
+                                    {
+                                        <div class="card-head">@Html.DisplayText("No Picture")</div>
+                                    }*@
+
+
+                            }
 
                         </div>
                         <!--/row-->
@@ -159,8 +116,9 @@
         <!--/well-->
 
     </div>
-    >
 </div>
-<div class="col-md-6 deckname">
-    <h4>See your Deck - Cards</h4>
-</div>
+
+
+
+
+
