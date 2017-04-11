@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CardGame.Web.Models.Card>
+﻿@model IEnumerable<CardGame.Web.Models.Deckbuilder>
 
 @{
     ViewBag.Title = "View";
@@ -8,19 +8,20 @@
     <div class="col-md-6 slider-body">
         <div class="well">
             <div id="myCarousel" class="carousel slide">
-
                 <!-- Carousel items -->
                 <div class="carousel-inner">
                     <div class="item active">
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-6">
                                 @foreach (var card in Model)
                                 {
                                     if (card.Pic != null)
                                     {
                                         var base64 = Convert.ToBase64String(card.Pic);
                                         var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                                        <img src="@imgSrc" id="cardOverviewPic" alt="Image" class="img-responsive" />
+                                        <div>
+                                            <img src="@imgSrc" id="cardPic" alt="Image" class="img-responsive" />
+                                        </div>
                                     }
                                     else
                                     {
@@ -30,6 +31,9 @@
 
 
 
+                                @*<a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>*@
+                            </div>
+                            @*<div class="col-sm-2">
                                 <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
                             </div>
                             <div class="col-sm-2">
@@ -43,10 +47,7 @@
                             </div>
                             <div class="col-sm-2">
                                 <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
-                            <div class="col-sm-2">
-                                <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
-                            </div>
+                            </div>*@
 
                         </div>
                         <!--/row-->

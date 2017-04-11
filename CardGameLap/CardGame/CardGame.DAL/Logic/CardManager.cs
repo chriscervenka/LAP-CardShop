@@ -73,11 +73,18 @@ namespace CardGame.DAL.Logic
 
         // TODO
         // New Method GetAllCardsFromDeck()
-        public static List<tbldeck> GetAllCardsFromDeck()
+        public static List<tblcard> GetAllCardsFromDeck(int id)
         {
-            List<tbldeck> ReturnList = null;
+            List<tblcard> ReturnList = null;
             using (var db = new ClonestoneFSEntities())
             {
+                var deck = db.tbldeck.Find(id);
+                ReturnList = new List<tblcard>();
+                foreach (var item in deck.tbldeckcard)
+                {
+                    ReturnList.Add(item.tblcard);
+                }
+                
                 //ReturnList = db.tblcard.Include(t => t.tbltype).ToList();
                 //ReturnList = db.tblcard.Include(t => t.tbldeckcard).ToList();
                 //ReturnList = db.tbldeck.ToList();

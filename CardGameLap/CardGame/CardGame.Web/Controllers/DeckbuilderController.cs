@@ -17,13 +17,17 @@ namespace CardGame.Web.Controllers
         {
             List<Deckbuilder> CardList = new List<Deckbuilder>();
 
-            var dbCardlist = CardManager.GetAllCardsFromDeck();
+            var dbCardlist = CardManager.GetAllCardsFromDeck(1);
 
             foreach (var c in dbCardlist)
             {
                 Deckbuilder deck = new Deckbuilder();
-                deck.ID = c.iddeck;
-                deck.Name = c.deckname;
+                deck.ID = c.idcard;
+                deck.Name = c.cardname;
+                deck.Life = c.life;
+                deck.Mana = c.mana;
+                deck.Pic = c.pic;
+                deck.Attack = c.attack;
 
 
                 //card.Type = c.tbltype.typename;
