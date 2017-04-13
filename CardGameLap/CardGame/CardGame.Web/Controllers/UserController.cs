@@ -26,13 +26,12 @@ namespace CardGame.Web.Controllers
                 user.Gamertag = c.gamertag;
                 user.Email = c.email;
                 user.Role = c.userrole;
+                user.CurrencyBalance = (int)c.currencybalance;  //Konvertiere einen NULLABLE int64 in einen 'normalen' int64 (int)
                 user.Password = c.password;
                 user.Salt = c.salt;
 
-
                 UserList.Add(user);
             }
-
             return View(UserList);
         }
 

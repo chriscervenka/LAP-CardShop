@@ -1,4 +1,4 @@
-﻿@model CardGame.Web.Models.Register
+﻿@*@model CardGame.Web.Models.User*@
 
 @{
     ViewBag.Title = "VerifyRegistration";
@@ -12,6 +12,11 @@
                     <div class="layout-background" id="wood_background">
                         <h2>Welcome</h2>
                         <h2>@ViewBag.Gamertag</h2>
+                        <p>You are successfully registrated</p>
+                        <hr />
+                        <p>You got @ViewBag.CurrencyBalance</p>
+                        <img src="~/Content/Images/diamond.png" alt="diamond" height="50" width="50" /><br />
+                        <p>Please Login to get the full Shop-Expirience</p>
                         
                         <input type="button" class="btn btn-info" value="Sign-Up" onclick="location.href='@Url.Action("Login", "Account")'" />
                     </div>

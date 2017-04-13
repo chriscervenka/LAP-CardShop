@@ -79,20 +79,32 @@ namespace CardGame.Web.Controllers
 
             AuthManager.Register(dbUser);
 
-            return RedirectToAction("Login");
+            return RedirectToAction("VerifyRegistration");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public ActionResult VerifyRegistration(Register regUser)
+        [HttpGet]
+        public ActionResult VerifyRegistration(string gamertag)
         {
-            if (ModelState.IsValid)
-            {
-                return View("VerifyRegistration");
-            }
-            return RedirectToAction("Registration");
+            //TODO
+            //Hole Gamertag
+            ViewBag.Gamertag = gamertag;
+            //TODO
+            //Hole Currencybalance
+            ViewBag.CurrencyBalance = 1000;
 
+            return View(gamertag);
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult VerifyRegistration(Register regUser)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View("Registration");
+        //    }
+        //    return RedirectToAction("VerifyRegistration");
+
+        //}
     }
 }

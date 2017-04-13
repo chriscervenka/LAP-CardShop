@@ -19,7 +19,6 @@ namespace CardGame.Web.Models
 
         [Range(0, int.MaxValue)]
         public int Life { get; set; }
-
         
         public string Type { get; set; }
 
