@@ -28,6 +28,8 @@ namespace CardGame.DAL.Logic
             CardTypes.Add(0, "n/a");
         }
 
+
+
         public static List<tblcard> GetAllCards()
         {
             List<tblcard> ReturnList = null;
@@ -85,10 +87,11 @@ namespace CardGame.DAL.Logic
                     ReturnList.Add(item.tblcard);
                 }
             }
+
             return ReturnList;
+        }
 
-
-
+        
         }
     }
-}
+

@@ -13,6 +13,26 @@ namespace CardGame.Web.Controllers
         // GET: Shop
         public ActionResult ShopStart()
         {
+            //List<Card> PackList = new List<Card>();
+
+            //var dbCardlist = CardManager.GetCardsFromPack();
+
+            //foreach (var c in dbPackList)
+            //{
+            //    Card card = new Card();
+            //    card.ID = c.idcard;
+            //    card.Name = c.cardname;
+            //    card.Mana = c.mana;
+            //    card.Attack = c.attack;
+            //    card.Life = c.life;
+            //    card.Pic = c.pic;
+            //    //card.Type = c.tbltype.typename;
+            //    //card.Type = CardManager.GetCardTypeById(c.fktype);
+            //    card.Type = CardManager.CardTypes[c.fktype];
+
+            //    PackList.Add(card);
+            //}
+
             return View();
         }
 

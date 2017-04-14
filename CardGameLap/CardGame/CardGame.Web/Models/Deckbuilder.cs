@@ -6,23 +6,19 @@ using System.Web;
 
 namespace CardGame.Web.Models
 {
-    public class Deckbuilder
+    public class Deckbuilder : Card
     {
         [Key]
         public int ID { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+        public List<Card> deck { get; set; }
 
-        [Range(0, int.MaxValue)]
-        public int Mana { get; set; }
+        public List<Card> collection { get; set; }
 
-        [Range(0, int.MaxValue)]
-        public int Attack { get; set; }
-
-        [Range(0, int.MaxValue)]
-        public int Life { get; set; }
-
-        public byte[] Pic { get; set; }
+        public Deckbuilder()
+        {
+            deck = new List<Card>();
+            collection = new List<Card>();
+        }
     }
 }
