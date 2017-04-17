@@ -10,7 +10,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
                 <div class="panell" id="backgroundleft">
                     <div class="layout-background" id="wood_background">
-                        @*@{if (User.Identity.Name == "")
+                        @{if (User.Identity.Name == "")
                             {
                                 <h1>Welcome</h1>
                             }
@@ -21,18 +21,18 @@
                                 <h2>to the amazing Shop of</h2>
 
                             }
-                        }*@
+                        }
 
 
 
 
                         <h1>Magical Tea Party</h1>
-                        @*@{
+                        @{
                             if (User.IsInRole("player"))
                             {
                                 <h2>You are a Player</h2>
                             }
-                        }*@
+                        }
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
                         <br>
                         <p>If you are interested on more</p>

@@ -9,7 +9,7 @@ namespace CardGame.Web.Models
     public class Deckbuilder : Card
     {
         [Key]
-        public int ID { get; set; }
+        public new int ID { get; set; }
 
         public List<Card> deck { get; set; }
 

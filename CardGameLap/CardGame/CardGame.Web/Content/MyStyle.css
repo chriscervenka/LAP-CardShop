@@ -173,9 +173,6 @@ button, input, select[multiple], textarea {
 	background-image: none;
 }
 
-/*button, input, optgroup, select, textarea {
-	margin: 40px;
-}*/
 
 .form-control#fn {
 	height: 35px;
@@ -226,7 +223,7 @@ text-left-registration {
 
 #slide {
   position:relative;
-  height:281px;
+  height:300px;
   width:450px;
   margin:0 auto;
 }

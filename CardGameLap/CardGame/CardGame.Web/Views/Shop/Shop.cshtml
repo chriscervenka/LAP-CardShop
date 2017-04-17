@@ -1,7 +1,5 @@
-﻿
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model CardGame.Web.Models.Packages
+
 
 @{
     ViewBag.Title = "Shop";
@@ -14,6 +12,28 @@
                 <div class="panell" id="backgroundleft">
                     <div class="layout-background" id="wood_background">
                         <div>
+                            <h2>@Model.Packname</h2>
+
+                            @Html.DisplayNameFor(cp => cp.CardQuantity):
+                            @Html.DisplayFor(cp => cp.CardQuantity)
+                            <br />
+                            @Html.DisplayNameFor(cp => cp.Packprice):
+                            @Html.DisplayFor(cp => cp.Packprice)
+                            <br />
+                            Price per Card:
+                            @((double)Model.Packprice / Model.CardQuantity)
+                            <br />
+                            <br />
+                            @using (Html.BeginForm())
+                            {
+                                <div>
+                                    Amount: <input type="text" name="numPacks" class="" />
+                                </div>
+                                <br />
+                                <div>
+                                    <input type="submit" value="Buy Pack(s)" class="btn btn-default" />
+                                </div>
+                            }
 
                         </div>
 

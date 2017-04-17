@@ -24,9 +24,9 @@
                     <ul class="nav navbar-nav">
 
                         @{
-                            if (User.IsInRole("role"))
+                            //if (User.IsInRole("role"))
                             //if (!User.Identity.IsAuthenticated)
-                            //if (User.Identity.Name == "")
+                            if (User.Identity.Name == "")
                             {
                                 <li><input type="button" class="btn btn-info" value="Register" onclick="location.href='@Url.Action("Register", "Account")'" /></li>
                                 <li><input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" /></li>

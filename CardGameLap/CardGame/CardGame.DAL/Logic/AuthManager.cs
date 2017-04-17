@@ -79,8 +79,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-
-                throw;
+                Writer.LogError(e);
+                return false;
             }
         }
     }

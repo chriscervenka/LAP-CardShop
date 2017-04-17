@@ -13,15 +13,18 @@ namespace CardGame.Web.Controllers
     {
         // GET: Account
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(Login login)
         {
             bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
+
             login.Role = UserManager.GetRoleNamesByEmail(login.Email);
             
 
@@ -33,7 +36,7 @@ namespace CardGame.Web.Controllers
                                 DateTime.Now,                   //Zeitpunkt der Erstellung
                                 DateTime.Now.AddMinutes(20),    //Gültigkeitsdauer
                                 true,                           //persistentes Ticket über Session hinweg
-                                "admin" //login.Role            //Userrolle(n)
+                                login.Role                      //Userrolle(n)
                                 );
 
                 string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
@@ -41,6 +44,8 @@ namespace CardGame.Web.Controllers
                 var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
 
                 System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
+
+                //return RedirectToAction("Index", "Home");
             }
 
             return RedirectToAction("Index", "Home");
@@ -69,7 +74,7 @@ namespace CardGame.Web.Controllers
             dbUser.email = regUser.Email;
             dbUser.password = regUser.Password;
             dbUser.salt = regUser.Salt;
-            dbUser.userrole = "admin";
+            dbUser.userrole = "player";
             dbUser.currencybalance = 1000;
             dbUser.isactive = true;
 

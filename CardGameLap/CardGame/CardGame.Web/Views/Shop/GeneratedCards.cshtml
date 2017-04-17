@@ -1,0 +1,11 @@
+﻿@model IEnumerable<CardGame.Web.Models.Card>
+
+@{ 
+    ViewBag.Title = "GeneratedCards";
+}
+
+<h2>Your ordered cards</h2>
+
+@Html.Partial("_ListOfCards", Model)
+
+<input type="button" class="btn btn-info" value="Back to Shop" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />

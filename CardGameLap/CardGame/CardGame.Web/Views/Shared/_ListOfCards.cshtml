@@ -1,0 +1,9 @@
+﻿@model IEnumerable<CardGame.Web.Models.Card>
+
+<div class="row col-md6">
+    @foreach (var card in Model)
+    {
+        @Html.DisplayFor(c => card.Pic)
+    }
+    
+</div>

@@ -11,14 +11,14 @@ namespace CardGame.Web.Models
     public class Packages
     {
         [Key]
-        public int idpack { get; set; }
+        public int Idpack { get; set; }
 
         public string Packname { get; set; }
 
-        public int Cardquantity { get; set; }
+        public int CardQuantity { get; set; }
 
         public decimal Packprice { get; set; }
 
-        public List<Card> Packlist { get; set; }
+        //public List<Card> Packlist { get; set; }
     }
 }

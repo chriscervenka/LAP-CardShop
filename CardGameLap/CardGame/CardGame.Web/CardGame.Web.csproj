@@ -166,10 +166,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Packages.cs" />
     <Compile Include="Models\Deckbuilder.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\Shop.cs" />
     <Compile Include="Models\Statistic.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,7 +187,6 @@
     <Content Include="Content\Images\diamond.png" />
     <Content Include="Content\Images\image1300x300.png" />
     <Content Include="Content\Images\image300x300.png" />
-    <Content Include="Content\Images\images2300x300.png" />
     <Content Include="Content\Images\LoginButton.png" />
     <Content Include="Content\Images\SignUpButton.png" />
     <Content Include="Content\Images\wood_background.png" />
@@ -238,6 +239,11 @@
     <Content Include="Views\Deckbuilder\Gallery.cshtml" />
     <Content Include="Views\Shop\Shop.cshtml" />
     <Content Include="Views\Account\VerifyRegistration.cshtml" />
+    <Content Include="Views\Shop\OrderDetails.cshtml" />
+    <Content Include="Views\Shared\_NotEnoughBalance.cshtml" />
+    <Content Include="Views\Shop\GeneratedCards.cshtml" />
+    <Content Include="Views\Shared\_ListOfCards.cshtml" />
+    <Content Include="Views\Shop\BuyDiamonds.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

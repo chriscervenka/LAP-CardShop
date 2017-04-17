@@ -1,0 +1,32 @@
+<Info>
+  <Time>16.04.2017 22:43:19</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>16.04.2017 22:43:19</Time>
+  <Info>HashPass = E084A84F8E6A510007A10583F2D7F2EF5FDF866C4908F725DA910A73B5FC267E6325405BDC1B5353D0B1B4F406CCB9B5777BD3376F4BDDABE259864E2E10357C</Info>
+</Info>
+<Info>
+  <Time>16.04.2017 22:47:41</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>16.04.2017 22:47:41</Time>
+  <Info>HashPass = E084A84F8E6A510007A10583F2D7F2EF5FDF866C4908F725DA910A73B5FC267E6325405BDC1B5353D0B1B4F406CCB9B5777BD3376F4BDDABE259864E2E10357C</Info>
+</Info>
+<Xcpt>
+  <Time>16.04.2017 22:48:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 21.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>16.04.2017 22:57:10</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 21.</Stack>
+  </Exception>
+</Xcpt>

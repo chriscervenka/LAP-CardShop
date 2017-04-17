@@ -8,6 +8,8 @@ namespace CardGame.Web.Controllers
     public class UserController : Controller
     {
         // GET: User
+        [HttpGet]
+        [Authorize(Roles = "player, admin")]
         public ActionResult Index()
         {
             List<User> UserList = new List<User>();
