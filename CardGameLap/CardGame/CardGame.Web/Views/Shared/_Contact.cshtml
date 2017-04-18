@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "_Contact";
+}
+
+<h2>Contact</h2>
+
+<div class="contact-partial">
+    
+    <div id="googleMap" style="height:300px;" class="w3-grayscale-max"></div>
+    <br />
+    <hr />
+    <br />
+    <div>
+        <i class="fa fa-map-marker" style="width:30px"></i> Vienna, AUT<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +01 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+    </div>
+
+    <script>
+        function myMap() {
+          myCenter=new google.maps.LatLng(41.878114, -87.629798);
+          var mapOptions= {
+            center:myCenter,
+            zoom:12, scrollwheel: false, draggable: false,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+          var marker = new google.maps.Marker({
+            position: myCenter,
+          });
+          marker.setMap(map);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script><div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+    <script>
+    function myMap() {
+      myCenter=new google.maps.LatLng(41.878114, -87.629798);
+      var mapOptions= {
+        center:myCenter,
+        zoom:12, scrollwheel: false, draggable: false,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+      var marker = new google.maps.Marker({
+        position: myCenter,
+      });
+      marker.setMap(map);
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+</div>
+

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model int
+
+@{
     ViewBag.Title = "About";
 }
 @*<h2>@ViewBag.Title.</h2>
@@ -36,18 +38,38 @@
                         <p>If you are interested on more</p>
                         <p>Choose buttons byond</p>
 
-                        <input type="button" class="btn btn-info" value="Impressum" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
+                        <input type="button" class="btn btn-info" value="Impressum" onclick="location.href='@Url.Action("About", "Home", new { seite = 1})'" />
 
-                        <input type="button" class="btn btn-info" value="AGB" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
+                        <input type="button" class="btn btn-info" value="AGB" onclick="location.href='@Url.Action("About", "Home", new { seite = 2})'" />
 
-                        <input type="button" class="btn btn-info" value="Contact" onclick="location.href='@Url.Action("ShopStart", "Shop")'" />
+                        <input type="button" class="btn btn-info" value="Contact" onclick="location.href='@Url.Action("About", "Home", new { seite = 3})'" />
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+            <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
                 <div class="panell" id="backgroundright">
                     <div class="layout-background" id="wood_background">
+
+                        @if (Model == 1)
+                        {
+                            @Html.Partial("_Impressum")
+                        }
+
+                        else if (Model == 2)
+                        {
+                            @Html.Partial("_AGB")
+                        }
+
+                        else
+                        {
+                            @Html.Partial("_Contact")
+                        }
+
+                      
+
+                        
+
 
 
 

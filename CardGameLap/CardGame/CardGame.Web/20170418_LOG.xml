@@ -1,0 +1,48 @@
+<Xcpt>
+  <Time>18.04.2017 13:49:56</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 57.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>18.04.2017 14:05:13</Time>
+  <Info>Entered Pass = beers</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 14:05:13</Time>
+  <Info>HashPass = 6A7D84F1BBCBF994AC4A008E51E71B39DE2767B113FE03EFEA2AD76F397A6B477E6DF3875F7521CEBB923BEE5F8E562CD9490E8180B3A7A2B6162DFC39562513</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:14:25</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:14:25</Time>
+  <Info>HashPass = 8CDEBEBA68B49F85DFD32E82D607BAFCD85C5A1CADC686B5A9BFC71B6FED8113928A33AEDBC60F2677FDA7C382EAC92597EED9701CBE9DFC19C4234ED9C3B1E5</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:14:50</Time>
+  <Info>Entered Pass = beers</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:14:50</Time>
+  <Info>HashPass = 6A7D84F1BBCBF994AC4A008E51E71B39DE2767B113FE03EFEA2AD76F397A6B477E6DF3875F7521CEBB923BEE5F8E562CD9490E8180B3A7A2B6162DFC39562513</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:19:02</Time>
+  <Info>Entered Pass = hengst</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:19:02</Time>
+  <Info>HashPass = 0ECB9622EDD492257A3B3B558B7AC3FB56CA44D76F62AA5B1A38158C842EBD5C60D6931559CDB8C767056D6EA1B30940CF30B2089DDD543B5A6EAEEDD7D69204</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:20:25</Time>
+  <Info>Entered Pass = beers</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 16:20:25</Time>
+  <Info>HashPass = 6A7D84F1BBCBF994AC4A008E51E71B39DE2767B113FE03EFEA2AD76F397A6B477E6DF3875F7521CEBB923BEE5F8E562CD9490E8180B3A7A2B6162DFC39562513</Info>
+</Info>

@@ -244,6 +244,9 @@
     <Content Include="Views\Shop\GeneratedCards.cshtml" />
     <Content Include="Views\Shared\_ListOfCards.cshtml" />
     <Content Include="Views\Shop\BuyDiamonds.cshtml" />
+    <Content Include="Views\Shared\_AGB.cshtml" />
+    <Content Include="Views\Shared\_Impressum.cshtml" />
+    <Content Include="Views\Shared\_Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

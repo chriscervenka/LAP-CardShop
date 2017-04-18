@@ -65,15 +65,24 @@ namespace CardGame.DAL.Logic
         public static string GetRoleNamesByEmail(string email)
         {
             string role = "";
-            using (var db = new ClonestoneFSEntities())
+
+            try
             {
-                var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
-                if (dbUser == null)
+                using (var db = new ClonestoneFSEntities())
                 {
-                    throw new Exception("User Does Not Exist");
+                    var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    if (dbUser == null)
+                    {
+                        throw new Exception("User Does Not Exist");
+                    }
+                    role = dbUser.userrole;
                 }
-                role = dbUser.userrole;
             }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+            }
+            
             return role;
         }
 

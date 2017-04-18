@@ -29,11 +29,11 @@ namespace CardGame.Web.Controllers
         }
 
         [Authorize(Roles ="player, admin")]
-        public ActionResult About()
+        public ActionResult About(int? seite)
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View(seite ?? 1);
         }
 
         [Authorize(Roles = "player, admin")]
