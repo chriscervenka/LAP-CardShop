@@ -1,8 +1,8 @@
-﻿@model CardGame.Web.Models.Shop
+﻿@model CardGame.Web.Models.Packages
 
 
 @{
-    ViewBag.Title = "Shop";
+    ViewBag.Title = "Packages";
 }
 
 <body>
@@ -14,10 +14,10 @@
                         <div>
                             <h2>@Model.Packname</h2>
 
-                            @Html.DisplayNameFor(cp => cp.CardQuantity):
+                            @Html.DisplayNameFor(cp => cp.CardQuantity)
                             @Html.DisplayFor(cp => cp.CardQuantity)
                             <br />
-                            @Html.DisplayNameFor(cp => cp.Packprice):
+                            @Html.DisplayNameFor(cp => cp.Packprice)
                             @Html.DisplayFor(cp => cp.Packprice)
                             <br />
                             Price per Card:

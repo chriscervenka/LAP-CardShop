@@ -4,6 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @*@Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/MyStyle.css")
+
+    @if (Request.Browser.IsMobileDevice == "Chrome")
+    {
+        @Styles.Render("~/Content/css/chrome.css")
+    }
+    else
+    {
+        @Styles.Render("~/Content/css/wasinet.css")
+    }*@
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/MyStyle.css" type="text/css">
@@ -42,7 +55,7 @@
 
                                 <li><input type="button" class="btn btn-info" id="deckbuilderbutton" value="Deckbuilder" onclick="location.href='@Url.Action("Deckbuilder", "Card")'" /></li>
 
-                                <li><input type="button" class="btn btn-info" id="shopbutton" value="Shop" onclick="location.href='@Url.Action("OrderDetails", "Shop")'" /></li>
+                                <li><input type="button" class="btn btn-info" id="shopbutton" value="Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" /></li>
                             }
                         }
 

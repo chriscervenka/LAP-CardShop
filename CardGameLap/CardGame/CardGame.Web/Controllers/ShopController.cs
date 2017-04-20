@@ -36,12 +36,10 @@ namespace CardGame.Web.Controllers
                 cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
 
-                
-
                 shop.cardPacks.Add(cardPack);
             }
 
-            return View(shop);
+            return View("ShopStart", shop);
         }
 
 
@@ -132,7 +130,7 @@ namespace CardGame.Web.Controllers
             TempData["OrderedCards"] = orderedCards;
             return RedirectToAction("GeneratedCards");
 
-            return RedirectToAction("Error", "Error");
+            //return RedirectToAction("Error", "Error");
         }
 
 
