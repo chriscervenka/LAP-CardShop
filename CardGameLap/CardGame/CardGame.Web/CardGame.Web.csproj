@@ -188,6 +188,8 @@
     <Content Include="Content\Images\image1300x300.png" />
     <Content Include="Content\Images\image300x300.png" />
     <Content Include="Content\Images\LoginButton.png" />
+    <Content Include="Content\Images\pack1.png" />
+    <Content Include="Content\Images\pack2.png" />
     <Content Include="Content\Images\SignUpButton.png" />
     <Content Include="Content\Images\wood_background.png" />
     <Content Include="Content\MyStyle.css" />

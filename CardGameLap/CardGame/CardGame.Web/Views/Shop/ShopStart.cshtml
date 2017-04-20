@@ -7,7 +7,7 @@
 
 <body>
     <div class="booklets" id="background">
-        <div class="row">
+        <div class="row col-md-12">
             <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
                 <div class="panell" id="backgroundleft">
                     <div class="layout-background" id="wood_background">
@@ -33,30 +33,45 @@
                         }
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
 
-                        <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />
+                        <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("BuyCardPackages","Shop")'" />
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+            <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
                 <div class="panell" id="backgroundright">
                     <div class="layout-background" id="wood_background">
-                        <h2>Available Card Packs</h2>
+                        <h2>see all available Cardpacks</h2>
+                        <br />
                         <div class="">
-                            <h3>Packname</h3>
+                            
                             @foreach (var cp in Model.cardPacks)
                             {
-                                @Html.DisplayFor(cardpack => cp.Packname)
+                                <div class="packages-shopstart row col-sm-12">
+                                    <hr />
+                                    <div class="row col-sm-6">
+                                        <img src="~/Content/Images/pack1.png" alt="diamond" height="120" width="90" />
+                                    </div>
+                                    <br />
+                                    <div class="row col-sm-6">
+                                        
+                                        @Html.DisplayFor(cardpack => cp.Packname) 
+                                    <br />
+                                        @Html.DisplayFor(cardpack => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
+                                    </div>
+                                    <br />
+                                </div>
                             }
                         </div>
+                        <br />
 
-                        <div class="">
+                        @*<div class="">
                             <h3>Packprice</h3>
                             @foreach (var cp in Model.cardPacks)
                             {
                                 @Html.DisplayFor(cardpack => cp.Packprice)
                             }
-                        </div>
+                        </div>*@
 
 
                         @*<div class="form-group">

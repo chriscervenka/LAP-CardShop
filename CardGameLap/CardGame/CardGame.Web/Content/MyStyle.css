@@ -113,7 +113,7 @@ h2 {
 	margin-bottom: 180px;
 	color: #fff;
 	text-align: center;
-	padding: 40px 60px 40px 170px;
+	/*padding: 40px 60px 40px 170px;*/
 	border: 1px;
 	border-color: #fff;
 	}
@@ -125,12 +125,13 @@ h2 {
 	margin-bottom: 180px;
 	color: #fff;
 	text-align: center;
-	padding: 40px 170px 40px 60px;
+	/*padding: 40px 170px 40px 60px;*/
 	}
 
 .layout-background#wood_background {
 	background:url(../Content/Images/wood_background.png);
-	height: 600px;
+    /*height: 600px;*/
+	height: 800px;
    
     padding: 50px 10px 50px 10px;
 	}
@@ -223,7 +224,7 @@ text-left-registration {
 #slide {
   position:relative;
   height:300px;
-  width:450px;
+  width:600px;
   margin:0 auto;
 }
 

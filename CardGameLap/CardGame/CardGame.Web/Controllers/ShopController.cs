@@ -51,7 +51,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         [Authorize(Roles = "player")]
-        public ActionResult BuyCardPackages(int id)
+        public ActionResult BuyCardPackages(int? id)
         {
             var dbtblpack = ShopManager.GetCardPackById(id);
 
@@ -62,7 +62,7 @@ namespace CardGame.Web.Controllers
             cardPack.Packprice = dbtblpack.packprice.GetValueOrDefault();
             cardPack.CardQuantity = dbtblpack.cardquantity.GetValueOrDefault();
 
-            return View(cardPack);
+            return View("Shop", cardPack);
         }
 
 
@@ -75,7 +75,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [Authorize(Roles ="player")]
-        public ActionResult BuyCardPackages(int id, int numberOfPacks)
+        public ActionResult BuyCardPackages(int id, int? numberOfPacks)
         {
             Order o = new Order();
             var dbPackages = ShopManager.GetCardPackById(id);

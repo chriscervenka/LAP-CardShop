@@ -38,7 +38,7 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="id"></param>
         /// <returns> return dbCardPack</returns>
-        public static tblpack GetCardPackById(int id)
+        public static tblpack GetCardPackById(int? id)
         {
             var dbCardPack = new tblpack();
 
