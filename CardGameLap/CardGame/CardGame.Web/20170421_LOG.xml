@@ -1,0 +1,120 @@
+<Info>
+  <Time>21.04.2017 08:24:29</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 08:24:29</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Xcpt>
+  <Time>21.04.2017 08:26:00</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>CardPackNotFound</Message>
+    <Stack>   bei CardGame.DAL.Logic.ShopManager.GetCardPackById(Nullable`1 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 53.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 08:31:31</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>CardPackNotFound</Message>
+    <Stack>   bei CardGame.DAL.Logic.ShopManager.GetCardPackById(Nullable`1 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 53.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 08:49:42</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 08:49:42</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 10:10:57</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 10:10:57</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.04.2017 10:11:09</Time>
+  <Info>Entered Pass = </Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:11:09</Time>
+  <Info>HashPass = CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E</Info>
+</Info>
+<Xcpt>
+  <Time>21.04.2017 10:11:21</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 10:11:21</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.04.2017 10:11:35</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:11:35</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:31:54</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:31:54</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:32:09</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:32:09</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:59:48</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 10:59:48</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 11:16:30</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 11:16:30</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>

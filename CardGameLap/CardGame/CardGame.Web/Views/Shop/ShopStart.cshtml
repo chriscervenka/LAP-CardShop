@@ -33,55 +33,12 @@
                         }
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
 
-                        <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("BuyCardPackages","Shop")'" />
+                        <input type="button" class="btn btn-info" value="Buy Pack" onclick="location.href='@Url.Action("Shop","Shop")'" />
                     </div>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
-                <div class="panell" id="backgroundright">
-                    <div class="layout-background" id="wood_background">
-                        <h2>see all available Cardpacks</h2>
-                        <br />
-                        <div class="">
-                            
-                            @foreach (var cp in Model.cardPacks)
-                            {
-                                <div class="packages-shopstart row col-sm-12">
-                                    <hr />
-                                    <div class="row col-sm-6">
-                                        <img src="~/Content/Images/pack1.png" alt="diamond" height="120" width="90" />
-                                    </div>
-                                    <br />
-                                    <div class="row col-sm-6">
-                                        
-                                        @Html.DisplayFor(cardpack => cp.Packname) 
-                                    <br />
-                                        @Html.DisplayFor(cardpack => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
-                                    </div>
-                                    <br />
-                                </div>
-                            }
-                        </div>
-                        <br />
-
-                        @*<div class="">
-                            <h3>Packprice</h3>
-                            @foreach (var cp in Model.cardPacks)
-                            {
-                                @Html.DisplayFor(cardpack => cp.Packprice)
-                            }
-                        </div>*@
-
-
-                        @*<div class="form-group">
-                                <button type="submit" class="btn btn-submit" id="login">Login</button>
-                            </div>*@
-
-
-                    </div>
-                </div>
-            </div>
+           @Html.Partial("_Cardpacks", Model.cardPacks)
         </div>
     </div>
 </body>

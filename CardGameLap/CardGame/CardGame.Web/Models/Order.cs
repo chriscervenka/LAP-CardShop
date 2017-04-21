@@ -14,5 +14,15 @@ namespace CardGame.Web.Models
         public int PackQuantity { get; set; }
 
         public int UserBalance { get; set; }
+
+
+        //Konstruktor erstellt
+        public Order()
+        {
+            Pack  = new Packages();
+            PackQuantity = -1;
+            UserBalance = -1;
+            OrderDate = DateTime.Now;
+        }
     }
 }

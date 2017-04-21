@@ -15,12 +15,12 @@ namespace CardGame.Web.Controllers
         // GET: Shop
 
         /// <summary>
-        /// 
+        /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
-        /// <returns>return View(shop)</returns>
+        /// <returns>return View("ShopStart", shop)</returns>
         [HttpGet]
         [Authorize(Roles = "player")]
-        public ActionResult Shop()
+        public ActionResult ShopStart()
         {
             Shop shop = new Shop();
             shop.cardPacks = new List<Packages>();
@@ -43,6 +43,31 @@ namespace CardGame.Web.Controllers
         }
 
 
+        [HttpGet]
+        [Authorize(Roles = "player")]
+        public ActionResult Shop()
+        {
+            Shop shop = new Shop();
+            shop.cardPacks = new List<Packages>();
+            shop.order = new Order();
+            shop.order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+
+            var dbCardPacks = ShopManager.AllCardPacks();
+
+            foreach (var dbCp in dbCardPacks)
+            {
+                Packages cardPack = new Packages();
+                cardPack.Idpack = dbCp.idpack;
+                cardPack.Packname = dbCp.packname;
+                //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
+                cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
+                cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
+
+                shop.cardPacks.Add(cardPack);
+            }
+
+            return View("Shop", shop);
+        }
 
         /// <summary>
         /// 
@@ -51,7 +76,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         [Authorize(Roles = "player")]
-        public ActionResult BuyCardPackages(int? id)
+        public ActionResult BuyCardPackages(int id)
         {
             var dbtblpack = ShopManager.GetCardPackById(id);
 
@@ -75,7 +100,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [Authorize(Roles ="player")]
-        public ActionResult BuyCardPackages(int id, int? numberOfPacks)
+        public ActionResult BuyCardPackages(int id, int numberOfPacks)
         {
             Order o = new Order();
             var dbPackages = ShopManager.GetCardPackById(id);

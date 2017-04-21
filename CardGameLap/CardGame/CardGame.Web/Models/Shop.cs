@@ -8,5 +8,7 @@ namespace CardGame.Web.Models
     public class Shop
     {
         public List<Packages> cardPacks { get; set; }
+
+        public Order order { get; set; }
     }
 }
