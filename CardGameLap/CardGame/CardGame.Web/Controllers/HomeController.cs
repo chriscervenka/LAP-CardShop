@@ -10,6 +10,10 @@ namespace CardGame.Web.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult Index()
         {
@@ -27,6 +31,12 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
+
+        /// <summary>
+        /// Steht im HomeController
+        /// </summary>
+        /// <param name="seite"></param>
+        /// <returns></returns>
         [Authorize(Roles ="player, admin")]
         public ActionResult About(int? seite)
         {
@@ -35,6 +45,11 @@ namespace CardGame.Web.Controllers
             return View(seite ?? 1);
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = "player, admin")]
         public ActionResult Contact()
         {

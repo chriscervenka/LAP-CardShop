@@ -68,6 +68,7 @@ namespace CardGame.DAL.Logic
         /// <returns>return generatedCards</returns>
         public static List<tblcard> OrderPack(int id, int numberOfPacks)
         {
+            Random rnd = new Random();
             var generatedCards = new List<tblcard>();
 
             using (var db = new ClonestoneFSEntities())
@@ -78,9 +79,9 @@ namespace CardGame.DAL.Logic
                 {
                     throw new Exception("Pack not found");
                 }
-                int cardquantity = 5;
+                
 
-                int numCardsToGenerate = (cardquantity);
+                int numCardsToGenerate = cardPack.cardquantity ?? 0;
 
         
                 numCardsToGenerate *= numberOfPacks;
@@ -94,10 +95,10 @@ namespace CardGame.DAL.Logic
                     throw new Exception("No Card found");
                 }
 
-                //zufällig generierte 5 Cards für Deck
-                for (int i = 1; i < numCardsToGenerate; i++)
+                //zufällig generierte Cards für Deck
+                for (int i = 0; i < numCardsToGenerate; i++)
                 {
-                    Random rnd = new Random();
+                    
                     int indexId = rnd.Next(0, validIDs.Count - 1);
                     int generatedCardId = validIDs[indexId];
                     var generatedCard = db.tblcard.Where(c => c.idcard == generatedCardId).Include(c => c.tbltype).FirstOrDefault();

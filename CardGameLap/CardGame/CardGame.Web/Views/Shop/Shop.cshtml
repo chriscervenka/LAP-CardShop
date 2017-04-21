@@ -7,85 +7,21 @@
 
 <body>
     <div class="booklets" id="background">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
-                <div class="panell" id="backgroundleft">
-                    <div class="layout-background" id="wood_background">
-                        @*<div>
-                            <h2>@Model.Packname</h2>
+        <div class="row col-xs-12 col-sm-6 col-md-6 side" id="left">
 
-                            <div class="row col-sm-6 orderdetails">
-                                <img src="~/Content/Images/pack1.png" alt="diamond" height="120" width="90" />
-
-
-                                @Html.DisplayNameFor(cp => cp.CardQuantity)
-                                @Html.DisplayFor(cp => cp.CardQuantity)
-                                <br />
-                                @Html.DisplayNameFor(cp => cp.Packprice)
-                                @Html.DisplayFor(cp => cp.Packprice)
-                                <br />
-                                Price per Card:
-                                @((double)Model.Packprice / Model.CardQuantity)
-                                <br />
-                                <br />
-                                @using (Html.BeginForm())
-                                {
-                                    <div>
-                                        Amount: <input type="text" name="numPacks" class="" />
-                                    </div>
-                                    <br />
-                                    <div>
-                                        <input type="submit" value="Buy Pack(s)" class="btn btn-default" />
-                                    </div>
-                                }
-
-                            </div>
-                        </div>*@
 
                             @Html.Partial("_Orderdetails", Model.order)
 
                         <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />
                     </div>
-                </div>
-            </div>
-
-            @*<div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
-                <div class="panell" id="backgroundright">
-                    <div class="layout-background" id="wood_background">
-
-                        <h2>see all available Cardpacks</h2>
-                        <br />
-                        <div class="">
-
-                            @foreach (var cp in Model.cardPacks)
-                            {
-                                <div class="packages-shopstart row col-sm-12">
-                                    <hr />
-                                    <div class="row col-sm-6">
-                                        <img src="~/Content/Images/pack1.png" alt="diamond" height="120" width="90" />
-                                    </div>
-                                    <br />
-                                    <div class="row col-sm-6">
-
-                                        Pack @Html.DisplayFor(cardpack => cp.Packname)
-                                        <br />
-                                        Cards inside @Html.DisplayFor(cardpack => cp.CardQuantity)
-                                        <br />
-                                        Price @Html.DisplayFor(cardpack => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
-                                    </div>
-                                    <br />
-                                </div>
-                            }
-                        </div>
-                        <br />
-
-                    </div>
-                </div>
-            </div>*@
+        <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
 
             @Html.Partial("_Cardpacks", Model.cardPacks)
         </div>
     </div>
+
+
+
 </body>
 
 

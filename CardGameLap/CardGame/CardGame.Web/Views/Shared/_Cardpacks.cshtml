@@ -4,9 +4,9 @@
     ViewBag.Title = "_Cardpacks";
 }
 
-<h2>_Cardpacks</h2>
 
-<div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
+
+
     <div class="panell" id="backgroundright">
         <div class="layout-background" id="wood_background">
             <h2>see all available Cardpacks</h2>
@@ -15,13 +15,13 @@
 
                 @foreach (var cp in Model)
                 {
-                    <div class="packages-shopstart row col-sm-12">
+                    <div class="packages-shopstart row col-md-6">
                         <hr />
-                        <div class="row col-sm-6">
+                        <div class="col-sm-6">
                             <img src="~/Content/Images/pack1.png" alt="diamond" height="120" width="90" />
                         </div>
                         <br />
-                        <div class="row col-sm-6">
+                        <div class="col-sm-6">
 
                             Pack @Html.DisplayFor(cardpack => cp.Packname)
                             <br />
@@ -51,4 +51,3 @@
 
         </div>
     </div>
-</div>
