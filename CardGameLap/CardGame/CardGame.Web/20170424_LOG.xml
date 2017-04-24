@@ -1,0 +1,80 @@
+<Info>
+  <Time>24.04.2017 09:11:56</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:11:56</Time>
+  <Info>HashPass = 0B74863B9CEC58DCC9AB65C878D65B46552011A49489A1C400FC25D55062AB70A4960527A9D35EF982C99CBE4138CBF517EADB4B93470FAB546CECFDC7686C14</Info>
+</Info>
+<Xcpt>
+  <Time>24.04.2017 09:12:32</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>24.04.2017 09:12:49</Time>
+  <Info>Entered Pass = 12345678</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:12:49</Time>
+  <Info>HashPass = 8F76D76BE6F21DBC3F9D5DB56DD575DC8E79AF056B0D62914CA2DA324635988DF363C40776405FE514F0E38FD1B75C0A00F25B683C20BFC489E194EA4BCB3A59</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:13:06</Time>
+  <Info>Entered Pass = 12345678</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:13:06</Time>
+  <Info>HashPass = 8F76D76BE6F21DBC3F9D5DB56DD575DC8E79AF056B0D62914CA2DA324635988DF363C40776405FE514F0E38FD1B75C0A00F25B683C20BFC489E194EA4BCB3A59</Info>
+</Info>
+<Xcpt>
+  <Time>24.04.2017 09:13:18</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>24.04.2017 09:13:18</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>24.04.2017 09:13:30</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:13:30</Time>
+  <Info>HashPass = 197D82FA93122C7DDF2AF3F2EF63DB527C297F20F97B9E4073993990078E1D4468DA9FF33E3C5253468B4DA29A8856783D9E9BF438191733D3ECC603EFF2A822</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:14:12</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:14:12</Time>
+  <Info>HashPass = E42F430F56E6F15DDA8F5FD349F3E7D1A1CF6647B2B9E41FAA9AAE138B63E01AB6FED6ED98303BC83FB0CDFB31EE8529B5A2ECF887A723AB064C08594E057A87</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:21:26</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:21:26</Time>
+  <Info>HashPass = 0B74863B9CEC58DCC9AB65C878D65B46552011A49489A1C400FC25D55062AB70A4960527A9D35EF982C99CBE4138CBF517EADB4B93470FAB546CECFDC7686C14</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:21:38</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 09:21:38</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>

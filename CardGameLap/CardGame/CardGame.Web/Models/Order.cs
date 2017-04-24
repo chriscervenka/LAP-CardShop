@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CardGame.Web.Models
 {
-    public class Order
+    public class Order 
     {
         public Packages Pack { get; set; }
 

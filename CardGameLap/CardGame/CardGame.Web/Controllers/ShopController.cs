@@ -19,7 +19,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns>return View("ShopStart", shop)</returns>
         [HttpGet]
-        [Authorize(Roles = "player")]
+        [Authorize]
         public ActionResult ShopStart()
         {
             Shop shop = new Shop();
@@ -44,13 +44,15 @@ namespace CardGame.Web.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "player")]
+        [Authorize]
         public ActionResult Shop()
         {
-            Shop shop = new Shop();
-            shop.cardPacks = new List<Packages>();
-            shop.order = new Order();
-            shop.order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+            ShopContainer sc = new ShopContainer();
+
+            sc.shop = new Shop();
+            sc.shop.cardPacks = new List<Packages>();
+            sc.shop.order = new Order();
+            sc.shop.order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
@@ -63,10 +65,12 @@ namespace CardGame.Web.Controllers
                 cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
 
-                shop.cardPacks.Add(cardPack);
+                sc.shop.cardPacks.Add(cardPack);
             }
 
-            return View("Shop", shop);
+            sc.generatedCards = this.GeneratedCards();
+
+            return View("Shop", sc);
         }
 
         /// <summary>
@@ -75,7 +79,7 @@ namespace CardGame.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        [Authorize(Roles = "player")]
+        [Authorize]
         public ActionResult BuyCardPackages(int id)
         {
             var dbtblpack = ShopManager.GetCardPackById(id);
@@ -99,7 +103,7 @@ namespace CardGame.Web.Controllers
         /// <param name="numberOfPacks"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(Roles ="player")]
+        [Authorize]
         public ActionResult BuyCardPackages(int id, int numberOfPacks)
         {
             Order o = new Order();
@@ -128,7 +132,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(Roles = "player")]
+        [Authorize]
         [ActionName("OrderDetails")]
         public ActionResult Order()
         {
@@ -165,11 +169,11 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [Authorize(Roles = "player")]
+        [Authorize]
         public ActionResult OrderDetails()
         {
             Order o = (Order)TempData["Order"];
-            TempData["Order"] = o;
+            TempData["Order"] = o;   
             return View(o);
         }
 
@@ -179,11 +183,33 @@ namespace CardGame.Web.Controllers
         /// Gibt in einer Liste von CARDS alle 
         /// </summary>
         /// <returns>View(cards)</returns>
-        [HttpGet]
-        [Authorize(Roles = "player")]
-        public ActionResult GeneratedCards()
+        //[HttpGet]
+        //[Authorize(Roles = "player")]
+        //public ActionResult GeneratedCards()
+        //{
+        //    var orderedCards = (List<tblcard>)TempData["OrderedCards"];
+        //    var cards = new List<Card>();
+
+        //    foreach (var c in orderedCards)
+        //    {
+        //        Card card = new Card();
+        //        card.ID = c.idcard;
+        //        card.Name = c.cardname;
+        //        card.Type = c.tbltype.typename;
+        //        card.Mana = c.mana;
+        //        card.Attack = c.attack;
+        //        card.Life = c.life;
+        //        card.Pic = c.pic;
+        //        cards.Add(card);
+        //    }
+        //    return View(cards);
+        //}[HttpGet]
+        
+        
+        
+        private List<tblcard> GeneratedCards()
         {
-            var orderedCards = (List<tblcard>)TempData["OrderedCards"];
+            List<tblcard> orderedCards = (List<tblcard>)TempData["OrderedCards"];
             var cards = new List<Card>();
 
             foreach (var c in orderedCards)
@@ -198,7 +224,7 @@ namespace CardGame.Web.Controllers
                 card.Pic = c.pic;
                 cards.Add(card);
             }
-            return View(cards);
+            return orderedCards;
         }
 
 
@@ -208,7 +234,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns>return View() - PartialView _NotEnoughBalance</returns>
         [HttpGet]
-        [Authorize(Roles = "player")]
+        [Authorize]
         public ActionResult _NotEnoughBalance() //PARTIAL VIEW erstellen !!!!!
         {
             return View();

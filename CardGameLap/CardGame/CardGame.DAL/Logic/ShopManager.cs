@@ -61,7 +61,7 @@ namespace CardGame.DAL.Logic
 
 
         /// <summary>
-        /// Methode ORDERPACK erstellt PACK mit 5 zufällig erstellten Karten aus TBLCARD
+        /// Methode ORDERPACK erstellt PACK mit zufällig erstellten Karten aus TBLCARD
         /// </summary>
         /// <param name="id"></param>
         /// <param name="numberOfPacks"></param>
@@ -80,9 +80,7 @@ namespace CardGame.DAL.Logic
                     throw new Exception("Pack not found");
                 }
                 
-
                 int numCardsToGenerate = cardPack.cardquantity ?? 0;
-
         
                 numCardsToGenerate *= numberOfPacks;
 
@@ -95,7 +93,7 @@ namespace CardGame.DAL.Logic
                     throw new Exception("No Card found");
                 }
 
-                //zufällig generierte Cards für Deck
+                //zufällig generierte Cards für Pack
                 for (int i = 0; i < numCardsToGenerate; i++)
                 {
                     

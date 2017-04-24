@@ -37,7 +37,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <param name="seite"></param>
         /// <returns></returns>
-        [Authorize(Roles ="player, admin")]
+        [Authorize]
         public ActionResult About(int? seite)
         {
             ViewBag.Message = "Your application description page.";
@@ -50,7 +50,7 @@ namespace CardGame.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [Authorize(Roles = "player, admin")]
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

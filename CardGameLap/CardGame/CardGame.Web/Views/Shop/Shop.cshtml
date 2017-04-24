@@ -1,5 +1,4 @@
-﻿@model CardGame.Web.Models.Shop
-
+﻿@model CardGame.Web.Models.ShopContainer
 
 @{
     ViewBag.Title = "Packages";
@@ -10,13 +9,13 @@
         <div class="row col-xs-12 col-sm-6 col-md-6 side" id="left">
 
 
-                            @Html.Partial("_Orderdetails", Model.order)
+                            @Html.Partial("_Orderdetails", Model.shop.order)
 
                         <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />
                     </div>
         <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
 
-            @Html.Partial("_Cardpacks", Model.cardPacks)
+            @Html.Partial("_ListOfCards",Model.generatedCards)
         </div>
     </div>
 
