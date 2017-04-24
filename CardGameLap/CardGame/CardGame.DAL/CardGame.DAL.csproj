@@ -127,6 +127,12 @@
       <LastGenOutput>CardGameModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
+      <Project>{4C467B6A-C1CF-405C-A784-994C9911C030}</Project>
+      <Name>CardGame.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
