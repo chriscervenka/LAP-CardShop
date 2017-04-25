@@ -207,6 +207,7 @@ namespace CardGame.Web.Controllers
         
         
         
+        [HttpGet]
         private List<tblcard> GeneratedCards()
         {
             List<tblcard> orderedCards = (List<tblcard>)TempData["OrderedCards"];

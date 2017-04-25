@@ -1,0 +1,32 @@
+<Info>
+  <Time>25.04.2017 13:25:20</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>25.04.2017 13:25:20</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Xcpt>
+  <Time>25.04.2017 14:09:33</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>25.04.2017 14:09:33</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>25.04.2017 14:12:29</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>25.04.2017 14:12:29</Time>
+  <Info>HashPass = 65B30F1F299B27FA88C54C3CBE8167AF5BD178ECBDEA760FD31E909AACE41932E8174468316910F9396E31B9F859B6B11C77ABA6F8281FE04125C8BB348F2407</Info>
+</Info>
