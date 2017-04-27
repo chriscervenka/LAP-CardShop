@@ -46,3 +46,59 @@
   <Time>27.04.2017 08:51:48</Time>
   <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
 </Info>
+<Xcpt>
+  <Time>27.04.2017 09:55:59</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 13:22:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 14:39:54</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 14:50:43</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 14:54:34</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 14:59:00</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>27.04.2017 14:59:54</Time>
+  <Info>Entered Pass = gindlwindl</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 14:59:54</Time>
+  <Info>HashPass = 72D5E40C80C424528C3F94DDE0FED8628411DF9F3EF27A471F810F2D331E8719853DCF28BFA1AE77F6F1901798E0D7DC218050299191861BEFE8C8BA4B91BF04</Info>
+</Info>

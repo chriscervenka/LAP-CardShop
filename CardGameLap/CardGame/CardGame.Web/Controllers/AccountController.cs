@@ -5,12 +5,14 @@ using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
-
+using static System.Collections.Specialized.BitVector32;
 
 namespace CardGame.Web.Controllers
 {
     public class AccountController : Controller
     {
+        
+
         // GET: Account
         [HttpGet]
         [AllowAnonymous]
@@ -67,6 +69,7 @@ namespace CardGame.Web.Controllers
         public ActionResult Register(Register regUser)
         {
             var dbUser = new tblperson();
+            Session.Add("Person", dbUser);
 
             dbUser.firstname = regUser.Firstname;
             dbUser.lastname = regUser.Lastname;
@@ -84,20 +87,21 @@ namespace CardGame.Web.Controllers
 
             AuthManager.Register(dbUser);
 
-            return RedirectToAction("VerifyRegistration");
+            // gibt der ActionMethod VerifyRegistration ein neues OBJECT mit gamertag und cuurencybalance mit
+            return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.gamertag, currencybalance = dbUser.currencybalance });
         }
 
         [HttpGet]
-        public ActionResult VerifyRegistration(string gamertag)
+        public ActionResult VerifyRegistration(string gamertag, int? currencybalance)
         {
-            //TODO
-            //Hole Gamertag
+         
+            //speichert Gamertag in VIEWBAG
             ViewBag.Gamertag = gamertag;
-            //TODO
-            //Hole Currencybalance
-            ViewBag.CurrencyBalance = 1000;
 
-            return View(gamertag);
+            //speichert Currencybalance in VIEWBAG
+            ViewBag.CurrencyBalance = currencybalance;
+
+            return View();
         }
 
         //[HttpPost]
