@@ -102,3 +102,51 @@
   <Time>27.04.2017 14:59:54</Time>
   <Info>HashPass = 72D5E40C80C424528C3F94DDE0FED8628411DF9F3EF27A471F810F2D331E8719853DCF28BFA1AE77F6F1901798E0D7DC218050299191861BEFE8C8BA4B91BF04</Info>
 </Info>
+<Xcpt>
+  <Time>27.04.2017 15:39:25</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>27.04.2017 15:40:06</Time>
+  <Info>Entered Pass = user2</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 15:40:06</Time>
+  <Info>HashPass = 6E18D8CDD44A5F9B35345EF36F8E907832CC2DB2F41C48E854A160ADBBB4AA9DA917BEA130A10036EFCD43DE7E2384A781181E0B16664DC749A3AB4A794DF9B7</Info>
+</Info>
+<Xcpt>
+  <Time>27.04.2017 15:40:39</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 15:40:39</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>27.04.2017 15:41:02</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 15:41:02</Time>
+  <Info>HashPass = 66D8A50EDB3015A74E1EE271069603D48A7B170569E30F194FD1E276F8F888AE0595B0DD8BFC34299EDDB928DDFBB001323D132B16D414E806E83FF1055E1EE6</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 15:41:12</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 15:41:12</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>

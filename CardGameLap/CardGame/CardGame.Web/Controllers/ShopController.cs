@@ -61,6 +61,7 @@ namespace CardGame.Web.Controllers
                 Packages cardPack = new Packages();
                 cardPack.Idpack = dbCp.idpack;
                 cardPack.Packname = dbCp.packname;
+
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
