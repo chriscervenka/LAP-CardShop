@@ -1,0 +1,48 @@
+<Xcpt>
+  <Time>27.04.2017 08:30:51</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 08:30:51</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>27.04.2017 08:31:07</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:31:07</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
+<Xcpt>
+  <Time>27.04.2017 08:31:30</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 08:31:30</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>27.04.2017 08:51:48</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:51:48</Time>
+  <Info>HashPass = 4964F8657EB0E0827E0F4918F094D87F398EDDBED4FD1D2EAA995BA9B3C26E6C9344700BF17CEAB9863A4E8D0A589A90F389643ADD88E92184016E92DD93BC59</Info>
+</Info>
