@@ -5,7 +5,7 @@ using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
-using static System.Collections.Specialized.BitVector32;
+
 
 namespace CardGame.Web.Controllers
 {
@@ -66,6 +66,8 @@ namespace CardGame.Web.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Register(Register regUser)
         {
             var dbUser = new tblperson();
@@ -92,9 +94,9 @@ namespace CardGame.Web.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult VerifyRegistration(string gamertag, int? currencybalance)
-        {
-         
+        {        
             //speichert Gamertag in VIEWBAG
             ViewBag.Gamertag = gamertag;
 

@@ -4,6 +4,31 @@
 
 <h2>NotEnoughBalance</h2>
 
-<input type="button" class="btn btn-info" value="Go back" onclick="location.href='@Url.Action("Shop", "Shop")'" />
+<div class="booklets" id="background">
+    <div class="row col-md-12">
+        <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+            <div class="panell" id="backgroundleft">
+                <div class="layout-background" id="wood_background">
+                    <h2>Sorry ...</h2>
+                    <br />
+                    <h2>@ViewBag.Gamertag</h2>
+                    <br />
+                    <h2>you don't have enough diamonds to buy other cards</h2>
+                    <br />
+                    <p>if you want to buy some ...</p>
+                    <p>PRESS button underneath ...</p>
+                    <input type="button" class="btn btn-info" value="Buy Diamonds" onclick="location.href='@Url.Action("Shop","Shop")'" />
+                    <br />
+                    <p>for changing your order ...</p>
+                    <input type="button" class="btn btn-info" value="Go back" onclick="location.href='@Url.Action("Shop", "Shop")'" />
 
-<input type="button" class="btn btn-info" value="Buy Diamonds" onclick="location.href='@Url.Action("Shop", "Shop")'" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

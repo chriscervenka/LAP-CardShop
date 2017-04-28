@@ -8,7 +8,7 @@
 <body>
     <div class="booklets" id="background">
         <div class="row col-md-12">
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+            <div class="col-sm-6 col-md-6 side" id="left">
                 <div class="panell" id="backgroundleft">
                     <div class="layout-background" id="wood_background">
                         @{if (User.Identity.Name == "")
@@ -19,26 +19,41 @@
                             {
                                 <h2> Welcome</h2>
                                 <h2>@ViewBag.Gamertag</h2>
-                                <h2>to the amazing Shop of</h2>
+                                <h2>the shop is open ...</h2>
 
                             }
                         }
 
-                        <h1>CLONESTONE</h1>
                         @{
                             if (User.IsInRole("player"))
                             {
-                                <h2>You are a Player</h2>
+                                <h4>Your current status is @ViewBag.Role</h4>
                             }
                         }
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
 
-                        <input type="button" class="btn btn-info" value="Buy Pack" onclick="location.href='@Url.Action("Shop","Shop")'" />
+                        <p>select your package by Drag & Drop the image</p>
+                        <br />
+
+                        @*<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <img src="~/Content/Images/pack1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="155">
+                        </div>*@
+
+                        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <br />
+
+                        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <br />
+
+                        <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <br />
+
+                        @*<input type="button" class="btn btn-info" value="Buy Pack" onclick="location.href='@Url.Action("Shop","Shop")'" />*@
                     </div>
                 </div>
             </div>
-
-           @Html.Partial("_Cardpacks", Model.cardPacks)
-        </div>
+            <div class="col-sm-6 col-md-6 side" id="right">
+                @Html.Partial("_Cardpacks", Model.cardPacks)
+            </div>
     </div>
+</div>
 </body>
