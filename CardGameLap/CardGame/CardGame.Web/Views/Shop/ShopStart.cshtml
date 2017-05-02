@@ -4,11 +4,21 @@
     ViewBag.Title = "View";
 }
 
+<head>
+    <title>jQuery Smart Cart - The smart interactive jQuery Shopping Cart plugin with PayPal payment support</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS -->
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">*@
+
+    <!-- Include SmartCart CSS -->
+    <link href="../Content/smart_cart.min.css" rel="stylesheet" type="text/css" />
+</head>
 
 <body>
-    <div class="booklets" id="background">
-        <div class="row col-md-12">
-            <div class="col-sm-6 col-md-6 side" id="left">
+    @*<div class="booklets" id="background">
+        <div class="row col-md-12">*@
+            @*<div class="col-sm-6 col-md-6 side" id="left">
                 <div class="panell" id="backgroundleft">
                     <div class="layout-background" id="wood_background">
                         @{if (User.Identity.Name == "")
@@ -29,14 +39,156 @@
                             {
                                 <h4>Your current status is @ViewBag.Role</h4>
                             }
-                        }
+                        }*@
 
-                        <p>select your package by Drag & Drop the image</p>
+                        <section class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            Available Packages
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <!-- BEGIN PRODUCTS -->
+                                                <div class="col-md-4 col-sm-6">
+                                                    <div class="sc-product-item thumbnail">
+                                                        <img data-name="product_image" src="../Content/Images/pack1.png" alt="...">
+                                                        <div class="caption">
+                                                            <h4 data-name="product_name">Pack Novice</h4>
+                                                            <p data-name="product_desc">5 Cards inside</p>
+                                                            <hr class="line">
+                                                            <div>
+
+                                                                <div class="form-group2">
+                                                                    <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                                                </div>
+                                                                <br>
+                                                                <strong class="price pull-left">250</strong>
+
+                                                                <input name="product_price" value="250.00" type="hidden" />
+                                                                <input name="product_id" value="12" type="hidden" />
+                                                                <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-sm-6">
+                                                    <span class="sc-product-item thumbnail">
+                                                        <img data-name="product_image" src="../Content/Images/pack1.png" alt="...">
+                                                        <div class="caption">
+                                                            <h4 data-name="product_name">Pack Fighter</h4>
+                                                            <p data-name="product_desc">7 Cards inside</p>
+
+                                                            <hr class="line">
+                                                            <div>
+                                                                <div class="form-group2">
+                                                                    <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                                                </div>
+                                                                <br>
+
+                                                                <strong class="price pull-left">500</strong>
+
+                                                                <input name="product_price" value="500" type="hidden" />
+                                                                <input name="product_id" value="145" type="hidden" />
+                                                                <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-md-4 col-sm-6">
+                                                    <span class="sc-product-item thumbnail">
+                                                        <img data-name="product_image" src="../Content/Images/pack1.png" alt="...">
+                                                        <div class="caption">
+                                                            <h4 data-name="product_name">Pack Heroic</h4>
+                                                            <p data-name="product_desc">20 Cards inside</p>
+
+                                                            <hr class="line">
+                                                            <div>
+                                                                <div class="form-group2">
+                                                                    <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                                                </div>
+                                                                <br>
+
+                                                                <strong class="price pull-left">1000</strong>
+
+                                                                <input name="product_price" value="1000" type="hidden" />
+                                                                <input name="product_id" value="145" type="hidden" />
+                                                                <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </span>
+                                                </div>
+
+                                                <!-- END PRODUCTS -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <aside class="col-md-6">
+
+                                    <!-- Cart submit form -->
+                                    @*<form action="../Scripts/results.php" method="POST">
+                                         SmartCart element 
+                                        <div id="smartcart"></div>
+                                    </form>*@
+
+                                    @*<?php
+                                    // Get the results as JSON string
+                                    $product_list = filter_input(INPUT_POST, 'cart_list');
+                                    // Convert JSON to array
+                                    $product_list_array = json_decode($product_list);
+
+                                    $result_html = '';
+                                    if($product_list_array) {
+                                    foreach($product_list_array as $p){
+                                    foreach($p as $key=>$value) {
+                                    //var_dump($key, $value);
+                                    $result_html .= $key.": ".$value."<br />";
+                                    }
+                                    $result_html .= '------------------------------------------<br />';
+                                    }
+                                    } else {
+                                    $result_html .= "<strong>Cart is Empty</strong>";
+                                    }
+                                    ?>*@
+
+                                    <section class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        Cart Products
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <hr />
+                                                        
+                                                        <br /><br />
+                                                        Product List<hr />
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>   
+
+                                </aside>
+                            </div>
+                        </section>
+
+                        @*<p>select your package by Drag & Drop the image</p>
                         <br />
 
                         @*<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
                             <img src="~/Content/Images/pack1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="155">
-                        </div>*@
+                        </div>
 
                         <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                         <br />
@@ -47,13 +199,28 @@
                         <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                         <br />
 
-                        @*<input type="button" class="btn btn-info" value="Buy Pack" onclick="location.href='@Url.Action("Shop","Shop")'" />*@
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 side" id="right">
+                        <input type="button" class="btn btn-info" value="Buy Pack" onclick="location.href='@Url.Action("Shop","Shop")'" />*@
+                    @*</div>
+                </div>*@
+            @*</div>*@
+            @*<div class="col-sm-6 col-md-6 side" id="right">
                 @Html.Partial("_Cardpacks", Model.cardPacks)
-            </div>
-    </div>
-</div>
+
+
+            </div>*@
+    @*</div>
+</div>*@
+
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <!-- Include SmartCart -->
+    <script src="../Scripts/jquery.smartCart.min.js" type="text/javascript"></script>
+    <!-- Initialize -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Initialize Smart Cart
+            $('#smartcart').smartCart();
+		});
+    </script>
+
 </body>

@@ -1,0 +1,32 @@
+<Xcpt>
+  <Time>02.05.2017 14:14:16</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>02.05.2017 14:14:16</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 78.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>02.05.2017 14:14:30</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>02.05.2017 14:14:30</Time>
+  <Info>HashPass = 6AAE91097FE9E0E6622CCF285E5DC78CCB42CCFB10D682FF716C34D4FD4EE43CDAE9D622884CB461918C273057537451FFD02A650637F1233066607910CAD064</Info>
+</Info>
+<Info>
+  <Time>02.05.2017 14:16:10</Time>
+  <Info>Entered Pass = usertom</Info>
+</Info>
+<Info>
+  <Time>02.05.2017 14:16:10</Time>
+  <Info>HashPass = C30AF3B70775CD7DB03AE52AF3CC3D35CF5AB32C7AC913F0F3A4BA37067B133585F639DF1CA5D75013D42635AB14ACF857CEB694A7ED92DC83ECBACBAC073F60</Info>
+</Info>
