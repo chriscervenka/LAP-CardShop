@@ -23,7 +23,7 @@ namespace CardGame.Web.Controllers
         public ActionResult ShopStart()
         {
             Shop shop = new Shop();
-            shop.cardPacks = new List<Packages>();
+            shop.CardPacks = new List<Packages>();
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
@@ -36,10 +36,11 @@ namespace CardGame.Web.Controllers
                 cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
 
-                shop.cardPacks.Add(cardPack);
+                shop.CardPacks.Add(cardPack);
             }
 
             return View("ShopStart", shop);
+            //return View(shop);
         }
 
 
@@ -50,9 +51,9 @@ namespace CardGame.Web.Controllers
             ShopContainer sc = new ShopContainer();
 
             sc.shop = new Shop();
-            sc.shop.cardPacks = new List<Packages>();
-            sc.shop.order = new Order();
-            sc.shop.order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+            sc.shop.CardPacks = new List<Packages>();
+            sc.shop.Order = new Order();
+            sc.shop.Order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
@@ -66,7 +67,7 @@ namespace CardGame.Web.Controllers
                 cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
 
-                sc.shop.cardPacks.Add(cardPack);
+                sc.shop.CardPacks.Add(cardPack);
             }
 
             sc.generatedCards = this.GeneratedCards();

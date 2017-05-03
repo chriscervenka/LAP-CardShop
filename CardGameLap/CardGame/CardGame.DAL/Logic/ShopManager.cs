@@ -49,7 +49,7 @@ namespace CardGame.DAL.Logic
                     dbCardPack = db.tblpack.Find(id);
                 }
                 if (dbCardPack == null)
-                    throw new Exception("CardPackNotFound");
+                    throw new Exception("kein Pack gefunden");
             }
             catch (Exception e)
             {

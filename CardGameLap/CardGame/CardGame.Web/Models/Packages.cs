@@ -10,7 +10,7 @@ namespace CardGame.Web.Models
 {
     public class Packages
     {
-        [Key]
+        
         public int Idpack { get; set; }
 
         public string Packname { get; set; }

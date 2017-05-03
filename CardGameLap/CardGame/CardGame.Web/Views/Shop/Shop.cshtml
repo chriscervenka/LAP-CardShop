@@ -8,7 +8,7 @@
     <div class="booklets" id="background">
         <div class="row col-xs-12 col-sm-6 col-md-6 side" id="left">
 
-            @Html.Partial("_Orderdetails", Model.shop.order)
+            @Html.Partial("_Orderdetails", Model.shop.Order)
 
             <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />
         </div>
