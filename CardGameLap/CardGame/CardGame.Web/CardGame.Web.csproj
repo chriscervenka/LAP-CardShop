@@ -272,6 +272,10 @@
       <Project>{eb5dd192-e1a3-4351-a680-57034adf3708}</Project>
       <Name>CardGame.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{771b8bb9-fedc-451e-8400-df120245e51c}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

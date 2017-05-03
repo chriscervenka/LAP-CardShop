@@ -4,22 +4,23 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Security;
+using Resources;
 
 namespace CardGame.Web.Models
 {
     public class Login : User
     {
-        [Required(ErrorMessage = "E-Mail is required")]
-        [RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$", ErrorMessage = "Please enter a valid email")]
-        [DataType(DataType.EmailAddress)]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [Display(Name = Constants.Labels.FIRSTNAME, ResourceType = typeof(Labels))]
+        [RegularExpression(".+@.+\\..+", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.EMAIL)]
         public new string Email { get; set; }
 
 
 
-        //  TODO PASSWORD Validation funktioniert noch nicht
-        [Required(ErrorMessage = "Please provide Password", AllowEmptyStrings = false)]
-        [DataType(DataType.Password)]
-        [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be min 6 char long")]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(maximumLength: 20, MinimumLength = 6, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.LENGTH)]
+        [Display(Name = Constants.Labels.PASSWORD, ResourceType = typeof(Labels))]
         public new string Password { get; set; }
     }
 }

@@ -23,9 +23,9 @@
                 <div class="panell" id="backgroundright">
                     <div class="layout-background" id="wood_background">
                         @using (Html.BeginForm())
-                        {
-                        
+                        {                      
                             <h2>LOGIN</h2>
+
                             <div class="form-group">                          
                                 @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })
                                 @Html.TextBoxFor(u => u.Email, htmlAttributes: new { @class = "form-control", placeholder = "Enter email", id = "email" })
@@ -34,10 +34,8 @@
 
                             <div class="form-group">
                                 @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
-                                @Html.TextBoxFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
+                                @Html.PasswordFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
                                 @Html.ValidationMessageFor(u => u.Password)
-
-
                             </div>
 
 

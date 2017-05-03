@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Web", "CardGame.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Log", "CardGame.Log\CardGame.Log.csproj", "{4C467B6A-C1CF-405C-A784-994C9911C030}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{771B8BB9-FEDC-451E-8400-DF120245E51C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4C467B6A-C1CF-405C-A784-994C9911C030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C467B6A-C1CF-405C-A784-994C9911C030}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C467B6A-C1CF-405C-A784-994C9911C030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771B8BB9-FEDC-451E-8400-DF120245E51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771B8BB9-FEDC-451E-8400-DF120245E51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771B8BB9-FEDC-451E-8400-DF120245E51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771B8BB9-FEDC-451E-8400-DF120245E51C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

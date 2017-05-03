@@ -59,13 +59,13 @@
 
                                 <div class="input-field">
                                     <p>@Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })</p>
-                                    @Html.EditorFor(u => u.Password)
+                                    @Html.PasswordFor(u => u.Password)
                                     @Html.ValidationMessageFor(u => u.Password)
                                 </div>
 
                                 <div class="input-field">
-                                    <p>@Html.Label("Confirm Password", htmlAttributes: new { @class = "control-label" })</p>
-                                    @Html.EditorFor(u => u.ConfirmPassword)
+                                    <p>@Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })</p>
+                                    @Html.PasswordFor(u => u.ConfirmPassword)
                                     @Html.ValidationMessageFor(u => u.ConfirmPassword)
                                 </div>
                             </div>
