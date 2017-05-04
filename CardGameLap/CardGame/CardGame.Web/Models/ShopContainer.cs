@@ -10,6 +10,6 @@ namespace CardGame.Web.Models
     {
         public Shop shop { get; set; }
 
-        public List<tblcard> generatedCards { get; set; }
+        public List<Card> generatedCards { get; set; }
     }
 }

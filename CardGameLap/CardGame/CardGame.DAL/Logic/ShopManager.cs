@@ -16,13 +16,13 @@ namespace CardGame.DAL.Logic
         /// 
         /// </summary>
         /// <returns>return allPacks</returns>
-        public static List<tblpack> AllCardPacks()
+        public static List<Pack> AllCardPacks()
         {
-            var allPacks = new List<tblpack>();
+            var allPacks = new List<Pack>();
 
             using (var db = new ClonestoneFSEntities())
             {
-                allPacks = db.tblpack.ToList();
+                allPacks = db.AllPacks.ToList();
             }
 
             if (allPacks == null)
@@ -38,15 +38,15 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="id"></param>
         /// <returns> return dbCardPack</returns>
-        public static tblpack GetCardPackById(int id)
+        public static Pack GetCardPackById(int id)
         {
-            var dbCardPack = new tblpack();
+            var dbCardPack = new Pack();
 
             try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbCardPack = db.tblpack.Find(id);
+                    dbCardPack = db.AllPacks.Find(id);
                 }
                 if (dbCardPack == null)
                     throw new Exception("kein Pack gefunden");
@@ -66,25 +66,25 @@ namespace CardGame.DAL.Logic
         /// <param name="id"></param>
         /// <param name="numberOfPacks"></param>
         /// <returns>return generatedCards</returns>
-        public static List<tblcard> OrderPack(int id, int numberOfPacks)
+        public static List<Card> OrderPack(int id, int numberOfPacks)
         {
             Random rnd = new Random();
-            var generatedCards = new List<tblcard>();
+            var generatedCards = new List<Card>();
 
             using (var db = new ClonestoneFSEntities())
             {
-                var cardPack = db.tblpack.Find(id);
+                var cardPack = db.AllPacks.Find(id);
 
                 if (cardPack == null)
                 {
                     throw new Exception("Pack not found");
                 }
                 
-                int numCardsToGenerate = cardPack.cardquantity ?? 0;
+                int numCardsToGenerate = cardPack.NumberOfCards ?? 0;
         
                 numCardsToGenerate *= numberOfPacks;
 
-                var validIDs = db.tblcard.Select(c => c.idcard).ToList();
+                var validIDs = db.AllCards.Select(c => c.ID).ToList();
 
                 Writer.LogInfo("ID: " + validIDs.Count.ToString());
 
@@ -99,7 +99,7 @@ namespace CardGame.DAL.Logic
                     
                     int indexId = rnd.Next(0, validIDs.Count - 1);
                     int generatedCardId = validIDs[indexId];
-                    var generatedCard = db.tblcard.Where(c => c.idcard == generatedCardId).Include(c => c.tbltype).FirstOrDefault();
+                    var generatedCard = db.AllCards.Where(c => c.ID == generatedCardId).Include(c => c.Type).FirstOrDefault();
 
                     //Abfrage ob generatedCard NULL (nicht vorhanden) ist
                     //TODO  ODER ob generatedCard mehrfach vorkommt !!!!
@@ -127,14 +127,14 @@ namespace CardGame.DAL.Logic
 
             using (var db = new ClonestoneFSEntities())
             {
-                var pack = db.tblpack.Find(id);
+                var pack = db.AllPacks.Find(id);
                 if (pack == null)
                 {
                     throw new Exception("No Pack found");
                 }
 
                 //Convert a nullable DECIMAL to INT
-                price = (int)pack.packprice;
+                price = (int)pack.Price;
             }
 
             return price * numberOfPacks;

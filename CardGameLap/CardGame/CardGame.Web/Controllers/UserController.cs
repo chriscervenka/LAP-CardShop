@@ -22,15 +22,15 @@ namespace CardGame.Web.Controllers
             foreach (var c in dbUserlist)
             {
                 Register user = new Register();
-                user.ID = c.idperson;
-                user.Firstname = c.firstname;
-                user.Lastname = c.lastname;
-                user.Gamertag = c.gamertag;
-                user.Email = c.email;
-                user.Role = c.userrole;
-                user.CurrencyBalance = (int)c.currencybalance;  //Konvertiere einen NULLABLE int64 in einen 'normalen' int64 (int)
-                user.Password = c.password;
-                user.Salt = c.salt;
+                user.ID = c.ID;
+                user.Firstname = c.FirstName;
+                user.Lastname = c.LastName;
+                user.Gamertag = c.GamerTag;
+                user.Email = c.Email;
+                user.Role = c.Role;
+                user.CurrencyBalance = (int)c.CurrencyBalance;  //Konvertiere einen NULLABLE int64 in einen 'normalen' int64 (int)
+                user.Password = c.Password;
+                user.Salt = c.Salt;
 
                 UserList.Add(user);
             }

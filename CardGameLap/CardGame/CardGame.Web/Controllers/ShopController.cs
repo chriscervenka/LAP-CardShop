@@ -12,38 +12,69 @@ namespace CardGame.Web.Controllers
 {
     public class ShopController : Controller
     {
-        // GET: Shop
-
         /// <summary>
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
         /// <returns>return View("ShopStart", shop)</returns>
+        //[HttpGet]
+        //[Authorize]
+        //public ActionResult ShopStart()
+        //{
+        //    Shop shop = new Shop();
+        //    shop.CardPacks = new List<Packages>();
+
+        //    var dbCardPacks = ShopManager.AllCardPacks();
+
+        //    foreach (var dbCp in dbCardPacks)
+        //    {
+        //        Packages cardPack = new Packages();
+        //        cardPack.Idpack = dbCp.ID;
+        //        cardPack.Packname = dbCp.Name;
+        //        //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
+        //        cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
+        //        cardPack.Packprice = dbCp.Price.GetValueOrDefault();
+
+        //        shop.CardPacks.Add(cardPack);
+        //    }
+        //    return View("ShopStart", shop);
+        //    //return View(shop);
+        //}
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize]
         public ActionResult ShopStart()
         {
-            Shop shop = new Shop();
-            shop.CardPacks = new List<Packages>();
+            Cart cart = new Cart();
+            cart.CardPacks = new List<Packages>();
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
             foreach (var dbCp in dbCardPacks)
             {
                 Packages cardPack = new Packages();
-                cardPack.Idpack = dbCp.idpack;
-                cardPack.Packname = dbCp.packname;
+                cardPack.Idpack = dbCp.ID;
+                cardPack.Packname = dbCp.Name;
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
-                cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
+                cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
+                cardPack.Packprice = dbCp.Price.GetValueOrDefault();
 
-                shop.CardPacks.Add(cardPack);
+                cart.CardPacks.Add(cardPack);
             }
 
-            return View("ShopStart", shop);
-            //return View(shop);
-        }
+            return View("ShopStart", cart);
+        }            
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Authorize]
         public ActionResult Shop()
@@ -52,7 +83,7 @@ namespace CardGame.Web.Controllers
 
             sc.shop = new Shop();
             sc.shop.CardPacks = new List<Packages>();
-            sc.shop.Order = new Order();
+            sc.shop.Order = new Models.Order();
             sc.shop.Order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
 
             var dbCardPacks = ShopManager.AllCardPacks();
@@ -60,17 +91,17 @@ namespace CardGame.Web.Controllers
             foreach (var dbCp in dbCardPacks)
             {
                 Packages cardPack = new Packages();
-                cardPack.Idpack = dbCp.idpack;
-                cardPack.Packname = dbCp.packname;
+                cardPack.Idpack = dbCp.ID;
+                cardPack.Packname = dbCp.Name;
 
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = dbCp.cardquantity.GetValueOrDefault();
-                cardPack.Packprice = dbCp.packprice.GetValueOrDefault();
+                cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
+                cardPack.Packprice = dbCp.Price.GetValueOrDefault();
 
                 sc.shop.CardPacks.Add(cardPack);
             }
 
-            sc.generatedCards = this.GeneratedCards();
+            sc.generatedCards = GeneratedCards();
 
             return View("Shop", sc);
         }
@@ -84,14 +115,14 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPackages(int id)
         {
-            var dbtblpack = ShopManager.GetCardPackById(id);
+            var dbPack = ShopManager.GetCardPackById(id);
 
             Packages cardPack = new Packages();
-            cardPack.Idpack = dbtblpack.idpack;
-            cardPack.Packname = dbtblpack.packname;
+            cardPack.Idpack = dbPack.ID;
+            cardPack.Packname = dbPack.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal
-            cardPack.Packprice = dbtblpack.packprice.GetValueOrDefault();
-            cardPack.CardQuantity = dbtblpack.cardquantity.GetValueOrDefault();
+            cardPack.Packprice = dbPack.Price.GetValueOrDefault();
+            cardPack.CardQuantity = dbPack.NumberOfCards.GetValueOrDefault();
 
             return View("Shop", cardPack);
         }
@@ -108,15 +139,15 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPackages(int id, int numberOfPacks)
         {
-            Order o = new Order();
+            Models.Order o = new Models.Order();
             var dbPackages = ShopManager.GetCardPackById(id);
 
             Packages cardPack = new Packages();
-            cardPack.Idpack = dbPackages.idpack;
-            cardPack.Packname = dbPackages.packname;
+            cardPack.Idpack = dbPackages.ID;
+            cardPack.Packname = dbPackages.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal => Konvertierung da NULLABLE
-            cardPack.CardQuantity = dbPackages.cardquantity.GetValueOrDefault();
-            cardPack.Packprice = dbPackages.packprice.GetValueOrDefault();
+            cardPack.CardQuantity = dbPackages.NumberOfCards.GetValueOrDefault();
+            cardPack.Packprice = dbPackages.Price.GetValueOrDefault();
 
             o.Pack = cardPack;
             o.OrderDate = DateTime.Now;
@@ -138,7 +169,7 @@ namespace CardGame.Web.Controllers
         [ActionName("OrderDetails")]
         public ActionResult Order()
         {
-            Order o = (Order)TempData["Order"];
+            Models.Order o = (Models.Order)TempData["Order"];
 
             var totalOrder = ShopManager.TotalCost(o.Pack.Idpack, o.PackQuantity);
             if (totalOrder > o.UserBalance)
@@ -174,22 +205,19 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult OrderDetails()
         {
-            Order o = (Order)TempData["Order"];
+            Models.Order o = (Models.Order)TempData["Order"];
             TempData["Order"] = o;   
             return View(o);
         }
 
 
 
-        /// <summary>
-        /// Gibt in einer Liste von CARDS alle 
-        /// </summary>
-        /// <returns>View(cards)</returns>
+
         //[HttpGet]
         //[Authorize(Roles = "player")]
         //public ActionResult GeneratedCards()
         //{
-        //    var orderedCards = (List<tblcard>)TempData["OrderedCards"];
+        //    var orderedCards = (List<Card>)TempData["OrderedCards"];
         //    var cards = new List<Card>();
 
         //    foreach (var c in orderedCards)
@@ -205,29 +233,30 @@ namespace CardGame.Web.Controllers
         //        cards.Add(card);
         //    }
         //    return View(cards);
-        //}[HttpGet]
-        
-        
-        
+        //}
+
+
+
         [HttpGet]
-        private List<tblcard> GeneratedCards()
+        private List<Models.Card> GeneratedCards()
         {
-            List<tblcard> orderedCards = (List<tblcard>)TempData["OrderedCards"];
-            var cards = new List<Card>();
+            List<DAL.Model.Card> orderedCards = (List<DAL.Model.Card>)TempData["OrderedCards"];
+            var cards = new List<Models.Card>();
 
             foreach (var c in orderedCards)
             {
-                Card card = new Card();
-                card.ID = c.idcard;
-                card.Name = c.cardname;
-                card.Type = c.tbltype.typename;
-                card.Mana = c.mana;
-                card.Attack = c.attack;
-                card.Life = c.life;
-                card.Pic = c.pic;
+                Models.Card card = new Models.Card();
+                card.ID = c.ID;
+                card.Name = c.Name;
+                card.Type = c.Type.Name; ///TODO prüfen
+                card.Mana = c.ManaCost;
+                card.Attack = c.Attack;
+                card.Life = c.Life;
+                card.Pic = c.Pic;
                 cards.Add(card);
             }
-            return orderedCards;
+
+            return cards;
         }
 
 

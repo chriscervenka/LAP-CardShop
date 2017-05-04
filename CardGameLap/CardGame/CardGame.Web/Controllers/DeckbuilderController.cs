@@ -22,12 +22,12 @@ namespace CardGame.Web.Controllers
             foreach (var c in dbCardlist)
             {
                 Deckbuilder deck = new Deckbuilder();
-                deck.ID = c.idcard;
-                deck.Name = c.cardname;
-                deck.Life = c.life;
-                deck.Mana = c.mana;
-                deck.Pic = c.pic;
-                deck.Attack = c.attack;
+                deck.ID = c.ID;
+                deck.Name = c.Name;
+                deck.Life = c.Life;
+                deck.Mana = c.ManaCost;
+                deck.Pic = c.Pic;
+                deck.Attack = c.Attack;
 
 
                 //card.Type = c.tbltype.typename;

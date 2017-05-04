@@ -10,13 +10,13 @@ namespace CardGame.DAL.Logic
 {
     public class AuthManager
     {
-        public static bool Register(tblperson regUser)
+        public static bool Register(Person regUser)
         {
             try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    if (db.tblperson.Any(n => n.email == regUser.email))
+                    if (db.AllPersons.Any(n => n.Email == regUser.Email))
                     {
                         throw new Exception("UserAlreadyExists");
                     }
@@ -24,12 +24,12 @@ namespace CardGame.DAL.Logic
                     string salt = Helper.GenerateSalt();
 
                     //Passwort Hashen
-                    string hashedAndSaltedPassword = Helper.GenerateHash(regUser.password + salt);
+                    string hashedAndSaltedPassword = Helper.GenerateHash(regUser.Password + salt);
 
-                    regUser.password = hashedAndSaltedPassword;
-                    regUser.salt = salt;
+                    regUser.Password = hashedAndSaltedPassword;
+                    regUser.Salt = salt;
 
-                    db.tblperson.Add(regUser);
+                    db.AllPersons.Add(regUser);
                     db.SaveChanges();
                 }
             }
@@ -51,14 +51,14 @@ namespace CardGame.DAL.Logic
 
                 using (var db = new ClonestoneFSEntities())
                 {
-                    tblperson dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    Person dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
                     }
 
-                    dbUserPassword = dbUser.password;
-                    dbUserSalt = dbUser.salt;
+                    dbUserPassword = dbUser.Password;
+                    dbUserSalt = dbUser.Salt;
 
                     Writer.LogInfo("Entered Pass = " + password);
 

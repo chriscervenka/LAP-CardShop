@@ -15,14 +15,14 @@ namespace CardGame.DAL.Logic
         /// 
         /// </summary>
         /// <returns></returns>
-        public static List<tblperson> GetAllUser()
+        public static List<Person> GetAllUser()
         {
-            List<tblperson> ReturnList = null;
+            List<Person> ReturnList = null;
             using (var db = new ClonestoneFSEntities())
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                ReturnList = db.tblperson.ToList();
+                ReturnList = db.AllPersons.ToList();
             }
             return ReturnList;
         }
@@ -34,15 +34,15 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public static tblperson GetPersonByEmail(string email)
+        public static Person GetPersonByEmail(string email)
         {
-            tblperson dbUser = null;
+            Person dbUser = null;
 
             try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -70,12 +70,12 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
                     }
-                    role = dbUser.userrole;
+                    role = dbUser.Role;
                 }
             }
             catch (Exception e)
@@ -96,7 +96,7 @@ namespace CardGame.DAL.Logic
         public static bool BalanceUpdateByEmail(string email, int balanceNew)
         {
             var dbUser = GetPersonByEmail(email);
-            dbUser.currencybalance = balanceNew;
+            dbUser.CurrencyBalance = balanceNew;
             {
                 using (var db = new ClonestoneFSEntities())
                 {
@@ -115,7 +115,7 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int GetCurrencyBalanceByEmail(string email)
         {
-            return GetPersonByEmail(email).currencybalance.GetValueOrDefault();
+            return GetPersonByEmail(email).CurrencyBalance.GetValueOrDefault();
         }
 
 
@@ -125,18 +125,18 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public static List<tbldeck> GetAllDecksByEmail(string email)
+        public static List<Deck> GetAllDecksByEmail(string email)
         {
             try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
                     }
-                    var dbDecks = dbUser.tbldeck.ToList();
+                    var dbDecks = dbUser.AllDecks.ToList();
                     if (dbDecks == null)
                     {
                         throw new Exception("NoDecksFound");

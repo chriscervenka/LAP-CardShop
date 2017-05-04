@@ -57,6 +57,9 @@
     <Compile Include="Logic\Helper.cs" />
     <Compile Include="Logic\ShopManager.cs" />
     <Compile Include="Logic\UserManager.cs" />
+    <Compile Include="Model\Card.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CardGameModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,31 +75,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CardGameModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblcard.cs">
+    <Compile Include="Model\Class.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblclass.cs">
+    <Compile Include="Model\Collection.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblcollection.cs">
+    <Compile Include="Model\Deck.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbldeck.cs">
+    <Compile Include="Model\DeckCard.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tbldeckcard.cs">
+    <Compile Include="Model\Order.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblorder.cs">
+    <Compile Include="Model\Pack.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblpack.cs">
+    <Compile Include="Model\Person.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\tblperson.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\tbltype.cs">
+    <Compile Include="Model\Type.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

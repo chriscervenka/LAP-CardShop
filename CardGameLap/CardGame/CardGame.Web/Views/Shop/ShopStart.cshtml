@@ -1,6 +1,6 @@
 ﻿
 
-@model  CardGame.Web.Models.Packages
+@model  CardGame.Web.Models.Cart
 
     @{
         ViewBag.Title = "View";
@@ -47,20 +47,17 @@
 
                        
                         <div class="panel-body">
-                            <div class="row">
-                            
-                            
-
+                            <div class="row">                          
                                 <!-- BEGIN PRODUCTS -->
                                 <div class="col-md-2 col-sm-6">
                                     <div class="sc-product-item thumbnail">
                                         <img src="../Content/Images/pack1.png" alt="...">
                                         <div class="caption">
-                                            <h4 data-name="product_name">Pack Novice</h4>
-                                            <h4>@Html.DisplayFor(cardpack => Model.Packname)</h4>
+                                            @*<h4 data-name="product_name">Pack Novice</h4>*@
+                                            <h4>@Html.DisplayFor(CardPacks => Model.PackName)</h4>
                                             @*<h4>@Model.Order.Pack.Packname</h4>*@
                                             @*<p>@Model.CardQuantity</p>*@
-                                            <p>@Html.DisplayFor(cardpack => Model.CardQuantity)</p>
+                                            <p>@Html.DisplayFor(CardPacks => Model.CardQuantity)</p>
                                             <hr class="line">
                                             <div>
 
@@ -68,7 +65,7 @@
                                                     <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                                                 </div>
                                                 <br>
-                                                <p>class="price pull-left">@Html.DisplayFor(cardpack => Model.Packprice)</p>
+                                                <p>class="price pull-left">@Html.DisplayFor(cardpack => Model.PackPrice)</p>
 
                                                 <input name="product_price" value="250.00" type="hidden" />
                                                 <input name="product_id" value="12" type="hidden" />

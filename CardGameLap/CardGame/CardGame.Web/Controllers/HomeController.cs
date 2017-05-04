@@ -23,9 +23,9 @@ namespace CardGame.Web.Controllers
 
                 var dbUser = UserManager.GetPersonByEmail(User.Identity.Name);
 
-                ViewBag.Firstname = dbUser.firstname;
-                ViewBag.Lastname = dbUser.lastname;
-                ViewBag.Gamertag = dbUser.gamertag;
+                ViewBag.Firstname = dbUser.FirstName;
+                ViewBag.Lastname = dbUser.LastName;
+                ViewBag.Gamertag = dbUser.GamerTag;
             }
             //Eigentlich von DAL auf ViewModel mappen und View dem Viewmodel mitgeben             
             return View();

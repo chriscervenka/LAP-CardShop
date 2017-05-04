@@ -12,22 +12,22 @@ namespace CardGame.Web.Controllers
         // GET: Card
         public ActionResult Overview()
         {
-            List<Card> CardList = new List<Card>();
+            List<Models.Card> CardList = new List<Models.Card>();
 
             var dbCardlist = CardManager.GetAllCards();
 
             foreach (var c in dbCardlist)
             {
-                Card card = new Card();
-                card.ID = c.idcard;
-                card.Name = c.cardname;
-                card.Mana = c.mana;
-                card.Attack = c.attack;
-                card.Life = c.life;
-                card.Pic = c.pic;
+                Models.Card card = new Models.Card();
+                card.ID = c.ID;
+                card.Name = c.Name;
+                card.Mana = c.ManaCost;
+                card.Attack = c.Attack;
+                card.Life = c.Life;
+                card.Pic = c.Pic;
                 //card.Type = c.tbltype.typename;
                 //card.Type = CardManager.GetCardTypeById(c.fktype);
-                card.Type = CardManager.CardTypes[c.fktype];
+                card.Type = CardManager.CardTypes[c.ID_Type];
 
                 CardList.Add(card);
             }
@@ -37,17 +37,17 @@ namespace CardGame.Web.Controllers
 
         public ActionResult Details(int id)
         {
-            tblcard dbcard = null;
+            DAL.Model.Card dbcard = null;
 
             dbcard = CardManager.GetCardById(id);
 
-            Card card = new Card();
-            card.ID = dbcard.idcard;
-            card.Name = dbcard.cardname;
-            card.Mana = dbcard.mana;
-            card.Attack = dbcard.attack;
-            card.Life = dbcard.life;
-            card.Type = CardManager.CardTypes[dbcard.fktype];
+            Models.Card card = new Models.Card();
+            card.ID = dbcard.ID;
+            card.Name = dbcard.Name;
+            card.Mana = dbcard.ManaCost;
+            card.Attack = dbcard.Attack;
+            card.Life = dbcard.Life;
+            card.Type = CardManager.CardTypes[dbcard.ID_Type];
 
             return View(card);
         }

@@ -11,14 +11,14 @@ namespace CardGame.Web.Models
         [Key]
         public new int ID { get; set; }
 
-        public List<Card> deck { get; set; }
+        public List<Card> Deck { get; set; }
 
-        public List<Card> collection { get; set; }
+        public List<Card> Collection { get; set; }
 
         public Deckbuilder()
         {
-            deck = new List<Card>();
-            collection = new List<Card>();
+            Deck = new List<Card>();
+            Collection = new List<Card>();
         }
     }
 }

@@ -70,18 +70,18 @@ namespace CardGame.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(Register regUser)
         {
-            var dbUser = new tblperson();
+            var dbUser = new Person();
             Session.Add("Person", dbUser);
 
-            dbUser.firstname = regUser.Firstname;
-            dbUser.lastname = regUser.Lastname;
-            dbUser.gamertag = regUser.Gamertag;
-            dbUser.email = regUser.Email;
-            dbUser.password = regUser.Password;
-            dbUser.salt = regUser.Salt;
-            dbUser.userrole = "player";
-            dbUser.currencybalance = 1000;
-            dbUser.isactive = true;
+            dbUser.FirstName = regUser.Firstname;
+            dbUser.LastName = regUser.Lastname;
+            dbUser.GamerTag = regUser.Gamertag;
+            dbUser.Email = regUser.Email;
+            dbUser.Password = regUser.Password;
+            dbUser.Salt = regUser.Salt;
+            dbUser.Role = "player";
+            dbUser.CurrencyBalance = 1000;
+            dbUser.IsActiv = true;
 
             //dbUser.tblrole = new List<tblrole>();
             //dbUser.tblrole.Add(new tblrole());
@@ -90,7 +90,7 @@ namespace CardGame.Web.Controllers
             AuthManager.Register(dbUser);
 
             // gibt der ActionMethod VerifyRegistration ein neues OBJECT mit gamertag und cuurencybalance mit
-            return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.gamertag, currencybalance = dbUser.currencybalance });
+            return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.GamerTag, currencybalance = dbUser.CurrencyBalance });
         }
 
         [HttpGet]
