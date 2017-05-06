@@ -273,6 +273,10 @@
       <Project>{eb5dd192-e1a3-4351-a680-57034adf3708}</Project>
       <Name>CardGame.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
+      <Project>{4C467B6A-C1CF-405C-A784-994C9911C030}</Project>
+      <Name>CardGame.Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Resources\Resources.csproj">
       <Project>{771b8bb9-fedc-451e-8400-df120245e51c}</Project>
       <Name>Resources</Name>

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using CardGame.DAL.Logic;
 using CardGame.Web.Models;
 using CardGame.DAL.Model;
-
+using CardGame.Log;
 
 namespace CardGame.Web.Controllers
 {
@@ -15,37 +15,7 @@ namespace CardGame.Web.Controllers
         /// <summary>
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
-        /// <returns>return View("ShopStart", shop)</returns>
-        //[HttpGet]
-        //[Authorize]
-        //public ActionResult ShopStart()
-        //{
-        //    Shop shop = new Shop();
-        //    shop.CardPacks = new List<Packages>();
-
-        //    var dbCardPacks = ShopManager.AllCardPacks();
-
-        //    foreach (var dbCp in dbCardPacks)
-        //    {
-        //        Packages cardPack = new Packages();
-        //        cardPack.Idpack = dbCp.ID;
-        //        cardPack.Packname = dbCp.Name;
-        //        //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-        //        cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
-        //        cardPack.Packprice = dbCp.Price.GetValueOrDefault();
-
-        //        shop.CardPacks.Add(cardPack);
-        //    }
-        //    return View("ShopStart", shop);
-        //    //return View(shop);
-        //}
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <returns>return View("ShopStart", cart)</returns>
         [HttpGet]
         [Authorize]
         public ActionResult ShopStart()
@@ -63,7 +33,6 @@ namespace CardGame.Web.Controllers
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
                 cardPack.Packprice = dbCp.Price.GetValueOrDefault();
-
                 cart.CardPacks.Add(cardPack);
             }
 
@@ -93,11 +62,9 @@ namespace CardGame.Web.Controllers
                 Packages cardPack = new Packages();
                 cardPack.Idpack = dbCp.ID;
                 cardPack.Packname = dbCp.Name;
-
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
                 cardPack.Packprice = dbCp.Price.GetValueOrDefault();
-
                 sc.shop.CardPacks.Add(cardPack);
             }
 
@@ -105,6 +72,8 @@ namespace CardGame.Web.Controllers
 
             return View("Shop", sc);
         }
+
+
 
         /// <summary>
         /// 
@@ -139,6 +108,9 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPackages(int id, int numberOfPacks)
         {
+            Writer.LogInfo("id: " + id.ToString());
+            Writer.LogInfo("numPacks: " + numberOfPacks.ToString());
+
             Models.Order o = new Models.Order();
             var dbPackages = ShopManager.GetCardPackById(id);
 
@@ -171,28 +143,34 @@ namespace CardGame.Web.Controllers
         {
             Models.Order o = (Models.Order)TempData["Order"];
 
-            var totalOrder = ShopManager.TotalCost(o.Pack.Idpack, o.PackQuantity);
-            if (totalOrder > o.UserBalance)
+            try
             {
-                return RedirectToAction("_NotEnoughBalance");
-            }
-            var balanceNew = o.UserBalance - totalOrder;
+                var totalOrder = ShopManager.TotalCost(o.Pack.Idpack, o.PackQuantity);
+                if (totalOrder > o.UserBalance)
+                {
+                    return RedirectToAction("_NotEnoughBalance");
+                }
+                var balanceNew = o.UserBalance - totalOrder;
 
-            var updated = UserManager.BalanceUpdateByEmail(User.Identity.Name, balanceNew);
-            if (!updated)
+                var updated = UserManager.BalanceUpdateByEmail(User.Identity.Name, balanceNew);
+                if (!updated)
+                {
+                    return RedirectToAction("UpdateError");
+                }
+
+                var orderedCards = ShopManager.OrderPack(o.Pack.Idpack, o.PackQuantity);
+
+                //Methode 'AddCardsToCollectionByEmail' in USERMANAGER noch schreiben
+                var updatedCards = UserManager.AddCardsToCollectionByEmail(User.Identity.Name, orderedCards);
+
+                TempData["OrderedCards"] = orderedCards;
+                return RedirectToAction("GeneratedCards");
+            }
+            catch (Exception e)
             {
-                return RedirectToAction("UpdateError");
+                Writer.LogError(e);
+                return RedirectToAction("Error", "Error");
             }
-
-            var orderedCards = ShopManager.OrderPack(o.Pack.Idpack, o.PackQuantity);
-
-            //Methode 'AddCardsToCollectionByEmail' in USERMANAGER noch schreiben
-            //var updatedCards = UserManager.AddCardsToCollectionByEmail(User.Identity.Name, orderedCards);
-
-            TempData["OrderedCards"] = orderedCards;
-            return RedirectToAction("GeneratedCards");
-
-            //return RedirectToAction("Error", "Error");
         }
 
 
@@ -211,32 +189,10 @@ namespace CardGame.Web.Controllers
         }
 
 
-
-
-        //[HttpGet]
-        //[Authorize(Roles = "player")]
-        //public ActionResult GeneratedCards()
-        //{
-        //    var orderedCards = (List<Card>)TempData["OrderedCards"];
-        //    var cards = new List<Card>();
-
-        //    foreach (var c in orderedCards)
-        //    {
-        //        Card card = new Card();
-        //        card.ID = c.idcard;
-        //        card.Name = c.cardname;
-        //        card.Type = c.tbltype.typename;
-        //        card.Mana = c.mana;
-        //        card.Attack = c.attack;
-        //        card.Life = c.life;
-        //        card.Pic = c.pic;
-        //        cards.Add(card);
-        //    }
-        //    return View(cards);
-        //}
-
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         private List<Models.Card> GeneratedCards()
         {

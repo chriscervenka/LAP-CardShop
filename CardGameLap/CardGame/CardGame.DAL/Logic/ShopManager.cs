@@ -20,15 +20,22 @@ namespace CardGame.DAL.Logic
         {
             var allPacks = new List<Pack>();
 
-            using (var db = new ClonestoneFSEntities())
+            try
             {
-                allPacks = db.AllPacks.ToList();
-            }
+                using (var db = new ClonestoneFSEntities())
+                {
+                    allPacks = db.AllPacks.ToList();
+                }
 
-            if (allPacks == null)
-            {
-                throw new Exception("kein Pack gefunden");
+                if (allPacks == null)
+                {
+                    throw new Exception("kein Pack gefunden");
+                }
             }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+            }           
             return allPacks;
         }
 
@@ -71,46 +78,59 @@ namespace CardGame.DAL.Logic
             Random rnd = new Random();
             var generatedCards = new List<Card>();
 
-            using (var db = new ClonestoneFSEntities())
+            try
             {
-                var cardPack = db.AllPacks.Find(id);
-
-                if (cardPack == null)
+                using (var db = new ClonestoneFSEntities())
                 {
-                    throw new Exception("Pack not found");
-                }
-                
-                int numCardsToGenerate = cardPack.NumberOfCards ?? 0;
-        
-                numCardsToGenerate *= numberOfPacks;
+                    var cardPack = db.AllPacks.Find(id);
 
-                var validIDs = db.AllCards.Select(c => c.ID).ToList();
-
-                Writer.LogInfo("ID: " + validIDs.Count.ToString());
-
-                if (validIDs.Count == 0)
-                {
-                    throw new Exception("No Card found");
-                }
-
-                //zufällig generierte Cards für Pack
-                for (int i = 0; i < numCardsToGenerate; i++)
-                {
-                    
-                    int indexId = rnd.Next(0, validIDs.Count - 1);
-                    int generatedCardId = validIDs[indexId];
-                    var generatedCard = db.AllCards.Where(c => c.ID == generatedCardId).Include(c => c.Type).FirstOrDefault();
-
-                    //Abfrage ob generatedCard NULL (nicht vorhanden) ist
-                    //TODO  ODER ob generatedCard mehrfach vorkommt !!!!
-                    if (generatedCard == null)
+                    if (cardPack == null)
                     {
-                        throw new Exception("Card not found");
+                        throw new Exception("Pack not found");
                     }
 
-                    generatedCards.Add(generatedCard);
+                    int numCardsToGenerate = cardPack.NumberOfCards ?? 0;
+
+                    numCardsToGenerate *= numberOfPacks;
+
+                    var validIDs = db.AllCards.Select(c => c.ID).ToList();
+
+                    Writer.LogInfo("ID: " + validIDs.Count.ToString());
+
+                    if (validIDs.Count == 0)
+                    {
+                        throw new Exception("No Card found");
+                    }
+
+                    //zufällig generierte Cards für Pack
+                    for (int i = 0; i < numCardsToGenerate; i++)
+                    {
+
+                        int indexId = rnd.Next(0, validIDs.Count - 1);
+                        int generatedCardId = validIDs[indexId];
+                        var generatedCard = db.AllCards.Where(c => c.ID == generatedCardId).Include(c => c.Type).FirstOrDefault();
+
+                        //Abfrage ob generatedCard NULL (nicht vorhanden) ist
+                        //TODO  ODER ob generatedCard mehrfach vorkommt !!!!
+                        if (generatedCard == null)
+                        {
+                            throw new Exception("Card not found");
+                        }
+
+                        generatedCards.Add(generatedCard);
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+            }
+
+            foreach (var card in generatedCards)
+            {
+                Writer.LogInfo("Card: " + card.ID);
+            }
+            
             return generatedCards;
         }
 

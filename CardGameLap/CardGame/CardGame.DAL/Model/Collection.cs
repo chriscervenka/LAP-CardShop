@@ -19,9 +19,11 @@ namespace CardGame.DAL.Model
         public Nullable<int> ID_Person { get; set; }
         public Nullable<int> ID_Order { get; set; }
         public Nullable<int> ID_DeckCard { get; set; }
+        public int ID_Card { get; set; }
     
         public virtual DeckCard Deck { get; set; }
         public virtual Order AllOrders { get; set; }
         public virtual Person Person { get; set; }
+        public virtual Card Card { get; set; }
     }
 }

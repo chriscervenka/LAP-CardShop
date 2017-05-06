@@ -18,6 +18,7 @@ namespace CardGame.DAL.Model
         public Card()
         {
             this.AllDeckCards = new HashSet<DeckCard>();
+            this.AllCollections = new HashSet<Collection>();
         }
     
         public int ID { get; set; }
@@ -34,5 +35,7 @@ namespace CardGame.DAL.Model
         public virtual Type Type { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeckCard> AllDeckCards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Collection> AllCollections { get; set; }
     }
 }

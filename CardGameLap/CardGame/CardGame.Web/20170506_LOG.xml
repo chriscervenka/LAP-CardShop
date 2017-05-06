@@ -1,0 +1,80 @@
+<Info>
+  <Time>06.05.2017 21:13:57</Time>
+  <Info>Entered Pass = 123user</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:13:57</Time>
+  <Info>HashPass = 2F6691657BCA6450ABA2B78C989466F5CF102831A2E717650B60A3CE8D8745AAC8BE46E9609A3E2A78B89F82CD66A744E42D6AED129BE7F77A1D5A91BA75F9A0</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:14:27</Time>
+  <Info>Entered Pass = 123user</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:14:27</Time>
+  <Info>HashPass = 2F6691657BCA6450ABA2B78C989466F5CF102831A2E717650B60A3CE8D8745AAC8BE46E9609A3E2A78B89F82CD66A744E42D6AED129BE7F77A1D5A91BA75F9A0</Info>
+</Info>
+<Xcpt>
+  <Time>06.05.2017 21:15:24</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 21.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.05.2017 21:15:46</Time>
+  <Info>Entered Pass = 123user</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:15:46</Time>
+  <Info>HashPass = 2F6691657BCA6450ABA2B78C989466F5CF102831A2E717650B60A3CE8D8745AAC8BE46E9609A3E2A78B89F82CD66A744E42D6AED129BE7F77A1D5A91BA75F9A0</Info>
+</Info>
+<Xcpt>
+  <Time>06.05.2017 21:16:21</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 21.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.05.2017 21:16:35</Time>
+  <Info>Entered Pass = userchris</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:16:35</Time>
+  <Info>HashPass = 96E515241B595B7985797109C2CEC18311A73807BCF74F2D1B3D099E4A79DD7B97696E277B7FFBA5B65DC04503F8DF2C0A48EFBEFD99ED10996D611C4C4B7490</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:16:54</Time>
+  <Info>Entered Pass = userchris</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:16:54</Time>
+  <Info>HashPass = 96E515241B595B7985797109C2CEC18311A73807BCF74F2D1B3D099E4A79DD7B97696E277B7FFBA5B65DC04503F8DF2C0A48EFBEFD99ED10996D611C4C4B7490</Info>
+</Info>
+<Xcpt>
+  <Time>06.05.2017 21:17:24</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 21.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.05.2017 21:17:39</Time>
+  <Info>Entered Pass = christobal</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:17:39</Time>
+  <Info>HashPass = D56663E930C8A5FC8153A77E5CFE38EF9408E4728641660044F5232CFFBAA3F0056328E379FAD6CEC796BDC9C84D4EF7CBB9F903DF42B8E02AAF6A2991C4D80D</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:21:38</Time>
+  <Info>Entered Pass = sofia</Info>
+</Info>
+<Info>
+  <Time>06.05.2017 21:21:38</Time>
+  <Info>HashPass = 46ED72C81C41799DF17D327DA50AFB970460F563DDB043984C1D57DA8EB75E2D23B90E4175F330010BF41A449E63A25F17DD06C738D20E4E99E88ACC23E9F87E</Info>
+</Info>

@@ -12,7 +12,7 @@ namespace CardGame.Web.Models
     {
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
-        [Display(Name = Constants.Labels.FIRSTNAME, ResourceType = typeof(Labels))]
+        [Display(Name = Constants.Labels.EMAIL, ResourceType = typeof(Labels))]
         [RegularExpression(".+@.+\\..+", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.EMAIL)]
         public new string Email { get; set; }
 

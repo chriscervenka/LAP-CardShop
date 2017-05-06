@@ -284,6 +284,7 @@
           <NavigationProperty Name="AllClasses" Relationship="Self.FK__tblcard__fkclass__2D27B809" FromRole="tblcard" ToRole="tblclass" />
           <NavigationProperty Name="Type" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="tblcard" ToRole="tbltype" />
           <NavigationProperty Name="AllDeckCards" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="tblcard" ToRole="tbldeckcard" />
+          <NavigationProperty Name="AllCollections" Relationship="ClonestoneFSModel.CardCollection" FromRole="Card" ToRole="Collection" />
         </EntityType>
         <EntityType Name="Class">
           <Key>
@@ -305,6 +306,8 @@
           <NavigationProperty Name="Deck" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="tblcollection" ToRole="tbldeckcard" />
           <NavigationProperty Name="AllOrders" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="tblcollection" ToRole="tblorder" />
           <NavigationProperty Name="Person" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="tblcollection" ToRole="tblperson" />
+          <NavigationProperty Name="Card" Relationship="ClonestoneFSModel.CardCollection" FromRole="Collection" ToRole="Card" />
+          <Property Name="ID_Card" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Deck">
           <Key>
@@ -545,7 +548,23 @@
             <End Role="tblperson" EntitySet="AllPersons" />
             <End Role="tblorder" EntitySet="AllOrders" />
           </AssociationSet>
+          <AssociationSet Name="CardCollection" Association="ClonestoneFSModel.CardCollection">
+            <End Role="Card" EntitySet="AllCards" />
+            <End Role="Collection" EntitySet="AllCollections" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="CardCollection">
+          <End Type="ClonestoneFSModel.Card" Role="Card" Multiplicity="1" />
+          <End Type="ClonestoneFSModel.Collection" Role="Collection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Card">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collection">
+              <PropertyRef Name="ID_Card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

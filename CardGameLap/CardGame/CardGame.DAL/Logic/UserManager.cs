@@ -17,14 +17,14 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static List<Person> GetAllUser()
         {
-            List<Person> ReturnList = null;
+            List<Person> personList = null;
             using (var db = new ClonestoneFSEntities())
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                ReturnList = db.AllPersons.ToList();
+                personList = db.AllPersons.ToList();
             }
-            return ReturnList;
+            return personList;
         }
 
 
@@ -97,6 +97,8 @@ namespace CardGame.DAL.Logic
         {
             var dbUser = GetPersonByEmail(email);
             dbUser.CurrencyBalance = balanceNew;
+
+            try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
@@ -104,6 +106,11 @@ namespace CardGame.DAL.Logic
                     db.SaveChanges();
                     return true;
                 }
+            }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+                return false;
             }
         }
 
@@ -143,6 +150,121 @@ namespace CardGame.DAL.Logic
                     }
 
                     return dbDecks;
+                }
+            }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="cards"></param>
+        /// <returns></returns>
+        public static bool AddCardsToCollectionByEmail(string email, List<Card> cards)
+        {
+            var dbUser = new Person();
+            try
+            {
+                using (var db = new ClonestoneFSEntities())
+                {
+                    dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    if (dbUser == null)
+                    {
+                        throw new Exception("UserDoesNotExist");
+                    }
+
+                    foreach (var c in cards)
+                    {
+                        var userCC = (from coll in db.AllCollections
+                                      where coll.ID_Card == c.ID && coll.ID_Person == dbUser.ID
+                                      select coll)
+                                     .FirstOrDefault();
+
+                        if (userCC == null) //User does not own card, add to collection
+                        {
+
+                            var cc = new Collection();
+                            cc.Card = db.AllCards.Find(c.ID);
+                            cc.Person = dbUser;
+                            cc.CollectionNumberOfCards = 1;
+                            dbUser.AllCollections.Add(cc);
+                            db.SaveChanges();
+                        }
+                        else //User owns card, add to num
+                        {
+                            userCC.CollectionNumberOfCards += 1;
+                            db.Entry(userCC).State = EntityState.Modified;
+                            db.SaveChanges();
+                        }
+                    }
+                    //db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static int GetNumDecksOwnedByEmail(string email)
+        {
+            int numDecks = -1;
+            using (var db = new ClonestoneFSEntities())
+            {
+                Person dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                if (dbUser == null)
+                {
+                    throw new Exception("User exestiert nicht");
+                }
+                numDecks = dbUser.AllDecks.Count;
+            }
+            return numDecks;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static List<Card> GetAllCardsByEmail(string email)
+        {
+            var cardList = new List<Card>();
+
+            try
+            {
+                using (var db = new ClonestoneFSEntities())
+                {
+                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    if (dbUser == null)
+                    {
+                        throw new Exception("User exestiert nicht");
+                    }
+                    var dbCardCollection = dbUser.AllCollections.ToList();
+                    if (dbCardCollection == null)
+                    {
+                        throw new Exception("Collection nicht gefunden");
+                    }
+                    foreach (var cc in dbCardCollection)
+                    {
+                        for (int i = 0; i < cc.CollectionNumberOfCards; i++)
+                            cardList.Add(cc.Card);
+                    }
+                    return cardList;
                 }
             }
             catch (Exception e)
