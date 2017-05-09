@@ -21,7 +21,7 @@ namespace CardGame.Web.Controllers
                 Models.Card card = new Models.Card();
                 card.ID = c.ID;
                 card.Name = c.Name;
-                card.Mana = c.ManaCost;
+                card.Mana = c.Mana;
                 card.Attack = c.Attack;
                 card.Life = c.Life;
                 card.Pic = c.Pic;
@@ -44,7 +44,7 @@ namespace CardGame.Web.Controllers
             Models.Card card = new Models.Card();
             card.ID = dbcard.ID;
             card.Name = dbcard.Name;
-            card.Mana = dbcard.ManaCost;
+            card.Mana = dbcard.Mana;
             card.Attack = dbcard.Attack;
             card.Life = dbcard.Life;
             card.Type = CardManager.CardTypes[dbcard.ID_Type];

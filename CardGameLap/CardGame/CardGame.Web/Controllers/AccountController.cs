@@ -73,15 +73,15 @@ namespace CardGame.Web.Controllers
             var dbUser = new Person();
             Session.Add("Person", dbUser);
 
-            dbUser.FirstName = regUser.Firstname;
-            dbUser.LastName = regUser.Lastname;
-            dbUser.GamerTag = regUser.Gamertag;
+            dbUser.Firstname = regUser.Firstname;
+            dbUser.Lastname = regUser.Lastname;
+            dbUser.Gamertag = regUser.Gamertag;
             dbUser.Email = regUser.Email;
             dbUser.Password = regUser.Password;
             dbUser.Salt = regUser.Salt;
             dbUser.Role = "player";
-            dbUser.CurrencyBalance = 1000;
-            dbUser.IsActiv = true;
+            dbUser.Currencybalance = 1000;
+            dbUser.Isactive = true;
 
             //dbUser.tblrole = new List<tblrole>();
             //dbUser.tblrole.Add(new tblrole());
@@ -90,7 +90,7 @@ namespace CardGame.Web.Controllers
             AuthManager.Register(dbUser);
 
             // gibt der ActionMethod VerifyRegistration ein neues OBJECT mit gamertag und cuurencybalance mit
-            return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.GamerTag, currencybalance = dbUser.CurrencyBalance });
+            return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.Gamertag, currencybalance = dbUser.Currencybalance });
         }
 
         [HttpGet]

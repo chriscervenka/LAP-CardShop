@@ -25,7 +25,7 @@ namespace CardGame.Web.Controllers
                 deck.ID = c.ID;
                 deck.Name = c.Name;
                 deck.Life = c.Life;
-                deck.Mana = c.ManaCost;
+                deck.Mana = c.Mana;
                 deck.Pic = c.Pic;
                 deck.Attack = c.Attack;
 

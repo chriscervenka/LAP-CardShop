@@ -190,7 +190,7 @@ namespace CardGame.DAL.Logic
                         {
 
                             var cc = new Collection();
-                            cc.Cards = cards.Find(c.ID);
+                            //cc.Cards = cards.Find(c.ID);
                             cc.Person = dbUser;
                             //cc.Cards = 1;
                             dbUser.Collections.Add(cc);

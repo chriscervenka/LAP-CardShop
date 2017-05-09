@@ -23,12 +23,12 @@ namespace CardGame.Web.Controllers
             {
                 Register user = new Register();
                 user.ID = c.ID;
-                user.Firstname = c.FirstName;
-                user.Lastname = c.LastName;
-                user.Gamertag = c.GamerTag;
+                user.Firstname = c.Firstname;
+                user.Lastname = c.Lastname;
+                user.Gamertag = c.Gamertag;
                 user.Email = c.Email;
                 user.Role = c.Role;
-                user.CurrencyBalance = (int)c.CurrencyBalance;  //Konvertiere einen NULLABLE int64 in einen 'normalen' int64 (int)
+                user.CurrencyBalance = (int)c.Currencybalance;  //Konvertiere einen NULLABLE int64 in einen 'normalen' int64 (int)
                 user.Password = c.Password;
                 user.Salt = c.Salt;
 
