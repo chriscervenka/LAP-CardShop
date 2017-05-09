@@ -190,7 +190,7 @@ namespace CardGame.DAL.Logic
                         {
 
                             var cc = new Collection();
-                            cc.Cards = db.Cards.Find(c.ID);
+                            cc.Cards = cards.Find(c.ID);
                             cc.Person = dbUser;
                             //cc.Cards = 1;
                             dbUser.Collections.Add(cc);
@@ -250,23 +250,31 @@ namespace CardGame.DAL.Logic
                 using (var db = new ClonestoneFSEntities())
                 {
                     var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
-                    if (dbUser == null)
-                    {
-                        throw new Exception("User exestiert nicht");
-                    }
 
-                    var dbCardCollection = dbUser.Collections.ToList();
+                    //if (dbUser == null)
+                    //{
+                    //    throw new Exception("User exestiert nicht");
+                    //}
 
-                    if (dbCardCollection == null)
-                    {
-                        throw new Exception("Collection nicht gefunden");
-                    }
-                    foreach (var cc in dbCardCollection)
-                    {
-                        for (int i = 0; i < cc.Cards; i++)
-                            cardList.Add(cc.ID);
-                    }
+                    //var dbCardCollection = dbUser.Collections.ToList();
+
+                    //if (dbCardCollection == null)
+                    //{
+                    //    throw new Exception("Collection nicht gefunden");
+                    //}
+
                     return cardList;
+
+                    //Collection col = new Collection();
+                    //cardList.Add();
+                    //col.Cards.Add(cardList.Co)
+                    //dbUser.Collections.Add(Collection as c)
+                    //foreach (var cc in dbCardCollection)
+                    //{
+                    //    for (int i = 0; i < cc.Cards; i++)
+                    //        cardList.Add(cc.Cards);
+                    //}
+                    //return cardList;
                 }
             }
             catch (Exception e)
