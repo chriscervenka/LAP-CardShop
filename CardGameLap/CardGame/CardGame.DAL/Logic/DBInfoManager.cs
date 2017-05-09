@@ -16,7 +16,7 @@ namespace CardGame.DAL.Logic
             int numUsers = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                numUsers = db.People.Count();
+                numUsers = db.AllPeople.Count();
             }
 
             Writer.LogInfo("GetNumUsers " + numUsers);

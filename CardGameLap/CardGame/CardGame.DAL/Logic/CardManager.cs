@@ -82,7 +82,7 @@ namespace CardGame.DAL.Logic
             {
                 var deck = db.Decks.Find(id);
                 ReturnList = new List<Card>();
-                foreach (var item in deck.Deckcards)
+                foreach (var item in deck.AllDeckcards)
                 {
                     ReturnList.Add(item.Card);
                 }

@@ -22,7 +22,7 @@ namespace CardGame.DAL.Logic
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                personList = db.People.ToList();
+                personList = db.AllPeople.ToList();
             }
             return personList;
         }
@@ -42,7 +42,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -70,7 +70,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -138,12 +138,12 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
                     }
-                    var dbDecks = dbUser.Decks.ToList();
+                    var dbDecks = dbUser.AllDecks.ToList();
                     if (dbDecks == null)
                     {
                         throw new Exception("NoDecksFound");
@@ -173,7 +173,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -190,10 +190,10 @@ namespace CardGame.DAL.Logic
                         {
 
                             var cc = new Collection();
-                            //cc.Cards = cards.Find(c.ID);
+                            //cc.AllCards = cards.Find(c.ID);
                             cc.Person = dbUser;
-                            //cc.Cards = 1;
-                            dbUser.Collections.Add(cc);
+                            //cc.AllCards = 1;
+                            dbUser.AllCollections.Add(cc);
                             db.SaveChanges();
                         }
                         else //User owns card, add to num
@@ -225,12 +225,12 @@ namespace CardGame.DAL.Logic
             int numDecks = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                Person dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                Person dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
                     throw new Exception("User exestiert nicht");
                 }
-                numDecks = dbUser.Decks.Count;
+                numDecks = dbUser.AllDecks.Count;
             }
             return numDecks;
         }
@@ -249,7 +249,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
 
                     //if (dbUser == null)
                     //{

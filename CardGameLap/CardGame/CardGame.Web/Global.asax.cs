@@ -43,6 +43,7 @@ namespace CardGame.Web
 
             string[] roles = authTicket.UserData.Split(';');
 
+            // bekomme die Daten vom Ticket (login.Role => siehe ACCOUNT-CONTROLLER
             Context.User = new GenericPrincipal(new GenericIdentity(authTicket.Name), roles);
         }
 

@@ -16,7 +16,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    if (db.People.Any(n => n.Email == regUser.Email))
+                    if (db.AllPeople.Any(n => n.Email == regUser.Email))
                     {
                         throw new Exception("UserAlreadyExists");
                     }
@@ -29,7 +29,7 @@ namespace CardGame.DAL.Logic
                     regUser.Password = hashedAndSaltedPassword;
                     regUser.Salt = salt;
 
-                    db.People.Add(regUser);
+                    db.AllPeople.Add(regUser);
                     db.SaveChanges();
                 }
             }
@@ -51,7 +51,7 @@ namespace CardGame.DAL.Logic
 
                 using (var db = new ClonestoneFSEntities())
                 {
-                    Person dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
+                    Person dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
