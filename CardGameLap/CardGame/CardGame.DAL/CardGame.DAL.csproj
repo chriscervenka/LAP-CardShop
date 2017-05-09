@@ -57,21 +57,62 @@
     <Compile Include="Logic\Helper.cs" />
     <Compile Include="Logic\ShopManager.cs" />
     <Compile Include="Logic\UserManager.cs" />
-    <Compile Include="Model\Card.cs" />
-    <Compile Include="Model\Class.cs" />
-    <Compile Include="Model\ClonestoneFSEntities.cs" />
-    <Compile Include="Model\Collection.cs" />
-    <Compile Include="Model\Deck.cs" />
-    <Compile Include="Model\Deckcard.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Pack.cs" />
-    <Compile Include="Model\Person.cs" />
-    <Compile Include="Model\Type.cs" />
-    <Compile Include="Model\vEditor.cs" />
+    <Compile Include="Model\Card.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CardGameModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardGameModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CardGameModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CardGameModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Class.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Collection.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Deck.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Deckcard.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Pack.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Person.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Type.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\vEditor.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <EntityDeploy Include="Model\CardGameModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CardGameModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\CardGameModel.edmx.diagram">
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +123,18 @@
       <Project>{4C467B6A-C1CF-405C-A784-994C9911C030}</Project>
       <Name>CardGame.Log</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\CardGameModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+      <LastGenOutput>CardGameModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\CardGameModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+      <LastGenOutput>CardGameModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

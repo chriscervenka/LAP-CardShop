@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CardGame.DAL.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mana" Type="tinyint" Nullable="false" />
+          <Property Name="Life" Type="smallint" Nullable="false" />
+          <Property Name="Attack" Type="smallint" Nullable="false" />
+          <Property Name="Flavor" Type="varchar" MaxLength="500" />
+          <Property Name="ID_Type" Type="int" Nullable="false" />
+          <Property Name="ID_Class" Type="int" />
+          <Property Name="Pic" Type="varbinary(max)" />
+          <Property Name="ID_Collection" Type="int" />
+        </EntityType>
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Class" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Collections">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Person" Type="int" />
+          <Property Name="ID_Order" Type="int" />
+          <Property Name="ID_Deckcard" Type="int" />
+        </EntityType>
+        <EntityType Name="Deckcards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Deck" Type="int" Nullable="false" />
+          <Property Name="ID_Card" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Decks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ID_Person" Type="int" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Orderdate" Type="datetime" />
+          <Property Name="ID_Person" Type="int" />
+          <Property Name="ID_Pack" Type="int" />
+        </EntityType>
+        <EntityType Name="Packs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Packprice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Cardquantity" Type="int" />
+        </EntityType>
+        <EntityType Name="People">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gamertag" Type="varchar" MaxLength="50" />
+          <Property Name="Currencybalance" Type="int" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="Password" Type="char" MaxLength="128" />
+          <Property Name="Salt" Type="char" MaxLength="128" />
+          <Property Name="Role" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Während der Generierung sind Fehler aufgetreten:
+Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.-->
+        <EntityType Name="vEditor">
+          <Key>
+            <PropertyRef Name="idedit" />
+            <PropertyRef Name="ideditfile" />
+            <PropertyRef Name="idperson" />
+            <PropertyRef Name="firstname" />
+            <PropertyRef Name="lastname" />
+          </Key>
+          <Property Name="idedit" Type="int" Nullable="false" />
+          <Property Name="ideditfile" Type="int" Nullable="false" />
+          <Property Name="idperson" Type="int" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="100" />
+          <Property Name="content" Type="varchar" MaxLength="2000" />
+          <Property Name="editdate" Type="smalldatetime" />
+          <Property Name="editfile" Type="varbinary(max)" />
+          <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblcard__fkclass__2D27B809">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="0..1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcard__Fkcolle__2739D489">
+          <End Role="Collections" Type="Self.Collections" Multiplicity="0..1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Collections">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Collection" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcard__fktype__2C3393D0">
+          <End Role="Types" Type="Self.Types" Multiplicity="1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcollec__fkdec__10566F31">
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deckcards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Deckcard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcollec__fkord__0F624AF8">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcollec__fkper__0E6E26BF">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbldeck__fkperso__1DE57479">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Decks" Type="Self.Decks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Decks">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbldeckca__fkcar__31EC6D26">
+          <End Role="Cards" Type="Self.Cards" Multiplicity="1" />
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deckcards">
+              <PropertyRef Name="ID_Card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbldeckca__fkdec__30F848ED">
+          <End Role="Decks" Type="Self.Decks" Multiplicity="1" />
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Decks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deckcards">
+              <PropertyRef Name="ID_Deck" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblorder__fkpack__0B91BA14">
+          <End Role="Packs" Type="Self.Packs" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Pack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblorder__fkpers__0A9D95DB">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CardGameDALModelStoreContainer">
+          <EntitySet Name="Cards" EntityType="Self.Cards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Collections" EntityType="Self.Collections" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deckcards" EntityType="Self.Deckcards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Decks" EntityType="Self.Decks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Packs" EntityType="Self.Packs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="People" EntityType="Self.People" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vEditor" EntityType="Self.vEditor" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vEditor].[idedit] AS [idedit], 
+    [vEditor].[ideditfile] AS [ideditfile], 
+    [vEditor].[idperson] AS [idperson], 
+    [vEditor].[title] AS [title], 
+    [vEditor].[content] AS [content], 
+    [vEditor].[editdate] AS [editdate], 
+    [vEditor].[editfile] AS [editfile], 
+    [vEditor].[firstname] AS [firstname], 
+    [vEditor].[lastname] AS [lastname]
+    FROM [dbo].[vEditor] AS [vEditor]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcard__Fkcolle__2739D489" Association="Self.FK__tblcard__Fkcolle__2739D489">
+            <End Role="Collections" EntitySet="Collections" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcard__fktype__2C3393D0" Association="Self.FK__tblcard__fktype__2C3393D0">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcollec__fkdec__10566F31" Association="Self.FK__tblcollec__fkdec__10566F31">
+            <End Role="Deckcards" EntitySet="Deckcards" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcollec__fkord__0F624AF8" Association="Self.FK__tblcollec__fkord__0F624AF8">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcollec__fkper__0E6E26BF" Association="Self.FK__tblcollec__fkper__0E6E26BF">
+            <End Role="People" EntitySet="People" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldeck__fkperso__1DE57479" Association="Self.FK__tbldeck__fkperso__1DE57479">
+            <End Role="People" EntitySet="People" />
+            <End Role="Decks" EntitySet="Decks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldeckca__fkcar__31EC6D26" Association="Self.FK__tbldeckca__fkcar__31EC6D26">
+            <End Role="Cards" EntitySet="Cards" />
+            <End Role="Deckcards" EntitySet="Deckcards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldeckca__fkdec__30F848ED" Association="Self.FK__tbldeckca__fkdec__30F848ED">
+            <End Role="Decks" EntitySet="Decks" />
+            <End Role="Deckcards" EntitySet="Deckcards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblorder__fkpack__0B91BA14" Association="Self.FK__tblorder__fkpack__0B91BA14">
+            <End Role="Packs" EntitySet="Packs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblorder__fkpers__0A9D95DB" Association="Self.FK__tblorder__fkpers__0A9D95DB">
+            <End Role="People" EntitySet="People" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CardGame.DAL.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Card">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mana" Type="Byte" Nullable="false" />
+          <Property Name="Life" Type="Int16" Nullable="false" />
+          <Property Name="Attack" Type="Int16" Nullable="false" />
+          <Property Name="Flavor" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Type" Type="Int32" Nullable="false" />
+          <Property Name="ID_Class" Type="Int32" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ID_Collection" Type="Int32" />
+          <NavigationProperty Name="Class" Relationship="Self.FK__tblcard__fkclass__2D27B809" FromRole="Cards" ToRole="Classes" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK__tblcard__Fkcolle__2739D489" FromRole="Cards" ToRole="Collections" />
+          <NavigationProperty Name="Type" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="Cards" ToRole="Types" />
+          <NavigationProperty Name="AllDeckcards" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="Cards" ToRole="Deckcards" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Class1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AllCards" Relationship="Self.FK__tblcard__fkclass__2D27B809" FromRole="Classes" ToRole="Cards" />
+        </EntityType>
+        <EntityType Name="Collection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Person" Type="Int32" />
+          <Property Name="ID_Order" Type="Int32" />
+          <Property Name="ID_Deckcard" Type="Int32" />
+          <NavigationProperty Name="AllCards" Relationship="Self.FK__tblcard__Fkcolle__2739D489" FromRole="Collections" ToRole="Cards" />
+          <NavigationProperty Name="Deckcard" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="Collections" ToRole="Deckcards" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="Collections" ToRole="Orders" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="Collections" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Deckcard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Deck" Type="Int32" Nullable="false" />
+          <Property Name="ID_Card" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Card" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="Deckcards" ToRole="Cards" />
+          <NavigationProperty Name="AllCollections" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="Deckcards" ToRole="Collections" />
+          <NavigationProperty Name="Deck" Relationship="Self.FK__tbldeckca__fkdec__30F848ED" FromRole="Deckcards" ToRole="Decks" />
+        </EntityType>
+        <EntityType Name="Deck">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Person" Type="Int32" />
+          <NavigationProperty Name="AllDeckcards" Relationship="Self.FK__tbldeckca__fkdec__30F848ED" FromRole="Decks" ToRole="Deckcards" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__tbldeck__fkperso__1DE57479" FromRole="Decks" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Orderdate" Type="DateTime" Precision="3" />
+          <Property Name="ID_Person" Type="Int32" />
+          <Property Name="ID_Pack" Type="Int32" />
+          <NavigationProperty Name="AllCollections" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="Orders" ToRole="Collections" />
+          <NavigationProperty Name="Pack" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="Orders" ToRole="Packs" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="Orders" ToRole="People" />
+        </EntityType>
+        <EntityType Name="Pack">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Packprice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cardquantity" Type="Int32" />
+          <NavigationProperty Name="AllOrders" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="Packs" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gamertag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Currencybalance" Type="Int32" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+          <Property Name="Salt" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AllCollections" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="People" ToRole="Collections" />
+          <NavigationProperty Name="AllDecks" Relationship="Self.FK__tbldeck__fkperso__1DE57479" FromRole="People" ToRole="Decks" />
+          <NavigationProperty Name="AllOrders" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="People" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AllCards" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="Types" ToRole="Cards" />
+        </EntityType>
+        <Association Name="FK__tblcard__fkclass__2D27B809">
+          <End Role="Classes" Type="CardGame.DAL.Model.Class" Multiplicity="0..1" />
+          <End Role="Cards" Type="CardGame.DAL.Model.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcard__Fkcolle__2739D489">
+          <End Role="Collections" Type="CardGame.DAL.Model.Collection" Multiplicity="0..1" />
+          <End Role="Cards" Type="CardGame.DAL.Model.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Collections">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Collection" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcard__fktype__2C3393D0">
+          <End Role="Types" Type="CardGame.DAL.Model.Type" Multiplicity="1" />
+          <End Role="Cards" Type="CardGame.DAL.Model.Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbldeckca__fkcar__31EC6D26">
+          <End Role="Cards" Type="CardGame.DAL.Model.Card" Multiplicity="1" />
+          <End Role="Deckcards" Type="CardGame.DAL.Model.Deckcard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deckcards">
+              <PropertyRef Name="ID_Card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcollec__fkdec__10566F31">
+          <End Role="Deckcards" Type="CardGame.DAL.Model.Deckcard" Multiplicity="0..1" />
+          <End Role="Collections" Type="CardGame.DAL.Model.Collection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deckcards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Deckcard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcollec__fkord__0F624AF8">
+          <End Role="Orders" Type="CardGame.DAL.Model.Order" Multiplicity="0..1" />
+          <End Role="Collections" Type="CardGame.DAL.Model.Collection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblcollec__fkper__0E6E26BF">
+          <End Role="People" Type="CardGame.DAL.Model.Person" Multiplicity="0..1" />
+          <End Role="Collections" Type="CardGame.DAL.Model.Collection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbldeckca__fkdec__30F848ED">
+          <End Role="Decks" Type="CardGame.DAL.Model.Deck" Multiplicity="1" />
+          <End Role="Deckcards" Type="CardGame.DAL.Model.Deckcard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Decks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deckcards">
+              <PropertyRef Name="ID_Deck" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tbldeck__fkperso__1DE57479">
+          <End Role="People" Type="CardGame.DAL.Model.Person" Multiplicity="0..1" />
+          <End Role="Decks" Type="CardGame.DAL.Model.Deck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Decks">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblorder__fkpack__0B91BA14">
+          <End Role="Packs" Type="CardGame.DAL.Model.Pack" Multiplicity="0..1" />
+          <End Role="Orders" Type="CardGame.DAL.Model.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Pack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblorder__fkpers__0A9D95DB">
+          <End Role="People" Type="CardGame.DAL.Model.Person" Multiplicity="0..1" />
+          <End Role="Orders" Type="CardGame.DAL.Model.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClonestoneFSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cards" EntityType="CardGame.DAL.Model.Card" />
+          <EntitySet Name="Classes" EntityType="CardGame.DAL.Model.Class" />
+          <EntitySet Name="Collections" EntityType="CardGame.DAL.Model.Collection" />
+          <EntitySet Name="Deckcards" EntityType="CardGame.DAL.Model.Deckcard" />
+          <EntitySet Name="Decks" EntityType="CardGame.DAL.Model.Deck" />
+          <EntitySet Name="Orders" EntityType="CardGame.DAL.Model.Order" />
+          <EntitySet Name="Packs" EntityType="CardGame.DAL.Model.Pack" />
+          <EntitySet Name="AllPeople" EntityType="CardGame.DAL.Model.Person" />
+          <EntitySet Name="Types" EntityType="CardGame.DAL.Model.Type" />
+          <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcard__Fkcolle__2739D489" Association="Self.FK__tblcard__Fkcolle__2739D489">
+            <End Role="Collections" EntitySet="Collections" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcard__fktype__2C3393D0" Association="Self.FK__tblcard__fktype__2C3393D0">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldeckca__fkcar__31EC6D26" Association="Self.FK__tbldeckca__fkcar__31EC6D26">
+            <End Role="Cards" EntitySet="Cards" />
+            <End Role="Deckcards" EntitySet="Deckcards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcollec__fkdec__10566F31" Association="Self.FK__tblcollec__fkdec__10566F31">
+            <End Role="Deckcards" EntitySet="Deckcards" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcollec__fkord__0F624AF8" Association="Self.FK__tblcollec__fkord__0F624AF8">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcollec__fkper__0E6E26BF" Association="Self.FK__tblcollec__fkper__0E6E26BF">
+            <End Role="People" EntitySet="AllPeople" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldeckca__fkdec__30F848ED" Association="Self.FK__tbldeckca__fkdec__30F848ED">
+            <End Role="Decks" EntitySet="Decks" />
+            <End Role="Deckcards" EntitySet="Deckcards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldeck__fkperso__1DE57479" Association="Self.FK__tbldeck__fkperso__1DE57479">
+            <End Role="People" EntitySet="AllPeople" />
+            <End Role="Decks" EntitySet="Decks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblorder__fkpack__0B91BA14" Association="Self.FK__tblorder__fkpack__0B91BA14">
+            <End Role="Packs" EntitySet="Packs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblorder__fkpers__0A9D95DB" Association="Self.FK__tblorder__fkpers__0A9D95DB">
+            <End Role="People" EntitySet="AllPeople" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="vEditor" EntityType="CardGame.DAL.Model.vEditor" />
+        </EntityContainer>
+        <EntityType Name="vEditor">
+          <Key>
+            <PropertyRef Name="idedit" />
+            <PropertyRef Name="ideditfile" />
+            <PropertyRef Name="idperson" />
+            <PropertyRef Name="firstname" />
+            <PropertyRef Name="lastname" />
+          </Key>
+          <Property Name="idedit" Type="Int32" Nullable="false" />
+          <Property Name="ideditfile" Type="Int32" Nullable="false" />
+          <Property Name="idperson" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="editdate" Type="DateTime" Precision="0" />
+          <Property Name="editfile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CardGameDALModelStoreContainer" CdmEntityContainer="ClonestoneFSEntities">
+          <EntitySetMapping Name="Cards">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Card">
+              <MappingFragment StoreEntitySet="Cards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mana" ColumnName="Mana" />
+                <ScalarProperty Name="Life" ColumnName="Life" />
+                <ScalarProperty Name="Attack" ColumnName="Attack" />
+                <ScalarProperty Name="Flavor" ColumnName="Flavor" />
+                <ScalarProperty Name="ID_Type" ColumnName="ID_Type" />
+                <ScalarProperty Name="ID_Class" ColumnName="ID_Class" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="ID_Collection" ColumnName="ID_Collection" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Class">
+              <MappingFragment StoreEntitySet="Classes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Class1" ColumnName="Class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Collections">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Collection">
+              <MappingFragment StoreEntitySet="Collections">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+                <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
+                <ScalarProperty Name="ID_Deckcard" ColumnName="ID_Deckcard" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deckcards">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Deckcard">
+              <MappingFragment StoreEntitySet="Deckcards">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Deck" ColumnName="ID_Deck" />
+                <ScalarProperty Name="ID_Card" ColumnName="ID_Card" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Decks">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Deck">
+              <MappingFragment StoreEntitySet="Decks">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Orderdate" ColumnName="Orderdate" />
+                <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+                <ScalarProperty Name="ID_Pack" ColumnName="ID_Pack" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Packs">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Pack">
+              <MappingFragment StoreEntitySet="Packs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Packprice" ColumnName="Packprice" />
+                <ScalarProperty Name="Cardquantity" ColumnName="Cardquantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllPeople">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Person">
+              <MappingFragment StoreEntitySet="People">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Gamertag" ColumnName="Gamertag" />
+                <ScalarProperty Name="Currencybalance" ColumnName="Currencybalance" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.Type">
+              <MappingFragment StoreEntitySet="Types">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vEditor">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.vEditor">
+              <MappingFragment StoreEntitySet="vEditor">
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="editfile" ColumnName="editfile" />
+                <ScalarProperty Name="editdate" ColumnName="editdate" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="idperson" ColumnName="idperson" />
+                <ScalarProperty Name="ideditfile" ColumnName="ideditfile" />
+                <ScalarProperty Name="idedit" ColumnName="idedit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

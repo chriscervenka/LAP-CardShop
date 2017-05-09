@@ -21,6 +21,12 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(Login login)
@@ -53,11 +59,19 @@ namespace CardGame.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
+        /// <summary>
+        /// Bei LOGOUT redirect auf 'Home-Seite (Index)'
+        /// </summary>
+        /// <returns>VIEW</returns>
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+
 
         [HttpGet]
         public ActionResult Register()
@@ -65,6 +79,13 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="regUser"></param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -93,6 +114,14 @@ namespace CardGame.Web.Controllers
             return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.Gamertag, currencybalance = dbUser.Currencybalance });
         }
 
+
+
+        /// <summary>
+        /// ActionMethode 'VerifyRegistration' gibt auf VIEW Bestätigung einer erfolgreichen Registrierung mit CURRENCYBALANCE = 1000 aus
+        /// </summary>
+        /// <param name="gamertag"></param>
+        /// <param name="currencybalance"></param>
+        /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
         public ActionResult VerifyRegistration(string gamertag, int? currencybalance)
@@ -105,6 +134,9 @@ namespace CardGame.Web.Controllers
 
             return View();
         }
+
+
+
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
