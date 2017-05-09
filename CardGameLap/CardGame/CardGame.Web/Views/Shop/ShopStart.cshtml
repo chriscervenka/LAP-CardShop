@@ -1,5 +1,5 @@
 ﻿
-@*@model IEnumerable<CardGame.Web.Models.Cart>*@
+
 @model  CardGame.Web.Models.Cart
 
     @{
@@ -38,24 +38,26 @@
                     }*@
 
         <section class="container">
-            @*<div class="row">*@
+            <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Here are all available Packages ...
+                            Available Packages
                         </div>
 
-                       @foreach (var cp in Model.CardPacks)
-                       {
-                        @*<div class="panel-body">*@
-                            @*<div class="col-md-12">*@                         
+                       
+                        <div class="panel-body">
+                            <div class="row">                          
                                 <!-- BEGIN PRODUCTS -->
-                                <div class="col-md-4">
+                                <div class="col-md-2 col-sm-6">
                                     <div class="sc-product-item thumbnail">
                                         <img src="../Content/Images/pack1.png" alt="...">
                                         <div class="caption">
-                                            <p>Packname @Html.DisplayFor(Cardpack => cp.Packname)</p>
-                                            <p>Cards @Html.DisplayFor(Cardpack => cp.CardQuantity)</p>
+                                            @*<h4 data-name="product_name">Pack Novice</h4>*@
+                                            <h4>@Html.DisplayFor(CardPacks => Model.PackName)</h4>
+                                            @*<h4>@Model.Order.Pack.Packname</h4>*@
+                                            @*<p>@Model.CardQuantity</p>*@
+                                            <p>@Html.DisplayFor(CardPacks => Model.CardQuantity)</p>
                                             <hr class="line">
                                             <div>
 
@@ -63,24 +65,72 @@
                                                     <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
                                                 </div>
                                                 <br>
-                                                <p class="price pull-left">@Html.DisplayFor(Cardpack => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" /></p>
+                                                <p>class="price pull-left">@Html.DisplayFor(cardpack => Model.PackPrice)</p>
 
                                                 <input name="product_price" value="250.00" type="hidden" />
                                                 <input name="product_id" value="12" type="hidden" />
-                                                @*<button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>*@
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-submit pull-left" id="orderbutton">Buy Pack</button>
-                                                </div>
+                                                <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
                                 </div>
-                            @*</div>*@
-                        @*</div>*@
 
-                       }
+                                
 
+                                <div class="col-md-4 col-sm-6">
+                                    <span class="sc-product-item thumbnail">
+                                        <img data-name="product_image" src="../Content/Images/pack1.png" alt="...">
+                                        <div class="caption">
+                                            <h4 data-name="product_name">Pack Fighter</h4>
+                                            <p data-name="product_desc">7 Cards inside</p>
+
+                                            <hr class="line">
+                                            <div>
+                                                <div class="form-group2">
+                                                    <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                                </div>
+                                                <br>
+
+                                                <strong class="price pull-left">500</strong>
+
+                                                <input name="product_price" value="500" type="hidden" />
+                                                <input name="product_id" value="145" type="hidden" />
+                                                <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </span>
+                                </div>
+
+                                <div class="col-md-4 col-sm-6">
+                                    <span class="sc-product-item thumbnail">
+                                        <img data-name="product_image" src="../Content/Images/pack1.png" alt="...">
+                                        <div class="caption">
+                                            <h4 data-name="product_name">Pack Heroic</h4>
+                                            <p data-name="product_desc">20 Cards inside</p>
+
+                                            <hr class="line">
+                                            <div>
+                                                <div class="form-group2">
+                                                    <input class="sc-cart-item-qty" name="product_quantity" min="1" value="1" type="number">
+                                                </div>
+                                                <br>
+
+                                                <strong class="price pull-left">1000</strong>
+
+                                                <input name="product_price" value="1000" type="hidden" />
+                                                <input name="product_id" value="145" type="hidden" />
+                                                <button class="sc-add-to-cart btn btn-success btn-sm pull-right">Add to cart</button>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </span>
+                                </div>
+
+                                <!-- END PRODUCTS -->
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -133,7 +183,7 @@
                     </section>
 
                 </aside>
-            @*</div>*@
+            </div>
         </section>
 
         @*<p>select your package by Drag & Drop the image</p>

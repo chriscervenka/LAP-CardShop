@@ -97,18 +97,6 @@ h2 {
 	font-size: 16px;
 	padding: 0px;
 	}
-
-.btn.btn-submit#orderbutton {
-	width: 150px;
-	height: 30px;
-	background:url(../Content/Images/Button_hp.png) no-repeat; 
-	color: #fff;
-	margin-left: -15px;
-	margin-right: 65px;
-	margin-top: 10px;
-	font-size: 16px;
-	padding: 0px;
-	}
 		
 
 .panell#backgroundleft {
@@ -262,28 +250,3 @@ label {
     border: 1px solid #fff;
 }
 
-/*.thumbnail {
-    background:url(../Content/Images/wood_background.png);
-    color: #fff;
-}*/
-
-.thumbnail .caption {
-	padding: 9px;
-	color: #fff;
-}
-
-.thumbnail {
-	display: inline-block;
-	display: block;
-	height: auto;
-	max-width: 100%;
-	padding: 4px;
-	line-height: 1.428571429;
-	background-color: #ffffff;
-	/* border: 1px solid #dddddd; */
-	/* border-radius: 4px; */
-	-webkit-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-    background:url(../Content/Images/wood_background.png);
-    color: #fff;
-}
