@@ -22,7 +22,7 @@ namespace CardGame.DAL.Logic
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                personList = db.AllPersons.ToList();
+                personList = db.People.ToList();
             }
             return personList;
         }
@@ -42,7 +42,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -70,7 +70,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -96,7 +96,7 @@ namespace CardGame.DAL.Logic
         public static bool BalanceUpdateByEmail(string email, int balanceNew)
         {
             var dbUser = GetPersonByEmail(email);
-            dbUser.CurrencyBalance = balanceNew;
+            dbUser.Currencybalance = balanceNew;
 
             try
             {
@@ -122,7 +122,7 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int GetCurrencyBalanceByEmail(string email)
         {
-            return GetPersonByEmail(email).CurrencyBalance.GetValueOrDefault();
+            return GetPersonByEmail(email).Currencybalance.GetValueOrDefault();
         }
 
 
@@ -138,12 +138,12 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
                     }
-                    var dbDecks = dbUser.AllDecks.ToList();
+                    var dbDecks = dbUser.Decks.ToList();
                     if (dbDecks == null)
                     {
                         throw new Exception("NoDecksFound");
@@ -173,7 +173,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -181,8 +181,8 @@ namespace CardGame.DAL.Logic
 
                     foreach (var c in cards)
                     {
-                        var userCC = (from coll in db.AllCollections
-                                      where coll.ID_Card == c.ID && coll.ID_Person == dbUser.ID
+                        var userCC = (from coll in db.Collections
+                                      where coll.ID_Deckcard == c.ID && coll.ID_Person == dbUser.ID
                                       select coll)
                                      .FirstOrDefault();
 
@@ -190,15 +190,15 @@ namespace CardGame.DAL.Logic
                         {
 
                             var cc = new Collection();
-                            cc.Card = db.AllCards.Find(c.ID);
+                            cc.Cards = db.Cards.Find(c.ID);
                             cc.Person = dbUser;
-                            cc.CollectionNumberOfCards = 1;
-                            dbUser.AllCollections.Add(cc);
+                            //cc.Cards = 1;
+                            dbUser.Collections.Add(cc);
                             db.SaveChanges();
                         }
                         else //User owns card, add to num
                         {
-                            userCC.CollectionNumberOfCards += 1;
+                            userCC.ID += 1;
                             db.Entry(userCC).State = EntityState.Modified;
                             db.SaveChanges();
                         }
@@ -225,12 +225,12 @@ namespace CardGame.DAL.Logic
             int numDecks = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                Person dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                Person dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
                     throw new Exception("User exestiert nicht");
                 }
-                numDecks = dbUser.AllDecks.Count;
+                numDecks = dbUser.Decks.Count;
             }
             return numDecks;
         }
@@ -249,20 +249,22 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.People.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User exestiert nicht");
                     }
-                    var dbCardCollection = dbUser.AllCollections.ToList();
+
+                    var dbCardCollection = dbUser.Collections.ToList();
+
                     if (dbCardCollection == null)
                     {
                         throw new Exception("Collection nicht gefunden");
                     }
                     foreach (var cc in dbCardCollection)
                     {
-                        for (int i = 0; i < cc.CollectionNumberOfCards; i++)
-                            cardList.Add(cc.Card);
+                        for (int i = 0; i < cc.Cards; i++)
+                            cardList.Add(cc.ID);
                     }
                     return cardList;
                 }

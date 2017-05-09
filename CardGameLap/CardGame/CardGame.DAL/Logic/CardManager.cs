@@ -17,7 +17,7 @@ namespace CardGame.DAL.Logic
 
             using (var db = new ClonestoneFSEntities())
             {
-                cardTypeList = db.AllTypes.ToList();
+                cardTypeList = db.Types.ToList();
             }
 
             foreach (var type in cardTypeList)
@@ -36,7 +36,7 @@ namespace CardGame.DAL.Logic
             using (var db = new ClonestoneFSEntities())
             {
                 //ReturnList = db.tblcard.Include(t => t.tbltype).ToList();
-                ReturnList = db.AllCards.ToList();
+                ReturnList = db.Cards.ToList();
             }
             return ReturnList;
 
@@ -49,7 +49,7 @@ namespace CardGame.DAL.Logic
 
             using (var db = new ClonestoneFSEntities())
             {
-                TypeName = db.AllTypes.Find(id).Name;
+                TypeName = db.Types.Find(id).Name;
             }
             return TypeName;
         }
@@ -61,7 +61,7 @@ namespace CardGame.DAL.Logic
             using (var db = new ClonestoneFSEntities())
             {
                 //Extention Method
-                card = db.AllCards.Where(c => c.ID == id).FirstOrDefault();
+                card = db.Cards.Where(c => c.ID == id).FirstOrDefault();
 
                 //Klassisch LINQ
                 //card = (from c in db.tblcard
@@ -80,9 +80,9 @@ namespace CardGame.DAL.Logic
             List<Card> ReturnList = null;
             using (var db = new ClonestoneFSEntities())
             {
-                var deck = db.AllDecks.Find(id);
+                var deck = db.Decks.Find(id);
                 ReturnList = new List<Card>();
-                foreach (var item in deck.AllDeckCards)
+                foreach (var item in deck.Deckcards)
                 {
                     ReturnList.Add(item.Card);
                 }

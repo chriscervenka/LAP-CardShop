@@ -24,7 +24,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    allPacks = db.AllPacks.ToList();
+                    allPacks = db.Packs.ToList();
                 }
 
                 if (allPacks == null)
@@ -53,7 +53,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbCardPack = db.AllPacks.Find(id);
+                    dbCardPack = db.Packs.Find(id);
                 }
                 if (dbCardPack == null)
                     throw new Exception("kein Pack gefunden");
@@ -82,18 +82,18 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var cardPack = db.AllPacks.Find(id);
+                    var cardPack = db.Packs.Find(id);
 
                     if (cardPack == null)
                     {
                         throw new Exception("Pack not found");
                     }
 
-                    int numCardsToGenerate = cardPack.NumberOfCards ?? 0;
+                    int numCardsToGenerate = cardPack.Cardquantity ?? 0;
 
                     numCardsToGenerate *= numberOfPacks;
 
-                    var validIDs = db.AllCards.Select(c => c.ID).ToList();
+                    var validIDs = db.Cards.Select(c => c.ID).ToList();
 
                     Writer.LogInfo("ID: " + validIDs.Count.ToString());
 
@@ -108,7 +108,7 @@ namespace CardGame.DAL.Logic
 
                         int indexId = rnd.Next(0, validIDs.Count - 1);
                         int generatedCardId = validIDs[indexId];
-                        var generatedCard = db.AllCards.Where(c => c.ID == generatedCardId).Include(c => c.Type).FirstOrDefault();
+                        var generatedCard = db.Cards.Where(c => c.ID == generatedCardId).Include(c => c.Type).FirstOrDefault();
 
                         //Abfrage ob generatedCard NULL (nicht vorhanden) ist
                         //TODO  ODER ob generatedCard mehrfach vorkommt !!!!
@@ -147,14 +147,14 @@ namespace CardGame.DAL.Logic
 
             using (var db = new ClonestoneFSEntities())
             {
-                var pack = db.AllPacks.Find(id);
+                var pack = db.Packs.Find(id);
                 if (pack == null)
                 {
                     throw new Exception("No Pack found");
                 }
 
                 //Convert a nullable DECIMAL to INT
-                price = (int)pack.Price;
+                price = (int)pack.Packprice;
             }
 
             return price * numberOfPacks;

@@ -31,8 +31,8 @@ namespace CardGame.Web.Controllers
                 cardPack.Idpack = dbCp.ID;
                 cardPack.Packname = dbCp.Name;
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
-                cardPack.Packprice = dbCp.Price.GetValueOrDefault();
+                cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
+                cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
                 cart.CardPacks.Add(cardPack);
             }
 
@@ -63,8 +63,8 @@ namespace CardGame.Web.Controllers
                 cardPack.Idpack = dbCp.ID;
                 cardPack.Packname = dbCp.Name;
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = dbCp.NumberOfCards.GetValueOrDefault();
-                cardPack.Packprice = dbCp.Price.GetValueOrDefault();
+                cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
+                cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
                 sc.shop.CardPacks.Add(cardPack);
             }
 
@@ -90,8 +90,8 @@ namespace CardGame.Web.Controllers
             cardPack.Idpack = dbPack.ID;
             cardPack.Packname = dbPack.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal
-            cardPack.Packprice = dbPack.Price.GetValueOrDefault();
-            cardPack.CardQuantity = dbPack.NumberOfCards.GetValueOrDefault();
+            cardPack.Packprice = dbPack.Packprice.GetValueOrDefault();
+            cardPack.CardQuantity = dbPack.Cardquantity.GetValueOrDefault();
 
             return View("Shop", cardPack);
         }
@@ -118,8 +118,8 @@ namespace CardGame.Web.Controllers
             cardPack.Idpack = dbPackages.ID;
             cardPack.Packname = dbPackages.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal => Konvertierung da NULLABLE
-            cardPack.CardQuantity = dbPackages.NumberOfCards.GetValueOrDefault();
-            cardPack.Packprice = dbPackages.Price.GetValueOrDefault();
+            cardPack.CardQuantity = dbPackages.Cardquantity.GetValueOrDefault();
+            cardPack.Packprice = dbPackages.Packprice.GetValueOrDefault();
 
             o.Pack = cardPack;
             o.OrderDate = DateTime.Now;
@@ -205,7 +205,7 @@ namespace CardGame.Web.Controllers
                 card.ID = c.ID;
                 card.Name = c.Name;
                 card.Type = c.Type.Name; ///TODO prüfen
-                card.Mana = c.ManaCost;
+                card.Mana = c.Mana;
                 card.Attack = c.Attack;
                 card.Life = c.Life;
                 card.Pic = c.Pic;
