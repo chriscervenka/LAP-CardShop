@@ -1,11 +1,11 @@
 ﻿@using CardGame.DAL.Model;
 
-@model List<tblcard>
+@model List<Card>
 
 <div class="row col-md6">
-    @foreach (tblcard card in @Model)
+    @foreach (Card card in Model)
     {
-        @Html.DisplayFor(c => card.pic)
+        @Html.DisplayFor(c => card.Pic)
     }
     
 </div>

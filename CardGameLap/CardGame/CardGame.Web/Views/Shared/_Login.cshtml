@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewBag.Title = "_Login";
+}
+
+
+<div class="booklets" id="background">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+            <div class="panell" id="backgroundleft">
+                <div class="layout-background" id="wood_background">
+                    <h2>Welcome</h2>
+                    <h2>@ViewBag.Gamertag</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p>Don't have a account, please ...</p>
+                    <input type="button" class="btn btn-info" value="Create Account" onclick="location.href='@Url.Action("Register", "Account")'" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
+            <div class="panell" id="backgroundright">
+                <div class="layout-background" id="wood_background">
+                    @using (Html.BeginForm())
+                    {
+                        <h2>LOGIN</h2>
+
+                            <div class="form-group">
+                                @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })
+                                @Html.TextBoxFor(u => u.Email, htmlAttributes: new { @class = "form-control", placeholder = "Enter email", id = "email" })
+                                @Html.ValidationMessageFor(u => u.Email)
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
+                                @Html.PasswordFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
+                                @Html.ValidationMessageFor(u => u.Password)
+                            </div>
+
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-submit" id="login">Login</button>
+                            </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

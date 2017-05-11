@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Fullscreen Pageflip Shop Book</title>
+		<meta name="description" content="Fullscreen Pageflip Layout with BookBlock" />
+		<meta name="keywords" content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+
+		<link rel="stylesheet" type="text/css" href="css/Bootstrap v3.3.7.css" />		
+		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script src="js/modernizr.custom.79639.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">	
+
+			<div class="menu-panel">				
+				<ul id="menu-toc" class="menu-toc">
+					<li class="menu-toc-current"><a href="#item1<!--'@Url.Action("Index", "Home")'-->">Welcome to our Shop</a></li>
+					<li><a href="#item2<!--@Url.Action("Register", "Account")'-->">REGISTER</a></li>
+					<li><a href="#item2<!--@Url.Action("Login", "Account")'-->">LOGIN</a></li>
+					<li><a href="#item3<!--@Url.Action("ShopStart", "Shop")'-->">Go to SHOP & PAYMENT</a></li>
+					<li><a href="#item4<!--@Url.Action("About", "Account")'-->">Go for buying DIAMONDS</a></li>
+					<li><a href="#item5<!--@Url.Action("About", "Account")'-->">Contact</a></li>
+					<li><a href="#item6<!--@Url.Action("Register", "Account")'-->">???</a></li>
+				</ul>
+			</div>
+
+			<div class="bb-custom-wrapper">
+				<div id="bb-bookblock" class="bb-bookblock">
+					<div class="bb-item" id="item1">
+						<div class="content">						
+							<div class="container-fluid row col-sm-12">						
+								<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<h3>Description how to use</h3><br>
+									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+									sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+									sed diam voluptua. 
+									At vero eos et accusam et justo duo dolores et ea rebum. 
+									Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+									sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+									At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+
+								<div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<h3>Description how to use</h3><br>
+									<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+									sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+									sed diam voluptua. 
+									At vero eos et accusam et justo duo dolores et ea rebum. 
+									Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+									sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+									At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+                                								
+							</div>							
+						</div>
+					</div>
+
+					<div class="bb-item" id="item2">
+						<div class="content">
+							<div class="container-fluid row col-sm-12">						
+								<div class="scroller-seite-drei row col-xs-6">
+									<h3>REGISTER</h3><br>
+									<div class="container-fluid">
+									
+									</div>
+								</div>
+
+								<div class="scroller-seite-vier row col-xs-6">
+									<h3>LOGIN</h3><br>
+									<div class="container-fluid">
+										
+									
+									<!--<img class="card-package" src="images/cardpackage.png" width="90" height="120" alt="Gallerycard 1" />
+									<img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 2" />
+									<img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 3" />-->
+									</div>								
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bb-item" id="item3">
+						<div class="content">
+							<div class="container-fluid row col-md-12">
+								<div class="scroller-seite-drei row col-md-6">
+									<h3>See CARDS from your choosen DECK 30CARDS</h3><br>
+										<div class="container-fluid">
+										
+											<!-- ++++ Gibt in einer LIST von PACKS alle CARDS auf Bildschirm aus-->
+											<img class="gallery-card" src="images/card1.png" width="50" height="70" alt="Gallerycard 1" />										
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+											<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										</div>
+								</div>
+								
+								<div class="scroller-seite-sechs row col-md-6">
+									<h3>See cards from your COLLECTION</h3><br>
+									<div class="container">
+									
+										<!-- ++++ Gibt in einer LIST von COLLECTION alle CARDS der COLLECTION auf Bildschirm aus-->
+										<img class="gallery-card" src="images/card1.png" width="50" height="70" alt="Gallerycard 1" />										
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+
+									<!--<img class="card-package" src="images/cardpackage.png" width="90" height="120" alt="Gallerycard 1" />
+									<img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 2" />
+									<img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 3" />-->
+										
+										
+										<!--<script>
+											function mouseOver() {
+												document.getElementById('img').style.height = "200px";
+												document.getElementById('img').style.width = "150px";
+											}
+										</script>-->
+										
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+										<img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bb-item" id="item4">
+						<div class="content">
+						<div class="container row col-md-12">
+							<div class="scroller-seite-drei row col-md-6">
+								<h3>Go to shop</h3>
+								<p>See all available PACKS</p>
+								<div class="container row col-sm-12">
+									<div class="row">
+										<img class="card-package" src="images/cardpackage.png" width="100" height="140" alt="Gallerycard 1" />
+									</div>
+									<div class="container col-sm-8">
+										<div>
+											<p>PACKNAME</p>
+											<p>CARDS INSIDE</p>
+											<p>PACKPRICE</p>										
+										</div>								
+									</div>
+								</div>
+							
+								<div class="container row col-sm-12">
+									<div class="row">
+										<img class="card-package" src="images/cardpackage.png" width="100" height="140" alt="Gallerycard 1" />
+									</div>
+									<div class="container col-sm-8">
+										<div>
+											<p>PACKNAME</p>
+											<p>CARDS INSIDE</p>
+											<p>PACKPRICE</p>										
+										</div>								
+									</div>
+								</div>
+							
+								<div class="container row col-sm-12">
+									<div class="row">
+										<img class="card-package" src="images/cardpackage.png" width="100" height="140" alt="Gallerycard 1" />
+									</div>
+									<div class="container col-sm-8">
+										<div>
+											<p>PACKNAME</p>
+											<p>CARDS INSIDE</p>
+											<p>PACKPRICE</p>										
+										</div>								
+									</div>
+								</div>
+							
+							</div>
+							
+							<div class="scroller-seite-vier row col-xs-6">
+								<h3>BUY PACK</h3><br>
+								<div class="container-fluid">
+									<h4>ORDERDETAILS</h4>
+									<p>your ORDER is about .... DIAMONDS</p>
+									<p>press BUTTON for accepting the ORDER</p>
+									<br>
+									<div class="form-group">        								  
+										<button type="submit" class="btn btn-submit">ORDER</button>								  
+									</div>
+								</div>
+
+								<h3>BUY DIAMONDS</h3><br>
+								<div class="container-fluid">
+									<h4>ORDERDETAILS</h4>
+									<p>your ORDER is about .... MONEY</p>
+									<p>press BUTTON for accepting the ORDER</p>
+									<br>
+									<div class="form-group">        								  
+										<button type="submit" class="btn btn-submit">ORDER</button>								  
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="bb-item" id="item5">
+						<div class="content">
+							<div class="scroller">
+								<h3>Buy Diamonds</h3>						
+							</div>
+						</div>
+					</div>
+					
+					<div class="bb-item" id="item6">
+						<div class="content">
+							<div class="scroller">
+								<h3>Deckbuilder</h3>
+									
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<nav>
+					<span id="bb-nav-prev">&larr;</span>
+					<span id="bb-nav-next">&rarr;</span>
+				</nav>
+
+				<span id="tblcontents" class="menu-button">Table of Contents</span>
+
+			</div>
+				
+		</div><!-- /container -->
+		<script src="js/jQuery-V3.1.js"></script>
+		<script src="js/jquery.mousewheel.js"></script>
+		<script src="js/jquery.jscrollpane.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script src="js/page.js"></script>
+		
+		<script>
+			$(function() {
+				Page.init();
+			});
+		</script>
+	</body>
+</html>

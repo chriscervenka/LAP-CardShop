@@ -179,13 +179,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bookblock.css" />
+    <Content Include="Content\Bootstrap v3.3.7.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\Bild1.png" />
     <Content Include="Content\Images\Bild2.png" />
     <Content Include="Content\Images\black.jpg" />
     <Content Include="Content\Images\Button_hp.png" />
+    <Content Include="Content\Images\card1.png" />
     <Content Include="Content\Images\diamond.png" />
     <Content Include="Content\Images\image1300x300.png" />
     <Content Include="Content\Images\image300x300.png" />
@@ -194,6 +198,7 @@
     <Content Include="Content\Images\pack2.png" />
     <Content Include="Content\Images\SignUpButton.png" />
     <Content Include="Content\Images\wood_background.png" />
+    <Content Include="Content\jquery.jscrollpane.custom.css" />
     <Content Include="Content\MyStyle.css" />
     <Content Include="Content\smart_cart.min.css" />
     <Content Include="favicon.ico" />
@@ -214,12 +219,20 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\jquery-V3.1.js" />
+    <Content Include="Scripts\js\jquery.bookblock.js" />
+    <Content Include="Scripts\js\jquery.jscrollpane.min.js" />
+    <Content Include="Scripts\js\jquery.mousewheel.js" />
+    <Content Include="Scripts\js\jquerypp.custom.js" />
+    <Content Include="Scripts\js\modernizr.custom.79639.js" />
+    <Content Include="Scripts\js\page.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\results.php" />
     <Content Include="Scripts\sliderscript.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\HTML_Template\index2.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -256,6 +269,8 @@
     <Content Include="Views\Shared\_Contact.cshtml" />
     <Content Include="Views\Shared\_OrderDetails.cshtml" />
     <Content Include="Views\Shared\_Cardpacks.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutNew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

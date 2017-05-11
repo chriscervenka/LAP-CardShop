@@ -1,98 +1,325 @@
-﻿@{
+﻿@model IEnumerable<CardGame.Web.Models.Packages>
+
+@{
     ViewBag.Title = "Shop";
 }
 
-@*<div class="jumbotron">
-    @{if (User.Identity.Name == "")
-        {
-        <h1>Welcome</h1>
-        }
-        else
-        {
-        <h1> Welcome @ViewBag.Email @ViewBag.Firstname @ViewBag.Lastname </h1>
-        }
-     }
-
-    @{ 
-        if (User.IsInRole("admin"))
-        {
-            <h1>You are admin!</h1>
-        }
-    }
-
-
-</div>*@
 
 <body>
-    <div class="booklets" id="background">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
-                <div class="panell" id="backgroundleft">
-                    <div class="layout-background" id="wood_background">
-                    @{if (User.Identity.Name == "")
-                        {
-                            <h1>Welcome</h1>
-                            <br />
-                            <h2>to the amazing Shop of</h2>
-                        }
-                        else
-                        {
-                            <h2> Welcome</h2>
-                            <h1>@ViewBag.Gamertag</h1>
-                            <h2>to the amazing Shop of</h2>
-
-                        }
-                    }                      
-                        <h1>CLONESTONE</h1>
-                        @{
-                            if (User.IsInRole("player"))
-                            {
-                                <h2>You are a Player</h2>
-                            }
-
-                            else
-                            {
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                                <p>If you have allredy a account, please ...</p>
-
-                                <input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" />
-
-                                <br />
-                                <br />
-                                <div>
-                                    <p>if not ... REGISTER with the button above ...</p>
-                                </div>
-                            }
-                        }
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
-                <div class="panell" id="backgroundright">
-                    <div class="layout-background" id="wood_background">
-
-                        <div id="slide">                           
-                            <img class="bottom" src="~/Content/Images/image300x300.png" />
-                            <img class="top" src="~/Content/Images/image1300x300.png" />
-                        </div>
-
-                        <div>
-                            <p>... you sure you want enter the shop</p>
-                            <h3>Hover the Picture</h3>
-                            <p>... if you want to see what's you await inside ...</p>
-                        </div>
-
-
-                            @*<div class="form-group">
-                                <button type="submit" class="btn btn-submit" id="login">Login</button>
-                            </div>*@
-                        
-
-                    </div>
-                </div>
-            </div>
+    <div id="container" class="container">
+        <div class="menu-panel">
+            <ul id="menu-toc" class="menu-toc">
+                <li class="menu-toc-current"><a href="#item1<!--'@Url.Action("Index", "Home")'-->">Welcome to our Shop</a></li>
+                <li><a href="#item2<!--@Url.Action("Register", "Account")'-->">REGISTER</a></li>
+                <li><a href="#item2<!--@Url.Action("Login", "Account")'-->">LOGIN</a></li>
+                <li><a href="#item3<!--@Url.Action("ShopStart", "Shop")'-->">Go to SHOP & PAYMENT</a></li>
+                <li><a href="#item4<!--@Url.Action("About", "Account")'-->">Go for buying DIAMONDS</a></li>
+                <li><a href="#item5<!--@Url.Action("About", "Account")'-->">Contact</a></li>
+                <li><a href="#item6<!--@Url.Action("Register", "Account")'-->">???</a></li>
+            </ul>
         </div>
-    </div>
+        <div class="bb-custom-wrapper">
+            <div id="bb-bookblock" class="bb-bookblock">
+                <div class="bb-item" id="item1">
+                    <div class="content">
+                        <div class="container-fluid row col-sm-12">
+                            <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <h3>Description how to use</h3><br>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                    sed diam voluptua.
+                                    At vero eos et accusam et justo duo dolores et ea rebum.
+                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
+                            <div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <h3>Description how to use</h3><br>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                    sed diam voluptua.
+                                    At vero eos et accusam et justo duo dolores et ea rebum.
+                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="bb-item" id="item2">
+                    <div class="content">
+                        <div class="container-fluid row col-sm-12">
+                            <div class="scroller-seite-drei row col-xs-6">
+                                <h3>REGISTER</h3><br>
+                                <div class="container-fluid">
+
+                                </div>
+                            </div>
+                            <div class="scroller-seite-vier row col-xs-6">
+                                <h3>LOGIN</h3><br>
+                                <div class="container-fluid">
+
+
+                                    <!--<img class="card-package" src="images/cardpackage.png" width="90" height="120" alt="Gallerycard 1" />
+                                    <img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 3" />-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bb-item" id="item3">
+                    <div class="content">
+                        <div class="container-fluid row col-md-12">
+                            <div class="scroller-seite-drei row col-md-6">
+                                <h3>See CARDS from your choosen DECK 30CARDS</h3><br>
+                                <div class="container-fluid">
+
+                                    <!-- ++++ Gibt in einer LIST von PACKS alle CARDS auf Bildschirm aus-->
+
+
+
+                                    <img class="gallery-card" src="~/Content/Images/card1.png" width="50" height="70" alt="Gallerycard 1" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                </div>
+                            </div>
+
+                            <div class="scroller-seite-sechs row col-md-6">
+                                <h3>See cards from your COLLECTION</h3><br>
+                                <div class="container">
+
+                                    <!-- ++++ Gibt in einer LIST von COLLECTION alle CARDS der COLLECTION auf Bildschirm aus-->
+                                    <img class="gallery-card" src="images/card1.png" width="50" height="70" alt="Gallerycard 1" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <!--<img class="card-package" src="images/cardpackage.png" width="90" height="120" alt="Gallerycard 1" />
+                                    <img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 3" />-->
+                                    <!--<script>
+                                        function mouseOver() {
+                                            document.getElementById('img').style.height = "200px";
+                                            document.getElementById('img').style.width = "150px";
+                                        }
+                                    </script>-->
+
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 6" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="bb-item" id="item4">
+                    <div class="content">
+                        <div class="container row col-md-12">
+                            <div class="scroller-seite-drei row col-md-6">
+                                <h3>Go to shop</h3>
+                                <p>See all available PACKS</p>
+                                <div class="container row col-sm-12">
+
+                                    @foreach (var cp in Model)
+                                    {
+                                        <div class="packages-shopstart row col-md-12">
+                                            <hr />
+                                            <div class="col-sm-6">
+                                                <img src="~/Content/Images/pack1.png" alt="" height="120" width="90" />
+
+                                                @*<div id=@Model.  ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                    <img src="~/Content/Images/pack1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="60" height="100">
+                                                  </div>*@
+
+                                            </div>
+                                            <br />
+                                            <div class="col-sm-6">
+
+                                                Pack @Html.DisplayFor(cardpack => cp.Packname)
+                                                <br />
+                                                Cards inside @Html.DisplayFor(cardpack => cp.CardQuantity)
+                                                <br />
+                                                Price @Html.DisplayFor(cardpack => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
+                                            </div>
+                                            <br />
+                                        </div>
+                                    }
+
+
+
+
+                                    <div class="row">
+                                        <img class="card-package" src="~/Content/Images/pack1.png" width="100" height="140" alt="Gallerycard 1" />
+                                    </div>
+                                    <div class="container col-sm-8">
+                                        <div>
+                                            <p>PACKNAME</p>
+                                            <p>CARDS INSIDE</p>
+                                            <p>PACKPRICE</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container row col-sm-12">
+                                    <div class="row">
+                                        <img class="card-package" src="images/cardpackage.png" width="100" height="140" alt="Gallerycard 1" />
+                                    </div>
+                                    <div class="container col-sm-8">
+                                        <div>
+                                            <p>PACKNAME</p>
+                                            <p>CARDS INSIDE</p>
+                                            <p>PACKPRICE</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container row col-sm-12">
+                                    <div class="row">
+                                        <img class="card-package" src="images/cardpackage.png" width="100" height="140" alt="Gallerycard 1" />
+                                    </div>
+                                    <div class="container col-sm-8">
+                                        <div>
+                                            <p>PACKNAME</p>
+                                            <p>CARDS INSIDE</p>
+                                            <p>PACKPRICE</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="scroller-seite-vier row col-xs-6">
+                                <h3>BUY PACK</h3><br>
+                                <div class="container-fluid">
+                                    <h4>ORDERDETAILS</h4>
+                                    <p>your ORDER is about .... DIAMONDS</p>
+                                    <p>press BUTTON for accepting the ORDER</p>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-submit">ORDER</button>
+                                    </div>
+                                </div>
+                                <h3>BUY DIAMONDS</h3><br>
+                                <div class="container-fluid">
+                                    <h4>ORDERDETAILS</h4>
+                                    <p>your ORDER is about .... MONEY</p>
+                                    <p>press BUTTON for accepting the ORDER</p>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-submit">ORDER</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bb-item" id="item5">
+                    <div class="content">
+                        <div class="scroller">
+                            <h3>Buy Diamonds</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bb-item" id="item6">
+                    <div class="content">
+                        <div class="scroller">
+                            <h3>Deckbuilder</h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav>
+                <span id="bb-nav-prev">&larr;</span>
+                <span id="bb-nav-next">&rarr;</span>
+            </nav>
+            <span id="tblcontents" class="menu-button">Table of Contents</span>
+        </div>
+
+    </div><!-- /container -->
+    <script src="js/jQuery-V3.1.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.jscrollpane.min.js"></script>
+    <script src="js/jquerypp.custom.js"></script>
+    <script src="js/jquery.bookblock.js"></script>
+    <script src="js/page.js"></script>
+
+    <script>
+			$(function() {
+				Page.init();
+			});
+    </script>
 </body>
