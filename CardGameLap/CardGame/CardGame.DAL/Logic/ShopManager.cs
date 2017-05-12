@@ -24,7 +24,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    allPacks = db.Packs.ToList();
+                    allPacks = db.Packs.OrderBy(x => x.Cardquantity).ToList();
                 }
 
                 if (allPacks == null)

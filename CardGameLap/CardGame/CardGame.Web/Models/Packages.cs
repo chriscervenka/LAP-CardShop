@@ -19,6 +19,6 @@ namespace CardGame.Web.Models
 
         public decimal Packprice { get; set; }
 
-        public List<Card> Packlist { get; set; }
+        public List<Card> CardList { get; set; }
     }
 }

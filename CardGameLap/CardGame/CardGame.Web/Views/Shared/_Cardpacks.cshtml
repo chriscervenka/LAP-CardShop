@@ -1,43 +1,33 @@
-﻿@model IEnumerable<CardGame.Web.Models.Packages>
+﻿@model IEnumerable<CardGame.Web.Models.Cart>
 
 @{
     ViewBag.Title = "_Cardpacks";
 }
 
+<div class="">
 
+    @foreach (var cp in Model)
+    {
+        <div class="packages-shopstart row col-md-12">
+            <hr />
+            <div class="col-sm-6">
+                <img src="~/Content/Images/pack1.png" alt="" height="120" width="90" />
 
+                @*<div id=@Model.  ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img src="~/Content/Images/pack1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="60" height="100">
+                </div>*@
 
-    <div class="panell" id="backgroundleft">
-        <div class="layout-background" id="wood_background">
-            <h2>see all available Cardpacks</h2>
+            </div>
             <br />
-            <div class="">
+            <div class="col-sm-6">
 
-                @foreach (var cp in Model)
-                {
-                    <div class="packages-shopstart row col-md-12">
-                        <hr />
-                        <div class="col-sm-6">
-                            <img src="~/Content/Images/pack1.png" alt="" height="120" width="90" />
-
-                            @*<div id=@Model.  ondrop="drop(event)" ondragover="allowDrop(event)">
-                                <img src="~/Content/Images/pack1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="60" height="100">
-                            </div>*@
-
-                        </div>
-                        <br />
-                        <div class="col-sm-6">
-
-                            Pack @Html.DisplayFor(cardpack => cp.Packname)
-                            <br />
-                            Cards inside @Html.DisplayFor(cardpack => cp.CardQuantity)
-                            <br />
-                            Price @Html.DisplayFor(cardpack => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
-                        </div>
-                        <br />
-                    </div>
-                }
+                Pack @Html.DisplayFor(CardPacks => cp.Packname)
+                <br />
+                Cards inside @Html.DisplayFor(CardPacks => cp.CardQuantity)
+                <br />
+                Price @Html.DisplayFor(CardPacks => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
             </div>
             <br />
         </div>
-    </div>
+    }
+</div>

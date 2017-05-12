@@ -10,8 +10,8 @@
         <div class="menu-panel">
             <ul id="menu-toc" class="menu-toc">
                 <li class="menu-toc-current"><a href="#item1<!--'@Url.Action("Index", "Home")'-->">Welcome to our Shop</a></li>
-                <li><a href="#item2<!--@Url.Action("Register", "Account")'-->">REGISTER</a></li>
-                <li><a href="#item2<!--@Url.Action("Login", "Account")'-->">LOGIN</a></li>
+                <li><a href="#item2<!--@Url.Action("Register", "Account")'-->">REGISTER / LOGIN</a></li>
+                <li><a href="#item2<!--@Url.Action("Login", "Account")'-->">DECKS / COLLECTION</a></li>
                 <li><a href="#item3<!--@Url.Action("ShopStart", "Shop")'-->">Go to SHOP & PAYMENT</a></li>
                 <li><a href="#item4<!--@Url.Action("About", "Account")'-->">Go for buying DIAMONDS</a></li>
                 <li><a href="#item5<!--@Url.Action("About", "Account")'-->">Contact</a></li>
@@ -60,16 +60,16 @@
                                 <h3>REGISTER</h3><br>
                                 <div class="container-fluid">
 
+                                    @Html.Partial("_Register")
+
                                 </div>
                             </div>
                             <div class="scroller-seite-vier row col-xs-6">
                                 <h3>LOGIN</h3><br>
                                 <div class="container-fluid">
 
+                                    @Html.Partial("_Login")
 
-                                    <!--<img class="card-package" src="images/cardpackage.png" width="90" height="120" alt="Gallerycard 1" />
-                                    <img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 2" />
-                                    <img class="card-package" src="images/cardpackage.png" width="80" height="110" alt="Gallerycard 3" />-->
                                 </div>
                             </div>
                         </div>
@@ -84,9 +84,9 @@
 
                                     <!-- ++++ Gibt in einer LIST von PACKS alle CARDS auf Bildschirm aus-->
 
+                                    @Html.Partial("_Cardpacks")
 
-
-                                    <img class="gallery-card" src="~/Content/Images/card1.png" width="50" height="70" alt="Gallerycard 1" />
+                                    @*<img class="gallery-card" src="~/Content/Images/card1.png" width="50" height="70" alt="Gallerycard 1" />
                                     <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
                                     <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
                                     <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
@@ -115,13 +115,15 @@
                                     <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 2" />
                                     <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 3" />
                                     <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 4" />
-                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />
+                                    <img class="gallery-card" src="images/card1.png" width="80" height="110" alt="Gallerycard 5" />*@
                                 </div>
                             </div>
 
                             <div class="scroller-seite-sechs row col-md-6">
                                 <h3>See cards from your COLLECTION</h3><br>
                                 <div class="container">
+
+                                    @Html.Partial("_ListOfCards")
 
                                     <!-- ++++ Gibt in einer LIST von COLLECTION alle CARDS der COLLECTION auf Bildschirm aus-->
                                     <img class="gallery-card" src="images/card1.png" width="50" height="70" alt="Gallerycard 1" />
@@ -190,7 +192,7 @@
                                 <p>See all available PACKS</p>
                                 <div class="container row col-sm-12">
 
-                                    @foreach (var cp in Model)
+                                    @*@foreach (var cp in )
                                     {
                                         <div class="packages-shopstart row col-md-12">
                                             <hr />
@@ -199,7 +201,7 @@
 
                                                 @*<div id=@Model.  ondrop="drop(event)" ondragover="allowDrop(event)">
                                                     <img src="~/Content/Images/pack1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="60" height="100">
-                                                  </div>*@
+                                                  </div>
 
                                             </div>
                                             <br />
@@ -213,9 +215,11 @@
                                             </div>
                                             <br />
                                         </div>
-                                    }
+                                    }*@
 
 
+
+                                    @*@Html.Partial("_Cardpacks")*@
 
 
                                     <div class="row">
@@ -308,6 +312,7 @@
             </nav>
             <span id="tblcontents" class="menu-button">Table of Contents</span>
         </div>
+    </div>
 
     </div><!-- /container -->
     <script src="js/jQuery-V3.1.js"></script>

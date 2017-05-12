@@ -1,0 +1,62 @@
+﻿
+@model CardGame.Web.Models.Register
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <h2>REGISTRATION</h2>
+    @Html.AntiForgeryToken()
+    if (ViewBag.Message != null)
+    {
+        <div style="border: solid 1px green">
+            @ViewBag.Message
+        </div>
+
+    }
+    <div class="form-group">
+        <div class="input-field">
+            <p>@Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })</p>
+            @Html.EditorFor(u => u.Firstname)
+            @Html.ValidationMessageFor(u => u.Firstname)
+        </div>
+
+        <div class="input-field">
+            <p>@Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })</p>
+            @Html.EditorFor(u => u.Lastname)
+            @Html.ValidationMessageFor(u => u.Lastname)
+        </div>
+
+        <div class="input-field">
+            <p>@Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })</p>
+            @Html.EditorFor(u => u.Gamertag)
+            @Html.ValidationMessageFor(u => u.Gamertag)
+        </div>
+
+        <div class="input-field">
+            <p>@Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })</p>
+            @Html.EditorFor(u => u.Email)
+            @Html.ValidationMessageFor(u => u.Email)
+        </div>
+
+        <div class="input-field">
+            <p>@Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })</p>
+            @Html.PasswordFor(u => u.Password)
+            @Html.ValidationMessageFor(u => u.Password)
+        </div>
+
+        <div class="input-field">
+            <p>@Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })</p>
+            @Html.PasswordFor(u => u.ConfirmPassword)
+            @Html.ValidationMessageFor(u => u.ConfirmPassword)
+        </div>
+    </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-submit">Sign-up</button>
+                            </div>
+}

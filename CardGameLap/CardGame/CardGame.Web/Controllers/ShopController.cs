@@ -20,8 +20,8 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult ShopStart()
         {
-            Cart cart = new Cart();
-            cart.CardPacks = new List<Packages>();
+            Cart Pack = new Cart();
+            Pack.CardPacks = new List<Packages>();
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
@@ -33,10 +33,10 @@ namespace CardGame.Web.Controllers
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
-                cart.CardPacks.Add(cardPack);
+                Pack.CardPacks.Add(cardPack);
             }
 
-            return View("ShopStart", cart);
+            return View(Pack);
         }            
 
 
