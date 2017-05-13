@@ -16,29 +16,69 @@ namespace CardGame.Web.Controllers
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
         /// <returns>return View("ShopStart", cart)</returns>
-        [HttpGet]
+        //[HttpGet]
+        //[Authorize]
+        //public ActionResult Packs()
+        //{
+        //    Cart model = new Cart();
+        //    model.Packs = new List<Packages>();
+
+        //    var dbCardPacks = ShopManager.AllCardPacks();
+
+        //    foreach (var pack in dbCardPacks)
+        //    {
+        //        Packages cardPack = new Packages();
+        //        cardPack.ID = pack.ID;
+        //        cardPack.Packname = pack.Name;
+        //        //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
+        //        cardPack.CardQuantity = pack.Cardquantity.GetValueOrDefault();
+        //        cardPack.Packprice = pack.Packprice.GetValueOrDefault();
+        //        model.Packs.Add(cardPack);
+        //    }
+
+        //    return View(model);
+        //}            
+
+
+        [HttpPost]
         [Authorize]
-        public ActionResult ShopStart()
+        public ActionResult Packs()
         {
-            Cart Pack = new Cart();
-            Pack.CardPacks = new List<Packages>();
-
-            var dbCardPacks = ShopManager.AllCardPacks();
-
-            foreach (var dbCp in dbCardPacks)
+            Cart model = null;
+            try
             {
-                Packages cardPack = new Packages();
-                cardPack.Idpack = dbCp.ID;
-                cardPack.Packname = dbCp.Name;
-                //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
-                cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
-                Pack.CardPacks.Add(cardPack);
+                List<Pack> packs = ShopManager.AllCardPacks();
+                //Person currentPerson = UserManager.GetAllUser(Person.Identity.Name);
+
+                //model = new Cart()
+                //{
+                //    Money = curremtPerson.Money
+                //};
+
+                List<Packages> packagesModel = new List<Packages>();
+
+                foreach (var pack in packs)
+                {
+                    packagesModel.Add(new Packages()
+                    {
+                        Packname = pack.Name,
+                        CardQuantity = pack.Cardquantity.GetValueOrDefault(),
+                        Packprice = pack.Packprice.GetValueOrDefault(),
+                        ID = pack.ID
+                    });
+                }
+                model.Packs = packagesModel; 
             }
 
-            return View(Pack);
-        }            
 
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return View(model);
+        }
 
         /// <summary>
         /// 
@@ -60,7 +100,7 @@ namespace CardGame.Web.Controllers
             foreach (var dbCp in dbCardPacks)
             {
                 Packages cardPack = new Packages();
-                cardPack.Idpack = dbCp.ID;
+                cardPack.ID = dbCp.ID;
                 cardPack.Packname = dbCp.Name;
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
@@ -87,7 +127,7 @@ namespace CardGame.Web.Controllers
             var dbPack = ShopManager.GetCardPackById(id);
 
             Packages cardPack = new Packages();
-            cardPack.Idpack = dbPack.ID;
+            cardPack.ID = dbPack.ID;
             cardPack.Packname = dbPack.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal
             cardPack.Packprice = dbPack.Packprice.GetValueOrDefault();
@@ -115,7 +155,7 @@ namespace CardGame.Web.Controllers
             var dbPackages = ShopManager.GetCardPackById(id);
 
             Packages cardPack = new Packages();
-            cardPack.Idpack = dbPackages.ID;
+            cardPack.ID = dbPackages.ID;
             cardPack.Packname = dbPackages.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal => Konvertierung da NULLABLE
             cardPack.CardQuantity = dbPackages.Cardquantity.GetValueOrDefault();
@@ -145,7 +185,7 @@ namespace CardGame.Web.Controllers
 
             try
             {
-                var totalOrder = ShopManager.TotalCost(o.Pack.Idpack, o.PackQuantity);
+                var totalOrder = ShopManager.TotalCost(o.Pack.ID, o.PackQuantity);
                 if (totalOrder > o.UserBalance)
                 {
                     return RedirectToAction("_NotEnoughBalance");
@@ -158,7 +198,7 @@ namespace CardGame.Web.Controllers
                     return RedirectToAction("UpdateError");
                 }
 
-                var orderedCards = ShopManager.OrderPack(o.Pack.Idpack, o.PackQuantity);
+                var orderedCards = ShopManager.OrderPack(o.Pack.ID, o.PackQuantity);
 
                 //Methode 'AddCardsToCollectionByEmail' in USERMANAGER noch schreiben
                 var updatedCards = UserManager.AddCardsToCollectionByEmail(User.Identity.Name, orderedCards);

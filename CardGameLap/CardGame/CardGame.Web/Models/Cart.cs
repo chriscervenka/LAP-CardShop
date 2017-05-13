@@ -7,7 +7,7 @@ namespace CardGame.Web.Models
 {
     public class Cart
     {
-       
-        public List<Packages> CardPacks { get; set; }
+        public int Money { get; set; }
+        public List<Packages> Packs { get; set; }
     }
 }

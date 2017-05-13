@@ -161,7 +161,6 @@
     <Compile Include="Controllers\DeckbuilderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
-    <Compile Include="Controllers\ShopTwoController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,11 +196,11 @@
     <Content Include="Content\Images\LoginButton.png" />
     <Content Include="Content\Images\pack1.png" />
     <Content Include="Content\Images\pack2.png" />
+    <Content Include="Content\Images\pic.png" />
     <Content Include="Content\Images\SignUpButton.png" />
     <Content Include="Content\Images\wood_background.png" />
     <Content Include="Content\jquery.jscrollpane.custom.css" />
     <Content Include="Content\MyStyle.css" />
-    <Content Include="Content\smart_cart.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -234,7 +233,7 @@
     <Content Include="Scripts\sliderscript.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\HTML_Template\index2.html" />
+    <Content Include="Views\HTML_Template\BookPageFlip.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -257,7 +256,6 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Deckbuilder\Deckbuilder.cshtml" />
-    <Content Include="Views\Shop\ShopStart.cshtml" />
     <Content Include="Views\Deckbuilder\Gallery.cshtml" />
     <Content Include="Views\Shop\Shop.cshtml" />
     <Content Include="Views\Account\VerifyRegistration.cshtml" />

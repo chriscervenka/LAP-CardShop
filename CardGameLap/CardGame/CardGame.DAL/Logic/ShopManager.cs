@@ -17,8 +17,10 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <returns>return allPacks</returns>
         public static List<Pack> AllCardPacks()
+            
         {
-            var allPacks = new List<Pack>();
+            List<Pack> allPacks = null;
+            //var allPacks = new List<Pack>();
 
             try
             {

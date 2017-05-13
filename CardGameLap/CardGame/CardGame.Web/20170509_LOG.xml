@@ -178,3 +178,48 @@
    bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 73.</Stack>
   </Exception>
 </Xcpt>
+<Xcpt>
+  <Time>09.05.2017 17:59:53</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>In der Anwendungskonfigurationsdatei wurde keine Verbindungszeichenfolge mit dem Namen 'ClonestoneFSEntities' gefunden.</Message>
+    <Stack>   bei System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 19.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>09.05.2017 18:00:37</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>In der Anwendungskonfigurationsdatei wurde keine Verbindungszeichenfolge mit dem Namen 'ClonestoneFSEntities' gefunden.</Message>
+    <Stack>   bei System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 54.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>09.05.2017 18:00:38</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>In der Anwendungskonfigurationsdatei wurde keine Verbindungszeichenfolge mit dem Namen 'ClonestoneFSEntities' gefunden.</Message>
+    <Stack>   bei System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 73.</Stack>
+  </Exception>
+</Xcpt>

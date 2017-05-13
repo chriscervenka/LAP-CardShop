@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CardGame.Web.Models.Cart>
+﻿@model CardGame.Web.Models.Cart
 
 @{
     ViewBag.Title = "_Cardpacks";
@@ -6,7 +6,7 @@
 
 <div class="">
 
-    @foreach (var cp in Model)
+    @foreach (var cp in Model.Packs)
     {
         <div class="packages-shopstart row col-md-12">
             <hr />
@@ -21,11 +21,11 @@
             <br />
             <div class="col-sm-6">
 
-                Pack @Html.DisplayFor(CardPacks => cp.Packname)
+                Pack @Html.Display(cp.Packname)
                 <br />
-                Cards inside @Html.DisplayFor(CardPacks => cp.CardQuantity)
+                Cards inside @(cp.CardQuantity)
                 <br />
-                Price @Html.DisplayFor(CardPacks => cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
+                Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
             </div>
             <br />
         </div>

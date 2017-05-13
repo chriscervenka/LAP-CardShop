@@ -1,6 +1,6 @@
 /* Content Flip Style */
 .bb-bookblock {
-	background-image: url("../images/pic.png");	
+	background-image: url(../Content/Images/pic.png);	
 	background-repeat: no-repeat;
 	background-size: cover;
 		-webkit-background-size: cover;
@@ -39,7 +39,7 @@
 }
 
 .bb-content {
-	background-image: url("../images/pic.png");	
+	background-image: url("../Content/Images/pic.png");	
 	background-repeat: no-repeat;		
 	background-size: cover;
 		-webkit-background-size: cover;

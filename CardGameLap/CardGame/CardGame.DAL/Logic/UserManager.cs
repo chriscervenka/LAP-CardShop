@@ -56,6 +56,11 @@ namespace CardGame.DAL.Logic
             return dbUser;
         }
 
+        public static Person GetAllUser(object name)
+        {
+            throw new NotImplementedException();
+        }
+
 
         /// <summary>
         /// 
