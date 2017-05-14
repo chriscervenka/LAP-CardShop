@@ -14,6 +14,9 @@ namespace CardGame.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/toastr").Include(
+                        "~/Scripts/js/toastr.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -25,7 +28,10 @@ namespace CardGame.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/jquery.jscrollpane.custom.css",
+                      "~/Content/custom.css",
+                      "~/Content/bookblock.css",
+                      "~/Content/MyStyle.css"));
         }
     }
 }
