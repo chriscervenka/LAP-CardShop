@@ -19,38 +19,38 @@
 
     }
     <div class="form-group">
-        <div class="input-field">
-            <p>@Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })</p>
-            @Html.EditorFor(u => u.Firstname)
+        <div class="form-group">
+            @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(u => u.Firstname)
             @Html.ValidationMessageFor(u => u.Firstname)
         </div>
 
-        <div class="input-field">
-            <p>@Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })</p>
-            @Html.EditorFor(u => u.Lastname)
+        <div class="form-group">
+            @Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(u => u.Lastname)
             @Html.ValidationMessageFor(u => u.Lastname)
         </div>
 
-        <div class="input-field">
-            <p>@Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })</p>
-            @Html.EditorFor(u => u.Gamertag)
+        <div class="form-group">
+            @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(u => u.Gamertag)
             @Html.ValidationMessageFor(u => u.Gamertag)
         </div>
 
-        <div class="input-field">
-            <p>@Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })</p>
-            @Html.EditorFor(u => u.Email)
+        <div class="form-group">
+            @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(u => u.Email)
             @Html.ValidationMessageFor(u => u.Email)
         </div>
 
-        <div class="input-field">
-            <p>@Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })</p>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
             @Html.PasswordFor(u => u.Password)
             @Html.ValidationMessageFor(u => u.Password)
         </div>
 
-        <div class="input-field">
-            <p>@Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })</p>
+        <div class="form-group">
+            @Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })
             @Html.PasswordFor(u => u.ConfirmPassword)
             @Html.ValidationMessageFor(u => u.ConfirmPassword)
         </div>
