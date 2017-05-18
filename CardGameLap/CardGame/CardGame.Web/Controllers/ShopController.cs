@@ -16,69 +16,70 @@ namespace CardGame.Web.Controllers
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
         /// <returns>return View("ShopStart", cart)</returns>
-        //[HttpGet]
-        //[Authorize]
-        //public ActionResult Packs()
-        //{
-        //    Cart model = new Cart();
-        //    model.Packs = new List<Packages>();
-
-        //    var dbCardPacks = ShopManager.AllCardPacks();
-
-        //    foreach (var pack in dbCardPacks)
-        //    {
-        //        Packages cardPack = new Packages();
-        //        cardPack.ID = pack.ID;
-        //        cardPack.Packname = pack.Name;
-        //        //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-        //        cardPack.CardQuantity = pack.Cardquantity.GetValueOrDefault();
-        //        cardPack.Packprice = pack.Packprice.GetValueOrDefault();
-        //        model.Packs.Add(cardPack);
-        //    }
-
-        //    return View(model);
-        //}
-
-
-        [HttpPost]
+        [HttpGet]
         [Authorize]
         public ActionResult Packs()
         {
-            Pack model = null;
-            try
+            Cart model = new Cart();
+            model.Packs = new List<Packages>();
+
+            var dbCardPacks = ShopManager.AllCardPacks();
+
+            foreach (var pack in dbCardPacks)
             {
-                List<Pack> packs = ShopManager.AllCardPacks();
-                //Person currentPerson = UserManager.GetAllUser(Person.Identity.Name);
-
-                //model = new Cart()
-                //{
-                //    Money = currentPerson.Money
-                //};
-
-                List<Packages> packagesModel = new List<Packages>();
-
-                foreach (var pack in packs)
-                {
-                    packagesModel.Add(new Packages()
-                    {
-                        Packname = pack.Name,
-                        CardQuantity = pack.Cardquantity.GetValueOrDefault(),
-                        Packprice = pack.Packprice.GetValueOrDefault(),
-                        ID = pack.ID
-                    });
-                }
-                Model.packs = packagesModel; 
-            }
-
-
-            catch (Exception)
-            {
-
-                throw;
+                Packages cardPack = new Packages();
+                cardPack.ID = pack.ID;
+                cardPack.Packname = pack.Name;
+                //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
+                cardPack.CardQuantity = pack.Cardquantity.GetValueOrDefault();
+                cardPack.Packprice = pack.Packprice.GetValueOrDefault();
+                model.Packs.Add(cardPack);
             }
 
             return View(model);
         }
+
+
+        //[HttpPost]
+        //[Authorize]
+        //public ActionResult Packs()
+        //{
+        //    Pack model = null;
+        //    try
+        //    {
+        //        List<Pack> packs = ShopManager.AllCardPacks();
+        //        Person currentPerson = UserManager.GetAllUser(packs);
+
+        //        model = new Cart()
+        //        {
+        //            Money = currentPerson.Mo
+        //        };
+
+        //        List<Packages> packagesModel = new List<Packages>();
+
+        //        foreach (var pack in packs)
+        //        {
+        //            packagesModel.Add(new Packages()
+        //            {
+        //                Packname = pack.Name,
+        //                CardQuantity = pack.Cardquantity.GetValueOrDefault(),
+        //                Packprice = pack.Packprice.GetValueOrDefault(),
+        //                ID = pack.ID
+        //            });
+        //        }
+
+        //        model.AllOrders = packagesModel; 
+        //    }
+
+
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+
+        //    return View(model);
+        //}
 
 
 
