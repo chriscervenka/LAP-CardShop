@@ -30,7 +30,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Login(Login login)
         {
             bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
@@ -57,6 +57,7 @@ namespace CardGame.Web.Controllers
 
             }
 
+            //return RedirectToAction("Index", "Home");
             return RedirectToAction("Index", "Home");
         }
 
@@ -89,11 +90,11 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Register(Register regUser)
         {
             var dbUser = new Person();
-            //Session.Add("Person", dbUser);
+            Session.Add("Person", dbUser);
 
             dbUser.Firstname = regUser.Firstname;
             dbUser.Lastname = regUser.Lastname;
@@ -135,20 +136,5 @@ namespace CardGame.Web.Controllers
 
             return View();
         }
-
-
-
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult VerifyRegistration(Register regUser)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View("Registration");
-        //    }
-        //    return RedirectToAction("VerifyRegistration");
-
-        //}
     }
 }

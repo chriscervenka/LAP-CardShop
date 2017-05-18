@@ -58,6 +58,7 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Statistics()
         {
             Statistic s = new Statistic();

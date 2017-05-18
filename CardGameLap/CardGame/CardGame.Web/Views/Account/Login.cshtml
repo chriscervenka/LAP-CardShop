@@ -8,8 +8,8 @@
     <div class="booklets" id="background">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 side" id="left">
-                <div class="panell" id="backgroundright">
-                    <div class="layout-background" id="wood_background">
+                @*<div class="panell" id="backgroundright">
+                    <div class="layout-background" id="wood_background">*@
                         @using (Html.BeginForm())
                         {                      
                             <h2>LOGIN</h2>
@@ -31,12 +31,14 @@
                                 <button type="submit" class="btn btn-submit" id="login">Login</button>
                             </div>
 
-                            <p>Don't have a account, please ...</p>
-                            <input type="button" class="btn btn-info" value="Create Account" onclick="location.href='@Url.Action("Register", "Account")'" />
+                            <div>
+                                <p>Don't have a account, please ...</p>
+                                <input type="button" class="btn btn-info" value="Create Account" onclick="location.href='@Url.Action("Register", "Account")'" />
+                            </div>
                         }                        
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        @*</div>
+    </div>*@
 </body>

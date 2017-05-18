@@ -37,14 +37,14 @@ namespace CardGame.Web.Controllers
         //    }
 
         //    return View(model);
-        //}            
+        //}
 
 
         [HttpPost]
         [Authorize]
         public ActionResult Packs()
         {
-            Cart model = null;
+            Pack model = null;
             try
             {
                 List<Pack> packs = ShopManager.AllCardPacks();
@@ -52,7 +52,7 @@ namespace CardGame.Web.Controllers
 
                 //model = new Cart()
                 //{
-                //    Money = curremtPerson.Money
+                //    Money = currentPerson.Money
                 //};
 
                 List<Packages> packagesModel = new List<Packages>();
@@ -67,7 +67,7 @@ namespace CardGame.Web.Controllers
                         ID = pack.ID
                     });
                 }
-                model.Packs = packagesModel; 
+                Model.packs = packagesModel; 
             }
 
 
@@ -79,6 +79,8 @@ namespace CardGame.Web.Controllers
 
             return View(model);
         }
+
+
 
         /// <summary>
         /// 

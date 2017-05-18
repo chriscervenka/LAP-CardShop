@@ -271,9 +271,7 @@
     <Content Include="Views\Shared\_Contact.cshtml" />
     <Content Include="Views\Shared\_OrderDetails.cshtml" />
     <Content Include="Views\Shared\_Cardpacks.cshtml" />
-    <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\_LayoutNew.cshtml" />
-    <Content Include="Views\Shared\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
