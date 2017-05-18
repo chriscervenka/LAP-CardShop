@@ -30,6 +30,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(Login login)
         {
             bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
@@ -54,7 +55,6 @@ namespace CardGame.Web.Controllers
 
                 System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
 
-                //return RedirectToAction("Index", "Home");
             }
 
             return RedirectToAction("Index", "Home");
@@ -93,7 +93,7 @@ namespace CardGame.Web.Controllers
         public ActionResult Register(Register regUser)
         {
             var dbUser = new Person();
-            Session.Add("Person", dbUser);
+            //Session.Add("Person", dbUser);
 
             dbUser.Firstname = regUser.Firstname;
             dbUser.Lastname = regUser.Lastname;

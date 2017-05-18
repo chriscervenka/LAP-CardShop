@@ -1,15 +1,15 @@
 ﻿
 
 body, html {
-	background:url(../Content/Images/background.png) no-repeat;
-	/*background-position: center center;*/
-	
-	background-size: cover;
-	height: 80%;
-	font-size: 16px;
-	margin: 0px;
-	padding: 0px;
-	}
+    /*background: url(../Content/Images/background.png) no-repeat;*/
+    background-image: url('Images/enterpic.jpg');
+    /*background-position: center center;*/
+    background-size: cover;
+    height: 80%;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
 	
 h2 {
 	margin: 0px;
@@ -60,11 +60,6 @@ h2 {
     font-size: 16px;		
 	}
 
-.btn-info {
-	color: #fff;
-	background-color: #5bc0de;
-	border-color: none;
-	}
 
 .btn.btn-info {
 	width: 150px;
@@ -97,31 +92,30 @@ h2 {
 	font-size: 16px;
 	padding: 0px;
 	}
-		
 
-.panell#backgroundleft {
-	/*background:url(wood_background.png);*/
+/*.panell#backgroundleft {
+	background:url(wood_background.png);
 	background-color: transparent !important;
 	border-radius: 0px;
 	margin-bottom: 180px;
 	color: #fff;
 	text-align: center;
-	/*padding: 40px 60px 40px 170px;*/
+	padding: 40px 60px 40px 170px;
 	border: 1px;
 	border-color: #fff;
 	}
 
 .panell#backgroundright {
-	/*background:url(wood_background.png);*/
+	background:url(wood_background.png);
 	background-color: transparent !important;
 	border-radius: 0px;
 	margin-bottom: 180px;
 	color: #fff;
 	text-align: center;
-	/*padding: 40px 170px 40px 60px;*/
-	}
+	padding: 40px 170px 40px 60px;
+	}*/
 
-.layout-background#wood_background {
+.layout-background {
 	background:url(../Content/Images/wood_background.png);
     /*height: 600px;*/
 	height: 800px;
@@ -248,5 +242,20 @@ label {
     margin: 10px;
     padding: 10px;
     border: 1px solid #fff;
+}
+
+.container, .body-content {
+	background-image: url(../Content/Images/enterpic.jpg);
+}
+
+#background {
+	background: url(../Content/Images/enterpic.jpg);
+	height: 100%;
+}
+
+.form-group {
+	margin-bottom: 15px;
+	margin-left: 30%;
+	margin-right: 30%;
 }
 

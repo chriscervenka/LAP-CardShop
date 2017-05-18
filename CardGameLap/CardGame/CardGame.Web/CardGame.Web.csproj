@@ -185,12 +185,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\Images\background.png" />
+    <Content Include="Content\Images\bibliothek.jpg" />
     <Content Include="Content\Images\Bild1.png" />
     <Content Include="Content\Images\Bild2.png" />
     <Content Include="Content\Images\black.jpg" />
     <Content Include="Content\Images\Button_hp.png" />
     <Content Include="Content\Images\card1.png" />
     <Content Include="Content\Images\diamond.png" />
+    <Content Include="Content\Images\enterpic.jpg" />
     <Content Include="Content\Images\image1300x300.png" />
     <Content Include="Content\Images\image300x300.png" />
     <Content Include="Content\Images\LoginButton.png" />
