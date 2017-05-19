@@ -3,79 +3,99 @@
     ViewBag.Title = "Register";
 }
 
+<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
-<body>
-<div class="booklets" id="background">
-    <div class="row">
-        <div class="col-lg-12 col-sm-12 col-md-12 side" id="left">
-            <div class="panell" id="backgroundright">
-                <div class="layout-background" id="wood_background">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
 
-                    @using (Html.BeginForm())
-                    {                    
-                        @Html.ValidationSummary(true)
+        <h2>REGISTRATION</h2>
+        @Html.AntiForgeryToken()
+        @*if (ViewBag.Message != null)
+            {
+                <div style="border: solid 1px green">
+                    @ViewBag.Message
+                </div>
 
-                        <h2>REGISTRATION</h2>
-                        @Html.AntiForgeryToken()
-                        @*if (ViewBag.Message != null)
-                        {
-                            <div style="border: solid 1px green">
-                                @ViewBag.Message
-                            </div>
+            }*@
 
-                        }*@
-                   
-                            <div class="form-group">
-                                <div class="input-field">
-                                @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })
-                                @Html.TextBoxFor(u => u.Firstname, htmlAttributes: new { @class = "form-control", placeholder = "Firstname", id = "firstname" })
-                                @Html.ValidationMessageFor(u => u.Firstname)
-                                </div>
+        <div class="form-group">
+            <div class="input-field">
+                @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label" })
+                @Html.TextBoxFor(u => u.Firstname, htmlAttributes: new { @class = "form-control", placeholder = "Firstname", id = "firstname" })
+                @Html.ValidationMessageFor(u => u.Firstname)
+            </div>
 
-                                <div class="input-field">
-                                    @Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })
-                                    @Html.TextBoxFor(u => u.Lastname, htmlAttributes: new { @class = "form-control", placeholder = "Lastname", id = "lastname" })
-                                    @Html.ValidationMessageFor(u => u.Lastname)
-                                </div>
+            <div class="input-field">
+                @Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label" })
+                @Html.TextBoxFor(u => u.Lastname, htmlAttributes: new { @class = "form-control", placeholder = "Lastname", id = "lastname" })
+                @Html.ValidationMessageFor(u => u.Lastname)
+            </div>
 
-                                <div class="input-field">
-                                    @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })
-                                    @Html.TextBoxFor(u => u.Gamertag, htmlAttributes: new { @class = "form-control", placeholder = "Gamertag", id = "gamertag" })
-                                    @Html.ValidationMessageFor(u => u.Gamertag)
-                                </div>
+            <div class="input-field">
+                @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })
+                @Html.TextBoxFor(u => u.Gamertag, htmlAttributes: new { @class = "form-control", placeholder = "Gamertag", id = "gamertag" })
+                @Html.ValidationMessageFor(u => u.Gamertag)
+            </div>
 
-                                <div class="input-field">
-                                    @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })
-                                    @Html.TextBoxFor(u => u.Email, htmlAttributes: new { @class = "form-control", placeholder = "E-Mail", id = "email" })
-                                    @Html.ValidationMessageFor(u => u.Email)
-                                </div>
+            <div class="input-field">
+                @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label" })
+                @Html.TextBoxFor(u => u.Email, htmlAttributes: new { @class = "form-control", placeholder = "E-Mail", id = "email" })
+                @Html.ValidationMessageFor(u => u.Email)
+            </div>
 
-                                <div class="input-field">
-                                    @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
-                                    @Html.PasswordFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
-                                    @Html.ValidationMessageFor(u => u.Password)
-                                </div>
+            <div class="input-field">
+                @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label" })
+                @Html.PasswordFor(u => u.Password, htmlAttributes: new { @class = "form-control", placeholder = "Enter Password", id = "password" })
+                @Html.ValidationMessageFor(u => u.Password)
+            </div>
 
-                                <div class="input-field">
-                                    @Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })
-                                    @Html.PasswordFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "form-control", placeholder = "Confirm Password", id = "password" })
-                                    @Html.ValidationMessageFor(u => u.ConfirmPassword)
-                                </div>
-                            </div>
+            <div class="input-field">
+                @Html.LabelFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "control-label" })
+                @Html.PasswordFor(u => u.ConfirmPassword, htmlAttributes: new { @class = "form-control", placeholder = "Confirm Password", id = "password" })
+                @Html.ValidationMessageFor(u => u.ConfirmPassword)
+            </div>
+        </div>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-submit">Sign-up</button>
-                            </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-submit">Sign-up</button>
+                        </div>
 
 
                             <div>
                                 <p>You allready have a account, go to ...</p>
                                 <input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" />
                             </div>
-                    }                   
+    }
+</div>
+<div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h3>Überschrift rechte seite</h3><br>
+    @*<p>
+       allgemeine info zur registrierung
+    </p>*@
+
+    <div class="booklets" id="background">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 side" id="left">
+                <div class="panell" id="backgroundleft">
+                    <div class="layout-background" id="wood_background">
+                        <h1>Welcome</h1>
+                        <br />
+                        <h2>@ViewBag.Gamertag</h2>
+                        <br />
+                        <p>You are successfully registrated</p>
+                        <hr />
+                        <br />
+                        <p>You got @ViewBag.CurrencyBalance <img src="~/Content/Images/diamond.png" alt="diamond" height="60" width="60" /> diamonds</p>
+                        <p>for your shopping tour ...</p>
+                        <br />
+                        <p>Please Login to get the full Shop-Expirience</p>
+
+                        <input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-</body>

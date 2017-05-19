@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
+using System.Diagnostics;
 
 namespace CardGame.Web.Controllers
 {
@@ -17,6 +18,7 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            Debug.WriteLine("GET - Home - Index");
             if (User.Identity.Name != "")
             {
                 ViewBag.Email = User.Identity.Name;
@@ -40,6 +42,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult About(int? seite)
         {
+            Debug.WriteLine("GET - Home - About");
             ViewBag.Message = "Your application description page.";
 
             return View(seite ?? 1);
@@ -53,6 +56,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult Contact()
         {
+            Debug.WriteLine("GET - Home - Contact");
             ViewBag.Message = "Your contact page.";
 
             return View();
@@ -61,6 +65,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult Statistics()
         {
+            Debug.WriteLine("GET - Home - Statistics");
             Statistic s = new Statistic();
 
             //Befülle die Statistik

@@ -7,6 +7,7 @@ using CardGame.DAL.Logic;
 using CardGame.Web.Models;
 using CardGame.DAL.Model;
 using CardGame.Log;
+using System.Diagnostics;
 
 namespace CardGame.Web.Controllers
 {
@@ -20,6 +21,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult Packs()
         {
+            Debug.WriteLine("GET - Shop - Packs");
             Cart model = new Cart();
             model.Packs = new List<Packages>();
 
@@ -38,8 +40,7 @@ namespace CardGame.Web.Controllers
 
             return View(model);
         }
-
-
+        
         //[HttpPost]
         //[Authorize]
         //public ActionResult Packs()
@@ -80,9 +81,7 @@ namespace CardGame.Web.Controllers
 
         //    return View(model);
         //}
-
-
-
+        
         /// <summary>
         /// 
         /// </summary>
@@ -91,6 +90,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult Shop()
         {
+            Debug.WriteLine("GET - Shop - Shop");
             ShopContainer sc = new ShopContainer();
 
             sc.shop = new Shop();
@@ -116,8 +116,6 @@ namespace CardGame.Web.Controllers
             return View("Shop", sc);
         }
 
-
-
         /// <summary>
         /// 
         /// </summary>
@@ -127,6 +125,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPackages(int id)
         {
+            Debug.WriteLine("GET - Shop - BuyCardPackages(id)");
             var dbPack = ShopManager.GetCardPackById(id);
 
             Packages cardPack = new Packages();
@@ -151,6 +150,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPackages(int id, int numberOfPacks)
         {
+            Debug.WriteLine("POST - Shop - BuyCardPackages(id, numberOfPacks)");
             Writer.LogInfo("id: " + id.ToString());
             Writer.LogInfo("numPacks: " + numberOfPacks.ToString());
 
@@ -184,6 +184,7 @@ namespace CardGame.Web.Controllers
         [ActionName("OrderDetails")]
         public ActionResult Order()
         {
+            Debug.WriteLine("POST - Shop - Order");
             Models.Order o = (Models.Order)TempData["Order"];
 
             try
@@ -226,6 +227,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult OrderDetails()
         {
+            Debug.WriteLine("POST - Shop - OrderDetails");
             Models.Order o = (Models.Order)TempData["Order"];
             TempData["Order"] = o;   
             return View(o);
@@ -239,6 +241,7 @@ namespace CardGame.Web.Controllers
         [HttpGet]
         private List<Models.Card> GeneratedCards()
         {
+            Debug.WriteLine("GET - Shop - GeneratedCards");
             List<DAL.Model.Card> orderedCards = (List<DAL.Model.Card>)TempData["OrderedCards"];
             var cards = new List<Models.Card>();
 
@@ -268,6 +271,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult _NotEnoughBalance() //PARTIAL VIEW erstellen !!!!!
         {
+            Debug.WriteLine("GET - Shop - _NotEnoughBalance");
             return View();
         }
     }

@@ -6,6 +6,16 @@ html { height: 100%; }
 	width: 100%;
 }
 
+
+.bb-item {
+    display: inherit !important;
+}
+
+nav li {
+    list-style: none;
+}
+
+
 *,
 *:after,
 *:before {

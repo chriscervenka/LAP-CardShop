@@ -107,7 +107,6 @@ namespace CardGame.DAL.Logic
                     //zufällig generierte Cards für Pack
                     for (int i = 0; i < numCardsToGenerate; i++)
                     {
-
                         int indexId = rnd.Next(0, validIDs.Count - 1);
                         int generatedCardId = validIDs[indexId];
                         var generatedCard = db.Cards.Where(c => c.ID == generatedCardId).Include(c => c.Type).FirstOrDefault();
@@ -154,7 +153,6 @@ namespace CardGame.DAL.Logic
                 {
                     throw new Exception("No Pack found");
                 }
-
                 //Convert a nullable DECIMAL to INT
                 price = (int)pack.Packprice;
             }
