@@ -4,31 +4,26 @@
     ViewBag.Title = "VerifyRegistration";
 }
 
-<body>
-    <div class="booklets" id="background">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 side" id="left">
-                <div class="panell" id="backgroundleft">
-                    <div class="layout-background" id="wood_background">
-                        <h1>Welcome</h1>
-                        <br />
-                        <h2>@ViewBag.Gamertag</h2>
-                        <br />
-                        <p>You are successfully registrated</p>
-                        <hr />
-                        <br />
-                        <p>You got @ViewBag.CurrencyBalance <img src="~/Content/Images/diamond.png" alt="diamond" height="60" width="60" /> diamonds</p>
-                        <p>for your shopping tour ...</p>
-                        <br />
-                        <p>Please Login to get the full Shop-Expirience</p>
-                        
-                        <input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" />
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+    <div class="layout-background" id="wood_background">
+        <h1>Welcome</h1>
+        <br />
+        <h2>@ViewBag.Gamertag</h2>
+        <br />
+        <p>You are successfully registrated</p>
+        <hr />
+        <br />
+        <p>You got @ViewBag.CurrencyBalance <img src="~/Content/Images/diamond.png" alt="diamond" height="60" width="60" /> diamonds</p>
+        <p>for your shopping tour ...</p>
+        <br />
+        <p>Please Login to get the full Shop-Expirience</p>
+
+        <input type="button" class="btn btn-info" value="Login" onclick="location.href='@Url.Action("Login", "Account")'" />
     </div>
-</body>
+
+</div>
 
 
 
