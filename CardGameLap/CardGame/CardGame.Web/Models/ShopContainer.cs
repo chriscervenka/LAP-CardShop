@@ -8,8 +8,8 @@ namespace CardGame.Web.Models
 {
     public class ShopContainer
     {
-        public Shop shop { get; set; }
+        public Shop Shop { get; set; }
 
-        public List<Card> generatedCards { get; set; }
+        public List<Card> GeneratedCards { get; set; }
     }
 }

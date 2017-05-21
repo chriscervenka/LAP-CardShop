@@ -93,10 +93,10 @@ namespace CardGame.Web.Controllers
             Debug.WriteLine("GET - Shop - Shop");
             ShopContainer sc = new ShopContainer();
 
-            sc.shop = new Shop();
-            sc.shop.CardPacks = new List<Packages>();
-            sc.shop.Order = new Models.Order();
-            sc.shop.Order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+            sc.Shop = new Shop();
+            sc.Shop.CardPacks = new List<Packages>();
+            sc.Shop.Order = new Models.Order();
+            sc.Shop.Order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
@@ -108,10 +108,10 @@ namespace CardGame.Web.Controllers
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
                 cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
-                sc.shop.CardPacks.Add(cardPack);
+                sc.Shop.CardPacks.Add(cardPack);
             }
 
-            sc.generatedCards = GeneratedCards();
+            sc.GeneratedCards = GeneratedCards();
 
             return View("Shop", sc);
         }
@@ -266,10 +266,10 @@ namespace CardGame.Web.Controllers
         /// <summary>
         /// Gibt auf Bildschirm View mit Meldung "nicht genug Diamanten" aus
         /// </summary>
-        /// <returns>return View() - PartialView _NotEnoughBalance</returns>
+        /// <returns>return View()</returns>
         [HttpGet]
         [Authorize]
-        public ActionResult _NotEnoughBalance() //PARTIAL VIEW erstellen !!!!!
+        public ActionResult NotEnoughBalance()
         {
             Debug.WriteLine("GET - Shop - _NotEnoughBalance");
             return View();
