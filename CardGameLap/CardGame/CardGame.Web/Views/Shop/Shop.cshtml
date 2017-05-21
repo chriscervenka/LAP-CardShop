@@ -1,23 +1,57 @@
-﻿@model CardGame.Web.Models.ShopContainer
+﻿@model CardGame.Web.Models.Shop
 
 @{
     ViewBag.Title = "Packages";
 }
 
 
-    <div class="booklets" id="background">
-        <div class="row col-xs-12 col-sm-6 col-md-6 side" id="left">
 
-            @Html.Partial("_Orderdetails", Model.shop.Order)
+        <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
-            <input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />
+            @*@Html.Partial("_Orderdetails", Model.shop.Order)*@
+
+            @foreach (var cp in Model.CardPacks)
+            {
+                <div class="packages-shopstart row col-md-12">
+                    <hr />
+                    <div class="col-sm-6">
+                        <img src="~/Content/Images/pack1.png" alt="" height="120" width="90" />
+                    </div>
+                    <br />
+                    <div class="col-sm-6">
+
+                        Pack @Html.Display(cp.Packname)
+                        <br />
+                        Cards inside @(cp.CardQuantity)
+                        <br />
+                        Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
+                    </div>
+                    <br />
+
+                    @if (Model.AmountMoney < cp.Packprice)
+                    {
+                        <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop")'" />
+                    }
+
+                    else
+                    {
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-submit" id="buypack">buy Pack</button>
+                        </div>
+                    }
+
+                </div>
+            }
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
 
-            @Html.Partial("_ListOfCards",Model.generatedCards)
+            @*<input type="button" class="btn btn-info" value="Go to Shop" onclick="location.href='@Url.Action("Shop", "Shop")'" />*@
+        
+        @*<div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
 
-        </div>
-    </div>
+            @Html.Partial("_Cardpacks")
+
+        </div>*@
+   
 
 
 

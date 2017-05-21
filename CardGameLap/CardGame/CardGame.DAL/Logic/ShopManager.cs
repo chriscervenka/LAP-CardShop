@@ -13,7 +13,7 @@ namespace CardGame.DAL.Logic
     {
 
         /// <summary>
-        /// 
+        /// Alle PACK aus der Tabelle PACK ohne PARAMETER
         /// </summary>
         /// <returns>return allPacks</returns>
         public static List<Pack> AllCardPacks()
@@ -43,7 +43,7 @@ namespace CardGame.DAL.Logic
 
 
         /// <summary>
-        /// 
+        /// Gibt mir aus Tabelle PACK die ID von jedem PACK
         /// </summary>
         /// <param name="id"></param>
         /// <returns> return dbCardPack</returns>
@@ -70,7 +70,7 @@ namespace CardGame.DAL.Logic
 
 
         /// <summary>
-        /// Methode ORDERPACK erstellt PACK mit zufällig erstellten Karten aus TBLCARD
+        /// Methode ORDERPACK erstellt PACK mit zufällig erstellten Karten aus CARDS
         /// </summary>
         /// <param name="id"></param>
         /// <param name="numberOfPacks"></param>
@@ -137,11 +137,11 @@ namespace CardGame.DAL.Logic
 
 
         /// <summary>
-        /// 
+        /// Methode berechnet die TOTALCOST 
         /// </summary>
         /// <param name="id"></param>
         /// <param name="numberOfPacks"></param>
-        /// <returns></returns>
+        /// <returns>den PREIS aus price * numberOfPacks</returns>
         public static int TotalCost(int id, int numberOfPacks)
         {
             int price = 0;
