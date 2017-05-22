@@ -22,12 +22,14 @@
                 Cards inside @(cp.CardQuantity)
                 <br />
                 Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" />
-            </div>
+                <br/>
+                Your current amount is now @Model.AmountMoney
+                </div>
             <br />
 
             @if (Model.AmountMoney < cp.Packprice)
             {
-                <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop")'" />
+                <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop" , new { id = cp.ID})'" />
             }
 
             else

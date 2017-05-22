@@ -28,6 +28,8 @@ namespace CardGame.Web.Controllers
             List<Web.Models.Pack> packages = new List<Web.Models.Pack>();
             Models.Pack pack = new Models.Pack();
 
+            var currencyBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+
             var dbCardPacks = ShopManager.AllCardPacks();
 
             foreach (var p in dbCardPacks)
@@ -42,9 +44,14 @@ namespace CardGame.Web.Controllers
             }
             // Liste PACKAGES wird auf model.CardPacks gespeichert und model wird in View übergeben !!!!!!!
             model.CardPacks = packages;
+            model.AmountMoney = currencyBalance;
             return View(model);
         }
         
+
+
+
+
         //[HttpPost]
         //[Authorize]
         //public ActionResult Packs()
@@ -139,6 +146,7 @@ namespace CardGame.Web.Controllers
             cardPack.Packprice = dbPack.Packprice.GetValueOrDefault();
             cardPack.CardQuantity = dbPack.Cardquantity.GetValueOrDefault();
 
+            //TODO Pilgersdorfer fragen ob in selber VIEW generierbar
             return View("Shop", cardPack);
         }
 
