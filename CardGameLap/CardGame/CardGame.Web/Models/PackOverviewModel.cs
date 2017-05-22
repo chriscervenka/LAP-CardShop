@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-
 namespace CardGame.Web.Models
 {
-    public class Shop
-
+    public class PackOverviewModel
     {
         public int AmountMoney { get; set; }
-        
 
-        public Order Order { get; set; }
+        public List<Pack> CardPacks { get; set; }
     }
 }

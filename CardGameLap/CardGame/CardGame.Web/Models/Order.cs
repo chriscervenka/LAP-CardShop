@@ -7,7 +7,7 @@ namespace CardGame.Web.Models
 {
     public class Order 
     {
-        public Packages Pack { get; set; }
+        //public Packages Pack { get; set; }
 
         public DateTime OrderDate { get; set; }
 
@@ -15,14 +15,16 @@ namespace CardGame.Web.Models
 
         public int UserBalance { get; set; }
 
+        public List<Pack> CardPacks { get; set; }
+
 
         //Konstruktor erstellt
-        public Order()
-        {
-            Pack  = new Packages();
-            PackQuantity = -1;
-            UserBalance = -1;
-            OrderDate = DateTime.Now;
-        }
+        //public Order()
+        //{
+        //    Pack  = new Packages();
+        //    PackQuantity = -1;
+        //    UserBalance = -1;
+        //    OrderDate = DateTime.Now;
+        //}
     }
 }

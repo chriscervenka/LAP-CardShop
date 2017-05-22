@@ -17,27 +17,31 @@ namespace CardGame.Web.Controllers
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
         /// <returns>return View(vom ShopContainer.Model)</returns>
-        [HttpGet]
+        //[HttpGet]
         [Authorize]
-        public ActionResult Packs()
+        public ActionResult Shop()
         {
             Debug.WriteLine("GET - Shop - Packs");
-            ShopContainer model = new ShopContainer();
-            model.Shop.CardPacks = new List<Packages>();
+            //ShopContainer model = new ShopContainer();
+            PackOverviewModel model = new PackOverviewModel();
+
+            List<Web.Models.Pack> packages = new List<Web.Models.Pack>();
+            Models.Pack pack = new Models.Pack();
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
-            foreach (var pack in dbCardPacks)
+            foreach (var p in dbCardPacks)
             {
-                Packages cardPack = new Packages();
-                cardPack.ID = pack.ID;
-                cardPack.Packname = pack.Name;
+                Models.Pack cardPack = new Models.Pack();
+                cardPack.ID = p.ID;
+                cardPack.Packname = p.Name;
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = pack.Cardquantity.GetValueOrDefault();
-                cardPack.Packprice = pack.Packprice.GetValueOrDefault();
-                model.Shop.CardPacks.Add(cardPack);
+                cardPack.CardQuantity = p.Cardquantity.GetValueOrDefault();
+                cardPack.Packprice = p.Packprice.GetValueOrDefault();
+                packages.Add(cardPack);
             }
-
+            // Liste PACKAGES wird auf model.CardPacks gespeichert und model wird in View übergeben !!!!!!!
+            model.CardPacks = packages;
             return View(model);
         }
         
@@ -86,35 +90,35 @@ namespace CardGame.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Authorize]
-        public ActionResult Shop()
-        {
-            Debug.WriteLine("GET - Shop - Shop");
-            ShopContainer sc = new ShopContainer();
+        //[HttpGet]
+        //[Authorize]
+        //public ActionResult Shop()
+        //{
+        //    Debug.WriteLine("GET - Shop - Shop");
+        //    ShopContainer sc = new ShopContainer();
 
-            sc.Shop = new Shop();
-            sc.Shop.CardPacks = new List<Packages>();
-            sc.Shop.Order = new Models.Order();
-            sc.Shop.Order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+        //    sc.Shop = new Shop();
+        //    sc.Shop.Order = new List<Models.Pack>();
+        //    sc.Shop.Order = new Models.Order();
+        //    sc.Shop.Order.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
 
-            var dbCardPacks = ShopManager.AllCardPacks();
+        //    var dbCardPacks = ShopManager.AllCardPacks();
 
-            foreach (var dbCp in dbCardPacks)
-            {
-                Packages cardPack = new Packages();
-                cardPack.ID = dbCp.ID;
-                cardPack.Packname = dbCp.Name;
-                //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
-                cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
-                cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
-                sc.Shop.CardPacks.Add(cardPack);
-            }
+        //    foreach (var dbCp in dbCardPacks)
+        //    {
+        //        Models.Pack cardPack = new Models.Pack();
+        //        cardPack.ID = dbCp.ID;
+        //        cardPack.Packname = dbCp.Name;
+        //        //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
+        //        cardPack.CardQuantity = dbCp.Cardquantity.GetValueOrDefault();
+        //        cardPack.Packprice = dbCp.Packprice.GetValueOrDefault();
+        //        sc.Shop.CardPacks.Add(cardPack);
+        //    }
 
-            sc.GeneratedCards = GeneratedCards();
+        //    sc.GeneratedCards = GeneratedCards();
 
-            return View("Shop", sc);
-        }
+        //    return View("Shop", sc);
+        //}
 
         /// <summary>
         /// 
@@ -128,7 +132,7 @@ namespace CardGame.Web.Controllers
             Debug.WriteLine("GET - Shop - BuyCardPackages(id)");
             var dbPack = ShopManager.GetCardPackById(id);
 
-            Packages cardPack = new Packages();
+            Models.Pack cardPack = new Models.Pack();
             cardPack.ID = dbPack.ID;
             cardPack.Packname = dbPack.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal
@@ -157,14 +161,14 @@ namespace CardGame.Web.Controllers
             Models.Order o = new Models.Order();
             var dbPackages = ShopManager.GetCardPackById(id);
 
-            Packages cardPack = new Packages();
+            Models.Pack cardPack = new Models.Pack();
             cardPack.ID = dbPackages.ID;
             cardPack.Packname = dbPackages.Name;
             //GetValueOrDefault eingefügt wegen DATENTYP decimal => Konvertierung da NULLABLE
             cardPack.CardQuantity = dbPackages.Cardquantity.GetValueOrDefault();
             cardPack.Packprice = dbPackages.Packprice.GetValueOrDefault();
 
-            o.Pack = cardPack;
+            //o.CardPacks = ;
             o.OrderDate = DateTime.Now;
             o.PackQuantity = numberOfPacks;
             o.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
@@ -179,43 +183,43 @@ namespace CardGame.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        [Authorize]
-        [ActionName("OrderDetails")]
-        public ActionResult Order()
-        {
-            Debug.WriteLine("POST - Shop - Order");
-            Models.Order o = (Models.Order)TempData["Order"];
+        //[HttpPost]
+        //[Authorize]
+        //[ActionName("OrderDetails")]
+        //public ActionResult Order()
+        //{
+        //    Debug.WriteLine("POST - Shop - Order");
+        //    Models.Order o = (Models.Order)TempData["Order"];
 
-            try
-            {
-                var totalOrder = ShopManager.TotalCost(o.Pack.ID, o.PackQuantity);
-                if (totalOrder > o.UserBalance)
-                {
-                    return RedirectToAction("_NotEnoughBalance");
-                }
-                var balanceNew = o.UserBalance - totalOrder;
+        //    try
+        //    {
+        //        var totalOrder = ShopManager.TotalCost(o.List<Models.Pack>, o.PackQuantity);
+        //        if (totalOrder > o.UserBalance)
+        //        {
+        //            return RedirectToAction("_NotEnoughBalance");
+        //        }
+        //        var balanceNew = o.UserBalance - totalOrder;
 
-                var updated = UserManager.BalanceUpdateByEmail(User.Identity.Name, balanceNew);
-                if (!updated)
-                {
-                    return RedirectToAction("UpdateError");
-                }
+        //        var updated = UserManager.BalanceUpdateByEmail(User.Identity.Name, balanceNew);
+        //        if (!updated)
+        //        {
+        //            return RedirectToAction("UpdateError");
+        //        }
 
-                var orderedCards = ShopManager.OrderPack(o.Pack.ID, o.PackQuantity);
+        //        var orderedCards = ShopManager.OrderPack(o.Pack.ID, o.PackQuantity);
 
-                //Methode 'AddCardsToCollectionByEmail' in USERMANAGER noch schreiben
-                var updatedCards = UserManager.AddCardsToCollectionByEmail(User.Identity.Name, orderedCards);
+        //        //Methode 'AddCardsToCollectionByEmail' in USERMANAGER noch schreiben
+        //        var updatedCards = UserManager.AddCardsToCollectionByEmail(User.Identity.Name, orderedCards);
 
-                TempData["OrderedCards"] = orderedCards;
-                return RedirectToAction("GeneratedCards");
-            }
-            catch (Exception e)
-            {
-                Writer.LogError(e);
-                return RedirectToAction("Error", "Error");
-            }
-        }
+        //        TempData["OrderedCards"] = orderedCards;
+        //        return RedirectToAction("GeneratedCards");
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Writer.LogError(e);
+        //        return RedirectToAction("Error", "Error");
+        //    }
+        //}
 
 
 

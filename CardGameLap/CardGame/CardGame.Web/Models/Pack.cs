@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace CardGame.Web.Models
 {
-    public class Packages
+    public class Pack
     {
         
         public int ID { get; set; }
@@ -19,6 +19,6 @@ namespace CardGame.Web.Models
 
         public decimal Packprice { get; set; }
 
-        public List<Card> CardList { get; set; }
+        //public List<Packages> CardPackages { get; set; }
     }
 }

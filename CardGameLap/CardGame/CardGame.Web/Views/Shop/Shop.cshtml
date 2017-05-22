@@ -1,14 +1,13 @@
-﻿@model CardGame.Web.Models.ShopContainer
+﻿@model CardGame.Web.Models.PackOverviewModel
 
 @{
-    ViewBag.Title = "Packages";
+    ViewBag.Title = "Shop";
 }
 
 <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h3>Pack Overview</h3><br>
 
-    @*@Html.Partial("_Orderdetails", Model.shop.Order)*@
-
-    @foreach (var cp in Model.Shop.CardPacks)
+    @foreach (var cp in Model.CardPacks)
     {
         <div class="packages-shopstart row col-md-12">
             <hr />
@@ -18,7 +17,7 @@
             <br />
             <div class="col-sm-6">
 
-                Pack @Html.Display(cp.Packname)
+                Pack @(cp.Packname)
                 <br />
                 Cards inside @(cp.CardQuantity)
                 <br />
@@ -26,7 +25,7 @@
             </div>
             <br />
 
-            @if (Model.Shop.AmountMoney < cp.Packprice)
+            @if (Model.AmountMoney < cp.Packprice)
             {
                 <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop")'" />
             }
@@ -46,7 +45,7 @@
 <div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <h3>Order Details</h3><br>
     
-    @foreach (var order in Model.Shop.CardPacks)
+    @foreach (var order in Model.CardPacks)
     { 
         <div>
             @(order.CardQuantity)
