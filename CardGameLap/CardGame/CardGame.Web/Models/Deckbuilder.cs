@@ -8,7 +8,6 @@ namespace CardGame.Web.Models
 {
     public class Deckbuilder : Card
     {
-        [Key]
         public new int ID { get; set; }
 
         public List<Card> Deck { get; set; }

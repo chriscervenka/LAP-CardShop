@@ -1,0 +1,40 @@
+<Xcpt>
+  <Time>22.05.2017 09:19:15</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 50.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.05.2017 09:23:08</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>22.05.2017 09:24:50</Time>
+  <Info>Entered Pass = chris72</Info>
+</Info>
+<Info>
+  <Time>22.05.2017 09:24:50</Time>
+  <Info>HashPass = 572153951E48D6C729FC2FB38F7C3B45E58CF88002B0C0F50E160BD9C5F378464B08A610A09B4E9C122DF5BF086ACC56F1AAB8984F6E43B471017995232FD8E4</Info>
+</Info>
+<Xcpt>
+  <Time>22.05.2017 09:24:55</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 50.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>22.05.2017 09:40:30</Time>
+  <Info>Entered Pass = gannydo</Info>
+</Info>
+<Info>
+  <Time>22.05.2017 09:40:30</Time>
+  <Info>HashPass = 35B34A4DF43F6F1EE0E33420589E3FB55929091E64451F0664E7031D3D3D77D8F9C171356E768048693B876D6764814C25C6A9D315FDF2D1D3BD20A700C87108</Info>
+</Info>

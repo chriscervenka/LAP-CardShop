@@ -13,7 +13,7 @@
         <div class="packages-shopstart row col-md-12">
             <hr />
             <div class="col-sm-6">
-                <img src="~/Content/Images/pack1.png" alt="" height="120" width="90" />
+                <img src="~/Content/Images/pack1.png" alt="" height="100" width="70" />
             </div>
             <br />
             <div class="col-sm-6">
@@ -22,7 +22,7 @@
                 <br />
                 Cards inside @(cp.CardQuantity)
                 <br />
-                Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="25" width="25" />
+                Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" />
             </div>
             <br />
 
@@ -49,9 +49,9 @@
     @foreach (var order in Model.Shop.CardPacks)
     { 
         <div>
-            @Html.Display(order.OrderDate)
-            @Html.DisplayFor(order.PackQuantity)
-            @Html.DisplayFor(order.PackQuantity)
+            @(order.CardQuantity)
+            @(order.Packname)
+            
         </div>
     }
 </div>

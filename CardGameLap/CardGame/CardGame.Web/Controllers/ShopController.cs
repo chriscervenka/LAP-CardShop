@@ -16,14 +16,14 @@ namespace CardGame.Web.Controllers
         /// <summary>
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
-        /// <returns>return View(vom Shop.Model)</returns>
+        /// <returns>return View(vom ShopContainer.Model)</returns>
         [HttpGet]
         [Authorize]
         public ActionResult Packs()
         {
             Debug.WriteLine("GET - Shop - Packs");
-            Shop model = new Shop();
-            model.CardPacks = new List<Packages>();
+            ShopContainer model = new ShopContainer();
+            model.Shop.CardPacks = new List<Packages>();
 
             var dbCardPacks = ShopManager.AllCardPacks();
 
@@ -35,7 +35,7 @@ namespace CardGame.Web.Controllers
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = pack.Cardquantity.GetValueOrDefault();
                 cardPack.Packprice = pack.Packprice.GetValueOrDefault();
-                model.CardPacks.Add(cardPack);
+                model.Shop.CardPacks.Add(cardPack);
             }
 
             return View(model);
