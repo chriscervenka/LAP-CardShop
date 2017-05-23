@@ -34,10 +34,8 @@ namespace CardGame.Web.Controllers
                 //card.Type = CardManager.GetCardTypeById(c.fktype);
                 //card.Type = CardManager.CardTypes[c.fktype];
                 
-
                 CardList.Add(deck);
             }
-
             return View(CardList);
         }
     }

@@ -93,28 +93,6 @@ h2 {
 	padding: 0px;
 	}
 
-/*.panell#backgroundleft {
-	background:url(wood_background.png);
-	background-color: transparent !important;
-	border-radius: 0px;
-	margin-bottom: 180px;
-	color: #fff;
-	text-align: center;
-	padding: 40px 60px 40px 170px;
-	border: 1px;
-	border-color: #fff;
-	}
-
-.panell#backgroundright {
-	background:url(wood_background.png);
-	background-color: transparent !important;
-	border-radius: 0px;
-	margin-bottom: 180px;
-	color: #fff;
-	text-align: center;
-	padding: 40px 170px 40px 60px;
-	}*/
-
 .layout-background {
 	background:url(../Content/Images/wood_background.png);
     /*height: 600px;*/

@@ -5,48 +5,48 @@
 }
 
 <div class="container col-md-12">
-    <div class="row col-md-6 slider-body">
-        <div class="well">
-            <div id="myCarousel" class="carousel slide">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="item active col-md-12 col">
+    <div class="scrollerdeck row col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
+        <h2>Your Deck</h2>
 
-                        @foreach (var card in Model)
-                        {
-                            if (card.Pic != null)
-                            {
-                                var base64 = Convert.ToBase64String(card.Pic);
-                                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                                <div class="col-md-2">
-                                    <img src="@imgSrc" id="cardPic" alt="Image" class="img-responsive" />
-                                </div>
-                            }
+        <div id="myCarousel" class="carousel slide">
+            
 
-                            @*else
-                                {
-                                    <div class="card-head">@Html.DisplayText("No Picture")</div>
-                                }*@
-
-
-                        }
-
+            @foreach (var card in Model)
+            {
+                if (card.Pic != null)
+                {
+                    var base64 = Convert.ToBase64String(card.Pic);
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                    <div class="col-md-2">
+                        <img src="@imgSrc" id="cardPic" alt="Image" class="img-responsive" />
                     </div>
-                </div>
-                <!--/carousel-inner-->
-                @*<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                }
+
+                @*else
+                    {
+                        <div class="card-head">@Html.DisplayText("No Picture")</div>
+                    }*@
+
+
+            }
+
+            @*</div>
+                </div>*@
+            <!--/carousel-inner-->
+            @*<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>*@
-            </div>
-            <!--/myCarousel-->
         </div>
-        <!--/well-->
     </div>
+</div>
 
 
 
-    <div class="row col-md-6 slider-body">
+
+
+
+    @*<div class="row col-md-6 slider-body">
         <div class="well">
             <div id="myCarouselCol" class="carousel slide">
 
@@ -75,11 +75,11 @@
 
                             }
 
-                        </div>
-                        <!--/row-->
-                    </div>
+                        @*</div>
+                        /row
+                    </div>*@
                     <!--/item-->
-                    <div class="item">
+                    @*<div class="item">
                         <div class="row">
                             <div class="col-sm-2">
                                 <a href="#x"><img src="~/Content/Images/Card.png" alt="Image" class="img-responsive"></a>
@@ -101,22 +101,22 @@
                             </div>
 
                         </div>
-                        <!--/row-->
-                    </div>
+                        /row
+                    </div>*@
 
-                </div>
+                @*</div>*@
                 <!--/carousel-inner-->
-                <a class="left carousel-control" href="#myCarouselCol" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#myCarouselCol" data-slide="next">›</a>
+                @*<@*a class="left carousel-control" href="#myCarouselCol" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarouselCol" data-slide="next">›</a>*@
 
-            </div>
+            @*</div>
             <!--/myCarousel-->
 
         </div>
         <!--/well-->
 
     </div>
-</div>
+</div>*@
 
 
 

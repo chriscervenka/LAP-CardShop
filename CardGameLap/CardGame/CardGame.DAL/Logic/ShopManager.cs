@@ -77,7 +77,10 @@ namespace CardGame.DAL.Logic
         /// <returns>return generatedCards</returns>
         public static List<Card> OrderPack(int id, int numberOfPacks)
         {
+            //Random Instanz
             Random rnd = new Random();
+
+            //Liste von Card auf generatedCards gespeichert
             var generatedCards = new List<Card>();
 
             try

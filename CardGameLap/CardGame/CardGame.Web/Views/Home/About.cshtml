@@ -9,65 +9,67 @@
 <body>
     <div class="booklets" id="background">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="left">
-                <div class="panell" id="backgroundleft">
-                    <div class="layout-background" id="wood_background">
-                        @{if (User.Identity.Name == "")
-                            {
-                                <h1>Welcome</h1>
+            <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                @*<div class="col-xs-12 col-sm-6 col-md-6 side" id="left">*@
+                    <div class="panell" id="backgroundleft">
+                        <div class="layout-background" id="wood_background">
+                            @{if (User.Identity.Name == "")
+                                {
+                                    <h1>Welcome</h1>
+                                }
+                                else
+                                {
+                                    <h2> Welcome</h2>
+                                    <h1>@ViewBag.Gamertag</h1>
+                                    <h2>to the amazing Shop of</h2>
+
+                                }
                             }
+
+
+                            <h1>Magical Tea Party</h1>
+                            @{
+                                if (User.IsInRole("player"))
+                                {
+                                    <h2>You are a Player</h2>
+                                }
+                            }
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                            <br>
+                            <p>If you are interested on more</p>
+                            <p>Choose buttons byond</p>
+
+                            <input type="button" class="btn btn-info" value="Impressum" onclick="location.href='@Url.Action("About", "Home", new { seite = 1})'" />
+
+                            <input type="button" class="btn btn-info" value="AGB" onclick="location.href='@Url.Action("About", "Home", new { seite = 2})'" />
+
+                            <input type="button" class="btn btn-info" value="Contact" onclick="location.href='@Url.Action("About", "Home", new { seite = 3})'" />
+                        </div>
+                    </div>
+                </div>
+
+            <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                @*<div class="col-xs-12 col-sm-6 col-md-6 side" id="right">*@
+                    <div class="panell" id="backgroundright">
+                        <div class="layout-background" id="wood_background">
+
+                            @if (Model == 1)
+                            {
+                                @Html.Partial("_Impressum")
+                            }
+
+                            else if (Model == 2)
+                            {
+                                @Html.Partial("_AGB")
+                            }
+
                             else
                             {
-                                <h2> Welcome</h2>
-                                <h1>@ViewBag.Gamertag</h1>
-                                <h2>to the amazing Shop of</h2>
-
+                                @Html.Partial("_Contact")
                             }
-                        }
-
-
-                        <h1>Magical Tea Party</h1>
-                        @{
-                            if (User.IsInRole("player"))
-                            {
-                                <h2>You are a Player</h2>
-                            }
-                        }
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                        <br>
-                        <p>If you are interested on more</p>
-                        <p>Choose buttons byond</p>
-
-                        <input type="button" class="btn btn-info" value="Impressum" onclick="location.href='@Url.Action("About", "Home", new { seite = 1})'" />
-
-                        <input type="button" class="btn btn-info" value="AGB" onclick="location.href='@Url.Action("About", "Home", new { seite = 2})'" />
-
-                        <input type="button" class="btn btn-info" value="Contact" onclick="location.href='@Url.Action("About", "Home", new { seite = 3})'" />
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 side" id="right">
-                <div class="panell" id="backgroundright">
-                    <div class="layout-background" id="wood_background">
-
-                        @if (Model == 1)
-                        {
-                            @Html.Partial("_Impressum")
-                        }
-
-                        else if (Model == 2)
-                        {
-                            @Html.Partial("_AGB")
-                        }
-
-                        else
-                        {
-                            @Html.Partial("_Contact")
-                        }
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
