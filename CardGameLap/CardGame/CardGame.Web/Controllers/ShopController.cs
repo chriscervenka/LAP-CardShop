@@ -160,12 +160,11 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpPost]
         [Authorize]
-        public ActionResult BuyPack(int id, int numberOfPacks)
+        public ActionResult BuyPack(int id)
         {
-            Debug.WriteLine("POST - Shop - BuyCardPackages(id, numberOfPacks)");
+            Debug.WriteLine("POST - Shop - BuyCardPackages(id)");
             Writer.LogInfo("id: " + id.ToString());
-            Writer.LogInfo("numPacks: " + numberOfPacks.ToString());
-
+            
             Models.Order o = new Models.Order();
             var dbPackages = ShopManager.GetCardPackById(id);
 

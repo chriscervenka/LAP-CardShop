@@ -35,7 +35,12 @@
             else
             {
                 <div class="form-group">
-                    <button type="submit" class="btn btn-submit" id="buypack">buy Pack</button>
+                    @using (Html.BeginForm("BuyPack", "Shop", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("id", cp.ID)
+                        <button type="submit" class="btn btn-submit" id="buypack">buy Pack</button>
+                    }
                 </div>
             }
 
