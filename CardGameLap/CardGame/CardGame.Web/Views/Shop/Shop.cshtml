@@ -37,7 +37,7 @@
                 <div class="form-group">
                     @using (Html.BeginForm("BuyPack", "Shop", FormMethod.Post))
                     {
-                        @Html.AntiForgeryToken()
+                        @*@Html.AntiForgeryToken()*@
                         @Html.Hidden("id", cp.ID)
                         <button type="submit" class="btn btn-submit" id="buypack">buy Pack</button>
                     }
@@ -49,18 +49,13 @@
 </div>
 
 
-@*<div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <h3>Order Details</h3><br>
-    
-    @foreach (var order in Model.CardPacks)
-    { 
-        <div>
-            @(order.CardQuantity)
-            @(order.Packname)
-            
-        </div>
-    }
-</div>*@
+
+
+    @Html.Partial("_OrderDetails")
+
+</div>
 
             
    

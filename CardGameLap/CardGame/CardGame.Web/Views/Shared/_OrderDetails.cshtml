@@ -15,13 +15,13 @@
             @using (Html.BeginForm())
             {
                 <div>
-                    <p>Your Order is about @Model.PackQuantity pack(s) called @Model.Pack.Packname</p><br />
+                    <p>Your Order is about @Model.PackQuantity pack(s)</p><br />
                 </div>
 
                     <div>
                         <p>Your current balance is now @Model.UserBalance</p><br />
                         <p>Your total cost of this Order is @Model.PackQuantity </p><br />
-                        <p>Your new balance is about @(Model.UserBalance-(Model.PackQuantity * Model.Pack.Packprice))</p><br />
+                        <p>Your new balance is about @(Model.UserBalance)</p><br />
                     </div>
 
                     <div class="form-group">

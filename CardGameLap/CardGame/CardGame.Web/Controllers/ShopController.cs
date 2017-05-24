@@ -162,15 +162,15 @@ namespace CardGame.Web.Controllers
         /// <param name="numberOfPacks"></param>
         /// <returns></returns>
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult BuyPack(int idPack, string email)
+        public ActionResult BuyPack(int id, string email)
         {
             Debug.WriteLine("POST - Shop - BuyCardPackages(id)");
-            Writer.LogInfo("id: " + idPack.ToString());
+            Writer.LogInfo("id: " + id.ToString());
             
             Models.Order o = new Models.Order();
-            var dbPackages = ShopManager.GetCardPackById(idPack);
+            var dbPackages = ShopManager.GetCardPackById(id);
 
             //Models.Pack cardPack = new Models.Pack();
             //cardPack.ID = dbPackages.ID;
@@ -186,7 +186,7 @@ namespace CardGame.Web.Controllers
 
             email = User.Identity.Name;
 
-            BuyResult rueck = ShopManager.BuyPack(idPack, email);
+            BuyResult rueck = ShopManager.BuyPack(id, email);
 
             TempData["Order"] = o;
 
@@ -200,7 +200,7 @@ namespace CardGame.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [Authorize]
         public ActionResult Buy(int id)
         {

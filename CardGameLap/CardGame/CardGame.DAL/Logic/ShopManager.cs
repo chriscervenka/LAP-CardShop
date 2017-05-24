@@ -180,12 +180,12 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         private static Random RandomNumberGenerator = new Random();
 
-        public static BuyResult BuyPack(int idPack, string email)
+        public static BuyResult BuyPack(int id, string email)
         {
             BuyResult result = BuyResult.Success;
 
-            if (idPack <= 0)
-                throw new ArgumentException("Invalid Value", nameof(idPack));
+            if (id <= 0)
+                throw new ArgumentException("Invalid Value", nameof(id));
 
             if (string.IsNullOrEmpty(email))
                 throw new ArgumentNullException(nameof(email));
@@ -198,9 +198,9 @@ namespace CardGame.DAL.Logic
                     if (user == null)
                         throw new ArgumentException("Invalid value", nameof(email));
 
-                    Pack cardPack = context.Packs.FirstOrDefault(x => x.ID == idPack);
+                    Pack cardPack = context.Packs.FirstOrDefault(x => x.ID == id);
                     if (cardPack == null)
-                        throw new ArgumentException("Invalid value", nameof(idPack));
+                        throw new ArgumentException("Invalid value", nameof(id));
 
                     if (user.Currencybalance < cardPack.Packprice)
                     {
@@ -212,7 +212,7 @@ namespace CardGame.DAL.Logic
 
                         Order purchase = new Order()
                         {
-                            ID_Pack = idPack,
+                            ID_Pack = id,
                             ID_Person = user.ID,
                             NumberOfPacks = 1,
                             Orderdate = DateTime.Now
