@@ -35,6 +35,7 @@
           <Property Name="ID_Person" Type="int" />
           <Property Name="ID_Order" Type="int" />
           <Property Name="ID_Deckcard" Type="int" />
+          <Property Name="NumberOfCards" Type="int" />
         </EntityType>
         <EntityType Name="Deckcards">
           <Key>
@@ -60,6 +61,7 @@
           <Property Name="Orderdate" Type="datetime" />
           <Property Name="ID_Person" Type="int" />
           <Property Name="ID_Pack" Type="int" />
+          <Property Name="NumberOfPacks" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Packs">
           <Key>
@@ -84,6 +86,16 @@
           <Property Name="Password" Type="char" MaxLength="128" />
           <Property Name="Salt" Type="char" MaxLength="128" />
           <Property Name="Role" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Types">
           <Key>
@@ -253,6 +265,7 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Packs" EntityType="Self.Packs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="People" EntityType="Self.People" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vEditor" EntityType="Self.vEditor" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -355,6 +368,7 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
           <NavigationProperty Name="Deckcard" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="Collections" ToRole="Deckcards" />
           <NavigationProperty Name="Order" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="Collections" ToRole="Orders" />
           <NavigationProperty Name="Person" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="Collections" ToRole="People" />
+          <Property Name="NumberOfCards" Type="Int32" />
         </EntityType>
         <EntityType Name="Deckcard">
           <Key>
@@ -388,6 +402,7 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
           <NavigationProperty Name="AllCollections" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="Orders" ToRole="Collections" />
           <NavigationProperty Name="Pack" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="Orders" ToRole="Packs" />
           <NavigationProperty Name="Person" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="Orders" ToRole="People" />
+          <Property Name="NumberOfPacks" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Pack">
           <Key>
@@ -612,6 +627,7 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <EntitySet Name="vEditor" EntityType="CardGame.DAL.Model.vEditor" />
+          <EntitySet Name="sysdiagrams" EntityType="CardGame.DAL.Model.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="vEditor">
           <Key>
@@ -630,6 +646,16 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
           <Property Name="editfile" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -664,6 +690,7 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
           <EntitySetMapping Name="Collections">
             <EntityTypeMapping TypeName="CardGame.DAL.Model.Collection">
               <MappingFragment StoreEntitySet="Collections">
+                <ScalarProperty Name="NumberOfCards" ColumnName="NumberOfCards" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
                 <ScalarProperty Name="ID_Order" ColumnName="ID_Order" />
@@ -692,6 +719,7 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="CardGame.DAL.Model.Order">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="NumberOfPacks" ColumnName="NumberOfPacks" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Orderdate" ColumnName="Orderdate" />
                 <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
@@ -745,6 +773,17 @@ Warnung 6002: Für Tabelle/Sicht 'itin21_ClonestoneFS.dbo.vEditor' ist kein Prim
                 <ScalarProperty Name="idperson" ColumnName="idperson" />
                 <ScalarProperty Name="ideditfile" ColumnName="ideditfile" />
                 <ScalarProperty Name="idedit" ColumnName="idedit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CardGame.DAL.Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

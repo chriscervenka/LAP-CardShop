@@ -127,6 +127,9 @@ namespace CardGame.Web.Controllers
         //    return View("Shop", sc);
         //}
 
+
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -159,30 +162,76 @@ namespace CardGame.Web.Controllers
         /// <param name="numberOfPacks"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult BuyPack(int id)
+        public ActionResult BuyPack(int idPack, string email)
         {
             Debug.WriteLine("POST - Shop - BuyCardPackages(id)");
-            Writer.LogInfo("id: " + id.ToString());
+            Writer.LogInfo("id: " + idPack.ToString());
             
             Models.Order o = new Models.Order();
-            var dbPackages = ShopManager.GetCardPackById(id);
+            var dbPackages = ShopManager.GetCardPackById(idPack);
 
-            Models.Pack cardPack = new Models.Pack();
-            cardPack.ID = dbPackages.ID;
-            cardPack.Packname = dbPackages.Name;
-            //GetValueOrDefault eingefügt wegen DATENTYP decimal => Konvertierung da NULLABLE
-            cardPack.CardQuantity = dbPackages.Cardquantity.GetValueOrDefault();
-            cardPack.Packprice = dbPackages.Packprice.GetValueOrDefault();
+            //Models.Pack cardPack = new Models.Pack();
+            //cardPack.ID = dbPackages.ID;
+            //cardPack.Packname = dbPackages.Name;
+            ////GetValueOrDefault eingefügt wegen DATENTYP decimal => Konvertierung da NULLABLE
+            //cardPack.CardQuantity = dbPackages.Cardquantity.GetValueOrDefault();
+            //cardPack.Packprice = dbPackages.Packprice.GetValueOrDefault();
 
             //o.CardPacks = ;
             o.OrderDate = DateTime.Now;
-            o.PackQuantity = numberOfPacks;
+            o.PackQuantity = 1;
             o.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+
+            email = User.Identity.Name;
+
+            BuyResult rueck = ShopManager.BuyPack(idPack, email);
 
             TempData["Order"] = o;
 
             return RedirectToAction("OrderDetails");
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public ActionResult Buy(int id)
+        {
+            ActionResult result = RedirectToAction("Shop", "Shop");
+
+            //if (id <= 0)
+            //{
+            //    TempData[Constants.MessageType.WARNING] = Messages.INVALID_PACK_NUMBER;
+            //}
+
+            string username = User.Identity.Name;
+            try
+            {
+                //switch (ShopAdministration.BuyPack(id, username))
+                //{
+                //    case BuyResult.Success:
+                //        TempData[Constants.MessageType.SUCCESS] = Messages.BUY_PACK_SUCCESS;
+                //        break;
+                //    case BuyResult.NotEnoughMoney:
+                //        TempData[Constants.MessageType.WARNING] = Messages.NOT_ENOUGH_MONEY;
+                //        break;
+                //    default:
+                //        break;
+                //}
+            }
+            catch (Exception)
+            {
+                //TempData[Constants.MessageType.ERROR] = Messages.ERROR_COMMON;
+            }
+
+            return result;
         }
 
 
@@ -234,7 +283,7 @@ namespace CardGame.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
+        
         [Authorize]
         public ActionResult OrderDetails()
         {

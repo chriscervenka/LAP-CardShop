@@ -15,6 +15,8 @@ namespace CardGame.Web.Models
 
         public int UserBalance { get; set; }
 
+        public int NumberOfPacks { get; set; }
+
         public List<Pack> CardPacks { get; set; }
 
 

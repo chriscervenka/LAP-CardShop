@@ -24,6 +24,7 @@ namespace CardGame.DAL.Model
         public Nullable<int> ID_Person { get; set; }
         public Nullable<int> ID_Order { get; set; }
         public Nullable<int> ID_Deckcard { get; set; }
+        public Nullable<int> NumberOfCards { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Card> AllCards { get; set; }
