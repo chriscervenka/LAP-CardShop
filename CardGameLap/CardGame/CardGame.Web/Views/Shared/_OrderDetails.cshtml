@@ -11,22 +11,22 @@
 <div class="panell" id="backgroundright">
     <div class="layout-background" id="wood_background">
         <h2>Order Details</h2>
-                       
+        <br />            
         <div>
-            <p>Your Order is about @Model.PackQuantity pack(s)</p><br />
+            <p>Your order is about @Model.PackQuantity <img src="~/Content/Images/pack1.png" alt="diamond" height="30" width="18" /></p><br />
         </div>
 
         <div>
-            <p>Your current balance is now @Model.UserBalance</p><br />
-            <p>Your total cost of this Order is @Model.PackQuantity </p><br />
-            <p>Your new balance is about @(Model.UserBalance)</p><br />
+            <p>Your current balance is now @(Model.UserBalance) <img src="~/Content/Images/diamond.png" alt="diamond" height="18" width="15" /></p><br />
+            <p>Your total cost of this Order is @Model.PackQuantity</p><br />
+            <p>Your new balance is about @(Model.UserBalance) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" /></p><br />
         </div>
 
         @*<div class="form-group">
             <button type="submit" class="btn btn-submit" id="orderbutton">Buy Pack</button>
         </div>*@
 
-        <input type="button" class="btn btn-info" value="Back To Shop" onclick="location.href='@Url.Action("Shop", "Shop", new { ShopPage = 2})'" />
+        <input type="button" class="btn btn-info" value="Back To Shop" onclick="location.href='@Url.Action("Shop", "Shop", new { ShopPage = 1})'" />
 
     </div>
 </div>

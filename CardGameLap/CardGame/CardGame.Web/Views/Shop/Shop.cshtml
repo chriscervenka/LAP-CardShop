@@ -34,12 +34,12 @@
                     <br />
                     Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" />
                     <br />
-                    Your current amount is now @Model.AmountMoney
+                    Your current amount @Model.AmountMoney
                 </div>
                 <br />
                 if (Model.AmountMoney < cp.Packprice)
                 {
-                    <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop", new { id = cp.ID })'" />
+                    <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Shop", "Shop", new { ShopPage = 2}@*new { id = cp.ID }*@)'" />
                 }
 
                 else

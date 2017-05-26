@@ -219,6 +219,7 @@ namespace CardGame.DAL.Logic
                                 ID_Person = user.ID,
                                 NumberOfPacks = 1,
                                 Orderdate = DateTime.Now
+                                
                             };
                             context.Orders.Add(purchase);
 
