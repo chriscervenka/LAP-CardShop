@@ -96,13 +96,7 @@
     <Compile Include="Model\Person.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Type.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\vEditor.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

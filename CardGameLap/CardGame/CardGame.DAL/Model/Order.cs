@@ -24,7 +24,7 @@ namespace CardGame.DAL.Model
         public Nullable<System.DateTime> Orderdate { get; set; }
         public Nullable<int> ID_Person { get; set; }
         public Nullable<int> ID_Pack { get; set; }
-        public int NumberOfPacks { get; set; }
+        public Nullable<int> NumberOfPacks { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Collection> AllCollections { get; set; }
