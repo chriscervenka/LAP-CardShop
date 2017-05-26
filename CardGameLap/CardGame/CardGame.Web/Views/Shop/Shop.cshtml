@@ -11,39 +11,70 @@
     {
         <div class="packages-shopstart row col-md-12">
             <hr />
-            <div class="col-sm-6">
-                <img src="~/Content/Images/pack1.png" alt="" height="100" width="70" />
-            </div>
-            <br />
-            <div class="col-sm-6">
-
-                Pack @(cp.Packname)
-                <br />
-                Cards inside @(cp.CardQuantity)
-                <br />
-                Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" />
-                <br/>
-                Your current amount is now @Model.AmountMoney
-                </div>
-            <br />
-
-            @if (Model.AmountMoney < cp.Packprice)
+            @if (cp.IsMoney == false)
             {
-                <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop" , new { id = cp.ID})'" />
+                <div class="col-sm-6">
+                    <img src="~/Content/Images/pack1.png" alt="" height="90" width="60" />
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-6">
+                    <img src="~/Content/Images/diamond.png" alt="" height="80" width="80" />
+                </div>
+            }
+            <br />
+            @if (cp.IsMoney == false)
+            {
+                <div class="col-sm-6">
+
+                    Pack @(cp.Packname)
+                    <br />
+                    Cards inside @(cp.CardQuantity)
+                    <br />
+                    Price @(cp.Packprice) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" />
+                    <br />
+                    Your current amount is now @Model.AmountMoney
+                </div>
+                <br />
+                if (Model.AmountMoney < cp.Packprice)
+                {
+                    <input type="button" class="btn btn-info" value="buy Diamonds" onclick="location.href='@Url.Action("Order", "Shop", new { id = cp.ID })'" />
+                }
+
+                else
+                {
+                    <div class="form-group">
+                        @using (Html.BeginForm("BuyPack", "Shop", FormMethod.Post))
+                        {
+                            @*@Html.AntiForgeryToken()*@
+                            @Html.Hidden("id", cp.ID)
+                            <button type="submit" class="btn btn-submit" id="buypack">buy Pack</button>
+                        }
+                    </div>
+                }
             }
 
             else
             {
-                <div class="form-group">
-                    @using (Html.BeginForm("BuyPack", "Shop", FormMethod.Post))
-                    {
-                        @*@Html.AntiForgeryToken()*@
-                        @Html.Hidden("id", cp.ID)
-                        <button type="submit" class="btn btn-submit" id="buypack">buy Pack</button>
-                    }
+                <div class="col-sm-6">
+
+                    @(cp.Packname)
+                    <br />
+                    Price @(cp.Packprice) &nbsp; €
+                    <br />
+                    Value @(cp.DiamondValue)
+
+                    <div class="form-group">
+                        @using (Html.BeginForm("BuyPack", "Shop", FormMethod.Post))
+                        {
+                            @*@Html.AntiForgeryToken()*@
+                            @Html.Hidden("id", cp.ID)
+                            <button type="submit" class="btn btn-submit" id="buypack">buy Diamonds</button>
+                        }
+                    </div>
                 </div>
             }
-
         </div>
     }
 </div>

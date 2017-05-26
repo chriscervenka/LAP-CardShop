@@ -13,13 +13,15 @@ namespace CardGame.Web.Controllers
 {
     public class ShopController : Controller
     {
+
+        #region ACTIONMETHODE Shop(int? ShopPage)
         /// <summary>
         /// Methode AllCardPacks() gibt mir alle in die Datenbank eingetragene PACKS zurück 
         /// </summary>
-        /// <returns>return View(vom ShopContainer.Model)</returns>
+        /// <returns></returns>
         //[HttpGet]
         [Authorize]
-        public ActionResult Shop()
+        public ActionResult Shop(int? ShopPage)
         {
             Debug.WriteLine("GET - Shop - Packs");
             //ShopContainer model = new ShopContainer();
@@ -40,18 +42,32 @@ namespace CardGame.Web.Controllers
                 //GetValueOrDefault METHODE zur Konvertierung eingefügt wegen DATENTYP decimal
                 cardPack.CardQuantity = p.Cardquantity.GetValueOrDefault();
                 cardPack.Packprice = p.Packprice.GetValueOrDefault();
+                cardPack.DiamondValue = p.DiamondValue.GetValueOrDefault();
+                cardPack.IsMoney = p.IsMoney.GetValueOrDefault();
                 packages.Add(cardPack);
             }
-            // Liste PACKAGES wird auf model.CardPacks gespeichert und model wird in View übergeben !!!!!!!
+            // Liste PACK wird auf model.CardPacks gespeichert und model wird in View übergeben !!!!!!!
+
+            if (ShopPage != null)
+            {
+                if (ShopPage == 1)
+                {
+                    packages = packages.Where(c => c.IsMoney == false).ToList();
+                }
+                else if (ShopPage == 2)
+                {
+                    packages = packages.Where(c => c.IsMoney == true).ToList();
+                }
+            }
+
             model.CardPacks = packages;
             model.AmountMoney = currencyBalance;
             return View(model);
         }
-        
+        #endregion
 
 
-
-
+        #region ACTIONMETHODE Packs() nicht verwendet
         //[HttpPost]
         //[Authorize]
         //public ActionResult Packs()
@@ -92,7 +108,7 @@ namespace CardGame.Web.Controllers
 
         //    return View(model);
         //}
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -125,11 +141,11 @@ namespace CardGame.Web.Controllers
         //    sc.GeneratedCards = GeneratedCards();
 
         //    return View("Shop", sc);
-        //}
+        //} 
+        #endregion
 
 
-
-
+        #region ACTIONMETHODE BuyCardPackages(int id)
         /// <summary>
         /// 
         /// </summary>
@@ -152,9 +168,10 @@ namespace CardGame.Web.Controllers
             //TODO Pilgersdorfer fragen ob in selber VIEW generierbar
             return View("Shop", cardPack);
         }
+        #endregion
 
 
-
+        #region ACTIONMETHODE BuyPack(int id, string email)
         /// <summary>
         /// 
         /// </summary>
@@ -168,7 +185,7 @@ namespace CardGame.Web.Controllers
         {
             Debug.WriteLine("POST - Shop - BuyCardPackages(id)");
             Writer.LogInfo("id: " + id.ToString());
-            
+
             Models.Order o = new Models.Order();
             var dbPackages = ShopManager.GetCardPackById(id);
 
@@ -182,18 +199,20 @@ namespace CardGame.Web.Controllers
             //o.CardPacks = ;
             o.OrderDate = DateTime.Now;
             o.PackQuantity = 1;
-            o.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+            //o.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
 
             email = User.Identity.Name;
 
             BuyResult rueck = ShopManager.BuyPack(id, email);
-
+            o.UserBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
             TempData["Order"] = o;
 
             return RedirectToAction("OrderDetails");
         }
+        #endregion
 
 
+        #region ACTIONMETHODE Buy(int id)
         /// <summary>
         /// 
         /// </summary>
@@ -233,8 +252,10 @@ namespace CardGame.Web.Controllers
 
             return result;
         }
+        #endregion
 
 
+        #region ACTIONMETHODE Order() nicht verwendet
         /// <summary>
         /// 
         /// </summary>
@@ -275,29 +296,33 @@ namespace CardGame.Web.Controllers
         //        Writer.LogError(e);
         //        return RedirectToAction("Error", "Error");
         //    }
-        //}
+        //} 
+        #endregion
 
 
-
+        #region ACTIONMETHODE OrderDetails()
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        
+
         [Authorize]
         public ActionResult OrderDetails()
         {
             Debug.WriteLine("POST - Shop - OrderDetails");
             Models.Order o = (Models.Order)TempData["Order"];
-            TempData["Order"] = o;   
+            TempData["Order"] = o;
             return View(o);
         }
+        #endregion
 
 
+        #region ACTIONMETHODE List<Models.Card> GeneratedCards()
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
+
         [HttpGet]
         private List<Models.Card> GeneratedCards()
         {
@@ -320,9 +345,10 @@ namespace CardGame.Web.Controllers
 
             return cards;
         }
+        #endregion
 
 
-
+        #region ACTIONMETHODE  NotEnoughBalance()
         /// <summary>
         /// Gibt auf Bildschirm View mit Meldung "nicht genug Diamanten" aus
         /// </summary>
@@ -333,6 +359,7 @@ namespace CardGame.Web.Controllers
         {
             Debug.WriteLine("GET - Shop - _NotEnoughBalance");
             return View();
-        }
+        } 
+        #endregion
     }
 }

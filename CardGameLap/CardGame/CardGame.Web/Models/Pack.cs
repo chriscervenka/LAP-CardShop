@@ -19,6 +19,10 @@ namespace CardGame.Web.Models
 
         public decimal Packprice { get; set; }
 
+        public bool IsMoney { get; set; }
+
+        public int DiamondValue { get; set; }
+
         //public List<Packages> CardPackages { get; set; }
     }
 }

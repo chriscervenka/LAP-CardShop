@@ -21,8 +21,8 @@
             <li class="col-md-2 text-center"><a href="@Url.Action("Index", "Home")">Welcome to our Shop</a></li>
             <li class="col-md-2 text-center"><a href="@Url.Action("Register", "Account")">REGISTER / LOGIN</a></li>
             <li class="col-md-2 text-center"><a href="@Url.Action("Deckbuilder", "Deckbuilder")">DECKS / COLLECTION</a></li>
-            <li class="col-md-2 text-center"><a href="@Url.Action("Shop", "Shop")">Go to SHOP & PAYMENT</a></li>
-            <li class="col-md-2 text-center"><a href="@Url.Action("About", "Account")">Go for buying DIAMONDS</a></li>
+            <li class="col-md-2 text-center"><a href="@Url.Action("Shop", "Shop", new { ShopPage = 1})">Go for buying Packs</a></li>
+            <li class="col-md-2 text-center"><a href="@Url.Action("Shop", "Shop", new { ShopPage = 2})">Go for buying DIAMONDS</a></li>
             <li class="col-md-2 text-center"><a href="@Url.Action("About", "Home")">Contact</a></li>
         </ul>
     </nav>
