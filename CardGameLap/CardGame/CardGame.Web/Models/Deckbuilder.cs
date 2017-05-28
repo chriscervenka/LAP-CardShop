@@ -10,6 +10,8 @@ namespace CardGame.Web.Models
     {
         public new int ID { get; set; }
 
+        public new byte[] Pic { get; set; }
+
         public List<Card> Deck { get; set; }
 
         public List<Card> Collection { get; set; }
@@ -20,4 +22,4 @@ namespace CardGame.Web.Models
             Collection = new List<Card>();
         }
     }
-}
+}   

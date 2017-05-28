@@ -11,6 +11,6 @@ namespace CardGame.Web.Models
 
         public string Name { get; set; }
 
-        public List<Card> Cards { get; set; }
+        public List<Card> DeckCards { get; set; }
     }
 }
