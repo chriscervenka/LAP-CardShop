@@ -98,6 +98,13 @@ namespace CardGame.Web.Controllers
 
             dbUser.Firstname = regUser.Firstname;
             dbUser.Lastname = regUser.Lastname;
+
+            //hinzugefügte Felder von der Datenbank
+            dbUser.Anschrift = regUser.Adresse;
+            dbUser.Hausnummer = regUser.Hausnummer;
+            dbUser.Ort = regUser.Ort;
+            dbUser.PLZ = regUser.PLZ;
+
             dbUser.Gamertag = regUser.Gamertag;
             dbUser.Email = regUser.Email;
             dbUser.Password = regUser.Password;

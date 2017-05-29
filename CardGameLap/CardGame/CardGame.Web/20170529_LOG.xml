@@ -1,0 +1,136 @@
+<Info>
+  <Time>29.05.2017 08:24:27</Time>
+  <Info>Entered Pass = 123user</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 08:24:27</Time>
+  <Info>HashPass = B7D558CC4371323265204D7E0AB7D04F5F874EFC4AD74A717B21CF7975C8BA7D165DD1ACF086C70D87B46E5487F0135395B264E5AB72E6F955E08DD5CFCD53BD</Info>
+</Info>
+<Xcpt>
+  <Time>29.05.2017 08:24:30</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 36.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>29.05.2017 08:55:04</Time>
+  <Info>Entered Pass = 123user</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 08:55:04</Time>
+  <Info>HashPass = B7D558CC4371323265204D7E0AB7D04F5F874EFC4AD74A717B21CF7975C8BA7D165DD1ACF086C70D87B46E5487F0135395B264E5AB72E6F955E08DD5CFCD53BD</Info>
+</Info>
+<Xcpt>
+  <Time>29.05.2017 10:08:02</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>29.05.2017 10:09:48</Time>
+  <Info>Entered Pass = kloiber21</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 10:09:48</Time>
+  <Info>HashPass = C00F9B1DEC51CFE982C583713C4B33DB7391FE31EAC29DEDD8492293E84FCF1048392763CB7F4EEECD005F58F1990E1840B9B8273EF07CA8EFED6093C1F440BC</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 10:10:28</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 10:10:49</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:12:22</Time>
+  <Info>Entered Pass = brauner</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:12:22</Time>
+  <Info>HashPass = A5D4F477B658A962D4E0234C5C73EC93D96910D3793035CBC67256B8BC879E6C1CEA00ADA2D072AF8DD51FAD9915B7B369C57E86FC9C4B41857FBF439FCE0AE8</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:12:36</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:12:48</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:13:38</Time>
+  <Info>Entered Pass = </Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:13:38</Time>
+  <Info>HashPass = CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:19:57</Time>
+  <Info>Entered Pass = brauner</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 13:19:57</Time>
+  <Info>HashPass = A5D4F477B658A962D4E0234C5C73EC93D96910D3793035CBC67256B8BC879E6C1CEA00ADA2D072AF8DD51FAD9915B7B369C57E86FC9C4B41857FBF439FCE0AE8</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 14:21:10</Time>
+  <Info>Entered Pass = brauner</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 14:21:10</Time>
+  <Info>HashPass = A5D4F477B658A962D4E0234C5C73EC93D96910D3793035CBC67256B8BC879E6C1CEA00ADA2D072AF8DD51FAD9915B7B369C57E86FC9C4B41857FBF439FCE0AE8</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 14:21:41</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 14:21:55</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 14:22:05</Time>
+  <Info>id: 6</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 14:38:37</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 16:01:31</Time>
+  <Info>Entered Pass = hager1</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 16:01:31</Time>
+  <Info>HashPass = 04A0C89FED37FA7BA774D55EA4F3DA1BEF99B7FD48DF1A804C926DC023EF6542F8614AD53C1C034F1E90379D561ECA0218E41391552D508F0CD9FBAB52C9C9FD</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 16:07:17</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 16:07:17</Time>
+  <Info>HashPass = 8F497428D66A2E99DC444B0D73EFE6FB2CA4E84EC4EB000091CBC1FF20FD951EFD34F4E73214D4E8355D320DCA9C2ED565AA6E0A8C3E27F7C7C82510D22B5998</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 16:08:04</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>29.05.2017 16:08:40</Time>
+  <Info>id: 6</Info>
+</Info>

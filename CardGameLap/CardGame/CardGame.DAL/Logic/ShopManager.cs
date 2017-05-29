@@ -20,6 +20,40 @@ namespace CardGame.DAL.Logic
     {
 
         /// <summary>
+        /// LUHN Algorithmus
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static int getLuhn(string data)
+        {
+            int sum = 0;
+            bool odd = false;
+            for (int i = data.Length - 1; i >= 0; i--)
+            {
+                if (!odd)
+                {
+                    int tSum = (data[i] - '0') * 2;
+                    if (tSum >= 10)
+                    {
+                        tSum = tSum - 9;
+                    }
+                    sum += tSum;
+                }
+                else
+                    sum += (data[i] - '0');
+                odd = !odd;
+            }
+            int erg = (((sum / 10) + 1) * 10) - sum;
+            if (erg % 10 == 0)
+            {
+                erg = 0;
+            }
+            return erg;
+        }
+
+
+
+        /// <summary>
         /// Alle PACK aus der Tabelle PACK ohne PARAMETER
         /// </summary>
         /// <returns>return allPacks</returns>
@@ -194,7 +228,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var context = new ClonestoneFSEntities())
                 {
-                    Person user = context.AllPeople.FirstOrDefault(x => x.Email == email);
+                    Person user = context.Person.FirstOrDefault(x => x.Email == email);
                     if (user == null)
                         throw new ArgumentException("Invalid value", nameof(email));
 

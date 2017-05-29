@@ -25,6 +25,13 @@ namespace CardGame.Web.Controllers
                 user.ID = c.ID;
                 user.Firstname = c.Firstname;
                 user.Lastname = c.Lastname;
+
+                //hinzugefügte FELDER von der Datenbank
+                user.Adresse = c.Anschrift;
+                user.Ort = c.Ort;
+                user.PLZ = c.PLZ;
+                user.Hausnummer = c.Hausnummer;
+
                 user.Gamertag = c.Gamertag;
                 user.Email = c.Email;
                 user.Role = c.Role;

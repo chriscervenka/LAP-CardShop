@@ -32,6 +32,10 @@ namespace CardGame.DAL.Model
         public string Password { get; set; }
         public string Salt { get; set; }
         public string Role { get; set; }
+        public string Anschrift { get; set; }
+        public string PLZ { get; set; }
+        public string Ort { get; set; }
+        public string Hausnummer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Collection> AllCollections { get; set; }

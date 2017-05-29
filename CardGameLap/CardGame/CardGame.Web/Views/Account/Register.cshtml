@@ -25,6 +25,35 @@
                 @Html.ValidationMessageFor(u => u.Lastname)
             </div>
 
+
+            @*Neu eingefügte INPUT-Fields*@
+            <div class="input-field">
+                @Html.LabelFor(u => u.Adresse)
+                @Html.TextBoxFor(u => u.Adresse, htmlAttributes: new { @class= "form-control", placeholder = "Adresse", id = "adresse"})
+                @Html.ValidationMessageFor(u => u.Lastname)
+            </div>
+
+            <div class="input-field">
+                @Html.LabelFor(u => u.Hausnummer)
+                @Html.TextBoxFor(u => u.Hausnummer, htmlAttributes: new { @class = "form-control", placeholder = "Hausnummer", id = "number" })
+                @Html.ValidationMessageFor(u => u.Lastname)
+            </div>
+
+            <div class="input-field">
+                @Html.LabelFor(u => u.Ort)
+                @Html.TextBoxFor(u => u.Ort, htmlAttributes: new { @class = "form-control", placeholder = "Wohnort", id = "wohnort" })
+                @Html.ValidationMessageFor(u => u.Lastname)
+            </div>
+
+            <div class="input-field">
+                @Html.LabelFor(u => u.PLZ)
+                @Html.TextBoxFor(u => u.PLZ, htmlAttributes: new { @class = "form-control", placeholder = "PLZ", id = "plz" })
+                @Html.ValidationMessageFor(u => u.Lastname)
+            </div>
+
+
+
+
             <div class="input-field">
                 @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label" })
                 @Html.TextBoxFor(u => u.Gamertag, htmlAttributes: new { @class = "form-control", placeholder = "Gamertag", id = "gamertag" })
@@ -61,6 +90,8 @@
     </div>
     }
 </div>
+
+
 <div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <h3>Überschrift rechte seite</h3><br>
     @*<p>

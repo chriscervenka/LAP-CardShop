@@ -12,7 +12,7 @@ namespace CardGame.Web.Models
 {
     public class User
     {
-        [Key]
+
         public int ID { get; set; }
 
         public string Firstname { get; set; }
@@ -30,5 +30,11 @@ namespace CardGame.Web.Models
         public string Role { get; set; }
 
         public int CurrencyBalance { get; set; }
+
+        public string Adresse { get; set; }
+
+        public string Ort { get; set; }
+
+        public string PLZ { get; set; }
     }
 }

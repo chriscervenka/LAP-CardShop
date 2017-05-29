@@ -22,7 +22,7 @@ namespace CardGame.DAL.Logic
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                personList = db.AllPeople.ToList();
+                personList = db.Person.ToList();
             }
             return personList;
         }
@@ -42,7 +42,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -76,7 +76,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -144,7 +144,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -179,7 +179,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -231,7 +231,7 @@ namespace CardGame.DAL.Logic
             int numDecks = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                Person dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
+                Person dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
                     throw new Exception("User exestiert nicht");
@@ -255,7 +255,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.AllPeople.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
 
                     //if (dbUser == null)
                     //{
