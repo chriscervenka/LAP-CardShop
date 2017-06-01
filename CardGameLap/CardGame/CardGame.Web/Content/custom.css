@@ -232,6 +232,20 @@ a:hover {
 	padding: 10px 5% 10px 5%;
 }
 
+.editscroller {
+	width: 30%;
+	margin-top: 0px;
+	margin-left: 270px;
+	background-image: url("../images/paper background.png");	
+	background-repeat: no-repeat;		
+	background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+	background-position: center;	
+	padding: 10px 5% 10px 5%;
+}
+
 .scrollerdeck {
     width: 43%;
     margin-top: 75px;

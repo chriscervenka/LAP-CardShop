@@ -1,5 +1,6 @@
 ﻿using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
+using CardGame.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +14,7 @@ namespace CardGame.Web.Controllers
 {
     public class EditController : Controller
     {
-        public Person reg = new Person();
+        public Register reg = new Register();
 
         // GET: Default
         public ActionResult Index()
@@ -22,9 +23,24 @@ namespace CardGame.Web.Controllers
         }
 
         // GET: Default/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            return View();
+            Person dbUser = UserManager.GetPersonByEmail(User.Identity.Name);
+
+            //Register p = new Register();
+            ////Session.Add("Person", p);
+
+            //p.Firstname = dbUser.Firstname;
+            //p.Lastname = dbUser.Lastname;
+            //p.Adresse  = dbUser.Anschrift;
+            //p.Hausnummer = dbUser.Hausnummer;
+            //p.Ort = dbUser.Ort;
+            //p.PLZ = dbUser.PLZ;
+            //p.Email = dbUser.Email;
+            //p.Gamertag = dbUser.Gamertag;
+            //p.Password = dbUser.Password;
+
+            return View(dbUser);
         }
 
         // GET: Default/Create
@@ -51,28 +67,31 @@ namespace CardGame.Web.Controllers
         }
 
         // GET: Default/Edit/5
-        public ActionResult Edit(Person reg)
+        [HttpGet]
+        public ActionResult Edit()
         {
-            if (reg == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            Person dbUser = UserManager.GetPersonByEmail(User.Identity.Name);
 
-            Person p = new Person();
-            Session.Add("Person", p);
+            //if (reg == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
 
-            p.Firstname = reg.Firstname;
-            p.Lastname = reg.Lastname;
-            p.Anschrift = reg.Anschrift;
-            p.Hausnummer = reg.Hausnummer;
-            p.Ort = reg.Ort;
-            p.PLZ = reg.PLZ;
-            p.Email = reg.Email;
-            p.Gamertag = reg.Gamertag;
-            p.Password = reg.Password;
+            //Register p = new Register();
+            //Session.Add("Person", p);
+
+            //p.Firstname = reg.Firstname;
+            //p.Lastname = reg.Lastname;
+            //p.Adresse = reg.Adresse;
+            //p.Hausnummer = reg.Hausnummer;
+            //p.Ort = reg.Ort;
+            //p.PLZ = reg.PLZ;
+            //p.Email = reg.Email;
+            //p.Gamertag = reg.Gamertag;
+            //p.Password = reg.Password;
 
             //AuthManager.Register(p);
-            return View(p);
+            return View(dbUser);
         }
 
 
@@ -80,18 +99,40 @@ namespace CardGame.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult EditPost([Bind(Include = "ID,Firstname,Lastname,Gamertag,Email,Password,Anschrift,PLZ,Ort,Hausnummer")] Person p)
+        public ActionResult EditPost(Register ro)
         {
             ClonestoneFSEntities db = new ClonestoneFSEntities();
 
-            if (ModelState.IsValid)
-            {
-                db.Entry(p).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(p);
+            Person actPerson = (from p in db.Person where p.Email == User.Identity.Name select p).FirstOrDefault();
+
+            actPerson.Firstname = ro.Firstname;
+            actPerson.Lastname = ro.Lastname;
+            actPerson.Gamertag = ro.Gamertag;
+            actPerson.Password = ro.Password;
+            actPerson.Anschrift = ro.Adresse;
+            actPerson.Hausnummer = ro.Hausnummer;
+            actPerson.Ort = ro.Ort;
+            actPerson.PLZ = ro.PLZ;
+
+            db.SaveChanges();
+
+            return RedirectToAction("Details", "Edit");
         }
+
+        //public ActionResult EditPost([Bind(Include = "ID,Firstname,Lastname,Gamertag,Email,Password,Anschrift,PLZ,Ort,Hausnummer")] Person p)
+        //{
+        //    ClonestoneFSEntities db = new ClonestoneFSEntities();
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(p).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(p);
+        //}
+
+        
 
 
         //[HttpPost, ActionName("Edit")]
