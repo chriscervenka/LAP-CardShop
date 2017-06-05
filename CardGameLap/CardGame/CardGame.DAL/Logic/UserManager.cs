@@ -295,30 +295,21 @@ namespace CardGame.DAL.Logic
                 {
                     var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
 
-                    //if (dbUser == null)
+                    if (dbUser == null)
+                    {
+                        throw new Exception("UserDoesNotExist");
+                    }
+                    var dbCardCollection = dbUser.AllCollections.ToList();
+                    if (dbCardCollection == null)
+                    {
+                        throw new Exception("CardCollectionNotFound");
+                    }
+                    //foreach (var cc in  dbCardCollection)
                     //{
-                    //    throw new Exception("User exestiert nicht");
+                    //    for (int i = 0; i < cc.NumberOfCards; i++)
+                    //        cardList.Add(cc.AllCards);
                     //}
-
-                    //var dbCardCollection = dbUser.Collections.ToList();
-
-                    //if (dbCardCollection == null)
-                    //{
-                    //    throw new Exception("Collection nicht gefunden");
-                    //}
-
                     return cardList;
-
-                    //Collection col = new Collection();
-                    //cardList.Add();
-                    //col.Cards.Add(cardList.Co)
-                    //dbUser.Collections.Add(Collection as c)
-                    //foreach (var cc in dbCardCollection)
-                    //{
-                    //    for (int i = 0; i < cc.Cards; i++)
-                    //        cardList.Add(cc.Cards);
-                    //}
-                    //return cardList;
                 }
             }
             catch (Exception e)

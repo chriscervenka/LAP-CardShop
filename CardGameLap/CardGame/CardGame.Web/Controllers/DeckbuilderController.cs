@@ -35,9 +35,10 @@ namespace CardGame.Web.Controllers
         //}
 
 
-        public ActionResult EditDeck(int id)
+        public ActionResult EditDeck(string Email)
         {
             Deckbuilder db = new Deckbuilder();
+            var id = UserManager.GetPersonByEmail(Email).ID;
             db.ID = id;
             var dbDeckCards = DeckManager.GetDeckCardsById(id);
 

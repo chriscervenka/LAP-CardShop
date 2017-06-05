@@ -166,3 +166,71 @@
   <Time>05.06.2017 14:19:14</Time>
   <Info>id: 2</Info>
 </Info>
+<Info>
+  <Time>05.06.2017 14:48:05</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 14:48:05</Time>
+  <Info>HashPass = 9D21FF36F5E1C1342C4C6A4F4DB866E10F42B76E3EF1F6FABB0517C723159CA7DF6502F8578233E5ED484CF052C4B3280D4AC6E5F3FE50EAFC3E3E2561AAFC7C</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 14:49:02</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 14:49:30</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 14:49:44</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 15:30:00</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 15:30:00</Time>
+  <Info>HashPass = 9D21FF36F5E1C1342C4C6A4F4DB866E10F42B76E3EF1F6FABB0517C723159CA7DF6502F8578233E5ED484CF052C4B3280D4AC6E5F3FE50EAFC3E3E2561AAFC7C</Info>
+</Info>
+<Xcpt>
+  <Time>05.06.2017 15:36:57</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 id) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 73.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>05.06.2017 15:39:10</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 15:39:10</Time>
+  <Info>HashPass = 9D21FF36F5E1C1342C4C6A4F4DB866E10F42B76E3EF1F6FABB0517C723159CA7DF6502F8578233E5ED484CF052C4B3280D4AC6E5F3FE50EAFC3E3E2561AAFC7C</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 15:40:34</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 15:40:35</Time>
+  <Info>HashPass = 9D21FF36F5E1C1342C4C6A4F4DB866E10F42B76E3EF1F6FABB0517C723159CA7DF6502F8578233E5ED484CF052C4B3280D4AC6E5F3FE50EAFC3E3E2561AAFC7C</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 16:28:06</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 16:28:07</Time>
+  <Info>HashPass = 9D21FF36F5E1C1342C4C6A4F4DB866E10F42B76E3EF1F6FABB0517C723159CA7DF6502F8578233E5ED484CF052C4B3280D4AC6E5F3FE50EAFC3E3E2561AAFC7C</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 16:29:25</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 16:29:25</Time>
+  <Info>HashPass = 9D21FF36F5E1C1342C4C6A4F4DB866E10F42B76E3EF1F6FABB0517C723159CA7DF6502F8578233E5ED484CF052C4B3280D4AC6E5F3FE50EAFC3E3E2561AAFC7C</Info>
+</Info>

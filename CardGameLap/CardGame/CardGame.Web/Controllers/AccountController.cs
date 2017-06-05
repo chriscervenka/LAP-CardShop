@@ -5,7 +5,7 @@ using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
-
+using System.Data.Entity;
 
 namespace CardGame.Web.Controllers
 {
@@ -58,7 +58,9 @@ namespace CardGame.Web.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
+            var id = UserManager.GetPersonByEmail(User.Identity.Name).ID;
 
+            Session.Add("ID", id);
             return RedirectToAction("Error", "Error");
         }
 
@@ -99,6 +101,7 @@ namespace CardGame.Web.Controllers
         {
             var dbUser = new Person();
             Session.Add("Person", dbUser);
+            
 
             dbUser.Firstname = regUser.Firstname;
             dbUser.Lastname = regUser.Lastname;
