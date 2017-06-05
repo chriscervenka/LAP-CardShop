@@ -11,6 +11,44 @@ namespace CardGame.DAL.Logic
 {
     public class UserManager
     {
+        
+
+        public static int GetNumDistinctCardsOwnedByEmail(string email)
+        {
+            int numCards = -1;
+            using (var db = new ClonestoneFSEntities())
+            {
+                Person dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                if (dbUser == null)
+                {
+                    throw new Exception("UserDoesNotExist");
+                }
+                numCards = dbUser.AllCollections.Count;
+            }
+            return numCards;
+        }
+
+        public static int GetNumTotalCardsOwnedByEmail(string email)
+        {
+            int numCards = -1;
+            using (var db = new ClonestoneFSEntities())
+            {
+                Person dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                if (dbUser == null)
+                {
+                    throw new Exception("UserDoesNotExist");
+                }
+                numCards = 0;
+                foreach (var c in dbUser.AllCollections)
+                {
+                    numCards += c.NumberOfCards ?? 0;
+                }
+
+            }
+            return numCards;
+        }
+
+
         /// <summary>
         /// 
         /// </summary>

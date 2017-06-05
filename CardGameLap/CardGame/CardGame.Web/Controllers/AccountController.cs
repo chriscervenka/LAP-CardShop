@@ -55,10 +55,11 @@ namespace CardGame.Web.Controllers
 
                 System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
 
+                return RedirectToAction("Index", "Home");
             }
 
-            //return RedirectToAction("Index", "Home");
-            return RedirectToAction("Index", "Home");
+
+            return RedirectToAction("Error", "Error");
         }
 
 
@@ -67,6 +68,8 @@ namespace CardGame.Web.Controllers
         /// Bei LOGOUT redirect auf 'Home-Seite (Index)'
         /// </summary>
         /// <returns>VIEW</returns>
+        [HttpGet]
+        [Authorize]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -76,6 +79,7 @@ namespace CardGame.Web.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -100,8 +104,8 @@ namespace CardGame.Web.Controllers
             dbUser.Lastname = regUser.Lastname;
 
             //hinzugefügte Felder von der Datenbank
-            //dbUser.Anschrift = regUser.Adresse;
-            //dbUser.Hausnummer = regUser.Hausnummer;
+            dbUser.Anschrift = regUser.Adresse;
+            dbUser.Hausnummer = regUser.Hausnummer;
             dbUser.Ort = regUser.Ort;
             dbUser.PLZ = regUser.PLZ;
 
@@ -117,10 +121,17 @@ namespace CardGame.Web.Controllers
             //dbUser.tblrole.Add(new tblrole());
             //dbUser.tblrole.FirstOrDefault().rolename = "user";
 
-            AuthManager.Register(dbUser);
+            if (AuthManager.Register(dbUser))
+            {
+                int userID = UserManager.GetPersonByEmail(dbUser.Email).ID;
+                if (DeckManager.AddDefaultDecksByUserId(dbUser.ID))
+                {
+                    // gibt der ActionMethod VerifyRegistration ein neues OBJECT mit gamertag und cuurencybalance mit
 
-            // gibt der ActionMethod VerifyRegistration ein neues OBJECT mit gamertag und cuurencybalance mit
-            return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.Gamertag, currencybalance = dbUser.Currencybalance });
+                    return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.Gamertag, currencybalance = dbUser.Currencybalance });
+                }               
+            }
+            return RedirectToAction("Error", "Error");
         }
 
 

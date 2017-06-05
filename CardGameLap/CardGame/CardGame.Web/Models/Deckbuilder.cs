@@ -6,11 +6,11 @@ using System.Web;
 
 namespace CardGame.Web.Models
 {
-    public class Deckbuilder : Card
+    public class Deckbuilder 
     {
-        public new int ID { get; set; }
+        public int ID { get; set; }
 
-        public new byte[] Pic { get; set; }
+        public byte[] Pic { get; set; }
 
         public List<Card> Deck { get; set; }
 

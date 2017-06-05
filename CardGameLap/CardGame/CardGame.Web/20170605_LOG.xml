@@ -1,0 +1,168 @@
+<Xcpt>
+  <Time>05.06.2017 08:47:53</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler beim zugrunde liegenden Anbieter auf Open.</Message>
+    <Stack>   bei System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   bei System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   bei System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   bei System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;&gt;c__DisplayClass7.&lt;GetResults&gt;b__5()
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   bei System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator&gt;b__0()
+   bei System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   bei System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__1[TResult](IEnumerable`1 sequence)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   bei System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   bei System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+    <InnerException>
+      <Source>.Net SqlClient Data Provider</Source>
+      <Message>Netzwerkbezogener oder instanzspezifischer Fehler beim Herstellen einer Verbindung mit SQL Server. Der Server wurde nicht gefunden, oder auf ihn kann nicht zugegriffen werden. Überprüfen Sie, ob der Instanzname richtig ist und ob SQL Server Remoteverbindungen zulässt. (provider: Named Pipes Provider, error: 40 - Verbindung mit SQL Server konnte nicht geöffnet werden)</Message>
+      <Stack>   bei System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   bei System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   bei System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   bei System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   bei System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   bei System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   bei System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   bei System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
+   bei System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   bei System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   bei System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   bei System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   bei System.Data.SqlClient.SqlConnection.Open()
+   bei System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.&lt;Open&gt;b__36(DbConnection t, DbConnectionInterceptionContext c)
+   bei System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   bei System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.&lt;Open&gt;b__2()
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.&lt;&gt;c__DisplayClass1.&lt;Execute&gt;b__0()
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.Open()</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>05.06.2017 08:48:25</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler beim zugrunde liegenden Anbieter auf Open.</Message>
+    <Stack>   bei System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   bei System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   bei System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   bei System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;&gt;c__DisplayClass7.&lt;GetResults&gt;b__5()
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   bei System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator&gt;b__0()
+   bei System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   bei System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__1[TResult](IEnumerable`1 sequence)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   bei System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   bei System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+    <InnerException>
+      <Source>.Net SqlClient Data Provider</Source>
+      <Message>Netzwerkbezogener oder instanzspezifischer Fehler beim Herstellen einer Verbindung mit SQL Server. Der Server wurde nicht gefunden, oder auf ihn kann nicht zugegriffen werden. Überprüfen Sie, ob der Instanzname richtig ist und ob SQL Server Remoteverbindungen zulässt. (provider: Named Pipes Provider, error: 40 - Verbindung mit SQL Server konnte nicht geöffnet werden)</Message>
+      <Stack>   bei System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   bei System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   bei System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   bei System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   bei System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   bei System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   bei System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
+   bei System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
+   bei System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   bei System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   bei System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   bei System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   bei System.Data.SqlClient.SqlConnection.Open()
+   bei System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.&lt;Open&gt;b__36(DbConnection t, DbConnectionInterceptionContext c)
+   bei System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   bei System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.&lt;Open&gt;b__2()
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.&lt;&gt;c__DisplayClass1.&lt;Execute&gt;b__0()
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.Open()</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>05.06.2017 09:22:53</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'PLZ' bei 'Person' konnte nicht auf einen 'System.Int32'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.String' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   bei System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__1[TResult](IEnumerable`1 sequence)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   bei System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   bei System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 54.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>05.06.2017 09:22:53</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'PLZ' bei 'Person' konnte nicht auf einen 'System.Int32'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.String' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   bei System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__1[TResult](IEnumerable`1 sequence)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   bei System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   bei System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   bei System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 79.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>05.06.2017 09:23:13</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\Chris Artist\Documents\GitHub\LAP-CardShop\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 48.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>05.06.2017 12:27:49</Time>
+  <Info>Entered Pass = kloibsi1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 12:27:49</Time>
+  <Info>HashPass = 07BAFDF4C014BDF92CC93A121B6B840907BAFE248FC31B56BC6525C123510DA47B972A1979A5C04139F7EC45035A3AC647B90EE1275FD66B6A4EF21143DD9F6D</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 12:51:29</Time>
+  <Info>Entered Pass = knibbe1</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 12:51:29</Time>
+  <Info>HashPass = BD85A140FBAB6DB5F75DBE7F38AE8AB0C7244F9174EF20AF1C7B8C327F68635E04F6AB1DB42A7F4A58FCCA6E9A8A9364B42B2FD0AB007E679658CD69E5B6C7E3</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 14:18:55</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>05.06.2017 14:19:14</Time>
+  <Info>id: 2</Info>
+</Info>

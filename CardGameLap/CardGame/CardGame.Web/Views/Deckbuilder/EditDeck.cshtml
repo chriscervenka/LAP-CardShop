@@ -1,0 +1,101 @@
+﻿@model CardGame.Web.Models.Deckbuilder
+
+@{
+    ViewBag.Title = "EditDeck";
+}
+
+@*<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+    <h2>Your Deck</h2>
+        @foreach (var card in Model)
+            {
+                if (card.Pic != null)
+                {
+                    var base64 = Convert.ToBase64String(card.Pic);
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                <div class="col-md-2">
+                    <img src="@imgSrc" id="cardPic" alt="Image" class="img-responsive" />
+                </div>
+            }
+        }  
+</div>
+
+
+<div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h2>Your Collection</h2><br>
+</div>*@
+
+
+<div class="container-fluid">
+    <h4>Deckbuilder @Html.ActionLink("Return to Deck Overview", "DeckOverview", "Profile")</h4>
+    <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        Card Collection
+        <div class="table-responsive" style="height: 350px; overflow:auto;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-xs-6">Name</th>
+                        <th class="col-xs-2">Type</th>
+                        <th class="col-xs-1">Mana</th>
+                        <th class="col-xs-1">Att</th>
+                        <th class="col-xs-1">Life</th>
+                        <th class="col-xs-1"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var card in Model.Collection)
+                    {
+                        <tr>
+                            <td class="col-xs-6">@Html.DisplayFor(c => card.Name)</td>
+                            @*<td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>*@
+                            <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
+                            <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
+                            <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
+                            <td class="col-xs-1">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.Collection.IndexOf(card) })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        Deck @Html.ActionLink("Save Deck", "SaveDeck", new { id = Model.ID })
+        <div class="table-responsive" style="height: 350px; overflow:auto;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-xs-6">Name</th>
+                        @*<th class="col-xs-2">Type</th>*@
+                        <th class="col-xs-1">Mana</th>
+                        <th class="col-xs-1">Att</th>
+                        <th class="col-xs-1">Life</th>
+                        <th class="col-xs-1"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var card in Model.Deck)
+                    {
+                        <tr>
+                            <td class="col-xs-6">@Html.DisplayFor(c => card.Name)</td>
+                            <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
+                            <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
+                            <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
+                            <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
+                            <td class="col-xs-1">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.Deck.IndexOf(card) })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+

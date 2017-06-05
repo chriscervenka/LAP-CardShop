@@ -44,6 +44,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_Deck" Type="int" Nullable="false" />
           <Property Name="ID_Card" Type="int" Nullable="false" />
+          <Property Name="Numcards" Type="int" />
         </EntityType>
         <EntityType Name="Decks">
           <Key>
@@ -61,7 +62,7 @@
           <Property Name="Orderdate" Type="datetime" />
           <Property Name="ID_Person" Type="int" />
           <Property Name="ID_Pack" Type="int" />
-          <Property Name="NumberOfPacks" Type="int" Nullable="false" />
+          <Property Name="NumberOfPacks" Type="int" />
         </EntityType>
         <EntityType Name="Packs">
           <Key>
@@ -69,7 +70,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Packprice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Packprice" Type="int" />
           <Property Name="Cardquantity" Type="int" />
           <Property Name="IsMoney" Type="bit" />
           <Property Name="DiamondValue" Type="int" />
@@ -89,9 +90,9 @@
           <Property Name="Salt" Type="char" MaxLength="128" />
           <Property Name="Role" Type="varchar" MaxLength="20" />
           <Property Name="Anschrift" Type="varchar" MaxLength="50" />
-          <Property Name="Hausnummer" Type="varchar" MaxLength="10" />
-          <Property Name="PLZ" Type="varchar" MaxLength="10" />
           <Property Name="Ort" Type="varchar" MaxLength="50" />
+          <Property Name="Hausnummer" Type="varchar" MaxLength="50" />
+          <Property Name="PLZ" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Types">
           <Key>
@@ -100,6 +101,198 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Cards__ID_Collec__24927208">
+          <End Role="Collections" Type="Self.Collections" Multiplicity="0..1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Collections">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Collection" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Cards__ID_Collec__3B75D760">
+          <End Role="Collections" Type="Self.Collections" Multiplicity="0..1" />
+          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Collections">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cards">
+              <PropertyRef Name="ID_Collection" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Collectio__ID_De__267ABA7A">
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deckcards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Deckcard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Collectio__ID_De__3C69FB99">
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deckcards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Deckcard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Collectio__ID_Or__276EDEB3">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Collectio__ID_Or__3D5E1FD2">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Collectio__ID_Pe__286302EC">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Collectio__ID_Pe__3E52440B">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Collections">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deckcards__ID_De__2A4B4B5E">
+          <End Role="Decks" Type="Self.Decks" Multiplicity="1" />
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Decks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deckcards">
+              <PropertyRef Name="ID_Deck" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deckcards__ID_De__3F466844">
+          <End Role="Decks" Type="Self.Decks" Multiplicity="1" />
+          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Decks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deckcards">
+              <PropertyRef Name="ID_Deck" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Decks__ID_Person__2B3F6F97">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Decks" Type="Self.Decks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Decks">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Decks__ID_Person__403A8C7D">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Decks" Type="Self.Decks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Decks">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__ID_Pack__2C3393D0">
+          <End Role="Packs" Type="Self.Packs" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Pack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__ID_Pack__412EB0B6">
+          <End Role="Packs" Type="Self.Packs" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Pack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__ID_Perso__2D27B809">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__ID_Perso__4222D4EF">
+          <End Role="People" Type="Self.People" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ID_Person" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tblcard__fkclass__2D27B809">
           <End Role="Classes" Type="Self.Classes" Multiplicity="0..1" />
           <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
@@ -109,18 +302,6 @@
             </Principal>
             <Dependent Role="Cards">
               <PropertyRef Name="ID_Class" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tblcard__Fkcolle__2739D489">
-          <End Role="Collections" Type="Self.Collections" Multiplicity="0..1" />
-          <End Role="Cards" Type="Self.Cards" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Collections">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Cards">
-              <PropertyRef Name="ID_Collection" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -136,54 +317,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tblcollec__fkdec__10566F31">
-          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="0..1" />
-          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Deckcards">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Collections">
-              <PropertyRef Name="ID_Deckcard" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tblcollec__fkord__0F624AF8">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
-          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Orders">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Collections">
-              <PropertyRef Name="ID_Order" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tblcollec__fkper__0E6E26BF">
-          <End Role="People" Type="Self.People" Multiplicity="0..1" />
-          <End Role="Collections" Type="Self.Collections" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="People">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Collections">
-              <PropertyRef Name="ID_Person" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tbldeck__fkperso__1DE57479">
-          <End Role="People" Type="Self.People" Multiplicity="0..1" />
-          <End Role="Decks" Type="Self.Decks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="People">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Decks">
-              <PropertyRef Name="ID_Person" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__tbldeckca__fkcar__31EC6D26">
           <End Role="Cards" Type="Self.Cards" Multiplicity="1" />
           <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="*" />
@@ -193,42 +326,6 @@
             </Principal>
             <Dependent Role="Deckcards">
               <PropertyRef Name="ID_Card" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tbldeckca__fkdec__30F848ED">
-          <End Role="Decks" Type="Self.Decks" Multiplicity="1" />
-          <End Role="Deckcards" Type="Self.Deckcards" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Decks">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Deckcards">
-              <PropertyRef Name="ID_Deck" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tblorder__fkpack__0B91BA14">
-          <End Role="Packs" Type="Self.Packs" Multiplicity="0..1" />
-          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Packs">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="ID_Pack" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tblorder__fkpers__0A9D95DB">
-          <End Role="People" Type="Self.People" Multiplicity="0..1" />
-          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="People">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="ID_Person" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -242,49 +339,81 @@
           <EntitySet Name="Packs" EntityType="Self.Packs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="People" EntityType="Self.People" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
-            <End Role="Classes" EntitySet="Classes" />
+          <AssociationSet Name="FK__Cards__ID_Collec__24927208" Association="Self.FK__Cards__ID_Collec__24927208">
+            <End Role="Collections" EntitySet="Collections" />
             <End Role="Cards" EntitySet="Cards" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblcard__Fkcolle__2739D489" Association="Self.FK__tblcard__Fkcolle__2739D489">
+          <AssociationSet Name="FK__Cards__ID_Collec__3B75D760" Association="Self.FK__Cards__ID_Collec__3B75D760">
             <End Role="Collections" EntitySet="Collections" />
+            <End Role="Cards" EntitySet="Cards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Collectio__ID_De__267ABA7A" Association="Self.FK__Collectio__ID_De__267ABA7A">
+            <End Role="Deckcards" EntitySet="Deckcards" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Collectio__ID_De__3C69FB99" Association="Self.FK__Collectio__ID_De__3C69FB99">
+            <End Role="Deckcards" EntitySet="Deckcards" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Collectio__ID_Or__276EDEB3" Association="Self.FK__Collectio__ID_Or__276EDEB3">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Collectio__ID_Or__3D5E1FD2" Association="Self.FK__Collectio__ID_Or__3D5E1FD2">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Collectio__ID_Pe__286302EC" Association="Self.FK__Collectio__ID_Pe__286302EC">
+            <End Role="People" EntitySet="People" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Collectio__ID_Pe__3E52440B" Association="Self.FK__Collectio__ID_Pe__3E52440B">
+            <End Role="People" EntitySet="People" />
+            <End Role="Collections" EntitySet="Collections" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deckcards__ID_De__2A4B4B5E" Association="Self.FK__Deckcards__ID_De__2A4B4B5E">
+            <End Role="Decks" EntitySet="Decks" />
+            <End Role="Deckcards" EntitySet="Deckcards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deckcards__ID_De__3F466844" Association="Self.FK__Deckcards__ID_De__3F466844">
+            <End Role="Decks" EntitySet="Decks" />
+            <End Role="Deckcards" EntitySet="Deckcards" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Decks__ID_Person__2B3F6F97" Association="Self.FK__Decks__ID_Person__2B3F6F97">
+            <End Role="People" EntitySet="People" />
+            <End Role="Decks" EntitySet="Decks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Decks__ID_Person__403A8C7D" Association="Self.FK__Decks__ID_Person__403A8C7D">
+            <End Role="People" EntitySet="People" />
+            <End Role="Decks" EntitySet="Decks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__ID_Pack__2C3393D0" Association="Self.FK__Orders__ID_Pack__2C3393D0">
+            <End Role="Packs" EntitySet="Packs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__ID_Pack__412EB0B6" Association="Self.FK__Orders__ID_Pack__412EB0B6">
+            <End Role="Packs" EntitySet="Packs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__ID_Perso__2D27B809" Association="Self.FK__Orders__ID_Perso__2D27B809">
+            <End Role="People" EntitySet="People" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__ID_Perso__4222D4EF" Association="Self.FK__Orders__ID_Perso__4222D4EF">
+            <End Role="People" EntitySet="People" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
+            <End Role="Classes" EntitySet="Classes" />
             <End Role="Cards" EntitySet="Cards" />
           </AssociationSet>
           <AssociationSet Name="FK__tblcard__fktype__2C3393D0" Association="Self.FK__tblcard__fktype__2C3393D0">
             <End Role="Types" EntitySet="Types" />
             <End Role="Cards" EntitySet="Cards" />
           </AssociationSet>
-          <AssociationSet Name="FK__tblcollec__fkdec__10566F31" Association="Self.FK__tblcollec__fkdec__10566F31">
-            <End Role="Deckcards" EntitySet="Deckcards" />
-            <End Role="Collections" EntitySet="Collections" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tblcollec__fkord__0F624AF8" Association="Self.FK__tblcollec__fkord__0F624AF8">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="Collections" EntitySet="Collections" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tblcollec__fkper__0E6E26BF" Association="Self.FK__tblcollec__fkper__0E6E26BF">
-            <End Role="People" EntitySet="People" />
-            <End Role="Collections" EntitySet="Collections" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tbldeck__fkperso__1DE57479" Association="Self.FK__tbldeck__fkperso__1DE57479">
-            <End Role="People" EntitySet="People" />
-            <End Role="Decks" EntitySet="Decks" />
-          </AssociationSet>
           <AssociationSet Name="FK__tbldeckca__fkcar__31EC6D26" Association="Self.FK__tbldeckca__fkcar__31EC6D26">
             <End Role="Cards" EntitySet="Cards" />
             <End Role="Deckcards" EntitySet="Deckcards" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tbldeckca__fkdec__30F848ED" Association="Self.FK__tbldeckca__fkdec__30F848ED">
-            <End Role="Decks" EntitySet="Decks" />
-            <End Role="Deckcards" EntitySet="Deckcards" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tblorder__fkpack__0B91BA14" Association="Self.FK__tblorder__fkpack__0B91BA14">
-            <End Role="Packs" EntitySet="Packs" />
-            <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tblorder__fkpers__0A9D95DB" Association="Self.FK__tblorder__fkpers__0A9D95DB">
-            <End Role="People" EntitySet="People" />
-            <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -342,6 +471,7 @@
           <NavigationProperty Name="Card" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="Deckcards" ToRole="Cards" />
           <NavigationProperty Name="AllCollections" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="Deckcards" ToRole="Collections" />
           <NavigationProperty Name="Deck" Relationship="Self.FK__tbldeckca__fkdec__30F848ED" FromRole="Deckcards" ToRole="Decks" />
+          <Property Name="Numcards" Type="Int32" />
         </EntityType>
         <EntityType Name="Deck">
           <Key>
@@ -364,7 +494,7 @@
           <NavigationProperty Name="AllCollections" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="Orders" ToRole="Collections" />
           <NavigationProperty Name="Pack" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="Orders" ToRole="Packs" />
           <NavigationProperty Name="Person" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="Orders" ToRole="People" />
-          <Property Name="NumberOfPacks" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfPacks" Type="Int32" />
         </EntityType>
         <EntityType Name="Pack">
           <Key>
@@ -396,9 +526,9 @@
           <NavigationProperty Name="AllDecks" Relationship="Self.FK__tbldeck__fkperso__1DE57479" FromRole="People" ToRole="Decks" />
           <NavigationProperty Name="AllOrders" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="People" ToRole="Orders" />
           <Property Name="Anschrift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PLZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Ort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Hausnummer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Hausnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PLZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Type">
           <Key>
@@ -639,6 +769,7 @@
           <EntitySetMapping Name="Deckcards">
             <EntityTypeMapping TypeName="CardGame.DAL.Model.Deckcard">
               <MappingFragment StoreEntitySet="Deckcards">
+                <ScalarProperty Name="Numcards" ColumnName="Numcards" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Deck" ColumnName="ID_Deck" />
                 <ScalarProperty Name="ID_Card" ColumnName="ID_Card" />
@@ -680,9 +811,9 @@
           <EntitySetMapping Name="Person">
             <EntityTypeMapping TypeName="CardGame.DAL.Model.Person">
               <MappingFragment StoreEntitySet="People">
+                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
                 <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
                 <ScalarProperty Name="Ort" ColumnName="Ort" />
-                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
                 <ScalarProperty Name="Anschrift" ColumnName="Anschrift" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Firstname" ColumnName="Firstname" />

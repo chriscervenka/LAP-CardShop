@@ -20,11 +20,17 @@
         <ul class="row">
             <li class="col-md-1 text-center"><a href="@Url.Action("Index", "Home")">Welcome to our Shop</a></li>
             <li class="col-md-1 text-center"><a href="@Url.Action("Register", "Account")">REGISTER / LOGIN</a></li>
-            <li class="col-md-1 text-center"><a href="@Url.Action("Deckbuilder", "Deckbuilder")">DECKS / COLLECTION</a></li>
+            <li class="col-md-1 text-center"><a href="@Url.Action("EditDeck", "Deckbuilder", new { User.Identity.Name})">DECKS / COLLECTION</a></li>
             <li class="col-md-1 text-center"><a href="@Url.Action("Shop", "Shop", new { ShopPage = 1})">Go for buying Packs</a></li>
             <li class="col-md-1 text-center"><a href="@Url.Action("Shop", "Shop", new { ShopPage = 2})">Go for buying DIAMONDS</a></li>
             <li class="col-md-1 text-center"><a href="@Url.Action("About", "Home")">Contact</a></li>
             <li class="col-md-1 text-center"><a href="@Url.Action("Edit", "Edit")">Edit Profile</a></li>
+
+            <li class="col-md-1 text-center"><a href="@Url.Action("Logout", "Account")">Logout</a></li>
+
+            <li class="col-md-1 text-center"><a href="@Url.Action("Index", "Profile")">@User.Identity.Name</a></li>
+
+            
         </ul>
     </nav>
     <div id="container" class="container">
