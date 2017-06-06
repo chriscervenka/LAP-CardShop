@@ -22,3 +22,223 @@
    bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
   </Exception>
 </Xcpt>
+<Info>
+  <Time>06.06.2017 13:34:12</Time>
+  <Info>Entered Pass = </Info>
+</Info>
+<Info>
+  <Time>06.06.2017 13:34:12</Time>
+  <Info>HashPass = CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 13:34:12</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 13:35:58</Time>
+  <Info>Entered Pass = pfiff1</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 13:35:58</Time>
+  <Info>HashPass = B1CC2E7D4A07E58C758DE1B9B666B0C327177E4EF53D457C577207A5FC90C5BAB7B274207D1078D66A224FC25C0C2F55726F63A0AEA3902B523CEE5ECF9EF8CC</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 13:36:51</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 14:45:13</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 14:45:13</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 122.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 14:45:13</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 14:46:06</Time>
+  <Info>Entered Pass = gannydo</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 14:46:06</Time>
+  <Info>HashPass = 35B34A4DF43F6F1EE0E33420589E3FB55929091E64451F0664E7031D3D3D77D8F9C171356E768048693B876D6764814C25C6A9D315FDF2D1D3BD20A700C87108</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 14:47:18</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 15:18:58</Time>
+  <Info>Entered Pass = gannydo</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 15:18:59</Time>
+  <Info>HashPass = 35B34A4DF43F6F1EE0E33420589E3FB55929091E64451F0664E7031D3D3D77D8F9C171356E768048693B876D6764814C25C6A9D315FDF2D1D3BD20A700C87108</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 15:19:57</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 15:55:39</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 15:55:47</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 15:56:26</Time>
+  <Info>Entered Pass = kloiber1</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 15:56:26</Time>
+  <Info>HashPass = E7571DAE6FFA6E9FB91A2BFEF45B209E59C23D88CD060AA8D29DA2973CC5159B67EF049BF5962A1FD7F60FAF2FA6ECF5C683D51129FB28D5A59C2AEB8D940A18</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 15:56:30</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 15:58:22</Time>
+  <Info>Entered Pass = pilger1</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 15:58:22</Time>
+  <Info>HashPass = 0CF8A9474B5A880F7BFCB6B2DEDEAE2F28A6CA43820A86A039A6AFE19B8587CBCB97E1A0902BFCF9D6B110EB0167FC0E2FC8BF52485C2B8A393400C055A68F77</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 15:58:28</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 16:17:36</Time>
+  <Info>Entered Pass = asdfasdf</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 16:17:36</Time>
+  <Info>HashPass = 942640E07E8A88CC2A26A6DB8C5B30A6ECF894481DCF4278C0E789044EB14A56F018B20CAB56EB1F9C4463FA58E47D744329A7EF493CEF41FDDE5DD959F29E5A</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 16:18:56</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 16:27:26</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.06.2017 16:27:42</Time>
+  <Info>id: 1</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 16:28:26</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.06.2017 16:28:51</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>

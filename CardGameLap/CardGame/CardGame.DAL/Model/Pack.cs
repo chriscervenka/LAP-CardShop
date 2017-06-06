@@ -22,7 +22,7 @@ namespace CardGame.DAL.Model
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public Nullable<int> Packprice { get; set; }
+        public Nullable<decimal> Packprice { get; set; }
         public Nullable<int> Cardquantity { get; set; }
         public Nullable<bool> IsMoney { get; set; }
         public Nullable<int> DiamondValue { get; set; }

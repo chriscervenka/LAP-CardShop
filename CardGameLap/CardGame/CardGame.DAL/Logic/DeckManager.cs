@@ -59,7 +59,7 @@ namespace CardGame.DAL.Logic
         }
 
 
-        public static List<Card> GetDeckCardsById(int id)
+        public static List<Card> GetDeckCardsById(int idPerson)
         {
             var deckCards = new List<Card>();
 
@@ -67,7 +67,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbDeck = db.Decks.Where(d => d.ID == id).FirstOrDefault();
+                    var dbDeck = db.Decks.Where(d => d.ID_Person == idPerson).FirstOrDefault();
                     if (dbDeck == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -79,7 +79,7 @@ namespace CardGame.DAL.Logic
                     }
                     foreach (var dc in dbDeckCollection)
                     {
-                        for (int i = 0; i < dc.Numcards; i++)
+                        for (int i = 0; i < dc.NumCards; i++)
                             deckCards.Add(dc.Card);
                     }
 
@@ -118,7 +118,7 @@ namespace CardGame.DAL.Logic
                     foreach (var dc in deckCards)
                     {
                         var dbDeckCard = new Deckcard();
-                        dbDeckCard.Numcards = dc.Numcards;
+                        dbDeckCard.NumCards = dc.NumCards;
                         dbDeckCard.Deck = db.Decks.Find(id);
                         dbDeckCard.Card = db.Cards.Find(dc.Card.ID);
                         db.Deckcards.Add(dbDeckCard);

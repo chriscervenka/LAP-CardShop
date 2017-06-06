@@ -3,6 +3,7 @@ using CardGame.Log;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +68,8 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    allPacks = db.Packs.OrderBy(x => x.Cardquantity).ToList();
+                    //allPacks = db.Packs.OrderBy(x => x.Cardquantity).ToList();
+                    allPacks = db.Packs.ToList();
                 }
 
                 if (allPacks == null)
@@ -78,6 +80,7 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Writer.LogError(e);
+                Debugger.Break();
             }           
             return allPacks;
         }

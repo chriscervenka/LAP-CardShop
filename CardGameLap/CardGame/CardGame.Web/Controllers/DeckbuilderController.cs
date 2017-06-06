@@ -134,7 +134,7 @@ namespace CardGame.Web.Controllers
 
                 if (idx >= 0)
                 {
-                    dbDeckList[idx].Numcards += 1;
+                    dbDeckList[idx].NumCards += 1;
                 }
                 else
                 {
@@ -148,7 +148,7 @@ namespace CardGame.Web.Controllers
                     //im manager dann die ID raussuchen und die db hinzufuegen
                     var dbDeckCard = new CardGame.DAL.Model.Deckcard();
                     dbDeckCard.Card = dbCard;
-                    dbDeckCard.Numcards = 1;
+                    dbDeckCard.NumCards = 1;
                     //dbDeckCard.tblDeck = DeckManager.GetDeckById(id);
 
                     dbDeckList.Add(dbDeckCard);
