@@ -1,0 +1,24 @@
+<Info>
+  <Time>06.06.2017 12:45:44</Time>
+  <Info>Entered Pass = pfiff1</Info>
+</Info>
+<Info>
+  <Time>06.06.2017 12:45:44</Time>
+  <Info>HashPass = B1CC2E7D4A07E58C758DE1B9B666B0C327177E4EF53D457C577207A5FC90C5BAB7B274207D1078D66A224FC25C0C2F55726F63A0AEA3902B523CEE5ECF9EF8CC</Info>
+</Info>
+<Xcpt>
+  <Time>06.06.2017 12:46:49</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Die Eigenschaft 'Packprice' bei 'Pack' konnte nicht auf einen 'System.Decimal'-Wert festgelegt werden. Sie müssen diese Eigenschaft auf einen Nicht-NULL-Wert des Typs 'System.Int32' festlegen. </Message>
+    <Stack>   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   bei lambda_method(Closure , Shaper )
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   bei System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame.DAL.Logic.ShopManager.AllCardPacks() in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\ShopManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>

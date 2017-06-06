@@ -28,6 +28,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
+        #region Actionmethode LOGIN
         [HttpPost]
         [AllowAnonymous]
         //[ValidateAntiForgeryToken]
@@ -36,7 +37,7 @@ namespace CardGame.Web.Controllers
             bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
 
             login.Role = UserManager.GetRoleNamesByEmail(login.Email);
-            
+
 
             if (hasAccess)
             {
@@ -62,7 +63,8 @@ namespace CardGame.Web.Controllers
 
             Session.Add("ID", id);
             return RedirectToAction("Error", "Error");
-        }
+        } 
+        #endregion
 
 
 
@@ -70,13 +72,15 @@ namespace CardGame.Web.Controllers
         /// Bei LOGOUT redirect auf 'Home-Seite (Index)'
         /// </summary>
         /// <returns>VIEW</returns>
+        #region Actionmethode LOGOUT
         [HttpGet]
         [Authorize]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
-        }
+        } 
+        #endregion
 
 
 
@@ -94,6 +98,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <param name="regUser"></param>
         /// <returns></returns>
+        #region Actionmethode REGISTER
         [HttpPost]
         [AllowAnonymous]
         //[ValidateAntiForgeryToken]
@@ -101,7 +106,7 @@ namespace CardGame.Web.Controllers
         {
             var dbUser = new Person();
             Session.Add("Person", dbUser);
-            
+
 
             dbUser.Firstname = regUser.Firstname;
             dbUser.Lastname = regUser.Lastname;
@@ -132,10 +137,11 @@ namespace CardGame.Web.Controllers
                     // gibt der ActionMethod VerifyRegistration ein neues OBJECT mit gamertag und cuurencybalance mit
 
                     return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.Gamertag, currencybalance = dbUser.Currencybalance });
-                }               
+                }
             }
             return RedirectToAction("Error", "Error");
         }
+        #endregion
 
 
 
@@ -145,10 +151,11 @@ namespace CardGame.Web.Controllers
         /// <param name="gamertag"></param>
         /// <param name="currencybalance"></param>
         /// <returns></returns>
+        #region Actionmethode VERIFYREGISTRATION
         [HttpGet]
         [AllowAnonymous]
         public ActionResult VerifyRegistration(string gamertag, int? currencybalance)
-        {        
+        {
             //speichert Gamertag in VIEWBAG
             ViewBag.Gamertag = gamertag;
 
@@ -156,6 +163,7 @@ namespace CardGame.Web.Controllers
             ViewBag.CurrencyBalance = currencybalance;
 
             return View();
-        }
+        } 
+        #endregion
     }
 }

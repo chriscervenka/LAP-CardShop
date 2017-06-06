@@ -24,6 +24,7 @@ namespace CardGame.DAL.Logic
             return numUsers;
         }
 
+
         public static int GetNumCards()
         {
             int numCards = -1;
@@ -36,6 +37,7 @@ namespace CardGame.DAL.Logic
 
             return numCards;
         }
+
 
         public static int GetNumDecks()
         {

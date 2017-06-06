@@ -22,7 +22,13 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
-        // GET: Default/Details/5
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        #region Actionmethode DETAILS
         public ActionResult Details()
         {
             Person dbUser = UserManager.GetPersonByEmail(User.Identity.Name);
@@ -41,7 +47,8 @@ namespace CardGame.Web.Controllers
             //p.Password = dbUser.Password;
 
             return View(dbUser);
-        }
+        } 
+        #endregion
 
         // GET: Default/Create
         public ActionResult Create()
@@ -49,7 +56,13 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
-        // POST: Default/Create
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
+        #region Actionmethode CREATE
         [HttpPost]
         [Authorize]
         public ActionResult Create(FormCollection collection)
@@ -64,9 +77,16 @@ namespace CardGame.Web.Controllers
             {
                 return View();
             }
-        }
+        } 
+        #endregion
 
-        // GET: Default/Edit/5
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>View (dbUser)</returns>
+        #region Actionmethode EDIT
         [HttpGet]
         public ActionResult Edit()
         {
@@ -92,10 +112,16 @@ namespace CardGame.Web.Controllers
 
             //AuthManager.Register(p);
             return View(dbUser);
-        }
+        } 
+        #endregion
 
 
-        // POST: Default/Edit/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ro"></param>
+        /// <returns></returns>
+        #region Actionmethode EDITPOST
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -132,7 +158,7 @@ namespace CardGame.Web.Controllers
         //    return View(p);
         //}
 
-        
+
 
 
         //[HttpPost, ActionName("Edit")]
@@ -163,11 +189,17 @@ namespace CardGame.Web.Controllers
         //        }
         //    }
         //    return View(p);
-        //}
+        //} 
+        #endregion
 
 
 
-        // GET: Default/Delete/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region Actionmethode DELETE
         public ActionResult Delete(int? id)
         {
             ClonestoneFSEntities db = new ClonestoneFSEntities();
@@ -183,8 +215,17 @@ namespace CardGame.Web.Controllers
             }
             return View(p);
         }
+        #endregion
 
-        // POST: Default/Delete/5
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region Actionmethode DELETECONFIRMED
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize]
@@ -196,6 +237,7 @@ namespace CardGame.Web.Controllers
             db.Person.Remove(p);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
+        } 
+        #endregion
     }
 }
