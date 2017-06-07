@@ -44,7 +44,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10 form-control">
-                    @Model.Password
+                    @Html.PasswordFor(p => p.Password)
                 </div>
             </div>
 

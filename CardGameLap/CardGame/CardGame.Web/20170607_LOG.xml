@@ -1,0 +1,44 @@
+<Info>
+  <Time>07.06.2017 16:57:57</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 16:57:57</Time>
+  <Info>HashPass = E962D9F3952697F74C4234C573E51642C734B8CD9D2ED00E121FA6FE4F5C60549DFC586350C186A64A8C165130EC19B291B9EC1D1A2EDDA9F1A01A1295516F7A</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 16:58:10</Time>
+  <Info>id: 1</Info>
+</Info>
+<Xcpt>
+  <Time>07.06.2017 16:59:05</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>07.06.2017 17:03:35</Time>
+  <Info>Entered Pass = 123456</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 17:03:35</Time>
+  <Info>HashPass = E962D9F3952697F74C4234C573E51642C734B8CD9D2ED00E121FA6FE4F5C60549DFC586350C186A64A8C165130EC19B291B9EC1D1A2EDDA9F1A01A1295516F7A</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 17:03:46</Time>
+  <Info>id: 6</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 17:03:59</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 17:04:03</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>07.06.2017 17:04:09</Time>
+  <Info>id: 2</Info>
+</Info>

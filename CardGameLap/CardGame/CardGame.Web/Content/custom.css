@@ -427,6 +427,12 @@ figcaption {
 	font-size: 1em
 }
 
+#Password {
+    width: 255px;
+    height: 33px;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 800px){
 	.no-js .menu-panel {
 		display: none;
