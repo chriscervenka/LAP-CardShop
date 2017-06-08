@@ -83,20 +83,21 @@ namespace CardGame.Web.Controllers
             var deckCards = new List<Card>();
 
             var dbDeckCards = DeckManager.GetDeckCardsById(id);
-
-            foreach (var cc in dbDeckCards)
+            if (dbDeckCards != null)
             {
-                Card card = new Card();
-                card.ID = cc.ID;
-                card.Attack = cc.Attack;
-                card.Name = cc.Name;
-                card.Life = cc.Life;
-                card.Mana = cc.Mana;
-                //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
+                foreach (var cc in dbDeckCards)
+                {
+                    Card card = new Card();
+                    card.ID = cc.ID;
+                    card.Attack = cc.Attack;
+                    card.Name = cc.Name;
+                    card.Life = cc.Life;
+                    card.Mana = cc.Mana;
+                    //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
 
-                deckCards.Add(card);
+                    deckCards.Add(card);
+                }
             }
-
             return View(deckCards);
         }
     }

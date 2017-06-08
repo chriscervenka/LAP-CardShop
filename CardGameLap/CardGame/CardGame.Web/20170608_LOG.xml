@@ -54,3 +54,67 @@
   <Time>08.06.2017 09:56:37</Time>
   <Info>id: 5</Info>
 </Info>
+<Xcpt>
+  <Time>08.06.2017 13:37:51</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:43:24</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:43:36</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:45:34</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:48:48</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:48:53</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:49:22</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 13:50:13</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
+  </Exception>
+</Xcpt>
