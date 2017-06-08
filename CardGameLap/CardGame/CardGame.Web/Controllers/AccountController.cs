@@ -59,9 +59,11 @@ namespace CardGame.Web.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            var id = UserManager.GetPersonByEmail(User.Identity.Name).ID;
+            var person = UserManager.GetPersonByEmail(User.Identity.Name);
 
-            Session.Add("ID", id);
+            Session.Add("ID", person.ID);
+            Session.Add("Gamertag", person.Gamertag);
+            Session.Add("CurrencyBalance", person.Currencybalance);
             return RedirectToAction("Error", "Error");
         } 
         #endregion

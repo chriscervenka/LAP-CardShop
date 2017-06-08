@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CardGame.DAL.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
@@ -19,6 +20,8 @@ namespace CardGame.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+
 
         protected void Application_AuthenticateRequest(Object sender, EventArgs e)
         {
@@ -47,5 +50,15 @@ namespace CardGame.Web
             Context.User = new GenericPrincipal(new GenericIdentity(authTicket.Name), roles);
         }
 
+
+        protected void Session_Start(Object sender, EventArgs e)
+        {
+            //int temp = 90;
+
+            var person = UserManager.GetPersonByEmail(User.Identity.Name);
+            HttpContext.Current.Session.Add("Gamertag", person.Gamertag);
+            HttpContext.Current.Session.Add("ID", person.ID);
+            HttpContext.Current.Session.Add("CurrencyBalance", person.Currencybalance);
+        }
     }
 }

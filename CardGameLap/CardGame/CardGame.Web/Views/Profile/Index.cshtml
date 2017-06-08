@@ -4,27 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h1>Welcome, @Model.Email</h1>
+<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h1>Welcome, @Model.Firstname</h1>
 
-<h2>You currently have @Model.Currency credits!</h2>
+    <h2>You currently have @Model.Currency credits!</h2>
 
-<h2>Your Details</h2>
-@Html.DisplayNameFor(up => up.Firstname):
-@Html.DisplayFor(up => up.Firstname)
-<br />
-@Html.DisplayNameFor(up => up.Lastname):
-@Html.DisplayFor(up => up.Lastname)
-<br />
-@Html.DisplayNameFor(up => up.Email):
-@Html.DisplayFor(up => up.Email)
-<br />
-<h3>@Html.ActionLink("Cards Owned", "CardCollection")</h3>
-@Html.DisplayNameFor(up => up.NumDistinctCardsOwned):
-@Html.DisplayFor(up => up.NumDistinctCardsOwned)
-<br />
-@Html.DisplayNameFor(up => up.NumTotalCardsOwned):
-@Html.DisplayFor(up => up.NumTotalCardsOwned)
-<h3>@Html.ActionLink("Decks Owned", "DeckOverview")</h3>
-@Html.DisplayNameFor(up => up.NumDecksOwned):
-@Html.DisplayFor(up => up.NumDecksOwned)
+    <h2>Your Details</h2>
+    @Html.DisplayNameFor(up => up.Firstname):
+    @Html.DisplayFor(up => up.Firstname)
+    <br />
+    @Html.DisplayNameFor(up => up.Lastname):
+    @Html.DisplayFor(up => up.Lastname)
+    <br />
+    @Html.DisplayNameFor(up => up.Email):
+    @Html.DisplayFor(up => up.Email)
+    <br />
+    <h3>@Html.ActionLink("Cards Owned", "CardCollection")</h3>
+    @Html.DisplayNameFor(up => up.NumDistinctCardsOwned):
+    @Html.DisplayFor(up => up.NumDistinctCardsOwned)
+    <br />
+    @Html.DisplayNameFor(up => up.NumTotalCardsOwned):
+    @Html.DisplayFor(up => up.NumTotalCardsOwned)
+    <h3>@Html.ActionLink("Decks Owned", "DeckOverview")</h3>
+    @Html.DisplayNameFor(up => up.NumDecksOwned):
+    @Html.DisplayFor(up => up.NumDecksOwned)
+</div>
 

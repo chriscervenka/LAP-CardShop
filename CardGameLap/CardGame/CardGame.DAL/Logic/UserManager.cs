@@ -120,6 +120,8 @@ namespace CardGame.DAL.Logic
                         throw new Exception("User Does Not Exist");
                     }
                     role = dbUser.Role;
+                    
+                    
                 }
             }
             catch (Exception e)

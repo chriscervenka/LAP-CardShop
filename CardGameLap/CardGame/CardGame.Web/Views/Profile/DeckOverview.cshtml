@@ -4,29 +4,30 @@
     ViewBag.Title = "DeckOverview";
 }
 
-<h2>DeckOverview</h2>
+<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h2>DeckOverview</h2>
 
-<h3>You currently have @Model.ToList().Count decks</h3>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(d => d.Name)
-        </th>
-        <th>
-
-        </th>
-    </tr>
-
-    @foreach (var deck in Model)
-    {
+    <h3>You currently have @Model.ToList().Count decks</h3>
+    <table>
         <tr>
             <th>
-                @Html.DisplayFor(d => deck.Name)
+                @Html.DisplayNameFor(d => d.Name)
             </th>
             <th>
-                @Html.ActionLink("View Deck", "DeckDetails", new { id = deck.ID })
+
             </th>
         </tr>
-    }
-</table>
 
+        @foreach (var deck in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(d => deck.Name)
+                </th>
+                <th>
+                    @Html.ActionLink("View Deck", "DeckDetails", new { id = deck.ID })
+                </th>
+            </tr>
+        }
+    </table>
+</div>
