@@ -118,3 +118,67 @@
     <Stack>   bei CardGame.DAL.Logic.DeckManager.GetDeckCardsById(Int32 idPerson) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 75.</Stack>
   </Exception>
 </Xcpt>
+<Xcpt>
+  <Time>08.06.2017 16:06:55</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 16:08:29</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>08.06.2017 16:44:45</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 88.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>08.06.2017 16:48:15</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 16:48:15</Time>
+  <Info>HashPass = 9438D371A7460D47D5805D72D43803F7271AA0CDEDA1ED8A29777EE19C1E43189B9985EA2FB4932CFDFB271C654E2A0DF61B67482B85EBE182027A58C462CFD2</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 16:48:39</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 16:48:59</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 16:57:59</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 16:57:59</Time>
+  <Info>HashPass = 9438D371A7460D47D5805D72D43803F7271AA0CDEDA1ED8A29777EE19C1E43189B9985EA2FB4932CFDFB271C654E2A0DF61B67482B85EBE182027A58C462CFD2</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 17:13:13</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 17:13:13</Time>
+  <Info>HashPass = 9438D371A7460D47D5805D72D43803F7271AA0CDEDA1ED8A29777EE19C1E43189B9985EA2FB4932CFDFB271C654E2A0DF61B67482B85EBE182027A58C462CFD2</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 17:14:09</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>08.06.2017 17:14:09</Time>
+  <Info>HashPass = 9438D371A7460D47D5805D72D43803F7271AA0CDEDA1ED8A29777EE19C1E43189B9985EA2FB4932CFDFB271C654E2A0DF61B67482B85EBE182027A58C462CFD2</Info>
+</Info>

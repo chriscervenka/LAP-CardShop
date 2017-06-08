@@ -36,6 +36,7 @@
           <Property Name="ID_Order" Type="int" />
           <Property Name="ID_Deckcard" Type="int" />
           <Property Name="NumberOfCards" Type="int" />
+          <Property Name="ID_Card" Type="int" />
         </EntityType>
         <EntityType Name="Deckcards">
           <Key>
@@ -332,6 +333,7 @@
           <NavigationProperty Name="Order" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="Collections" ToRole="Orders" />
           <NavigationProperty Name="Person" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="Collections" ToRole="People" />
           <Property Name="NumberOfCards" Type="Int32" />
+          <Property Name="ID_Card" Type="Int32" />
         </EntityType>
         <EntityType Name="Deckcard">
           <Key>
@@ -630,6 +632,7 @@
           <EntitySetMapping Name="Collections">
             <EntityTypeMapping TypeName="CardGame.DAL.Model.Collection">
               <MappingFragment StoreEntitySet="Collections">
+                <ScalarProperty Name="ID_Card" ColumnName="ID_Card" />
                 <ScalarProperty Name="NumberOfCards" ColumnName="NumberOfCards" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
