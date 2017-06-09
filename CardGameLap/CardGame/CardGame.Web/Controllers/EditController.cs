@@ -129,7 +129,7 @@ namespace CardGame.Web.Controllers
         {
             ClonestoneFSEntities db = new ClonestoneFSEntities();
 
-            Person actPerson = (from p in db.Person where p.Email == User.Identity.Name select p).FirstOrDefault();
+            Person actPerson = (from p in db.AllPersons where p.Email == User.Identity.Name select p).FirstOrDefault();
 
             actPerson.Firstname = ro.Firstname;
             actPerson.Lastname = ro.Lastname;
@@ -208,7 +208,7 @@ namespace CardGame.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person p = db.Person.Find(id);
+            Person p = db.AllPersons.Find(id);
             if (p == null)
             {
                 return HttpNotFound();
@@ -233,8 +233,8 @@ namespace CardGame.Web.Controllers
         {
             ClonestoneFSEntities db = new ClonestoneFSEntities();
 
-            Person p = db.Person.Find(id);
-            db.Person.Remove(p);
+            Person p = db.AllPersons.Find(id);
+            db.AllPersons.Remove(p);
             db.SaveChanges();
             return RedirectToAction("Index");
         } 

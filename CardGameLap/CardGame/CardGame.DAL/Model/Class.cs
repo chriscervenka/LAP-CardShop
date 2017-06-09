@@ -21,7 +21,7 @@ namespace CardGame.DAL.Model
         }
     
         public int ID { get; set; }
-        public string Class1 { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Card> AllCards { get; set; }

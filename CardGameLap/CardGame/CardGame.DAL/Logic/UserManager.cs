@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CardGame.DAL.Model;
 using CardGame.Log;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace CardGame.DAL.Logic
 {
@@ -18,12 +19,12 @@ namespace CardGame.DAL.Logic
             int numCards = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                Person dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                Person dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
                     throw new Exception("UserDoesNotExist");
                 }
-                numCards = dbUser.AllCollections.Count;
+                numCards = dbUser.AllPersonCards.Count;
             }
             return numCards;
         }
@@ -33,13 +34,13 @@ namespace CardGame.DAL.Logic
             int numCards = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                Person dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                Person dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
                     throw new Exception("UserDoesNotExist");
                 }
                 numCards = 0;
-                foreach (var c in dbUser.AllCollections)
+                foreach (var c in dbUser.AllPersonCards)
                 {
                     numCards += c.NumberOfCards ?? 0;
                 }
@@ -60,7 +61,7 @@ namespace CardGame.DAL.Logic
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                personList = db.Person.ToList();
+                personList = db.AllPersons.ToList();
             }
             return personList;
         }
@@ -80,7 +81,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                    dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -114,7 +115,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("User Does Not Exist");
@@ -184,7 +185,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                    var dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -212,49 +213,47 @@ namespace CardGame.DAL.Logic
         /// <param name="email"></param>
         /// <param name="cards"></param>
         /// <returns></returns>
-        public static bool AddCardsToCollectionByEmail(string email, List<Card> cards)
+        public static bool AddPersonCardsByEmail(string email, List<Card> cards)
         {
-            var dbUser = new Person();
+            Person person = null;
             try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
-                    if (dbUser == null)
+                    person = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
+                    if (person == null)
                     {
                         throw new Exception("UserDoesNotExist");
                     }
 
-                    foreach (var c in cards)
+                    /// gehe alle Karten durch die dieser person hinzugefügt werden sollen
+                    foreach (var card in cards)
                     {
-                        var userCC = (from coll in db.Collections
-                                      where coll.ID_Deckcard == c.ID && coll.ID_Person == dbUser.ID
-                                      select coll)
-                                     .FirstOrDefault();
+                        /// ermittle ob die Person diese Karte bereits hat
+                        var personCard = person.AllPersonCards.Where(x => x.ID_Card == card.ID).FirstOrDefault();
 
-                        if (userCC == null) //User does not own card, add to collection
-                        {
-
-                            var cc = new Collection();
-                            //cc.AllCards = cards.Find(c.ID);
-                            cc.Person = dbUser;
-                            //cc.AllCards = 1;
-                            dbUser.AllCollections.Add(cc);
-                            db.SaveChanges();
+                        /// die person hat diese Karte noch NICHT
+                        if (personCard == null)
+                        { 
+                            personCard = new PersonCard();
+                            personCard.Person = person;
+                            personCard.NumberOfCards = 1;
+                            person.AllPersonCards.Add(personCard);
+                            
                         }
-                        else //User owns card, add to num
+                        else /// die person hat diese karte schon einmal
                         {
-                            userCC.ID += 1;
-                            db.Entry(userCC).State = EntityState.Modified;
-                            db.SaveChanges();
+                            personCard.NumberOfCards += 1;  /// erhöhe die anzahl dieser karte um eins
                         }
                     }
-                    //db.SaveChanges();
+
+                    db.SaveChanges();
                     return true;
                 }
             }
             catch (Exception e)
             {
+                Debugger.Break();
                 Writer.LogError(e);
                 return false;
             }
@@ -271,7 +270,7 @@ namespace CardGame.DAL.Logic
             int numDecks = -1;
             using (var db = new ClonestoneFSEntities())
             {
-                Person dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                Person dbUser = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
                     throw new Exception("User exestiert nicht");
@@ -295,14 +294,14 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    var dbUser = db.Person.Where(u => u.Email == email).FirstOrDefault();
+                    var user = db.AllPersons.Where(u => u.Email == email).FirstOrDefault();
 
-                    if (dbUser == null)
+                    if (user == null)
                     {
                         throw new Exception("UserDoesNotExist");
                     }
-                    var dbCardCollection = dbUser.AllCollections.ToList();
-                    if (dbCardCollection == null)
+                    var userPersonCards = user.AllPersonCards.ToList();
+                    if (userPersonCards == null)
                     {
                         throw new Exception("CardCollectionNotFound");
                     }
@@ -311,6 +310,8 @@ namespace CardGame.DAL.Logic
                     //    for (int i = 0; i < cc.NumberOfCards; i++)
                     //        cardList.Add(cc.AllCards);
                     //}
+
+                    /// TODO: fix personCard vs. card
                     return cardList;
                 }
             }

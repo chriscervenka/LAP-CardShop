@@ -126,7 +126,7 @@ namespace CardGame.Web.Controllers
             Web.Models.Deckbuilder db = new Web.Models.Deckbuilder();
             db = (Deckbuilder)TempData["DeckBuilder"];
 
-            var dbDeckList = new List<Deckcard>();
+            var dbDeckList = new List<DeckCard>();
 
             foreach (var c in db.Deck)
             {
@@ -146,7 +146,7 @@ namespace CardGame.Web.Controllers
                     dbCard.Mana = c.Mana;
                     //hier einfach nur die ID befuellen (muss DB id sein)
                     //im manager dann die ID raussuchen und die db hinzufuegen
-                    var dbDeckCard = new CardGame.DAL.Model.Deckcard();
+                    var dbDeckCard = new CardGame.DAL.Model.DeckCard();
                     dbDeckCard.Card = dbCard;
                     dbDeckCard.NumCards = 1;
                     //dbDeckCard.tblDeck = DeckManager.GetDeckById(id);

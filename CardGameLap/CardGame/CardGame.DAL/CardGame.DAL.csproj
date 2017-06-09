@@ -79,13 +79,10 @@
     <Compile Include="Model\Class.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Collection.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Deck.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Deckcard.cs">
+    <Compile Include="Model\DeckCard.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Order.cs">
@@ -95,6 +92,9 @@
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Person.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PersonCard.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Type.cs">

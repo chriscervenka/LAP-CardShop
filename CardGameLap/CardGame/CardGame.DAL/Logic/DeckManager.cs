@@ -17,7 +17,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    deck = db.Decks.Find(id);
+                    deck = db.AllDecks.Find(id);
                     if (deck == null)
                     {
                         throw new Exception("DeckNotFound");
@@ -41,7 +41,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    deck = db.Decks.Find(id);
+                    deck = db.AllDecks.Find(id);
                     if (deck == null)
                     {
                         throw new Exception("DeckNotFound");
@@ -73,7 +73,7 @@ namespace CardGame.DAL.Logic
                     //    throw new Exception("UserDoesNotExist");
                     //}
                     //var dbDeckCollection = dbDeck.AllDeckcards.ToList();
-                    var dbDeckCards = db.Deckcards.Where(d => d.ID_Deck == idDeck);
+                    var dbDeckCards = db.AllDeckcards.Where(d => d.ID_Deck == idDeck);
                     if (dbDeckCards == null)
                     {
                         throw new Exception("CardCollectionNotFound");
@@ -94,14 +94,14 @@ namespace CardGame.DAL.Logic
         }
 
 
-        public static bool UpdateDeckById(int id, List<Deckcard> deckCards)
+        public static bool UpdateDeckById(int id, List<DeckCard> deckCards)
         {
             Deck deck = null;
             try
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    deck = db.Decks.Find(id);
+                    deck = db.AllDecks.Find(id);
                     if (deck == null)
                     {
                         throw new Exception("DeckNotFound");
@@ -117,11 +117,11 @@ namespace CardGame.DAL.Logic
 
                     foreach (var dc in deckCards)
                     {
-                        var dbDeckCard = new Deckcard();
+                        var dbDeckCard = new DeckCard();
                         dbDeckCard.NumCards = dc.NumCards;
-                        dbDeckCard.Deck = db.Decks.Find(id);
-                        dbDeckCard.Card = db.Cards.Find(dc.Card.ID);
-                        db.Deckcards.Add(dbDeckCard);
+                        dbDeckCard.Deck = db.AllDecks.Find(id);
+                        dbDeckCard.Card = db.AllCards.Find(dc.Card.ID);
+                        db.AllDeckcards.Add(dbDeckCard);
                     }
 
                     db.SaveChanges();
@@ -145,12 +145,12 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    user = db.Person.Find(id);
+                    user = db.AllPersons.Find(id);
                     Deck deck = new Deck();
                     deck.Name = name;
                     deck.Person = user;
 
-                    db.Decks.Add(deck);
+                    db.AllDecks.Add(deck);
                     db.SaveChanges();
                     return true;
                 }
@@ -170,7 +170,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new ClonestoneFSEntities())
                 {
-                    user = db.Person.Find(id);
+                    user = db.AllPersons.Find(id);
                     bool addedAll = false;
                     if (user == null)
                         throw new Exception("UserNotFound");

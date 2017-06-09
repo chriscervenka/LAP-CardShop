@@ -14,20 +14,12 @@ namespace CardGame.DAL.Model
     
     public partial class Order
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
-        {
-            this.AllCollections = new HashSet<Collection>();
-        }
-    
         public int ID { get; set; }
         public Nullable<System.DateTime> Orderdate { get; set; }
         public Nullable<int> ID_Person { get; set; }
         public Nullable<int> ID_Pack { get; set; }
         public int NumberOfPacks { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Collection> AllCollections { get; set; }
         public virtual Pack Pack { get; set; }
         public virtual Person Person { get; set; }
     }

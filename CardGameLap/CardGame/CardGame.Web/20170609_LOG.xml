@@ -1,0 +1,72 @@
+<Info>
+  <Time>09.06.2017 10:30:17</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:30:17</Time>
+  <Info>HashPass = D106EA60CB5A63B73CD0787D944AF8332DF3ECF2D7B06EB5235B99C99813F88289F37DF6C5CFEE37B0D8EE2A653061EAEB461A08931DB3E6C6DC9EA73C811B3B</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:31:41</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:31:59</Time>
+  <Info>id: 6</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:33:12</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:40:23</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:40:31</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:40:34</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:41:48</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 10:46:09</Time>
+  <Info>id: 1</Info>
+</Info>
+<Xcpt>
+  <Time>09.06.2017 11:13:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>09.06.2017 11:53:09</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 11:53:09</Time>
+  <Info>HashPass = D106EA60CB5A63B73CD0787D944AF8332DF3ECF2D7B06EB5235B99C99813F88289F37DF6C5CFEE37B0D8EE2A653061EAEB461A08931DB3E6C6DC9EA73C811B3B</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 11:53:38</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>09.06.2017 11:53:44</Time>
+  <Info>id: 1</Info>
+</Info>
+<Xcpt>
+  <Time>09.06.2017 12:04:27</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>

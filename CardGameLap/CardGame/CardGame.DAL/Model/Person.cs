@@ -17,7 +17,7 @@ namespace CardGame.DAL.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Person()
         {
-            this.AllCollections = new HashSet<Collection>();
+            this.AllPersonCards = new HashSet<PersonCard>();
             this.AllDecks = new HashSet<Deck>();
             this.AllOrders = new HashSet<Order>();
         }
@@ -38,7 +38,7 @@ namespace CardGame.DAL.Model
         public string PLZ { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Collection> AllCollections { get; set; }
+        public virtual ICollection<PersonCard> AllPersonCards { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Deck> AllDecks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
