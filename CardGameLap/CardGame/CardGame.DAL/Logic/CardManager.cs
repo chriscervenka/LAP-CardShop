@@ -3,6 +3,8 @@ using System.Linq;
 using CardGame.DAL.Model;
 using System;
 using System.Web;
+using System.Data.Entity;
+using System.Diagnostics;
 
 namespace CardGame.DAL.Logic
 {
@@ -74,7 +76,7 @@ namespace CardGame.DAL.Logic
 
 
 
-
+        /// Karten IM Deck
         public static List<Card> GetAllCardsFromDeck(int id)
         {
             List<Card> ReturnList = null;
@@ -91,7 +93,60 @@ namespace CardGame.DAL.Logic
             return ReturnList;
         }
 
-        
+        /// Karten FÜR das Deck
+        public static List<Card> GetAllCardsForDeck(string email, int idDeck)
+        {
+            List<PersonCard> personCards = null;
+
+            try
+            {
+                using (var context = new ClonestoneFSEntities())
+                {
+                    var person = context.AllPersons
+                                    .Include(x => x.AllPersonCards)
+                                    .Include(x => x.AllPersonCards.Select(y => y.Card))
+                                    .FirstOrDefault(x => x.Email.Equals(email));
+
+                    if (person == null)
+                        throw new ArgumentException("Invalid username");
+
+                    /// get ALL cards assigned to this user
+                    personCards = person.AllPersonCards.ToList();
+
+                    /// get deck for given idDeck
+                    Deck deck = context.AllDecks.FirstOrDefault(x => x.ID == idDeck);
+
+                    if (deck == null)
+                        throw new ArgumentException("Invalid idDeck");
+
+                    /// iterate over all userCards
+                    foreach (var userCard in personCards)
+                    {
+                        /// check if current userCard is already present in current deck
+                        DeckCard deckCard = deck.AllDeckcards.FirstOrDefault(x => x.ID_Card == userCard.ID_Card);
+
+                        /// if card is already in deck
+                        if (deckCard != null)
+                            /// decrease number of cards available
+                            userCard.NumberOfCards -= deckCard.NumCards;
+                    }
+
+                    /// return only those cards, whose number is greater than 0
+                    personCards = personCards.Where(x => x.NumberOfCards > 0).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+
+                Debugger.Break();
+                throw ex;
+            }
+
+            return personCards.Select(x => x.Card).ToList();
         }
+
+
     }
+}
 

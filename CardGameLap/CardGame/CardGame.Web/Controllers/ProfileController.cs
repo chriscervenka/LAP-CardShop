@@ -80,8 +80,12 @@ namespace CardGame.Web.Controllers
         [Authorize(Roles = "player,admin")]
         public ActionResult DeckDetails(int id)
         {
-            var deckCards = new List<Card>();
+            /// Objekt für den Deckbuilder
+            ///     bestehend aus Cards IM Deck
+            ///     und aus Cards FÜR das Deck
+            var model = new Deckbuilder();
 
+            /// Karten IM Deck
             var dbDeckCards = DeckManager.GetDeckCardsById(id);
             if (dbDeckCards != null)
             {
@@ -95,10 +99,29 @@ namespace CardGame.Web.Controllers
                     card.Mana = cc.Mana;
                     //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
 
-                    deckCards.Add(card);
+                    model.Deck.Add(card);
                 }
             }
-            return View(deckCards);
+
+            var dbUserCards = CardManager.GetAllCardsForDeck(User.Identity.Name, id);
+
+            if (dbUserCards!=null)
+            {
+                foreach (var cc in dbUserCards)
+                {
+                    Card card = new Card();
+                    card.ID = cc.ID;
+                    card.Attack = cc.Attack;
+                    card.Name = cc.Name;
+                    card.Life = cc.Life;
+                    card.Mana = cc.Mana;
+                    //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
+
+                    model.Collection.Add(card);
+                }
+            }            
+
+            return View(model);
         }
     }
 }

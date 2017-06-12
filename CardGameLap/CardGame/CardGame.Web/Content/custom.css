@@ -220,9 +220,9 @@ a:hover {
 
 .scroller {
 	width: 30%;
-	margin-top: 75px;
+	margin-top: 30px;
 	margin-left: 270px;
-	background-image: url("../images/paper background.png");	
+	/*background-image: url("../images/paper background.png");*/	
 	background-repeat: no-repeat;		
 	background-size: cover;
 		-webkit-background-size: cover;
@@ -230,6 +230,42 @@ a:hover {
 		-o-background-size: cover;
 	background-position: center;	
 	padding: 10px 5% 10px 5%;
+    height: 750px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.scroller-seite-login {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 250px;
+    /*background-image: url("../images/paper background.png");*/
+    background-image: url('Images/enterpic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
+}
+
+.scroller-seite-register {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 250px;
+    /*background-image: url("../images/paper background.png");*/
+    /*background-image: url('Images/enterpic.jpg');*/
+    background-image: url('Images/bibliothek.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
 }
 
 .editscroller {
@@ -260,11 +296,11 @@ a:hover {
     padding: 10px 5% 10px 5%;
 }
 
-.scroller-seite-zwei {
-	width: 30%;
-	margin-top: 75px;
+.scroller-seite-zwei-imdeck {
+    width: 30%;
+	margin-top: 30px;
 	margin-left: 250px;
-	background-image: url("../images/paper background.png");	
+	/*background-image: url("../images/paper background.png");*/	
 	background-repeat: no-repeat;		
 	background-size: cover;
 		-webkit-background-size: cover;
@@ -272,6 +308,25 @@ a:hover {
 		-o-background-size: cover;
 	background-position: center;	
 	padding: 10px 5% 10px 5%;
+    height: 750px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.scroller-seite-zwei {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 250px;
+    /*background-image: url("../images/paper background.png");
+    background-image: url('Images/enterpic.jpg');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
 }
 
 .scroller-seite-drei {

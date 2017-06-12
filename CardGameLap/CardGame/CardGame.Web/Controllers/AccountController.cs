@@ -61,10 +61,10 @@ namespace CardGame.Web.Controllers
 
             var person = UserManager.GetPersonByEmail(User.Identity.Name);
 
-            Session.Add("ID", person.ID);
-            Session.Add("Gamertag", person.Gamertag);
-            Session.Add("CurrencyBalance", person.Currencybalance);
-            return RedirectToAction("Error", "Error");
+            //Session.Add("ID", person.ID);
+            //Session.Add("Gamertag", person.Gamertag);
+            //Session.Add("CurrencyBalance", person.Currencybalance);
+            return RedirectToAction("Error", "Home");
         } 
         #endregion
 
@@ -141,7 +141,7 @@ namespace CardGame.Web.Controllers
                     return RedirectToAction("VerifyRegistration", new { gamertag = dbUser.Gamertag, currencybalance = dbUser.Currencybalance });
                 }
             }
-            return RedirectToAction("Error", "Error");
+            return RedirectToAction("Error", "Home");
         }
         #endregion
 

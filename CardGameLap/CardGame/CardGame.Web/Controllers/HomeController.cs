@@ -76,6 +76,9 @@ namespace CardGame.Web.Controllers
             return View(s);
         }
 
-
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }
