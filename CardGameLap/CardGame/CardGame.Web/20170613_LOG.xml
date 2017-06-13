@@ -81,3 +81,44 @@
    bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 116.</Stack>
   </Exception>
 </Xcpt>
+<Xcpt>
+  <Time>13.06.2017 15:31:54</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 116.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>13.06.2017 15:38:06</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 116.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>13.06.2017 15:46:52</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 15:47:10</Time>
+  <Info>id: 2</Info>
+</Info>
+<Xcpt>
+  <Time>13.06.2017 15:47:27</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 116.</Stack>
+  </Exception>
+</Xcpt>

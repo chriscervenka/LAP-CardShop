@@ -80,6 +80,11 @@ namespace CardGame.Web.Controllers
         //}
 
 
+        /// <summary>
+        /// ActionResult EditDeck fürs Editieren meine gewählten Decks 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult EditDeck(int id)
         {
             /// Erstelle ein Objekt das während der Bearbeitung 
@@ -132,7 +137,6 @@ namespace CardGame.Web.Controllers
         }
 
 
-
         /// <summary>
         /// Verändert das DeckBuilder Objekt im TempData
         /// ACHTUNG es wurde NOCH NICHTS gespeichert
@@ -141,22 +145,19 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         public ActionResult AddCardToDeck(int id)
         {
-            /// id ist eigentlich INDEX!!!
+            /// Übergabeparameter id ist eigentlich INDEX!!! Wichtig ......
             
             Web.Models.Deckbuilder db = new Web.Models.Deckbuilder();
             db = (Deckbuilder)TempData["DeckBuilder"];
 
             Web.Models.Card card = db.Collection[id];
             db.Collection.RemoveAt(id);
-            
 
-            db.Deck.Add(card);
-            
+            db.Deck.Add(card);          
 
             TempData["DeckBuilder"] = db;
             return View("EditDeck", db);
         }
-
 
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace CardGame.Web.Controllers
 
 
         /// <summary>
-        /// ActionResult SaveDeck
+        /// ActionResult SaveDeck speichert das gebaute DECK in Datenbank !!!!
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -212,7 +213,7 @@ namespace CardGame.Web.Controllers
                     dbCard.Life = c.Life;
                     dbCard.Mana = c.Mana;
                     //hier einfach nur die ID befuellen (muss DB id sein)
-                    //im manager dann die ID raussuchen und die db hinzufuegen
+                    //im Manager dann die ID raussuchen und die db hinzufuegen
                     var dbDeckCard = new CardGame.DAL.Model.DeckCard();
                     dbDeckCard.Card = dbCard;
                     dbDeckCard.NumCards = 1;
@@ -222,10 +223,8 @@ namespace CardGame.Web.Controllers
                 }
             }
 
-            /// gehe in die Datenbank und speichere die Karten für dieses Deck
+            /// gehe über DeckManager.UpdateDeckById in die Datenbank und speichere die Karten für dieses Deck
             var result = DeckManager.UpdateDeckById(id, dbDeckList); 
-
-            
 
             return RedirectToAction("Index");
         }

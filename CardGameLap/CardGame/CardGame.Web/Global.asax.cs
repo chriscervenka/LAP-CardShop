@@ -51,14 +51,17 @@ namespace CardGame.Web
         }
 
 
-        //protected void Session_Start(Object sender, EventArgs e)
-        //{
-        //    //int temp = 90;
-
-        //    var person = UserManager.GetPersonByEmail(User.Identity.Name);
-        //    HttpContext.Current.Session.Add("Gamertag", person.Gamertag);
-        //    HttpContext.Current.Session.Add("ID", person.ID);
-        //    HttpContext.Current.Session.Add("CurrencyBalance", person.Currencybalance);
-        //}
+        protected void Session_Start(Object sender, EventArgs e)
+        {
+            //int temp = 90;
+            if (User.Identity.IsAuthenticated)
+            {
+                var person = UserManager.GetPersonByEmail(User.Identity.Name);
+                HttpContext.Current.Session.Add("Gamertag", person.Gamertag);
+                HttpContext.Current.Session.Add("ID", person.ID);
+                HttpContext.Current.Session.Add("CurrencyBalance", person.Currencybalance);
+            }
+            
+        }
     }
 }

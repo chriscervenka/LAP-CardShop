@@ -23,7 +23,6 @@ namespace CardGame.Web.Controllers
         }
 
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -49,6 +48,7 @@ namespace CardGame.Web.Controllers
             return View(dbUser);
         } 
         #endregion
+
 
         // GET: Default/Create
         public ActionResult Create()
@@ -79,7 +79,6 @@ namespace CardGame.Web.Controllers
             }
         } 
         #endregion
-
 
 
         /// <summary>
@@ -193,7 +192,6 @@ namespace CardGame.Web.Controllers
         #endregion
 
 
-
         /// <summary>
         /// 
         /// </summary>
@@ -216,8 +214,6 @@ namespace CardGame.Web.Controllers
             return View(p);
         }
         #endregion
-
-
 
 
         /// <summary>
