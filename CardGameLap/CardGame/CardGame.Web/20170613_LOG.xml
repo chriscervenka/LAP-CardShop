@@ -1,0 +1,83 @@
+<Xcpt>
+  <Time>13.06.2017 08:59:19</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler bei der Überprüfung einer oder mehrerer Entitäten. Weitere Informationen finden Sie in den Erläuterungen zur EntityValidationErrors-Eigenschaft.</Message>
+    <Stack>   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 33.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>13.06.2017 08:59:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>13.06.2017 08:59:53</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 08:59:53</Time>
+  <Info>HashPass = 9438D371A7460D47D5805D72D43803F7271AA0CDEDA1ED8A29777EE19C1E43189B9985EA2FB4932CFDFB271C654E2A0DF61B67482B85EBE182027A58C462CFD2</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 09:00:48</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 09:00:56</Time>
+  <Info>id: 6</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 09:01:00</Time>
+  <Info>id: 3</Info>
+</Info>
+<Xcpt>
+  <Time>13.06.2017 09:18:28</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>DeckNotFound</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 110.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>13.06.2017 11:25:19</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 11:25:19</Time>
+  <Info>HashPass = D618C5BC069317EBFB85C5458B987F9A98357E49EA41BAE3C03BDE391F43DB867550AE82D5084A06CB06881F44DE2AD7C5800404A701487A385E98CD8BA5E838</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 11:25:55</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>13.06.2017 11:26:13</Time>
+  <Info>id: 6</Info>
+</Info>
+<Xcpt>
+  <Time>13.06.2017 14:54:26</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 116.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>13.06.2017 15:08:59</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 116.</Stack>
+  </Exception>
+</Xcpt>

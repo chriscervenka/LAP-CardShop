@@ -5,17 +5,14 @@
     ViewBag.Title = "DeckDetails";
 }
 
-<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <h2>DeckDetails</h2>
+<div class="scroller-collection row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h2>Collection</h2>
     <h2>Cards FÜR Deck</h2>
     <table class="table">
         <tr>
             <th>
                 @Html.DisplayName("Name")
             </th>
-            @*<th>
-                @Html.DisplayNameFor(c => c.Type)
-            </th>*@
             <th>
                 @Html.DisplayName("Mana")
             </th>
@@ -33,9 +30,6 @@
             <th>
                 @card.Name
             </th>
-            @*<th>
-                    @Html.DisplayFor(c => card.Type)
-                </th>*@
             <th>
                 @card.Mana
             </th>
@@ -46,24 +40,23 @@
                 @card.Life
             </th>
             <th>
-                @Html.ActionLink("+", "AddCardToDeck", "Deckbuilder", new { id = card.ID })
+                @Html.ActionLink("+", "AddCardToDeck", "Deckbuilder", new { id = Model.Collection.IndexOf(card) })
             </th>
         </tr>
         }
-
     </table>
 </div>
 
+
 <div class="scroller-seite-zwei-imdeck row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h2>Deck</h2>
     <h2>Cards IM Deck</h2>
+    
     <table class="table">
         <tr>
                 <th>
                     @Html.DisplayName("Name")
                 </th>
-                @*<th>
-                        @Html.DisplayNameFor(c => c.Type)
-                    </th>*@
                 <th>
                     @Html.DisplayName("Mana")
                 </th>
@@ -81,9 +74,6 @@
                 <th>
                     @card.Name
                 </th>
-                @*<th>
-                        @Html.DisplayFor(c => card.Type)
-                    </th>*@
                 <th>
                     @card.Mana
                 </th>
@@ -94,7 +84,7 @@
                     @card.Life
                 </th>
                 <th>
-                    @Html.ActionLink("-", "RemoveCardFromDeck", "Deckbuilder", new { id = card.ID })
+                    @Html.ActionLink("+", "RemoveCardFromDeck", "Deckbuilder", new { id = Model.Deck.IndexOf(card) })
                 </th>
                
             </tr>
@@ -106,7 +96,13 @@
 
     @*@Html.ActionLink("Edit Deck", "EditDeck", "DeckBuilder", new { id = ViewContext.RouteData.Values["id"] }, null)*@
 
+    @Html.ActionLink("Save Deck", "SaveDeck", new { id = Model.ID })
+
+    <br />
+
     @Html.ActionLink("Deck bearbeiten", "EditDeck", "DeckBuilder")
+
+    <br />
 
     @Html.ActionLink("Back to Deck Overview", "DeckOverview")
 

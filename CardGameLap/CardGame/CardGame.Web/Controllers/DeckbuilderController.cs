@@ -11,35 +11,83 @@ namespace CardGame.Web.Controllers
 {
     public class DeckbuilderController : Controller
     {
-        // GET: Deckbuilder
-        //public ActionResult Deckbuilder()
+        [HttpGet]
+        [Authorize(Roles = "player,admin")]
+        public ActionResult Index()
+        {
+            /// Decks aus der Datenbank
+            var dbDecks = UserManager.GetAllDecksByEmail(User.Identity.Name);
 
+            /// Decks für die View
+            var decks = new List<Models.Deck>();
+            foreach (var d in dbDecks)
+            {
+                Models.Deck deck = new Models.Deck();
+                deck.ID = d.ID;
+                deck.Name = d.Name;
+                decks.Add(deck);
+            }
+
+            return View(decks);
+        }
+
+        //[HttpGet]
+        //[Authorize(Roles = "player,admin")]
+        //public ActionResult DeckDetails(int id)
         //{
-        //    List<Deckbuilder> CardList = new List<Deckbuilder>();
+        //    /// Objekt für den Deckbuilder
+        //    ///     bestehend aus Cards IM Deck
+        //    ///     und aus Cards FÜR das Deck
+        //    var model = new Deckbuilder();
 
-        //    var dbCardlist = CardManager.GetAllCardsFromDeck(1);
-
-        //    foreach (var c in dbCardlist)
+        //    /// Karten IM Deck
+        //    var dbDeckCards = DeckManager.GetDeckCardsById(id);
+        //    if (dbDeckCards != null)
         //    {
-        //        Deckbuilder deck = new Deckbuilder();
-        //        deck.ID = c.ID;
-        //        deck.N = c.Name;
-        //        deck.Life = c.Life;
-        //        deck.Mana = c.Mana;
-        //        deck.Pic = c.Pic;
-        //        deck.Attack = c.Attack;
-                
-        //        CardList.Add(deck);
+        //        foreach (var cc in dbDeckCards)
+        //        {
+        //            Card card = new Card();
+        //            card.ID = cc.ID;
+        //            card.Attack = cc.Attack;
+        //            card.Name = cc.Name;
+        //            card.Life = cc.Life;
+        //            card.Mana = cc.Mana;
+        //            //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
+
+        //            model.Deck.Add(card);
+        //        }
         //    }
-        //    return View(CardList);
+
+        //    var dbUserCards = CardManager.GetAllCardsForDeck(User.Identity.Name, id);
+
+        //    if (dbUserCards != null)
+        //    {
+        //        foreach (var cc in dbUserCards)
+        //        {
+        //            Card card = new Card();
+        //            card.ID = cc.ID;
+        //            card.Attack = cc.Attack;
+        //            card.Name = cc.Name;
+        //            card.Life = cc.Life;
+        //            card.Mana = cc.Mana;
+        //            //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
+
+        //            model.Collection.Add(card);
+        //        }
+        //    }
+
+        //    return View(model);
         //}
 
 
-        public ActionResult EditDeck(/*string Email*/)
+        public ActionResult EditDeck(int id)
         {
+            /// Erstelle ein Objekt das während der Bearbeitung 
+            /// die karten beinhaltet
             Deckbuilder db = new Deckbuilder();
-            var id = UserManager.GetPersonByEmail(User.Identity.Name).ID;
+            // speichere dort auch die ID des Decks
             db.ID = id;
+
             var dbDeckCards = DeckManager.GetDeckCardsById(id);
 
             foreach (var cc in dbDeckCards)
@@ -79,55 +127,74 @@ namespace CardGame.Web.Controllers
                 db.Collection.RemoveAt(idx);
             }
 
-            db.Collection.Sort();
-            db.Deck.Sort();
-
             TempData["DeckBuilder"] = db;
             return View(db);
         }
 
 
+
+        /// <summary>
+        /// Verändert das DeckBuilder Objekt im TempData
+        /// ACHTUNG es wurde NOCH NICHTS gespeichert
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult AddCardToDeck(int id)
         {
+            /// id ist eigentlich INDEX!!!
+            
             Web.Models.Deckbuilder db = new Web.Models.Deckbuilder();
             db = (Deckbuilder)TempData["DeckBuilder"];
 
             Web.Models.Card card = db.Collection[id];
             db.Collection.RemoveAt(id);
-            db.Collection.Sort();
+            
 
             db.Deck.Add(card);
-            db.Deck.Sort();           
-
-            TempData["DeckBuilder"] = db;
-            return View("DeckDetails", db);
-        }
-
-
-        public ActionResult RemoveCardFromDeck(int id)
-        {
-            Web.Models.Deckbuilder db = new Web.Models.Deckbuilder();
-            db = (Deckbuilder)TempData["DeckBuilder"];
-
-            Web.Models.Card card = db.Deck[id];
-            db.Deck.RemoveAt(id);
-            db.Deck.Sort();
-
-            db.Collection.Add(card);
-            db.Collection.Sort();
             
+
             TempData["DeckBuilder"] = db;
             return View("EditDeck", db);
         }
 
 
-        public ActionResult SaveDeck(int id)
+
+        /// <summary>
+        /// Verändert das DeckBuilder Objekt im TempData
+        /// ACHTUNG es wurde NOCH NICHTS gespeichert
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult RemoveCardFromDeck(int id)
         {
+            /// id ist eigentlich INDEX
+
             Web.Models.Deckbuilder db = new Web.Models.Deckbuilder();
             db = (Deckbuilder)TempData["DeckBuilder"];
 
-            var dbDeckList = new List<DeckCard>();
+            Web.Models.Card card = db.Deck[id];
+            db.Deck.RemoveAt(id);
 
+            db.Collection.Add(card);
+
+            TempData["DeckBuilder"] = db;
+            return View("EditDeck", db);
+        }
+
+
+        /// <summary>
+        /// ActionResult SaveDeck
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult SaveDeck(int id)
+        {
+            /// hole dir den DeckBuilder aus TempData raus
+            Web.Models.Deckbuilder db = (Deckbuilder)TempData["DeckBuilder"];
+
+            /// Ermittle die Karten die endgültig
+            /// für dieses Deck gespeichert werden sollen
+            var dbDeckList = new List<DeckCard>();
             foreach (var c in db.Deck)
             {
                 int idx = dbDeckList.FindIndex(i => i.ID == c.ID);
@@ -155,11 +222,12 @@ namespace CardGame.Web.Controllers
                 }
             }
 
-            var result = DeckManager.UpdateDeckById(id, dbDeckList); //Macht irgendwas, aber irgendwas falsches!
+            /// gehe in die Datenbank und speichere die Karten für dieses Deck
+            var result = DeckManager.UpdateDeckById(id, dbDeckList); 
 
-            //Neue DeckCollection dem DeckManager geben
+            
 
-            return RedirectToAction("DeckOverview", "Profile");
+            return RedirectToAction("Index");
         }
     }
 }

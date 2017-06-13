@@ -190,7 +190,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\Images\background.png" />
-    <Content Include="Content\Images\bibliothek.jpg" />
+    <Content Include="Content\Images\bibloiothek.jpg" />
     <Content Include="Content\Images\Bild1.png" />
     <Content Include="Content\Images\Bild2.png" />
     <Content Include="Content\Images\black.jpg" />
@@ -273,11 +273,8 @@
     <Content Include="Views\Shared\_OrderDetails.cshtml" />
     <Content Include="Views\Shared\_LayoutNew.cshtml" />
     <Content Include="Views\Shop\OrderDetails.cshtml" />
-    <Content Include="Views\Edit\Edit.cshtml" />
-    <Content Include="Views\Edit\Details.cshtml" />
     <Content Include="Views\Profile\CardCollection.cshtml" />
-    <Content Include="Views\Profile\DeckDetails.cshtml" />
-    <Content Include="Views\Profile\DeckOverview.cshtml" />
+    <Content Include="Views\Deckbuilder\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

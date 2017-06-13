@@ -305,13 +305,9 @@ namespace CardGame.DAL.Logic
                     {
                         throw new Exception("CardCollectionNotFound");
                     }
-                    //foreach (var cc in  dbCardCollection)
-                    //{
-                    //    for (int i = 0; i < cc.NumberOfCards; i++)
-                    //        cardList.Add(cc.AllCards);
-                    //}
 
-                    /// TODO: fix personCard vs. card
+                    cardList = userPersonCards.Select(x => x.Card).ToList();
+
                     return cardList;
                 }
             }
