@@ -100,7 +100,7 @@ namespace CardGame.Web.Controllers
             db.Deck.Sort();           
 
             TempData["DeckBuilder"] = db;
-            return View("EditDeck", db);
+            return View("DeckDetails", db);
         }
 
 

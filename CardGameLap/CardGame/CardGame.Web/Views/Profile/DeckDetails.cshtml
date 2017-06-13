@@ -46,7 +46,7 @@
                 @card.Life
             </th>
             <th>
-                @Html.ActionLink("Add", "AddCardToDeck", "DeckBuilder")
+                @Html.ActionLink("+", "AddCardToDeck", "Deckbuilder", new { id = card.ID })
             </th>
         </tr>
         }
@@ -94,7 +94,7 @@
                     @card.Life
                 </th>
                 <th>
-                    @Html.ActionLink("Remove", "RemoveCardFromDeck", "DeckBuilder")
+                    @Html.ActionLink("-", "RemoveCardFromDeck", "Deckbuilder", new { id = card.ID })
                 </th>
                
             </tr>
