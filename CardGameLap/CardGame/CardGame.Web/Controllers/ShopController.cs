@@ -189,6 +189,7 @@ namespace CardGame.Web.Controllers
             Models.Order o = new Models.Order();
             var dbPackages = ShopManager.GetCardPackById(id);
 
+
             //Models.Pack cardPack = new Models.Pack();
             //cardPack.ID = dbPackages.ID;
             //cardPack.Packname = dbPackages.Name;
@@ -361,5 +362,12 @@ namespace CardGame.Web.Controllers
             return View();
         } 
         #endregion
+
+
+
+        public ActionResult AcknowlegePayment()
+        {
+            return View();
+        }
     }
 }

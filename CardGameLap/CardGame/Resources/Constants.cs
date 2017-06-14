@@ -16,6 +16,8 @@ namespace Resources
             public const string PASSWORD_EQUAL = "PASSWORD_EQUAL";
             public const string LENGTH = "LENGTH";
             public const string SPECIAL_CHARACTER = "SPECIAL_CHARACTER";
+
+            public const string CARDHOLDERNAME = "CARDHOLDERNAME";
         }
 
         public class Labels
@@ -26,6 +28,8 @@ namespace Resources
             public const string LASTNAME = "LASTNAME";
             public const string PASSWORD = "PASSWORD";
             public const string GAMERTAG = "GAMERTAG";
+
+            public const string CARDHOLDERNAME = "CARDHOLDERNAME";
         }
     }
 }

@@ -120,6 +120,7 @@ namespace CardGame.Web.Controllers
                 card.Name = cc.Name;
                 card.Life = cc.Life;
                 card.Mana = cc.Mana;
+                card.Pic = cc.Pic;
                 //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
                 //card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
 
@@ -212,6 +213,7 @@ namespace CardGame.Web.Controllers
                     dbCard.ID = c.ID;
                     dbCard.Life = c.Life;
                     dbCard.Mana = c.Mana;
+                    dbCard.Pic = c.Pic;
                     //hier einfach nur die ID befuellen (muss DB id sein)
                     //im Manager dann die ID raussuchen und die db hinzufuegen
                     var dbDeckCard = new CardGame.DAL.Model.DeckCard();

@@ -47,6 +47,7 @@ namespace CardGame.Web.Controllers
             card.Mana = dbcard.Mana;
             card.Attack = dbcard.Attack;
             card.Life = dbcard.Life;
+            card.Pic = dbcard.Pic;
             card.Type = CardManager.CardTypes[dbcard.ID_Type];
 
             return View(card);

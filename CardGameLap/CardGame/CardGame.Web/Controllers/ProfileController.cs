@@ -49,6 +49,7 @@ namespace CardGame.Web.Controllers
                 card.Name = cc.Name;
                 card.Life = cc.Life;
                 card.Mana = cc.Mana;
+                card.Pic = cc.Pic;
                 //card.Type = UserManager.CardTypeNames[cc.fkCardType ?? 0];
 
                 cardCollection.Add(card);

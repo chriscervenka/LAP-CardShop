@@ -12,6 +12,10 @@ namespace CardGame.DAL.Logic
     {
         public static readonly Dictionary<int, string> CardTypes;
 
+
+        /// <summary>
+        /// 
+        /// </summary>
         static CardManager()
         {
             CardTypes = new Dictionary<int, string>();
@@ -31,7 +35,10 @@ namespace CardGame.DAL.Logic
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static List<Card> GetAllCards()
         {
             List<Card> ReturnList = null;
@@ -44,6 +51,12 @@ namespace CardGame.DAL.Logic
 
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         //Theoretisch überflüssig
         public static string GetCardTypeById(int? id)
         {
@@ -74,8 +87,7 @@ namespace CardGame.DAL.Logic
             return card;
         }
 
-
-
+       
         /// Karten IM Deck
         public static List<Card> GetAllCardsFromDeck(int id)
         {
@@ -92,6 +104,7 @@ namespace CardGame.DAL.Logic
 
             return ReturnList;
         }
+
 
         /// Karten FÜR das Deck
         public static List<Card> GetAllCardsForDeck(string email, int idDeck)

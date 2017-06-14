@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kreditkartenbesitzer ähnelt.
+        /// </summary>
+        public static string CARDHOLDERNAME {
+            get {
+                return ResourceManager.GetString("CARDHOLDERNAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Passwort bestätigen ähnelt.
         /// </summary>
         public static string CONFIRMATION {

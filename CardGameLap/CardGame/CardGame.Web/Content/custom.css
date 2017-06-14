@@ -221,8 +221,7 @@ a:hover {
 .scroller {
 	width: 30%;
 	margin-top: 30px;
-	margin-left: 270px;
-	/*background-image: url("../images/paper background.png");*/	
+	margin-left: 270px;	
 	background-repeat: no-repeat;		
 	background-size: cover;
 		-webkit-background-size: cover;
@@ -235,11 +234,10 @@ a:hover {
     overflow-y: scroll;*/
 }
 
-.scroller-collection {
+.scroller-edit-deck {
 	width: 30%;
 	margin-top: 30px;
-	margin-left: 270px;
-	/*background-image: url("../images/paper background.png");*/	
+	margin-left: 270px;	
 	background-repeat: no-repeat;		
 	background-size: cover;
 		-webkit-background-size: cover;
@@ -252,12 +250,58 @@ a:hover {
     overflow-y: scroll;
 }
 
+.scroller-collection {
+	width: 30%;
+	margin-top: 30px;
+	margin-left: 270px;	
+	background-repeat: no-repeat;		
+	background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+	background-position: center;	
+	padding: 10px 5% 10px 5%;
+    height: 750px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.scroller-card-collection {
+    width: 30%;
+	margin-top: 30px;
+	margin-left: 270px;	
+	background-repeat: no-repeat;		
+	background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+	background-position: center;	
+	padding: 10px 5% 10px 5%;
+    height: 750px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.scroller-seite-zwei-cardcollection {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 250px;
+    background-image: url('Images/enterpic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
+}
+
 .scroller-seite-login {
     width: 30%;
     height: 750px;
     margin-top: 75px;
     margin-left: 250px;
-    /*background-image: url("../images/paper background.png");*/
     background-image: url('Images/enterpic.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -273,9 +317,6 @@ a:hover {
     height: 750px;
     margin-top: 75px;
     margin-left: 250px;
-    /*background-image: url("../images/paper background.png");*/
-    /*background-image: url('Images/enterpic.jpg');*/
-    /*background-image: url('Images/bibliothek.jpg');*/
     background-image: url('Images/bibloiothek.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -317,8 +358,7 @@ a:hover {
 .scroller-seite-zwei-imdeck {
     width: 30%;
 	margin-top: 30px;
-	margin-left: 250px;
-	/*background-image: url("../images/paper background.png");*/	
+	margin-left: 250px;	
 	background-repeat: no-repeat;		
 	background-size: cover;
 		-webkit-background-size: cover;
@@ -336,8 +376,6 @@ a:hover {
     height: 750px;
     margin-top: 75px;
     margin-left: 250px;
-    /*background-image: url("../images/paper background.png");
-    background-image: url('Images/enterpic.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
@@ -390,19 +428,6 @@ a:hover {
 	padding: 10px 5% 10px 5%;
 }
 
-/*.gallery-card {
-	margin: 0px 15px 10px 0px;	
-	width: 40%; 
-	height: auto;
-	    transition: width 2s, height 2s, transform 2s;
-        -moz-transition: width 2s, height 2s, -moz-transform 2s;
-        -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
-        -o-transition: width 2s, height 2s,-o-transform 2s;
-}
-.gallerey-card img:hover {
-        width: 100%;
-        height:100%;
-    }*/
 
 .gallery-card
 {
@@ -420,8 +445,8 @@ a:hover {
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
     transform: scale(1);   
-
 }
+
 .gallery-card:hover
 {
     box-shadow: 0px 0px 150px #000000;
@@ -435,8 +460,6 @@ a:hover {
     transition: all 200ms ease-in;
     transform: scale(3);
 }
-
-
 
 .card-package {
 	margin: 15px 15px 0px 15px;	
@@ -472,19 +495,11 @@ figcaption {
 	height: 20px;
 	z-index: 100;
 	pointer-events: none;
-	/*background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);*/
 }
 
 .js .content:after {
 	top: auto;
 	bottom: 0;
-	/*background: -webkit-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	background: -moz-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	background: -o-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-	background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);*/
 }
 
 .content h2 {
@@ -501,7 +516,7 @@ figcaption {
 }
 
 #Password {
-    width: 255px;
+    width: 378px;
     height: 33px;
     border-radius: 5px;
 }
@@ -521,4 +536,17 @@ figcaption {
 	.content {
 		font-size: 75%;
 	}
+}
+
+.cardpic {
+  max-width: 20px;  
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.cardpic:hover {
+  -moz-transform: scale(5);
+  -webkit-transform: scale(5);
+  transform: scale(5);
 }

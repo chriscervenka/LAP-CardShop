@@ -10,26 +10,35 @@
     <h4>You currently have @Model.ToList().Count decks</h4>
     <table>
         <tr>
-            <th>
-                @Html.DisplayNameFor(d => d.Name)
-            </th>
+            @*<th>
+                Deck @Html.DisplayNameFor(d => d.Name) 
+            </th>*@
             <th>
                 <br />
             </th>
         </tr>
-        
+      </table>  
         @foreach (var deck in Model)
         {
-            <tr>
-                <th>
-                    @Html.DisplayFor(d => deck.Name)
-                </th>
-                <th>
-                    @Html.ActionLink("View Deck", "EditDeck", new { id = deck.ID })
-                    @*@Html.ActionLink("View Deck", "DeckDetails", "EditDeck", new { id = 22 })*@
-                </th>
-            </tr>
-            
-        }
-    </table>
+            <div class="row col-sm-12">
+                <img src="~/Content/Images/pack2.png" alt="" height="90" width="60" />
+
+                <table>
+                    <tr>
+                        <tr>
+                            @Html.DisplayFor(d => deck.Name)
+                        </tr>
+
+                        <td>
+                            @Html.ActionLink("View Deck", "EditDeck", new { id = deck.ID })
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </div>                 
+        } 
+</div>
+
+<div class="scroller-seite-zwei row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h3>Image</h3><br>
 </div>

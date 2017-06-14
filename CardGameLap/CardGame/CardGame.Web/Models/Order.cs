@@ -19,6 +19,8 @@ namespace CardGame.Web.Models
 
         public List<Pack> CardPacks { get; set; }
 
+        public Payment Payment { get; set; }
+
 
         //Konstruktor erstellt
         //public Order()

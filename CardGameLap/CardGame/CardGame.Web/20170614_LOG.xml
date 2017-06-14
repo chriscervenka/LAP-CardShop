@@ -1,0 +1,191 @@
+<Info>
+  <Time>14.06.2017 08:47:42</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 08:47:42</Time>
+  <Info>HashPass = D3FAEE017D6CBAFEBBEA99CC2293F2D2DD5FABE9E96BDCA03D4808B92EF9961FEA177A08ED40F357EC84D689BA33BFCAE4A94ECED6DC7D38666144615F6445C1</Info>
+</Info>
+<Xcpt>
+  <Time>14.06.2017 08:47:42</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>14.06.2017 08:48:04</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 08:48:04</Time>
+  <Info>HashPass = 43BF77C6DF19FFBC93DF63B6532D23699EDE6A0E0E6C1E37A24CB6772F8AC5CB49CD1F27912226DE09DB6A81609D74869C73C6EE5E4FF1F3AA1AF788D56EA3CC</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 08:49:37</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 08:50:03</Time>
+  <Info>id: 6</Info>
+</Info>
+<Xcpt>
+  <Time>14.06.2017 10:38:44</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 24.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>14.06.2017 10:38:44</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserNotFound</Message>
+    <Stack>   bei CardGame.DAL.Logic.DeckManager.AddDefaultDecksByUserId(Int32 id) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 178.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>14.06.2017 10:40:14</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 10:40:14</Time>
+  <Info>HashPass = 826EBCB3FB09A23CEE61BC159EB8094C9E078272406BE3C2DE1CC505FCECBA9A396B913FBBDE2041EDBAFC68D4360C1CA531F3B5653D90C25F6153181224D541</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 10:43:46</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 10:43:46</Time>
+  <Info>HashPass = 826EBCB3FB09A23CEE61BC159EB8094C9E078272406BE3C2DE1CC505FCECBA9A396B913FBBDE2041EDBAFC68D4360C1CA531F3B5653D90C25F6153181224D541</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 10:45:31</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 10:45:31</Time>
+  <Info>HashPass = 666C7753C321C4A24A56FAED155304F8C7982667A1B5F288DCFBB8A8E714AE58FE17E8F3D8E0E76304C15AA47597FEFF4A0F1B4EE4F228EADB259AE9694B2879</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 10:48:04</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 11:16:41</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 11:16:41</Time>
+  <Info>HashPass = 666C7753C321C4A24A56FAED155304F8C7982667A1B5F288DCFBB8A8E714AE58FE17E8F3D8E0E76304C15AA47597FEFF4A0F1B4EE4F228EADB259AE9694B2879</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 13:30:43</Time>
+  <Info>id: 6</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 13:30:56</Time>
+  <Info>id: 3</Info>
+</Info>
+<Xcpt>
+  <Time>14.06.2017 14:39:59</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>14.06.2017 14:40:44</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>14.06.2017 14:43:11</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>14.06.2017 14:52:57</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>14.06.2017 15:00:56</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>14.06.2017 15:02:47</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 15:02:56</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 15:03:24</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 15:12:46</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 15:36:59</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 15:42:02</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 15:49:53</Time>
+  <Info>id: 6</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 16:04:17</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 16:47:01</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 17:15:52</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>14.06.2017 17:16:20</Time>
+  <Info>id: 3</Info>
+</Info>

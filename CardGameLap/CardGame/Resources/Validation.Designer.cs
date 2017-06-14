@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Karteninhaber muss ausgefüllt sein ähnelt.
+        /// </summary>
+        public static string CARDHOLDERNAME {
+            get {
+                return ResourceManager.GetString("CARDHOLDERNAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Muss gültige E-Mail Adresse sein ähnelt.
         /// </summary>
         public static string EMAIL {

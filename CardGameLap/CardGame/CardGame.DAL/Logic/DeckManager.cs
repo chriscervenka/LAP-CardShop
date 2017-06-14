@@ -10,6 +10,11 @@ namespace CardGame.DAL.Logic
 {
     public class DeckManager
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Deck GetDeckById(int id)
         {
             Deck deck = null;
@@ -33,6 +38,11 @@ namespace CardGame.DAL.Logic
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static int GetNumDeckCardsById(int id)
         {
             Deck deck = null;
@@ -59,6 +69,11 @@ namespace CardGame.DAL.Logic
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idDeck"></param>
+        /// <returns></returns>
         public static List<Card> GetDeckCardsById(int idDeck)
         {
             var deckCards = new List<Card>();
@@ -94,6 +109,12 @@ namespace CardGame.DAL.Logic
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="deckCards"></param>
+        /// <returns></returns>
         public static bool UpdateDeckById(int id, List<DeckCard> deckCards)
         {
             Deck deck = null;
@@ -137,7 +158,12 @@ namespace CardGame.DAL.Logic
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static bool AddDeckByUserId(int id, string name)
         {
             Person user = null;
@@ -163,6 +189,11 @@ namespace CardGame.DAL.Logic
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static bool AddDefaultDecksByUserId(int id)
         {
             Person user = null;
@@ -177,7 +208,8 @@ namespace CardGame.DAL.Logic
 
                     for (int i = 1; i <= 3; ++i)
                     {
-                        addedAll = AddDeckByUserId(id, user.Email + i.ToString());
+                        //addedAll = AddDeckByUserId(id, user.Email + i.ToString());
+                        addedAll = AddDeckByUserId(id, user.Gamertag + " Deck " + i.ToString());
                     }
                     return addedAll;
                 }

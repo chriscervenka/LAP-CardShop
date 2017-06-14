@@ -10,8 +10,9 @@ namespace CardGame.Web.Models
 
     {
         public int AmountMoney { get; set; }
-        
-
+       
         public Order Order { get; set; }
+
+
     }
 }

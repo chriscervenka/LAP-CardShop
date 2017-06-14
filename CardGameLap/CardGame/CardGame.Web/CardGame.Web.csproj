@@ -161,7 +161,6 @@
     <Compile Include="Controllers\DeckbuilderController.cs" />
     <Compile Include="Controllers\EditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -175,6 +174,7 @@
     <Compile Include="Models\Deckbuilder.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\PackOverviewModel.cs" />
+    <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Models\ShopContainer.cs" />
