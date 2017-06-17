@@ -9,6 +9,11 @@ namespace CardGame.Web.Models
 {
     public class Payment
     {
+        /// <summary>
+        /// LUHN Algorithmus for Creditcard Payment
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static bool IsValidNumber(string data)
         {
             int sum = 0;
@@ -22,6 +27,13 @@ namespace CardGame.Web.Models
             return sum % 10 == 0;
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="month"></param>
+        /// <param name="year"></param>
+        /// <returns>BOOL isValidExpiration</returns>
         public static bool IsValidExpiration(int month, int year)
         {
             bool isValidExpiration = true;
@@ -34,12 +46,23 @@ namespace CardGame.Web.Models
             return isValidExpiration;
         }
 
+
         public string CreditCardNumber { get; private set; }
         public string CardHolder { get; private set; }
         public int ExpireMonth { get; private set; }
         public int ExpireYear { get; private set; }
         public int SecurityCode { get; private set; }
 
+
+
+        /// <summary>
+        /// PRIVAT Konstruktor Payment
+        /// </summary>
+        /// <param name="creditCardNumber"></param>
+        /// <param name="cardHolder"></param>
+        /// <param name="expireMonth"></param>
+        /// <param name="expireYear"></param>
+        /// <param name="securityCode"></param>
         private Payment(string creditCardNumber, string cardHolder, int expireMonth, int expireYear, int securityCode)
         {
             CreditCardNumber = creditCardNumber;
@@ -49,6 +72,17 @@ namespace CardGame.Web.Models
             SecurityCode = securityCode;
         }
 
+
+        /// <summary>
+        /// public static Payment Create
+        /// </summary>
+        /// <param name="creditCardNumber"></param>
+        /// <param name="cardHolder"></param>
+        /// <param name="expireMonth"></param>
+        /// <param name="expireYear"></param>
+        /// <param name="securityCode"></param>
+        /// <returns></returns>
+        /// 
         // Factory!!
         public static Payment Create(string creditCardNumber, string cardHolder, int expireMonth, int expireYear, int securityCode)
         {
