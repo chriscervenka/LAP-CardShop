@@ -197,7 +197,10 @@
     <Content Include="Content\Images\Button_hp.png" />
     <Content Include="Content\Images\card1.png" />
     <Content Include="Content\Images\diamond.png" />
+    <Content Include="Content\Images\dwarf.jpg" />
+    <Content Include="Content\Images\dwarf1.jpg" />
     <Content Include="Content\Images\enterpic.jpg" />
+    <Content Include="Content\Images\hearthstone-cover.jpg" />
     <Content Include="Content\Images\image1300x300.png" />
     <Content Include="Content\Images\image300x300.png" />
     <Content Include="Content\Images\LoginButton.png" />
@@ -205,6 +208,8 @@
     <Content Include="Content\Images\pack2.png" />
     <Content Include="Content\Images\pic.png" />
     <Content Include="Content\Images\SignUpButton.png" />
+    <Content Include="Content\Images\start.jpg" />
+    <Content Include="Content\Images\startpic2.jpg" />
     <Content Include="Content\Images\wood_background.png" />
     <Content Include="Content\jquery.jscrollpane.custom.css" />
     <Content Include="Content\MyStyle.css" />

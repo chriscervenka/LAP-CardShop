@@ -18,7 +18,7 @@
 
         <div>
             <p>Your current balance is now @(Model.UserBalance) <img src="~/Content/Images/diamond.png" alt="diamond" height="18" width="15" /></p><br />
-            <p>Your total cost of this Order is @Model.PackQuantity</p><br />
+            @*<p>Your total cost of this Order is @Model.PackQuantity</p><br />*@
             <p>Your new balance is about @(Model.UserBalance) <img src="~/Content/Images/diamond.png" alt="diamond" height="15" width="15" /></p><br />
         </div>
 
@@ -26,7 +26,7 @@
             <button type="submit" class="btn btn-submit" id="orderbutton">Buy Pack</button>
         </div>
 
-        @*<input type="button" class="btn btn-info" value="Back To Shop" onclick="location.href='@Url.Action("Shop", "Shop", new { ShopPage = 1})'" />*@
+        <input type="button" class="btn btn-info" value="Back To Shop" onclick="location.href='@Url.Action("Shop", "Shop", new { ShopPage = 1})'" />
 
     </div>
 </div>

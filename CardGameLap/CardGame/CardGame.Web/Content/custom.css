@@ -230,8 +230,37 @@ a:hover {
 	background-position: center;	
 	padding: 10px 5% 10px 5%;
     height: 750px;
-    /*overflow: hidden;
-    overflow-y: scroll;*/
+}
+
+.scroller-start {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 250px;
+    background-image: url('Images/startpic2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
+}
+
+.scroller-seite-zwei-startpage {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 250px;
+    background-image: url('Images/hearthstone-cover.jpg');
+    /*background-image: url('Images/enterpic.jpg');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
 }
 
 .scroller-edit-deck {
@@ -376,6 +405,21 @@ a:hover {
     height: 750px;
     margin-top: 75px;
     margin-left: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
+}
+
+.scroller-seite-zwei-orderdetails {
+    width: 30%;
+    height: 550px;
+    margin-top: 75px;
+    margin-left: 250px;
+    background-image: url('Images/dwarf1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
