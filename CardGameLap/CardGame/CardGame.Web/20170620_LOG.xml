@@ -1,0 +1,437 @@
+<Info>
+  <Time>20.06.2017 13:37:18</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 13:37:18</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 13:38:32</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 13:43:06</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 14:08:28</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 14:14:29</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 14:43:16</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 14:56:28</Time>
+  <Info>id: 5</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 14:58:58</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 14:58:58</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 14:58:58</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:00:18</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler bei der Überprüfung einer oder mehrerer Entitäten. Weitere Informationen finden Sie in den Erläuterungen zur EntityValidationErrors-Eigenschaft.</Message>
+    <Stack>   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 33.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:00:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:00:46</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:00:46</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:00:46</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:02:14</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:02:14</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:02:14</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 15:02:32</Time>
+  <Info>Entered Pass = </Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:02:32</Time>
+  <Info>HashPass = E3B73CC967423A75C31BA80024C45A38190404FA26A9AC3B6358CE634372C22939BDFA27D5B68AD3D6E76770A0CD31A94A1CD4574945EC1450788E785026E0AA</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 15:02:32</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:03:31</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:03:31</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:03:31</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:06:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:06:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:06:19</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:09:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:09:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:09:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 15:12:28</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:12:28</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:12:33</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:19:14</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:19:14</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:23:03</Time>
+  <Info>Entered Pass = jungsue1</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:23:03</Time>
+  <Info>HashPass = 9438D371A7460D47D5805D72D43803F7271AA0CDEDA1ED8A29777EE19C1E43189B9985EA2FB4932CFDFB271C654E2A0DF61B67482B85EBE182027A58C462CFD2</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:39:06</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:39:06</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:40:25</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:40:43</Time>
+  <Info>id: 2</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 15:41:47</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:42:04</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:42:26</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:42:41</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:44:47</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.06.2017 15:45:18</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 15:45:29</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:46:07</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:46:21</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:46:32</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:47:26</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:47:26</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:48:26</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:48:26</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 15:48:26</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 15:48:39</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:48:39</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 15:48:40</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 15:48:59</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:48:59</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 15:48:59</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 15:57:53</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:57:53</Time>
+  <Info>HashPass = 956CC5E18891998E782E67C924F6227DF121CDBAF7599071B75C8F4466CC8E350A90016E566EF04E793FD2F79423795CA614F12C828D26F99F507D652CE9E0FD</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:58:33</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 15:58:43</Time>
+  <Info>id: 2</Info>
+</Info>
+<Xcpt>
+  <Time>20.06.2017 16:13:26</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.06.2017 16:13:48</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 16:24:21</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>20.06.2017 16:27:16</Time>
+  <Info>id: 4</Info>
+</Info>

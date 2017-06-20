@@ -46,7 +46,7 @@ namespace CardGame.Web.Models
             return isValidExpiration;
         }
 
-
+        [Required(ErrorMessage = "Your Creditcard-Number is not valid")]
         public string CreditCardNumber { get; private set; }
         public string CardHolder { get; private set; }
         public int ExpireMonth { get; private set; }

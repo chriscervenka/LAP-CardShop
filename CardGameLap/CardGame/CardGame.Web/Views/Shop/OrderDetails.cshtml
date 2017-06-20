@@ -19,7 +19,7 @@
     @*<h3>Modal </h3>*@
     <br>
     <div class="container">
-        <h2>Modal Example</h2>
+        <h2>Press button for your payment ...</h2>
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Payment</button>
 
@@ -38,7 +38,6 @@
                             <div class="row">
                                 <div class="span12">
                                     @using (Html.BeginForm())
-
                                     {
                                             <h3>Payment</h3>
                                             <div class="form-group">
@@ -97,6 +96,11 @@
                                             <div class="form-group">
                                                     <button type="submit" class="btn btn-submit" id="orderbutton">Pay</button>
                                             </div>
+
+                                        @*<div>
+                                            <p>Please press button ...</p>
+                                            <input type="submit" class="btn btn-info" value="Pay ..." onclick="location.href='@Url.Action("Shop", "Shop")'" />
+                                        </div>*@
                                     }
 
                                 </div>

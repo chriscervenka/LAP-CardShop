@@ -15,13 +15,13 @@ namespace CardGame.Web.Models
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
         [Display(Name = Constants.Labels.FIRSTNAME, ResourceType = typeof(Labels))]
-        [RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
+        //[RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         public new string Firstname { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         [StringLength(50, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
         [Display(Name = Constants.Labels.LASTNAME, ResourceType = typeof(Labels))]
-        [RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
+        //[RegularExpression(@"^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,3})$", ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         public new string Lastname { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(Validation), ErrorMessageResourceName = Constants.Validation.REQUIRED)]

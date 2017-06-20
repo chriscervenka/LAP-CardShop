@@ -317,6 +317,30 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        [Authorize]
+        [HttpPost]
+        public ActionResult OrderDetails(Models.Order o)
+        {
+
+            bool validNumber = Payment.IsValidNumber(o.Payment.CreditCardNumber);
+
+            //if(!validNumber)
+            //{
+            //    ///TODO Fehlermeldung
+            //    ErrorMessage = "Enter an integer";
+            //}
+
+            //if (ModelState.IsValid())
+            if(!validNumber)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            //Weiterleiten auf das View mit den Fehlermeldung oder OK
+            return View("Error");
+        }
+
+
 
         #region ACTIONMETHODE List<Models.Card> GeneratedCards()
         /// <summary>

@@ -115,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Sondeerzeichen sind nicht erlaubt ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sonderzeichen sind nicht erlaubt ähnelt.
         /// </summary>
         public static string SPECIAL_CHARACTER {
             get {

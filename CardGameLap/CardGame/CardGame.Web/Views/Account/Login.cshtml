@@ -8,6 +8,8 @@
 <div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
     <h2>LOGIN</h2>
 
     <div class="form-group">

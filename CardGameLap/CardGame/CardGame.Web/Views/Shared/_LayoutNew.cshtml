@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="~/Content/bookblock.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/custom.css" />
 
+
+   
+
     @*@{var ID = Session["ID"];          
             }*@
 
@@ -52,8 +55,8 @@
                 <li class="col-md-1 text-center"><a href="@Url.Action("About", "Home")">Contact</a></li>
                 <li class="col-md-1 text-center"><a href="@Url.Action("Edit", "Edit")">Edit Profile</a></li>
                 <li class="col-md-1 text-center"><a href="@Url.Action("Logout", "Account")">Logout</a></li>
-                <li class="col-md-1 text-center"><a href="@Url.Action("Index", "Profile")">@gamertag 's Profil</a></li>
-                <li class="col-md-1 text-center"><img src="~/Content/Images/diamond.png" class="navpic" style="width: 16px"/><a href="@Url.Action("Shop", "Shop")">@currency</a></li>
+                <li class="col-md-1 text-center"><a href="@Url.Action("Index", "Profile")">Profil</a></li>
+                @*<li class="col-md-1 text-center"><img src="~/Content/Images/diamond.png" class="navpic" style="width: 16px"/><a href="@Url.Action("Shop", "Shop")">@currency</a></li>*@
             </ul>
         }
 
@@ -91,10 +94,14 @@
             </div>
         </div>
     </div><!-- /container -->
+    
     <script src="~/Scripts/js/modernizr.custom.79639.js"></script>
     <script src="~/scripts/js/jQuery-V3.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 
     @*<script src="~/scripts/js/jquery.mousewheel.js"></script>
         <script src="~/scripts/js/jquery.jscrollpane.min.js"></script>

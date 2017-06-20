@@ -136,6 +136,6 @@
     <value>Feld muss ausgefüllt werden</value>
   </data>
   <data name="SPECIAL_CHARACTER" xml:space="preserve">
-    <value>Sondeerzeichen sind nicht erlaubt</value>
+    <value>Sonderzeichen sind nicht erlaubt</value>
   </data>
 </root>
