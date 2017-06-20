@@ -218,6 +218,38 @@ a:hover {
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
+
+.modal-content {
+    background: url('img/red_transparent_background.png');
+    background: rgba(255, 0, 0, 0.4);
+}
+
+.modal-title {
+    color: #fff;   
+}
+
+.controls {
+    margin: 0px 30px;
+}
+
+.modal-dialog {
+    height: 50%;
+}
+
+.control-label {
+    color: #fff;
+    margin-left: 50px;
+}
+
+.close {
+    color: #fff;
+}
+
+.form-control::-moz-placeholder {
+    color: #000;
+}
+
+
 .scroller {
 	width: 30%;
 	margin-top: 30px;
