@@ -42,6 +42,7 @@ namespace CardGame.DAL.Logic
             return true;
         }
 
+
         public static bool AuthUser(string email, string password)
         {
             try

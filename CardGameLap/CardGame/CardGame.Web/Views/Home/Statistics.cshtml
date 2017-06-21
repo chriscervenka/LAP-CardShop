@@ -4,22 +4,122 @@
     ViewBag.Title = "Statistics";
 }
 
-<h2>Game Statistics</h2>
+<div class="scroller row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h2>The Whole Game Statistic</h2>
 
-@Html.LabelFor(s => s.NumUsers)
-@Html.DisplayFor(s => s.NumUsers)
+    @Html.LabelFor(s => s.NumUsers)
+    @Html.DisplayFor(s => s.NumUsers)
 
-<br />
+    <br />
 
-@Html.LabelFor(s => s.NumCards)
-@Html.DisplayFor(s => s.NumCards)
-<br />
+    @Html.LabelFor(s => s.NumCards)
+    @Html.DisplayFor(s => s.NumCards)
+    <br />
 
-@Html.LabelFor(s => s.NumDecks)
-@Html.DisplayFor(s => s.NumDecks)
-<br />
+    @Html.LabelFor(s => s.NumDecks)
+    @Html.DisplayFor(s => s.NumDecks)
+    <br />
 
-@Html.LabelFor(s => s.CreationTime)
-@Html.DisplayFor(s => s.CreationTime)
+    @Html.LabelFor(s => s.CreationTime)
+    @Html.DisplayFor(s => s.CreationTime)
+    <br />
 
+    @Html.LabelFor(s => s.NumPacks)
+    @Html.DisplayFor(s => s.NumPacks)
+
+</div>
+
+<div class="scroller-seite-zwei-statistic row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <h3>Diagramm</h3>
+
+    <div id="piechart"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+    // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+            function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Pack 1 "Novice"', 10],
+              ['Pack 2 "Lonestar"', 1],
+              ['Pack 3 "Fighter"', 5],
+            ]);
+
+          // Optional; add a title and set the width and height of the chart
+          var options = {'title':'Meistverkaufte Packs dieses Monat', 'width':550, 'height':120};
+
+          // Display the chart inside the <div> element with id="piechart"
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+    </script>
+
+    <h3>Diagramm</h3>
+
+    <div id="piechart1"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+            // Load google charts
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            // Draw the chart and set the chart values
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['Task', 'Hours per Day'],
+                  ['Pack 1 "Novice"', 9],
+                  ['Pack 2 "Lonestar"', 19],
+                  ['Pack 3 "Fighter"', 16],
+                ]);
+
+                // Optional; add a title and set the width and height of the chart
+                var options = { 'title': 'Meistverkaufte Packs voriges Monat', 'width': 550, 'height': 120 };
+
+                // Display the chart inside the <div> element with id="piechart"
+                var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+                chart.draw(data, options);
+            }
+    </script>
+
+    <h3>Diagramm</h3>
+
+    <div id="piechart2"></div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+            // Load google charts
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            // Draw the chart and set the chart values
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['Task', 'Hours per Day'],
+                  ['Pack 1 "Novice"', 5],
+                  ['Pack 2 "Lonestar"', 5],
+                  ['Pack 3 "Fighter"', 1],
+                ]);
+
+                // Optional; add a title and set the width and height of the chart
+                var options = { 'title': 'Meistverkaufte Packs vorvoriges Monat', 'width': 550, 'height': 120 };
+
+                // Display the chart inside the <div> element with id="piechart"
+                var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+                chart.draw(data, options);
+            }
+    </script>
+</div>
+
+
+
+
+    
 

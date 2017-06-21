@@ -36,5 +36,7 @@ namespace CardGame.Web.Models
         public string Ort { get; set; }
 
         public string PLZ { get; set; }
+
+        //public DateTime Registrierungsdatum { get; set; }
     }
 }

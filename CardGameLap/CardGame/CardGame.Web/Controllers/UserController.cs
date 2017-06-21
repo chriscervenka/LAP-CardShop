@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using CardGame.DAL.Logic;
 using CardGame.Web.Models;
+using System;
 
 namespace CardGame.Web.Controllers
 {
@@ -38,6 +39,9 @@ namespace CardGame.Web.Controllers
                 user.CurrencyBalance = (int)c.Currencybalance;  //Konvertiere einen NULLABLE int64 in einen 'normalen' int64 (int)
                 user.Password = c.Password;
                 user.Salt = c.Salt;
+
+                //hinzugefügt LAP
+                /*user.Registrierungsdatum = (DateTime)c.RegDatum;*/ //Konvertiert einen DATETIME
 
                 UserList.Add(user);
             }

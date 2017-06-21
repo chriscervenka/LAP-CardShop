@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="CardGame.DAL.Model.Deck" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGame.DAL.Model.Order" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGame.DAL.Model.Pack" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGame.DAL.Model.Person" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGame.DAL.Model.Person" Width="2.25" PointX="1.375" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGame.DAL.Model.Type" Width="1.5" PointX="10" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="CardGame.DAL.Model.FK__tblcard__fkclass__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="CardGame.DAL.Model.FK__tblcard__fktype__2C3393D0" ManuallyRouted="false" />

@@ -58,6 +58,20 @@ namespace CardGame.Web.Controllers
             return View(cardCollection);
         }
 
-      
+
+        /// <summary>
+        /// LAP Donate ActionMethod
+        /// </summary>
+        /// <returns>View</returns>
+        [HttpPost]
+        [Authorize(Roles = "player,admin")]
+        public ActionResult Donate()
+        {
+            var currencyBalance = UserManager.GetCurrencyBalanceByEmail(User.Identity.Name);
+            
+            return View("Index");
+        }
+
+
     }
 }

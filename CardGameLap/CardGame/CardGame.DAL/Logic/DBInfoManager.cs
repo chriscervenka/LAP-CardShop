@@ -51,5 +51,33 @@ namespace CardGame.DAL.Logic
 
             return numDecks;
         }
+
+
+
+        /// <summary>
+        /// LAP Methode für STATISTIK
+        /// Methode um aus Datenbank alle PACKS zu ermitteln
+        /// </summary>
+        /// <returns>numPacks</returns>
+        public static int GetNumPacks()
+        {
+            int numPacks = -1;
+            using (var db = new ClonestoneFSEntities())
+            {
+                numPacks = db.AllPacks.Count();
+            }
+
+            return numPacks;
+        }
+
+        public static int GetMostBuyedPacks()
+        {
+            int mostBuyedPacks = -1;
+            using (var db = new ClonestoneFSEntities())
+            {
+                mostBuyedPacks = db.AllOrders.Count();
+            }
+            return mostBuyedPacks;
+        }
     }
 }

@@ -35,6 +35,8 @@ namespace CardGame.Web.Controllers
             return View(CardList);
         }
 
+
+
         public ActionResult Details(int id)
         {
             DAL.Model.Card dbcard = null;

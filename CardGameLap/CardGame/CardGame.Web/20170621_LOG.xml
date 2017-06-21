@@ -1,0 +1,1195 @@
+<Info>
+  <Time>21.06.2017 10:21:33</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:21:33</Time>
+  <Info>HashPass = A4675BD2258B1137E92B13BFF1D4BD2C096E6152CF20C77704EBD648ABDB887808D72500BDFFF3D87AEE6A8A894C79DBC56EE758F58DD7CD2995A5704D22EAAD</Info>
+</Info>
+<Xcpt>
+  <Time>21.06.2017 10:21:33</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 10:21:56</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 60.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 10:21:56</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 10:21:56</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.06.2017 10:24:18</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:24:18</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:27:58</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:27:58</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:27:58</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:30:46</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:30:46</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:30:46</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:33:13</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:33:13</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:33:13</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:07</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:07</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:07</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:12</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:12</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:12</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:33</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:33</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:33</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:37</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:37</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:35:37</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:51:25</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:51:25</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:51:25</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:52:07</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:52:07</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:52:07</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:57:52</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:57:53</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 10:57:53</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:15:36</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:15:36</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:15:36</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:23:55</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:23:55</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:23:55</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:00</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:00</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:00</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:53</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:53</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:53</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:58</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:58</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:24:58</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:27:45</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:27:45</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:27:45</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:28:53</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:28:53</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:28:53</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:41:11</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:41:11</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:41:11</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:42:18</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:42:18</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:42:18</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:44:29</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:44:29</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:44:29</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:45:25</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:45:25</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:45:25</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:47:17</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:47:17</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:47:17</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:47:25</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:47:25</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:47:25</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:48:27</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:49:31</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:49:31</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:49:31</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:51:26</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:51:26</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:51:26</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:54:40</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:54:40</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:54:40</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:55:17</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:55:17</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:55:17</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:56:48</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:56:48</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 11:56:48</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Xcpt>
+  <Time>21.06.2017 13:23:06</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+    <Stack>   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 33.</Stack>
+    <InnerException>
+      <Source>EntityFramework</Source>
+      <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+      <Stack>   bei System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   bei System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:23:07</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:30:35</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+    <Stack>   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 33.</Stack>
+    <InnerException>
+      <Source>EntityFramework</Source>
+      <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+      <Stack>   bei System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   bei System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:30:35</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:42:23</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 61.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:42:23</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:42:23</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:42:36</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 61.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:42:36</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:42:36</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.06.2017 13:43:16</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:43:16</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:43:29</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:43:29</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:43:29</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:44:19</Time>
+  <Info>id: 3</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:44:45</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:44:45</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 13:44:45</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Xcpt>
+  <Time>21.06.2017 13:54:51</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+    <Stack>   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 33.</Stack>
+    <InnerException>
+      <Source>EntityFramework</Source>
+      <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+      <Stack>   bei System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   bei System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 13:54:51</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 14:06:16</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 61.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 14:06:16</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 14:06:16</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.06.2017 14:06:35</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:06:35</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:21:32</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:21:32</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:21:32</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:26:05</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:26:05</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:26:05</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:26:34</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:26:34</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:26:34</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:27:15</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:27:15</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:27:15</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:28:24</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:28:24</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:28:24</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:28:42</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:28:42</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:28:42</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:30:49</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:35:18</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:35:18</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:35:18</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:37:20</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:37:20</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:37:20</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:37:51</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:37:51</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:37:51</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:38:31</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:38:31</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:38:31</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:39:48</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:39:48</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:39:48</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:42:28</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:42:28</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:42:28</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:43:43</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:43:43</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:43:43</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:44:50</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:44:50</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:44:50</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:45:38</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:45:38</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:45:38</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:47:27</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:47:27</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:47:27</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:48:24</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:48:24</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:48:24</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:49:51</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:49:51</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:49:51</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:51:40</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:51:40</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 14:51:40</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:05:21</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:05:21</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:05:26</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:05:26</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:05:26</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:06:36</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:06:36</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:06:36</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:09:19</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:09:19</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:09:19</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:10:33</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:10:33</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:10:33</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:11:23</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:11:23</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:11:23</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:12:04</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:12:04</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:12:04</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:13:04</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:13:04</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:13:04</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:14:08</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:14:08</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:14:08</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:16:38</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:16:38</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:16:38</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:17:36</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:17:44</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:17:44</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:17:44</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:18:32</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:18:32</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:18:32</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Xcpt>
+  <Time>21.06.2017 15:37:08</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+    <Stack>   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.AuthManager.Register(Person regUser) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 33.</Stack>
+    <InnerException>
+      <Source>EntityFramework</Source>
+      <Message>Fehler beim Aktualisieren der Einträge. Weitere Informationen finden Sie in der internen Ausnahme.</Message>
+      <Stack>   bei System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   bei System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   bei System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:37:08</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:37:52</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 61.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:37:52</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:37:52</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:38:04</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 61.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:38:04</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:38:04</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:38:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 61.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:38:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetRoleNamesByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 123.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.06.2017 15:38:17</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does Not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetPersonByEmail(String email) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 89.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.06.2017 15:39:37</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:39:37</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:42:12</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:42:12</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:44:58</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:44:58</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:45:08</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:45:08</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:45:08</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:49:37</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:49:37</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:50:53</Time>
+  <Info>Entered Pass = 123user!</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:50:53</Time>
+  <Info>HashPass = 2543E8685CD2D66024E9DFF3586AC2B56885120E7596AFE0B756D3BA2EF60134A3A0CABDE7B8C2417F20FD3EE4FE4BE8B79AF92757138C208443299F88480221</Info>
+</Info>
+<Xcpt>
+  <Time>21.06.2017 15:52:06</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Der Vorgang ist fehlgeschlagen: Die Beziehung konnte nicht geändert werden, da für mindestens eine der Fremdschlüsseleigenschaften keine NULL-Werte zulässig sind. Wenn eine Beziehung geändert wird, wird die verwandte Fremdschlüsseleigenschaft auf einen NULL-Wert festgelegt. Wenn der Fremdschlüssel keine NULL-Werte unterstützt, muss eine neue Beziehung definiert, die Fremdschlüsseleigenschaft einem anderen Nicht-NULL-Wert zugeordnet oder das nicht verwandte Objekt gelöscht werden.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\cervchri\Documents\GitHub\LAP-CardShop\CardGameLap\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 137.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>21.06.2017 15:52:29</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:53:53</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:53:53</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:53:53</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 15:57:29</Time>
+  <Info>id: 4</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:02:20</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:02:47</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:02:47</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:02:47</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:03:40</Time>
+  <Info>id: 5</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:03:55</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:08</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:08</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:08</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:50</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:54</Time>
+  <Info>GetNumUsers 13</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:54</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>21.06.2017 16:04:54</Time>
+  <Info>GetNumDecks 33</Info>
+</Info>

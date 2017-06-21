@@ -28,5 +28,19 @@
     <h3>@Html.ActionLink("Decks Owned", "Index", "Deckbuilder")</h3>
     @Html.DisplayNameFor(up => up.NumDecksOwned):
     @Html.DisplayFor(up => up.NumDecksOwned)
+
+
+    @*LAP Erweiterung*@
+    <h3>Please donate your monthly rental fee</h3>
+    <h3>It's about 10 Diamonds</h3>
+    <div class="form-group">
+        @using (Html.BeginForm("Donate", "Shop", FormMethod.Post))
+        {
+            @*@Html.AntiForgeryToken()*@
+            @*@Html.Hidden("id", cp.ID)*@
+            <button type="submit" class="btn btn-submit" id="buypack">Donate</button>
+        }
+    </div>
+
 </div>
 

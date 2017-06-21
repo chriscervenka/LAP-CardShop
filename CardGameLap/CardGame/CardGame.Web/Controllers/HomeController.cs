@@ -71,7 +71,11 @@ namespace CardGame.Web.Controllers
             //Befülle die Statistik
             s.NumUsers = DBInfoManager.GetNumUsers();
             s.NumCards = DBInfoManager.GetNumCards();
-            s.NumDecks = DBInfoManager.GetNumDecks(); 
+            s.NumDecks = DBInfoManager.GetNumDecks();
+
+            //LAP
+            //s.NumPacks = DBInfoManager.GetNumPacks();
+            s.NumPacks = DBInfoManager.GetMostBuyedPacks();
 
             return View(s);
         }

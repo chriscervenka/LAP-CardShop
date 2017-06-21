@@ -109,7 +109,6 @@ namespace CardGame.Web.Controllers
             var dbUser = new Person();
             Session.Add("Person", dbUser);
 
-
             dbUser.Firstname = regUser.Firstname;
             dbUser.Lastname = regUser.Lastname;
 
@@ -126,6 +125,10 @@ namespace CardGame.Web.Controllers
             dbUser.Role = "player";
             dbUser.Currencybalance = 1000;
             dbUser.Isactive = true;
+
+            //LAP Erweiterung
+            //dbUser.RegDatum = regUser.Registrierungsdatum;
+
 
             //dbUser.tblrole = new List<tblrole>();
             //dbUser.tblrole.Add(new tblrole());

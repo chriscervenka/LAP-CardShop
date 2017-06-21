@@ -83,8 +83,7 @@ a:hover {
 	padding-left: 240px;
 }
 
-.menu-panel {
-   
+.menu-panel {  
     background-image: url('Images/wood_background.png');
     background-repeat: no-repeat;
     background-color: #000;
@@ -437,6 +436,20 @@ a:hover {
     height: 750px;
     margin-top: 75px;
     margin-left: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    padding: 10px 5% 10px 5%;
+}
+
+.scroller-seite-zwei-statistic {
+    width: 30%;
+    height: 750px;
+    margin-top: 75px;
+    margin-left: 170px;
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;

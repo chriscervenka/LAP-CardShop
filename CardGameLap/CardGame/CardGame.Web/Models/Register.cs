@@ -48,6 +48,9 @@ namespace CardGame.Web.Models
         [Required]
         public new string PLZ { get; set; }
 
+        //[Required]
+        //public new DateTime Registrierungsdatum { get; set; }
+
 
         public class RegisterDbContext : DbContext
         {

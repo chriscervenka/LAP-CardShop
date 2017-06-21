@@ -91,6 +91,7 @@
           <Property Name="Hausnummer" Type="varchar" MaxLength="10" />
           <Property Name="PLZ" Type="varchar" MaxLength="10" />
           <Property Name="Ort" Type="varchar" MaxLength="50" />
+          <Property Name="RegDatum" Type="datetime" />
         </EntityType>
         <EntityType Name="Types">
           <Key>

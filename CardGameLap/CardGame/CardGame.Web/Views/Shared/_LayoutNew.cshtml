@@ -40,6 +40,8 @@
                 <li class="col-md-1 text-center"><a href="@Url.Action("Edit", "Edit")">Edit Profile</a></li>
                 <li class="col-md-1 text-center"><a href="@Url.Action("Logout", "Account")">Logout</a></li>
                 <li class="col-md-1 text-center"><a href="@Url.Action("Index", "Profile")">@User.Identity.Name</a></li>
+
+                <li class="col-md-1 text-center"><a href="@Url.Action("Statistics", "Home")">Statistik</a></li>
             </ul>
         }
 
@@ -56,6 +58,8 @@
                 <li class="col-md-1 text-center"><a href="@Url.Action("Edit", "Edit")">Edit Profile</a></li>
                 <li class="col-md-1 text-center"><a href="@Url.Action("Logout", "Account")">Logout</a></li>
                 <li class="col-md-1 text-center"><a href="@Url.Action("Index", "Profile")">Profil</a></li>
+
+                <li class="col-md-1 text-center"><a href="@Url.Action("Statistics", "Home")">Statistik</a></li>
                 @*<li class="col-md-1 text-center"><img src="~/Content/Images/diamond.png" class="navpic" style="width: 16px"/><a href="@Url.Action("Shop", "Shop")">@currency</a></li>*@
             </ul>
         }
